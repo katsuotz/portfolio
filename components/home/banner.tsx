@@ -1,5 +1,8 @@
+'use client'
+
 import Id from "@/components/home/id";
 import {ArrowDownCircle, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon, MapIcon} from "lucide-react";
+import { Typewriter } from 'react-simple-typewriter'
 
 export default function Banner() {
   const year = new Date().getFullYear()
@@ -15,8 +18,16 @@ export default function Banner() {
           <span className="block">Fakhri</span>
         </h1>
         <p className="text-3xl mt-8">
-          <span className="block">Full-stack engineer</span>
-          <span className="block">Frontend engineer</span>
+          <span className="block">
+            <Typewriter
+              words={['Software Engineer', 'Full-Stack Developer', 'Frontend Developer']}
+              loop={0}
+              typeSpeed={50}
+              deleteSpeed={35}
+              delaySpeed={1500}
+            />
+            &nbsp;
+          </span>
           <span className="block">{year - startYear}+ years experience</span>
         </p>
         <div className="flex gap-4 mt-6">
