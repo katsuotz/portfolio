@@ -1,6 +1,5 @@
 'use client'
 
-
 import {GraduationCapIcon} from "lucide-react";
 
 export default function Education() {
@@ -32,7 +31,6 @@ export default function Education() {
           </div>
         </div>
       </div>
-
     </section>
   )
 }
