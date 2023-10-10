@@ -49,3 +49,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.swiper-slide {
+  width: auto!important;
+}
+
+.swiper-pagination-bullet {
+  background: #fff!important;
+}
