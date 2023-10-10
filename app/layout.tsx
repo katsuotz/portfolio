@@ -5,7 +5,6 @@ import {Outfit} from 'next/font/google'
 
 const outfit = Outfit({subsets: ['latin']})
 
-
 export default function RootLayout(
   {
     children,
@@ -21,6 +20,7 @@ export default function RootLayout(
     <html lang="en">
     <head>
       <title>{metadata.title}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body className={outfit.className}>
     <main className="relative">
