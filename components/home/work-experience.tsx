@@ -1,12 +1,12 @@
 'use client'
 
 import WorkExperienceItem, {WorkExperienceType} from "@/components/home/work-experience-item";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {BriefcaseIcon} from "lucide-react";
 
 export default function WorkExperience() {
-  const experiences:WorkExperienceType[] = [
+  const experiences: WorkExperienceType[] = [
     {
       logo: '/work/paxel.png',
       company: 'Paxel Indonesia',
@@ -21,20 +21,22 @@ export default function WorkExperience() {
       company: 'Lexigo',
       position: [{
         title: 'Frontend Developer - Freelance',
-        date: 'Sept 2022 - Now',
+        date: 'Aug 2022 - Feb 2023',
       }],
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate ea hic nihil provident!',
     },
     {
       logo: '/work/sgara.png',
       company: 'Sgara (PT. Transformasi Digital Laut)',
-      position: [{
-        title: 'Full-Stack Developer',
-        date: 'Aug 2021 - Aug 2022',
-      }, {
-        title: 'Frontend Developer',
-        date: 'Oct 2020 - Jul 2021',
-      },],
+      position: [
+        {
+          title: 'Frontend Developer',
+          date: 'Oct 2020 - Jul 2021',
+        }, {
+          title: 'Full-Stack Developer',
+          date: 'Aug 2021 - Aug 2022',
+        },
+      ],
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate ea hic nihil provident!',
     },
     {
@@ -55,14 +57,14 @@ export default function WorkExperience() {
         Work Experience
       </h3>
 
-      <div className="container">
+      <div className="w-full">
         <Swiper
           slidesPerView={'auto'}
           spaceBetween={30}
           className="mySwiper"
         >
           {experiences.map((experience, key) => {
-            return <SwiperSlide key={key}><WorkExperienceItem experience={experience} /></SwiperSlide>
+            return <SwiperSlide key={key} className={key === 0 ? 'sm:ml-60' : ''}><WorkExperienceItem experience={experience}/></SwiperSlide>
           })}
         </Swiper>
       </div>
