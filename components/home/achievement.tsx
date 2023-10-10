@@ -1,6 +1,6 @@
 'use client'
 
-import {TrophyIcon} from "lucide-react";
+import {LinkIcon, TrophyIcon} from "lucide-react";
 import Image from "next/image";
 
 interface AchievementType {
@@ -9,6 +9,7 @@ interface AchievementType {
   title: string
   organizer: string
   year: string
+  url: string
 }
 
 export default function Achievement() {
@@ -19,6 +20,7 @@ export default function Achievement() {
       title: 'Virtual Skills Competition - International Exhibition',
       organizer: 'WorldSkills India',
       year: '2020',
+      url: 'https://drive.google.com/drive/folders/1sTD1GAHAHJDOBkiFuiP5bqEFFXgWaey-?usp=drive_link',
     },
     {
       logo: '/achievement/hago.png',
@@ -26,6 +28,7 @@ export default function Achievement() {
       title: 'Jawara Games Indonesia',
       organizer: 'Hago Indonesia',
       year: '2019',
+      url: 'https://drive.google.com/file/d/18y72Ec0a8OiRyIYYDJorMAAKELELNTMp/view?usp=drive_link',
     },
     {
       logo: '/achievement/kemnaker.png',
@@ -33,6 +36,7 @@ export default function Achievement() {
       title: 'National Selection Web Technologies',
       organizer: 'Ministry of Manpower Indonesia',
       year: '2019',
+      url: 'https://drive.google.com/file/d/19qznZ5Urq5sVVPcESLdVkNpgImlD4i1s/view?usp=drive_link',
     },
     {
       logo: '/achievement/kemdikbud.png',
@@ -40,6 +44,7 @@ export default function Achievement() {
       title: 'LKS Web Design & Development',
       organizer: 'Ministry of Education and Culture Indonesia',
       year: '2018',
+      url: 'https://drive.google.com/file/d/10sOrssOTDtQphctoZLxqcFMmm3Ab8Jj1/view?usp=drive_link',
     },
   ]
 
@@ -54,12 +59,15 @@ export default function Achievement() {
         <div className="grid grid-cols-12 gap-6">
           {achievements.map((achievement, key) => {
             return <div className="col-span-12 sm:col-span-6" key={key}>
-              <div className="flex flex-col items-center justify-center px-4 py-6 text-center bg-white/[10%] rounded-lg">
+              <div className="flex flex-col items-center justify-center px-4 py-6 text-center bg-white/[10%] rounded-lg relative">
                 <Image loading="lazy" src={achievement.logo} width={64} height={64} alt="" className="w-auto h-14 mb-4"/>
                 <p className="font-bold tracking-wide">{achievement.position}</p>
                 <p className="">{achievement.title}</p>
                 <p className="font-light text-sm text-gray-400">{achievement.organizer}</p>
                 <p className="font-light text-sm text-gray-400">{achievement.year}</p>
+                <a href={achievement.url} className="absolute top-4 right-4">
+                  <LinkIcon className="w-4 h-4"/>
+                </a>
               </div>
             </div>
           })}
