@@ -50,8 +50,8 @@ export default function WorkExperience() {
 
   return (
     <section className="relative flex flex-col justify-center items-center lg:pt-8 pt-6 lg:pb-20 pb-12">
-      <h3 className="text-5xl font-bold mb-12 flex items-center">
-        <BriefcaseIcon className="w-10 h-10 mr-4"/>
+      <h3 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center">
+        <BriefcaseIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>
         Work Experience
       </h3>
 

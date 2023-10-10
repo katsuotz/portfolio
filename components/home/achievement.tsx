@@ -46,15 +46,15 @@ export default function Achievement() {
 
   return (
     <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12">
-      <h3 className="text-5xl font-bold mb-12 flex items-center">
-        <TrophyIcon className="w-10 h-10 mr-4"/>
+      <h3 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center">
+        <TrophyIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>
         Achievement
       </h3>
 
       <div className="container">
         <div className="grid grid-cols-12 gap-6">
           {achievements.map((achievement, key) => {
-            return <div className="col-span-6" key={key}>
+            return <div className="col-span-12 sm:col-span-6" key={key}>
               <div className="flex flex-col items-center justify-center px-4 py-6 text-center bg-white/[10%] rounded-lg">
                 <img src={achievement.logo} alt="" className="w-auto h-14 mb-4"/>
                 <p className="font-bold tracking-wide">{achievement.position}</p>

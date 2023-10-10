@@ -10,14 +10,14 @@ export default function Banner() {
 
   return (
     <section className="h-screen w-full relative flex justify-center items-center overflow-hidden">
-      <Id className="absolute -z-10 opacity-20 w-auto h-[500px]"/>
+      <Id className="absolute -z-10 opacity-20 w-auto h-auto sm:h-[500px]"/>
 
       <div>
-        <h1 className="text-[190px] font-black leading-[160px] shadow tracking-wider">
+        <h1 className="text-7xl sm:text-[190px] font-black leading-[65px] sm:leading-[160px] shadow tracking-wider">
           <span className="text-white/[0.5]">Irfan</span>
           <span className="block">Fakhri</span>
         </h1>
-        <p className="text-3xl mt-8">
+        <p className="text-2xl sm:text-3xl mt-8">
           <span className="block">
             <Typewriter
               words={['Software Engineer', 'Full-Stack Developer', 'Frontend Developer']}
