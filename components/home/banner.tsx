@@ -3,6 +3,8 @@
 import Id from "@/components/home/id";
 import {ArrowDownCircle, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon, MapIcon} from "lucide-react";
 import { Typewriter } from 'react-simple-typewriter'
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
+import Image from "next/image";
 
 export default function Banner() {
   const year = new Date().getFullYear()
@@ -31,15 +33,36 @@ export default function Banner() {
           <span className="block">{year - startYear}+ years experience</span>
         </p>
         <div className="flex gap-4 mt-6">
-          <a href="https://github.com/katsuotz/" target="_blank">
-            <GithubIcon className="w-6 h-6"/>
-          </a>
-          <a href="https://www.linkedin.com/in/irfan-fakhri/" target="_blank">
-            <LinkedinIcon className="w-6 h-6"/>
-          </a>
-          <a href="https://www.instagram.com/katsuotz/" target="_blank">
-            <InstagramIcon className="w-6 h-6"/>
-          </a>
+          <TooltipProvider delayDuration={0}>
+            <Tooltip>
+              <TooltipTrigger>
+                <a href="https://github.com/katsuotz/" target="_blank">
+                  <GithubIcon className="w-6 h-6"/>
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Github</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider delayDuration={0}>
+            <Tooltip>
+              <TooltipTrigger>
+                <a href="https://www.linkedin.com/in/irfan-fakhri/" target="_blank">
+                  <LinkedinIcon className="w-6 h-6"/>
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>LinkedIn</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider delayDuration={0}>
+            <Tooltip>
+              <TooltipTrigger>
+                <a href="https://www.instagram.com/katsuotz/" target="_blank">
+                  <InstagramIcon className="w-6 h-6"/>
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Instagram</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
         <div className="flex justify-center mt-14">
           <div className="relative w-8-h-8 flex justify-center items-center cursor-pointer motion-reduce:animate-bounce">
