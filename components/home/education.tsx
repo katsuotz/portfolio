@@ -16,14 +16,14 @@ export default function Education() {
           </div>
           <div className="flex flex-col sm:flex-row sm:gap-32 gap-8 w-full sm:w-auto">
             <div className="flex flex-col items-center sm:items-start">
-              <img src="/education/unikom.png" alt="Universitas Komputer Indonesia" className="w-28 h-28 mb-2"/>
+              <img loading="lazy" src="/education/unikom.png" alt="Universitas Komputer Indonesia" className="w-28 h-28 mb-2"/>
               <p className="tracking-wide">Universitas Komputer Indonesia</p>
               <p className="text-gray-400 font-light">Bachelor Degree</p>
               <p>Information System</p>
               <p className="">2023</p>
             </div>
             <div className="flex flex-col items-center sm:items-start">
-              <img src="/education/smkn4.png" alt="SMK Negeri 4 Bandung" className="w-28 h-28 mb-2"/>
+              <img loading="lazy" src="/education/smkn4.png" alt="SMK Negeri 4 Bandung" className="w-28 h-28 mb-2"/>
               <p className="tracking-wide">SMK Negeri 4 Bandung</p>
               <p className="text-gray-400 font-light">Vocational School</p>
               <p>Software Engineering</p>

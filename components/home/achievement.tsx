@@ -56,7 +56,7 @@ export default function Achievement() {
           {achievements.map((achievement, key) => {
             return <div className="col-span-12 sm:col-span-6" key={key}>
               <div className="flex flex-col items-center justify-center px-4 py-6 text-center bg-white/[10%] rounded-lg">
-                <img src={achievement.logo} alt="" className="w-auto h-14 mb-4"/>
+                <img loading="lazy" src={achievement.logo} alt="" className="w-auto h-14 mb-4"/>
                 <p className="font-bold tracking-wide">{achievement.position}</p>
                 <p className="">{achievement.title}</p>
                 <p className="font-light text-sm text-gray-400">{achievement.organizer}</p>
