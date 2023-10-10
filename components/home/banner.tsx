@@ -9,8 +9,8 @@ export default function Banner() {
   const startYear = 2018
 
   return (
-    <section className="h-screen w-full relative flex justify-center items-center">
-      <Id className="absolute -z-10 opacity-20 w-[1000px]"/>
+    <section className="h-screen w-full relative flex justify-center items-center overflow-hidden">
+      <Id className="absolute -z-10 opacity-20 w-auto h-[500px]"/>
 
       <div>
         <h1 className="text-[190px] font-black leading-[160px] shadow tracking-wider">
