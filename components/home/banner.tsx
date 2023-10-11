@@ -4,22 +4,33 @@ import Id from "@/components/home/id";
 import {ArrowDownCircle, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon, MapIcon} from "lucide-react";
 import { Typewriter } from 'react-simple-typewriter'
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
-import Image from "next/image";
+import Atropos from 'atropos/react';
+import 'atropos/css'
 
 export default function Banner() {
   const year = new Date().getFullYear()
   const startYear = 2018
 
+  const scrollPage = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    })
+  }
+
   return (
-    <section className="h-screen w-full relative flex justify-center items-center overflow-hidden">
+    <section className="h-screen w-full relative flex justify-center items-center overflow-hidden ">
       <Id className="absolute -z-10 opacity-20 w-auto h-auto sm:h-[500px]"/>
 
-      <div>
+      <Atropos
+        rotateXMax={5}
+        rotateYMax={5}
+      >
         <h1 className="text-7xl sm:text-[190px] font-black leading-[65px] sm:leading-[160px] shadow tracking-wider">
-          <span className="text-white/[0.5]">Irfan</span>
-          <span className="block">Fakhri</span>
+          <span className="text-white/[0.5] block intro-y">Irfan</span>
+          <span className="block intro-y">Fakhri</span>
         </h1>
-        <p className="text-2xl sm:text-3xl mt-8">
+        <p className="text-2xl sm:text-3xl mt-8 intro-y">
           <span className="block">
             <Typewriter
               words={['Software Engineer', 'Full-Stack Developer', 'Frontend Developer']}
@@ -35,7 +46,7 @@ export default function Banner() {
         <div className="flex gap-4 mt-6">
           <TooltipProvider delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger className="intro-y">
                 <a href="https://github.com/katsuotz/" target="_blank">
                   <GithubIcon className="w-6 h-6"/>
                 </a>
@@ -45,7 +56,7 @@ export default function Banner() {
           </TooltipProvider>
           <TooltipProvider delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger className="intro-y">
                 <a href="https://www.linkedin.com/in/irfan-fakhri/" target="_blank">
                   <LinkedinIcon className="w-6 h-6"/>
                 </a>
@@ -55,7 +66,7 @@ export default function Banner() {
           </TooltipProvider>
           <TooltipProvider delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger className="intro-y">
                 <a href="https://www.instagram.com/katsuotz/" target="_blank">
                   <InstagramIcon className="w-6 h-6"/>
                 </a>
@@ -64,16 +75,17 @@ export default function Banner() {
             </Tooltip>
           </TooltipProvider>
         </div>
-        <div className="flex justify-center mt-14">
-          <div className="relative w-8-h-8 flex justify-center items-center cursor-pointer motion-reduce:animate-bounce">
-            <ArrowDownCircle className="w-8 h-8"/>
-          </div>
-        </div>
+      </Atropos>
 
-        <div className="absolute top-0 left-0 pl-10 pt-10">
-          <p className="flex items-center"><MailIcon className="w-4 h-4 mr-2"/> m.irfan.fakhri66@gmail.com</p>
-          <p className="flex items-center"><MapIcon className="w-4 h-4 mr-2"/> Indonesia</p>
+      <div className="absolute  left-1/2 -translate-x-1/2 bottom-10 flex justify-center mt-14">
+        <div className="relative w-8-h-8 flex justify-center items-center cursor-pointer motion-reduce:animate-bounce" onClick={scrollPage}>
+          <ArrowDownCircle className="w-8 h-8 intro-y"/>
         </div>
+      </div>
+
+      <div className="absolute top-0 left-0 pl-10 pt-10">
+        <p className="flex items-center intro-y"><MailIcon className="w-4 h-4 mr-2"/> m.irfan.fakhri66@gmail.com</p>
+        <p className="flex items-center intro-y"><MapIcon className="w-4 h-4 mr-2"/> Indonesia</p>
       </div>
     </section>
   )

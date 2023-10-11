@@ -4,6 +4,7 @@ import Education from "@/components/home/education";
 import Achievement from "@/components/home/achievement";
 import Skills from "@/components/home/skills";
 import Footer from "@/components/home/footer";
+import BackToTop from "@/components/home/back-to-top";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Achievement/>
       <Skills/>
       <Footer/>
+      <BackToTop/>
     </div>
   )
 }

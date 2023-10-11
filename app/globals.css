@@ -43,6 +43,9 @@
   body {
     @apply bg-background text-foreground text-white;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .container {
@@ -57,3 +60,49 @@
 .swiper-pagination-bullet {
   background: #fff!important;
 }
+
+.atropos-inner {
+  @apply p-10;
+}
+
+.back-to-top rect{
+  fill: #000000;
+}
+
+*>.intro-y:nth-child(1) {
+  z-index: 49;
+  opacity: 0;
+  position: relative;
+  transform: translateY(50px);
+  animation: .4s intro-y-animation ease-in-out .33333s;
+  animation-fill-mode: forwards;
+  animation-delay: .1s;
+}
+
+*>.intro-y:nth-child(2) {
+  z-index: 49;
+  opacity: 0;
+  position: relative;
+  transform: translateY(50px);
+  animation: .4s intro-y-animation ease-in-out .33333s;
+  animation-fill-mode: forwards;
+  animation-delay: .2s;
+}
+
+*>.intro-y:nth-child(3) {
+  z-index: 49;
+  opacity: 0;
+  position: relative;
+  transform: translateY(50px);
+  animation: .4s intro-y-animation ease-in-out .33333s;
+  animation-fill-mode: forwards;
+  animation-delay: .3s;
+}
+
+@keyframes intro-y-animation {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
