@@ -1,14 +1,16 @@
 'use client'
 
 import {ArrowUpSquareIcon} from "lucide-react";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function BackToTop() {
   const [showBackToTop, setShowBackToTop] = useState(false)
 
-  window.addEventListener('scroll', function (event: Event) {
-    setShowBackToTop(window.pageYOffset > (window.innerHeight / 2))
-  })
+  useEffect(() => {
+    window.addEventListener('scroll', function (event: Event) {
+      setShowBackToTop(window.pageYOffset > (window.innerHeight / 2))
+    })
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
