@@ -7,7 +7,7 @@ export default function BackToTop() {
   const [showBackToTop, setShowBackToTop] = useState(false)
 
   useEffect(() => {
-    window.addEventListener('scroll', function (event: Event) {
+    window.addEventListener('scroll', function () {
       setShowBackToTop(window.pageYOffset > (window.innerHeight / 2))
     })
   }, [])
