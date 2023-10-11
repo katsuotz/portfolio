@@ -33,6 +33,8 @@
     --ring: 212.7 26.8% 83.9%;
 
     --radius: 0.5rem;
+
+    --swiper-pagination-bottom: -30px;
   }
 }
 
@@ -53,6 +55,10 @@
   margin-right: auto;
 }
 
+.swiper {
+  overflow-y: visible!important;
+}
+
 .swiper-slide {
   width: auto!important;
 }
@@ -70,33 +76,24 @@
   fill: #000000;
 }
 
-*>.intro-y:nth-child(1) {
+*>.intro-y {
   z-index: 49;
   opacity: 0;
   position: relative;
   transform: translateY(50px);
   animation: .4s intro-y-animation ease-in-out .33333s;
   animation-fill-mode: forwards;
+}
+
+*>.intro-y:nth-child(1) {
   animation-delay: .1s;
 }
 
 *>.intro-y:nth-child(2) {
-  z-index: 49;
-  opacity: 0;
-  position: relative;
-  transform: translateY(50px);
-  animation: .4s intro-y-animation ease-in-out .33333s;
-  animation-fill-mode: forwards;
   animation-delay: .2s;
 }
 
 *>.intro-y:nth-child(3) {
-  z-index: 49;
-  opacity: 0;
-  position: relative;
-  transform: translateY(50px);
-  animation: .4s intro-y-animation ease-in-out .33333s;
-  animation-fill-mode: forwards;
   animation-delay: .3s;
 }
 
