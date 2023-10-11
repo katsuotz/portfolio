@@ -20,12 +20,12 @@ export default function Banner() {
 
   return (
     <section className="h-screen w-full relative flex justify-center items-center overflow-hidden ">
-      <Id className="absolute -z-10 opacity-20 w-auto h-auto sm:h-[500px]"/>
-
       <Atropos
         rotateXMax={5}
         rotateYMax={5}
       >
+        <Id className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -z-10 opacity-20 w-auto h-auto sm:h-[500px]"/>
+
         <h1 className="text-7xl sm:text-[190px] font-black leading-[65px] sm:leading-[160px] shadow tracking-wider">
           <span className="text-white/[0.5] block intro-y">Irfan</span>
           <span className="block intro-y">Fakhri</span>

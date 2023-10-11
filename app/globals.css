@@ -63,6 +63,7 @@
 
 .atropos-inner {
   @apply p-10;
+  overflow: visible!important;
 }
 
 .back-to-top rect{
