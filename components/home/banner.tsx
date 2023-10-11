@@ -24,7 +24,7 @@ export default function Banner() {
         rotateXMax={5}
         rotateYMax={5}
       >
-        <Id className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -z-10 opacity-20 w-auto h-auto sm:h-[500px]"/>
+        <Id className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -z-10 opacity-20 w-auto h-auto sm:h-[500px] pointer-events-none"/>
 
         <h1 className="text-7xl sm:text-[190px] font-black leading-[65px] sm:leading-[160px] shadow tracking-wider">
           <span className="text-white/[0.5] block intro-y">Irfan</span>
