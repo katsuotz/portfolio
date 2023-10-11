@@ -57,7 +57,7 @@ export default function WorkExperience() {
         Work Experience
       </h3>
 
-      <div className="w-full">
+      <div className="w-full px-5 sm:px-0">
         <Swiper
           slidesPerView={'auto'}
           spaceBetween={30}
