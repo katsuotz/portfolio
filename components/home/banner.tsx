@@ -43,10 +43,10 @@ export default function Banner() {
           </span>
           <span className="block">{year - startYear}+ years experience</span>
         </p>
-        <div className="flex gap-4 mt-6">
+        <div className="flex gap-4 mt-6 intro-y">
           <TooltipProvider delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger className="intro-y">
+              <TooltipTrigger>
                 <a href="https://github.com/katsuotz/" target="_blank">
                   <GithubIcon className="w-6 h-6"/>
                 </a>
@@ -56,7 +56,7 @@ export default function Banner() {
           </TooltipProvider>
           <TooltipProvider delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger className="intro-y">
+              <TooltipTrigger>
                 <a href="https://www.linkedin.com/in/irfan-fakhri/" target="_blank">
                   <LinkedinIcon className="w-6 h-6"/>
                 </a>
@@ -66,7 +66,7 @@ export default function Banner() {
           </TooltipProvider>
           <TooltipProvider delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger className="intro-y">
+              <TooltipTrigger>
                 <a href="https://www.instagram.com/katsuotz/" target="_blank">
                   <InstagramIcon className="w-6 h-6"/>
                 </a>
