@@ -50,6 +50,10 @@
   }
 }
 
+.bg-background-gradient {
+  background: radial-gradient(75% 61.2% at 92.6% 6.9%, rgb(46, 46, 46) 0%, rgb(26, 26, 26) 100%);
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -67,7 +71,7 @@
   background: #fff!important;
 }
 
-.atropos-inner {
+.atropos-banner .atropos-inner {
   @apply p-10;
   overflow: visible!important;
 }

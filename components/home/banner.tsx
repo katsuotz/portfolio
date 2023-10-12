@@ -19,8 +19,9 @@ export default function Banner() {
   }
 
   return (
-    <section className="h-screen w-full relative flex justify-center items-center overflow-hidden ">
+    <section className="h-screen w-full relative flex justify-center items-center overflow-hidden">
       <Atropos
+        className="atropos-banner"
         rotateXMax={5}
         rotateYMax={5}
       >
