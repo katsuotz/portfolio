@@ -2,6 +2,7 @@
 
 import {LinkIcon, TrophyIcon} from "lucide-react";
 import Image from "next/image";
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 
 interface AchievementType {
   logo: string
@@ -65,9 +66,18 @@ export default function Achievement() {
                 <p className="">{achievement.title}</p>
                 <p className="font-light text-sm text-gray-400">{achievement.organizer}</p>
                 <p className="font-light text-sm text-gray-400">{achievement.year}</p>
-                <a href={achievement.url} className="absolute top-4 right-4" target="_blank">
-                  <LinkIcon className="w-4 h-4"/>
-                </a>
+                <TooltipProvider delayDuration={0} key={key}>
+                  <Tooltip>
+                    <TooltipTrigger className="absolute top-4 right-4">
+                      <a href={achievement.url} className="" target="_blank">
+                        <LinkIcon className="w-4 h-4"/>
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      See Certificate
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
             </div>
           })}
