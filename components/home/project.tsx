@@ -1,42 +1,92 @@
 'use client'
 
-import {ExternalLinkIcon, LayoutGridIcon, MonitorSmartphoneIcon} from "lucide-react";
-import Image from "next/image";
+import {LayoutGridIcon, MonitorSmartphoneIcon} from "lucide-react";
 import Atropos from "atropos/react";
+import ProjectItem, {ProjectType} from "@/components/home/project-item";
+import Link from "next/link";
 
-interface ProjectType {
-  logo: string
-  name: string
-  year: string
-  description: string
-  url?: string
-}
-
-export default function Project() {
+export default function Project({showAllProjects = false}) {
   const projects: ProjectType[] = [
     {
       logo: '/project/ppdb.png',
       name: 'PPDB Jawa Barat',
       year: '2019 - 2023',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      description: 'An all-in-one web app for students in West Java, enabling seamless high school registration by providing a user-friendly platform.',
+      image: '/project/ppdb-1.jpg',
+      highlight: true,
+    },
+    {
+      logo: '/project/cek-reputasi.png',
+      name: 'Cek Reputasi',
+      year: '2023',
+      description: 'UI Slicing Web App for analyzing political election data, offering insights into candidate historical data.',
+      image: '/project/cek-reputasi-1.jpg',
     },
     {
       logo: '/project/sgara-book.png',
       name: 'Sgara Book',
       year: '2020 - 2022',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      description: 'An AI-driven farm management system to monitor farms on a daily basis from day one to harvest.',
+      image: '/project/sgara-book-1.jpg',
+      url: 'https://book.sgara.id/',
+      highlight: true,
     },
     {
       logo: '/project/edunex.png',
       name: 'Edunex ITB',
       year: '2020 - 2022',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      description: 'A customizable LMS designed for students and lecturers in ITB (Bandung Institute of Technology).',
+      image: '/project/edunex-1.jpg',
+      url: 'https://edunex.itb.ac.id/',
+      highlight: true,
+    },
+    {
+      logo: '/education/unikom.png',
+      name: 'CCNA Registration',
+      year: '2021',
+      description: 'A customizable LMS designed for students and lecturers in ITB (Bandung Institute of Technology).',
+      image: '/project/edunex-1.jpg',
+    },
+    {
+      logo: '/achievement/kemdikbud.png',
+      name: 'Virtual Exhibition LKS',
+      year: '2020',
+      description: 'A customizable LMS designed for students and lecturers in ITB (Bandung Institute of Technology).',
+      image: '/project/edunex-1.jpg',
+    },
+    {
+      logo: '/achievement/kemnaker.png',
+      name: 'eModul',
+      year: '2020',
+      description: 'Online e-book library for Ministry of Manpower Indonesia',
+      image: '/project/edunex-1.jpg',
+    },
+    {
+      logo: '/work/someah.jpg',
+      name: 'Pantau Covid-19',
+      year: '2020',
+      description: 'A customizable LMS designed for students and lecturers in ITB (Bandung Institute of Technology).',
+      image: '/project/edunex-1.jpg',
+    },
+    {
+      logo: '/education/smkn4.png',
+      name: 'eSchool ',
+      year: '2017 - 2018',
+      description: 'A web app to manage all aspects of school including student enrollment, teacher management, subject allocation, and scheduling.',
+      image: '/project/eschool.jpg',
+      url: 'https://smkn4bdg.sch.id/'
+    },
+    {
+      logo: '/education/smkn4.png',
+      name: 'SMKN 4 Landing Page',
+      year: '2017',
+      description: 'A customizable Landing Page and CMS for SMKN 4 Bandung.',
+      image: '/project/smkn4-landing-page.jpg',
+      url: 'https://eschool.smkn4bdg.sch.id/'
     },
   ]
 
-  const handleClickProject = (e: React.MouseEvent<HTMLElement>, url?: string): void => {
-    if (!url) e.preventDefault()
-  }
+  const filteredProject = showAllProjects ? projects : projects.filter(e => e.highlight)
 
   return (
     <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12">
@@ -48,42 +98,23 @@ export default function Project() {
       <div className="container">
         <div className="grid grid-cols-12 gap-8">
           {
-            projects.map((project, key) => {
-              return <Atropos
-                key={key}
-                className="col col-span-3 rounded-3xl overflow-hidden"
-              >
-                <a
-                  href={project.url}
-                  target="_blank"
-                  onClick={(e) => handleClickProject(e, project.url)}
-                  className="px-4 h-[350px] bg-background-gradient rounded-3xl flex flex-col items-center justify-center cursor-pointer relative group/project">
-                  {
-                    project.url ?
-                      <ExternalLinkIcon className="absolute top-6 right-6 group-hover/project:opacity-100 opacity-0 transition-all duration-500"/>
-                      : ''
-                  }
-                  <Image src={project.logo} alt="" width={80} height={80} className="h-20 w-auto mb-8 group-hover/project:scale-110 transition-all duration-300"/>
-                  <div className="text-center group-hover/project:-translate-y-3 group-hover/project:scale-105 transition-all duration-300">
-                    <p className="font-bold text-xl">{project.name}</p>
-                    <p className="font-bold text-xl">{project.year}</p>
-                  </div>
-                  <p className="absolute text-center px-5 bottom-0 opacity-0 group-hover/project:opacity-100 group-hover/project:bottom-10 transition-all duration-300">
-                    {project.description}
-                  </p>
-                </a>
-              </Atropos>
+            filteredProject.map((project, key) => {
+              return <ProjectItem project={project} key={key} />
             })
           }
-          <Atropos
-            className="col col-span-3 rounded-3xl overflow-hidden"
-          >
-            <div
-              className="px-4 h-[350px] bg-background-gradient rounded-3xl flex flex-col items-center justify-center cursor-pointer relative group/project">
-              <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5]"/>
-              <p className="font-bold text-xl">More</p>
-            </div>
-          </Atropos>
+          { !showAllProjects ?
+            <Atropos
+              className="col col-span-3 atropos-project group/project intro-y"
+            >
+              <Link href="/projects">
+                <div
+                  className="px-4 h-[350px] bg-background-gradient rounded-3xl flex flex-col items-center justify-center cursor-pointer relative">
+                  <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5]"/>
+                  <p className="font-bold text-xl">More</p>
+                </div>
+              </Link>
+            </Atropos> : ''
+          }
         </div>
       </div>
     </section>

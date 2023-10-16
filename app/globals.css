@@ -76,6 +76,10 @@
   overflow: visible!important;
 }
 
+.atropos-project .atropos-rotate {
+  @apply rounded-3xl overflow-hidden;
+}
+
 .back-to-top rect{
   fill: #000000;
 }

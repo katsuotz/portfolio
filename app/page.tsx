@@ -15,7 +15,7 @@ export default function Home() {
       <Education/>
       <Achievement/>
       <Skills/>
-      <Project/>
+      <Project showAllProjects={false}/>
       <Footer/>
       <BackToTop/>
     </div>
