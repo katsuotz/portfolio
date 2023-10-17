@@ -42,7 +42,7 @@ export default function Project({showAllProjects = false}) {
     },
     {
       logo: '/education/unikom.png',
-      name: 'CCNA Network Education',
+      name: 'Cisco Network Education',
       year: '2021',
       description: 'A web app for managing Unikom students who have taken a network class.',
       image: '/project/ccna.png',
