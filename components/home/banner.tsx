@@ -1,10 +1,10 @@
 'use client'
 
 import Id from "@/components/home/id";
-import {ArrowDownCircle, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon, MapIcon} from "lucide-react";
+import {ArrowDownCircle, MailIcon, MapIcon} from "lucide-react";
 import { Typewriter } from 'react-simple-typewriter'
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import Atropos from 'atropos/react';
+import SocialMedia from "@/components/home/social-media";
 
 export default function Banner() {
   const year = new Date().getFullYear()
@@ -44,36 +44,7 @@ export default function Banner() {
           <span className="block">{year - startYear}+ years experience</span>
         </p>
         <div className="flex gap-4 mt-6 intro-y">
-          <TooltipProvider delayDuration={0}>
-            <Tooltip>
-              <TooltipTrigger asChild={true}>
-                <a href="https://github.com/katsuotz/" target="_blank">
-                  <GithubIcon className="w-6 h-6"/>
-                </a>
-              </TooltipTrigger>
-              <TooltipContent>Github</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-          <TooltipProvider delayDuration={0}>
-            <Tooltip>
-              <TooltipTrigger asChild={true}>
-                <a href="https://www.linkedin.com/in/irfan-fakhri/" target="_blank">
-                  <LinkedinIcon className="w-6 h-6"/>
-                </a>
-              </TooltipTrigger>
-              <TooltipContent>LinkedIn</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-          <TooltipProvider delayDuration={0}>
-            <Tooltip>
-              <TooltipTrigger asChild={true}>
-                <a href="https://www.instagram.com/katsuotz/" target="_blank">
-                  <InstagramIcon className="w-6 h-6"/>
-                </a>
-              </TooltipTrigger>
-              <TooltipContent>Instagram</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <SocialMedia/>
         </div>
       </Atropos>
 
