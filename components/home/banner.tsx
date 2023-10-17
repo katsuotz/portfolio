@@ -5,7 +5,6 @@ import {ArrowDownCircle, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon, MapI
 import { Typewriter } from 'react-simple-typewriter'
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import Atropos from 'atropos/react';
-import 'atropos/css'
 
 export default function Banner() {
   const year = new Date().getFullYear()

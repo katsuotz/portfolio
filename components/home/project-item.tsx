@@ -50,7 +50,7 @@ export default function ProjectItem({project}: { project:ProjectType }) {
           <DialogDescription className="pb-2 text-white text-[1rem]">
             {project.description}
           </DialogDescription>
-          <Image src={project.image} alt="" width="1000" height="600" className="rounded-lg"/>
+          <Image src={project.image} alt="" width="1000" height="900" className="rounded-lg"/>
           <div className="flex gap-2 justify-end mt-4">
             <DialogClose aria-label="Close">
               <Button variant="ghost">
