@@ -44,6 +44,17 @@ export default function WorkExperience() {
       description: 'Create a one-stop platform for shrimp farming with data-driven farm advisory and marketplace solution form shrimp farmers.',
     },
     {
+      logo: '/project/edunex.png',
+      company: 'Cognisia',
+      position: [
+        {
+          title: 'Frontend Developer',
+          date: 'Nov 2020 - Jul 2022',
+        },
+      ],
+      description: 'Developed a custom Web-based Learning Management System (LMS) for Bandung Institute Technology (ITB).',
+    },
+    {
       logo: '/work/someah.jpg',
       company: 'Someah Kreatif Nusantara',
       position: [{
