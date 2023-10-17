@@ -68,7 +68,7 @@ export default function Achievement() {
                 <p className="font-light text-sm text-gray-400">{achievement.year}</p>
                 <TooltipProvider delayDuration={0} key={key}>
                   <Tooltip>
-                    <TooltipTrigger className="absolute top-4 right-4">
+                    <TooltipTrigger className="absolute top-4 right-4" asChild={true}>
                       <a href={achievement.url} className="" target="_blank">
                         <LinkIcon className="w-4 h-4"/>
                       </a>

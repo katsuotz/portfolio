@@ -81,7 +81,7 @@ export default function Skills() {
           {skills.map((skill,key) => {
             return <TooltipProvider delayDuration={0} key={key}>
               <Tooltip>
-                <TooltipTrigger><Image key={key} loading="lazy" src={skill.logo} width={100} height={100} alt="" className={skill.className || 'w-auto h-12'}/></TooltipTrigger>
+                <TooltipTrigger aria-label={skill.name}><Image key={key} loading="lazy" src={skill.logo} width={100} height={100} alt="" className={skill.className || 'w-auto h-12'}/></TooltipTrigger>
                 <TooltipContent>
                   <p>{skill.name}</p>
                 </TooltipContent>

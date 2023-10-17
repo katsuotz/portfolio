@@ -46,7 +46,7 @@ export default function Banner() {
         <div className="flex gap-4 mt-6 intro-y">
           <TooltipProvider delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild={true}>
                 <a href="https://github.com/katsuotz/" target="_blank">
                   <GithubIcon className="w-6 h-6"/>
                 </a>
@@ -56,7 +56,7 @@ export default function Banner() {
           </TooltipProvider>
           <TooltipProvider delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild={true}>
                 <a href="https://www.linkedin.com/in/irfan-fakhri/" target="_blank">
                   <LinkedinIcon className="w-6 h-6"/>
                 </a>
@@ -66,7 +66,7 @@ export default function Banner() {
           </TooltipProvider>
           <TooltipProvider delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild={true}>
                 <a href="https://www.instagram.com/katsuotz/" target="_blank">
                   <InstagramIcon className="w-6 h-6"/>
                 </a>
