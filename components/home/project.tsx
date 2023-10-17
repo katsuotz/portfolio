@@ -74,7 +74,7 @@ export default function Project({showAllProjects = false}) {
       year: '2017 - 2018',
       description: 'A web app to manage all aspects of school including student enrollment, teacher management, subject allocation, and scheduling.',
       image: '/project/eschool.jpg',
-      url: 'https://smkn4bdg.sch.id/'
+      url: 'https://eschool.smkn4bdg.sch.id/',
     },
     {
       logo: '/education/smkn4.png',
@@ -82,7 +82,7 @@ export default function Project({showAllProjects = false}) {
       year: '2017',
       description: 'A customizable Landing Page and CMS for SMKN 4 Bandung.',
       image: '/project/smkn4-landing-page.jpg',
-      url: 'https://eschool.smkn4bdg.sch.id/'
+      url: 'https://smkn4bdg.sch.id/',
     },
   ]
 
