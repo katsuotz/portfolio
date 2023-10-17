@@ -78,7 +78,7 @@ export default function Banner() {
       </Atropos>
 
       <div className="absolute  left-1/2 -translate-x-1/2 bottom-10 flex justify-center mt-14">
-        <div className="relative w-8-h-8 flex justify-center items-center cursor-pointer motion-reduce:animate-bounce" onClick={scrollPage}>
+        <div className="relative w-8-h-8 flex justify-center items-center cursor-pointer animate-bounce" onClick={scrollPage}>
           <ArrowDownCircle className="w-8 h-8 intro-y"/>
         </div>
       </div>
