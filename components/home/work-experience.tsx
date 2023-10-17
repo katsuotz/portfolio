@@ -18,7 +18,7 @@ export default function WorkExperience() {
         title: 'Full-Stack Developer',
         date: 'Sept 2022 - Now',
       }],
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate ea hic nihil provident!',
+      description: 'Enhance and maintain logistics shipment apps to optimize operations and ensure seamless flow within customers, business and warehouses.',
     },
     {
       logo: '/work/lexigo.jpg',
@@ -27,7 +27,7 @@ export default function WorkExperience() {
         title: 'Frontend Developer - Freelance',
         date: 'Aug 2022 - Feb 2023',
       }],
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate ea hic nihil provident!',
+      description: 'Create translation and localization web apps with cloud-based technology to enable organizations to communicate with confidence.',
     },
     {
       logo: '/work/sgara.png',
@@ -41,7 +41,7 @@ export default function WorkExperience() {
           date: 'Aug 2021 - Aug 2022',
         },
       ],
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate ea hic nihil provident!',
+      description: 'Create a one-stop platform for shrimp farming with data-driven farm advisory and marketplace solution form shrimp farmers.',
     },
     {
       logo: '/work/someah.jpg',
@@ -50,7 +50,7 @@ export default function WorkExperience() {
         title: 'Full-Stack Developer',
         date: 'Oct 2017 - Jan 2021',
       }],
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate ea hic nihil provident!',
+      description: 'Developed custom web applications based on client requirements, utilizing a full stack development approach to handle both frontend and backend components.',
     },
   ]
 
