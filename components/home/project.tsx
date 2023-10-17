@@ -65,7 +65,7 @@ export default function Project({showAllProjects = false}) {
       logo: '/work/someah.jpg',
       name: 'Pantau Covid-19',
       year: '2020',
-      description: 'A customizable LMS designed for students and lecturers in ITB (Bandung Institute of Technology).',
+      description: 'A web application designed to monitor the COVID virus\'s transmission within Indonesia.',
       image: '/project/pantau-covid.png',
     },
     {
