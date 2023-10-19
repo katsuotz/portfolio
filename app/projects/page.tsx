@@ -2,6 +2,7 @@ import Project from "@/components/home/project";
 import Footer from "@/components/home/footer";
 import Link from "next/link";
 import {ArrowLeftCircleIcon} from "lucide-react";
+import BackToTop from "@/components/home/back-to-top";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         </Link>
       </div>
       <Project showAllProjects={true}/>
+      <BackToTop/>
       <Footer/>
     </>
   )
