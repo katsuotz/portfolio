@@ -60,7 +60,7 @@ export default function Achievement() {
         <div className="grid grid-cols-12 gap-6">
           {achievements.map((achievement, key) => {
             return <div className="col-span-12 sm:col-span-6" key={key}>
-              <div className="flex flex-col items-center justify-center px-4 py-6 text-center bg-background-gradient rounded-lg relative">
+              <div className="flex flex-col items-center justify-center px-4 py-6 text-center bg-background-gradient rounded-3xl relative">
                 <Image loading="lazy" src={achievement.logo} width={64} height={64} alt="" className="w-auto h-14 mb-4"/>
                 <p className="font-bold tracking-wide">{achievement.position}</p>
                 <p className="">{achievement.title}</p>
