@@ -34,6 +34,11 @@ export default function Skills() {
       name: 'Vue',
     },
     {
+      logo: '/skills/nuxt.svg',
+      name: 'Nuxt',
+      className: 'w-auto h-16'
+    },
+    {
       logo: '/skills/react.png',
       name: 'React',
     },
