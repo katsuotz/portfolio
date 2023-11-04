@@ -18,18 +18,18 @@ export default function Education() {
               <div className="p-4 rounded-[2.4rem] absolute left-10 top-0 -translate-y-1/2">
                 <Image unoptimized={true} width={200} height={200} src="/education/unikom.png" alt="Universitas Komputer Indonesia" className="w-24 h-24"/>
               </div>
-              <p className="font-bold tracking-wide text-3xl">Universitas Komputer Indonesia</p>
+              <p className="font-bold tracking-wide text-2xl sm:text-3xl">Universitas Komputer Indonesia</p>
               <p className="font-light text-xl text-gray-400">Bachelor Degree</p>
               <p className="text-xl">Information System</p>
               <p className="font-semibold text-xl">2023</p>
             </div>
           </div>
-          <div className="col-span-12 sm:col-span-6">
+          <div className="col-span-12 sm:col-span-6 mt-12 sm:mt-0">
             <div className="flex flex-col px-10 pb-6 pt-16 bg-background-gradient rounded-3xl relative">
               <div className="p-4 rounded-[2.4rem] absolute left-10 top-0 -translate-y-1/2">
                 <Image unoptimized={true} width={200} height={200} src="/education/smkn4.png" alt="SMK Negeri 4 Bandung" className="w-24 h-24"/>
               </div>
-              <p className="font-bold tracking-wide text-3xl">SMK Negeri 4 Bandung</p>
+              <p className="font-bold tracking-wide text-2xl sm:text-3xl">SMK Negeri 4 Bandung</p>
               <p className="font-light text-xl text-gray-400">Vocational High School</p>
               <p className="text-xl">Software Engineering</p>
               <p className="font-semibold text-xl">2018</p>

@@ -23,6 +23,7 @@ export default function Banner() {
         className="atropos-banner"
         rotateXMax={5}
         rotateYMax={5}
+        rotateTouch={false}
       >
         <Id className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -z-10 opacity-20 w-auto h-auto sm:h-[500px] pointer-events-none"/>
 
