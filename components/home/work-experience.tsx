@@ -2,11 +2,9 @@
 
 import WorkExperienceItem, {WorkExperienceType} from "@/components/home/work-experience-item";
 import {Swiper, SwiperSlide} from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import {Mousewheel, Pagination} from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import {BriefcaseIcon} from "lucide-react";
 
 export default function WorkExperience() {
@@ -74,10 +72,11 @@ export default function WorkExperience() {
 
       <div className="w-full">
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Mousewheel]}
           pagination={{ clickable: true }}
           slidesPerView={'auto'}
           spaceBetween={0}
+          mousewheel
         >
           {experiences.map((experience, key) => {
             return <SwiperSlide key={key} className={key === 0 ? 'sm:ml-80' : ''}><WorkExperienceItem experience={experience}/></SwiperSlide>
