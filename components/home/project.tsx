@@ -8,6 +8,14 @@ import Link from "next/link";
 export default function Project({showAllProjects = false}) {
   const projects: ProjectType[] = [
     {
+      logo: '/project/dota.png',
+      name: 'Dreamocel Portfolio',
+      year: '2023',
+      description: 'A single page portfolio website for Professional Esports Dota 2 Player.',
+      image: '/project/dreamocel-web.jpg',
+      url: 'https://dreamocel.katsuotz.com/',
+    },
+    {
       logo: '/project/ppdb.png',
       name: 'PPDB Jawa Barat',
       year: '2019 - 2023',
