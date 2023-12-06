@@ -26,10 +26,13 @@ export interface ProjectType {
 export default function ProjectItem({project}: { project:ProjectType }) {
   return (
     <Dialog>
-      <DialogTrigger className="col col-span-3 rounded-3xl group/project intro-y">
-        <Atropos className="atropos-project">
+      <DialogTrigger className="col col-span-12 sm:col-span-3 rounded-3xl group/project intro-y">
+        <Atropos
+          rotateTouch={false}
+          className="atropos-project"
+        >
           <div
-            className="px-4 h-[350px] bg-background-gradient rounded-3xl flex flex-col justify-center cursor-pointer relative">
+            className="px-4 sm:h-[350px] h-[240px] bg-background-gradient rounded-3xl flex flex-col justify-center cursor-pointer relative">
             <ExternalLinkIcon className="absolute top-6 right-6 group-hover/project:opacity-100 opacity-0 transition-all duration-500"/>
             <div className="flex flex-col items-center relative">
               <Image src={project.logo} alt="" width={80} height={80} className="h-20 w-auto mb-8 group-hover/project:scale-110 group-hover/project:-translate-y-10 transition-all duration-300"/>

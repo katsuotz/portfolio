@@ -6,9 +6,15 @@ import {useEffect, useState} from "react";
 export default function BackToTop() {
   const [showBackToTop, setShowBackToTop] = useState(false)
 
+  const handleShowBackToTop = () => {
+    setShowBackToTop(window.pageYOffset > (window.innerHeight / 2))
+  }
+
   useEffect(() => {
+    handleShowBackToTop()
+
     window.addEventListener('scroll', function () {
-      setShowBackToTop(window.pageYOffset > (window.innerHeight / 2))
+      handleShowBackToTop()
     })
   }, [])
 

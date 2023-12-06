@@ -16,7 +16,7 @@ export default function WorkExperienceItem({experience}: { experience:WorkExperi
   return (
     <div className="sm:w-[450px] w-screen px-5">
       <div
-        className="flex flex-col items-center justify-center px-4 py-6 text-center bg-white/[10%] rounded-lg">
+        className="flex flex-col items-center justify-center px-4 py-6 text-center bg-background-gradient rounded-3xl">
         <Image src={experience.logo} alt="" width={40} height={40} className="w-auto h-10 mb-1.5"/>
         <p className="mb-2 tracking-wider">{experience.company}</p>
         <div className="flex gap-6">

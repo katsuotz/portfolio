@@ -2,12 +2,10 @@
 
 import WorkExperienceItem, {WorkExperienceType} from "@/components/home/work-experience-item";
 import {Swiper, SwiperSlide} from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import {Mousewheel, Pagination} from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import {BriefcaseIcon} from "lucide-react";
+import {Laptop2Icon} from "lucide-react";
 
 export default function WorkExperience() {
   const experiences: WorkExperienceType[] = [
@@ -68,16 +66,17 @@ export default function WorkExperience() {
   return (
     <section className="relative flex flex-col justify-center items-center lg:pt-8 pt-6 lg:pb-20 pb-16">
       <h3 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center">
-        <BriefcaseIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>
+        <Laptop2Icon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>
         Work Experience
       </h3>
 
       <div className="w-full">
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Mousewheel]}
           pagination={{ clickable: true }}
           slidesPerView={'auto'}
           spaceBetween={0}
+          mousewheel
         >
           {experiences.map((experience, key) => {
             return <SwiperSlide key={key} className={key === 0 ? 'sm:ml-80' : ''}><WorkExperienceItem experience={experience}/></SwiperSlide>

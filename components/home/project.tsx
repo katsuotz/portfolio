@@ -8,6 +8,14 @@ import Link from "next/link";
 export default function Project({showAllProjects = false}) {
   const projects: ProjectType[] = [
     {
+      logo: '/project/dota.png',
+      name: 'Dreamocel Portfolio',
+      year: '2023',
+      description: 'A single page portfolio website for Professional Esports Dota 2 Player.',
+      image: '/project/dreamocel-web.jpg',
+      url: 'https://dreamocel.katsuotz.com/',
+    },
+    {
       logo: '/project/ppdb.png',
       name: 'PPDB Jawa Barat',
       year: '2019 - 2023',
@@ -104,7 +112,7 @@ export default function Project({showAllProjects = false}) {
       </h3>
 
       <div className="container">
-        <div className="grid grid-cols-12 gap-8">
+        <div className="grid grid-cols-12 gap-6 sm:gap-8">
           {
             filteredProject.map((project, key) => {
               return <ProjectItem project={project} key={key} />
@@ -112,11 +120,12 @@ export default function Project({showAllProjects = false}) {
           }
           { !showAllProjects ?
             <Atropos
-              className="col col-span-3 atropos-project group/project intro-y"
+              rotateTouch={false}
+              className="col col-span-12 sm:col-span-3 atropos-project group/project intro-y"
             >
               <Link href="/projects">
                 <div
-                  className="px-4 h-[350px] bg-background-gradient rounded-3xl flex flex-col items-center justify-center cursor-pointer relative">
+                  className="px-4 sm:h-[350px] h-[240px] bg-background-gradient rounded-3xl flex flex-col items-center justify-center cursor-pointer relative">
                   <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5]"/>
                   <p className="font-bold text-xl">More</p>
                 </div>
