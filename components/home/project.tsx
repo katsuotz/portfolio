@@ -69,8 +69,16 @@ export default function Project({showAllProjects = false}) {
       image: '/project/pantau-covid.png',
     },
     {
+      logo: '/project/middle-space.png',
+      name: 'Middle Space',
+      year: '2019',
+      description: 'Middle Space is an exhilarating shooter space game where players take on the role of a high-tech aircraft spaceship navigating through the vast cosmos.',
+      image: '/project/middle-space-gameplay.jpg',
+      url: 'https://katsuotz.itch.io/middle-space',
+    },
+    {
       logo: '/education/smkn4.png',
-      name: 'eSchool ',
+      name: 'eSchool',
       year: '2017 - 2018',
       description: 'A web app to manage all aspects of school including student enrollment, teacher management, subject allocation, and scheduling.',
       image: '/project/eschool.jpg',
