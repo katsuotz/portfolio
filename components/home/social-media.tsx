@@ -1,7 +1,7 @@
 'use client'
 
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
-import {AtSignIcon, GithubIcon, InstagramIcon, LinkedinIcon} from "lucide-react";
+import {AtSignIcon, GithubIcon, InstagramIcon, LinkedinIcon, TwitchIcon} from "lucide-react";
 
 export default function SocialMedia() {
 
@@ -45,6 +45,16 @@ export default function SocialMedia() {
             </a>
           </TooltipTrigger>
           <TooltipContent>Email</TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+      <TooltipProvider delayDuration={0}>
+        <Tooltip>
+          <TooltipTrigger asChild={true}>
+            <a href="https://www.twitch.tv/katsuotz" target="_blank">
+              <TwitchIcon className="w-6 h-6"/>
+            </a>
+          </TooltipTrigger>
+          <TooltipContent>Twitch</TooltipContent>
         </Tooltip>
       </TooltipProvider>
     </>
