@@ -1,9 +1,14 @@
-'use client'
-
 import '@/app/globals.css'
 import {Outfit} from 'next/font/google'
 
 const outfit = Outfit({subsets: ['latin']})
+
+export const metadata = {
+  title: 'Irfan Fakhri - Software Engineer | Katsuotz',
+  description: 'Experienced full-stack developer with over 5 years of industry expertise, actively engaged in startups and freelancing on side projects.',
+  author: 'Irfan Fakhri',
+  keywords: 'web design, web, web apps, html, css, js, ts, node.js, next, vue, react, go, golang, php, laravel, mongodb, sql, mysql, postgre'
+}
 
 export default function RootLayout(
   {
@@ -11,12 +16,6 @@ export default function RootLayout(
   }: {
     children: React.ReactNode
   }) {
-  const metadata = {
-    title: 'Irfan Fakhri - Software Engineer | Katsuotz',
-    description: 'Experienced full-stack developer with over 5 years of industry expertise, actively engaged in startups and freelancing on side projects.',
-    author: 'Irfan Fakhri',
-    keywords: 'web design, web, web apps, html, css, js, ts, node.js, next, vue, react, go, golang, php, laravel, mongodb, sql, mysql, postgre'
-  }
 
   return (
     <html lang="en">
