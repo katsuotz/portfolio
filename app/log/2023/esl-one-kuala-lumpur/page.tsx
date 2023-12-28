@@ -41,9 +41,9 @@ export default function EslOneKualaLumpur() {
               Malaysia International Trade and Exhibition Centre (MITEC).</p>
             <p>It's like an apart. The price was <b>IDR 3.900.000</b> for 7 nights and because we stayed together (3
               people) it's only <b>IDR 186.000 a night</b>.</p>
-            <p>Arte Mont Kiara: <a className="text-blue-500" href="https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA"
+            <p>Arte Mont Kiara: <a href="https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA"
                                    target="_blank">🔗 https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA</a></p>
-            <p>MITEC: <a className="text-blue-500" href="https://maps.app.goo.gl/Z5ZdVFfPU9gTVEe1A" target="_blank">🔗
+            <p>MITEC: <a href="https://maps.app.goo.gl/Z5ZdVFfPU9gTVEe1A" target="_blank">🔗
               https://maps.app.goo.gl/Z5ZdVFfPU9gTVEe1A</a></p>
             <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/arte-mitec.jpg"
                    alt="Arte Mont Kiara to MITEC" className="w-full"/>
@@ -122,7 +122,7 @@ export default function EslOneKualaLumpur() {
             <p>When I was in KL, I streamed while walking from my apart to the venue. You can check it out the VOD from
               my stream below, it was a new wonderful experience for me.</p>
             <p>ESL One KL Venue Review:
-              <a className="text-blue-500" href="https://www.twitch.tv/videos/2006148619" target="_blank">🔗 https://www.twitch.tv/videos/2006148619</a>
+              <a href="https://www.twitch.tv/videos/2006148619" target="_blank">🔗 https://www.twitch.tv/videos/2006148619</a>
             </p>
           </div>
         </div>

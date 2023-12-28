@@ -1,3 +1,16 @@
-p, img {
+.log p, .log img {
     margin-bottom: .5rem;
+}
+
+.log a {
+    @apply text-blue-400;
+}
+
+.log a:hover {
+    @apply text-white;
+}
+
+.log-nav a,
+.footer a {
+    @apply text-white;
 }

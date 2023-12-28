@@ -15,8 +15,8 @@ export default function Log() {
         <div className="container max-w-[600px]">
           <div>
             <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">2023</h4>
-            <p>ESL One Kuala Lumpur (2023/12/17): <br/>
-              <Link className="text-blue-500" href="/log/2023/esl-one-kuala-lumpur">🔗 https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA</Link>
+            <p>
+              <Link href="/log/2023/esl-one-kuala-lumpur">🔗 ESL One Kuala Lumpur (2023/12/17)</Link>
             </p>
           </div>
         </div>

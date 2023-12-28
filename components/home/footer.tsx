@@ -4,7 +4,7 @@ import SocialMedia from "@/components/home/social-media";
 
 export default function Footer() {
   return (
-    <div className="lg:pt-20 pt-12 lg:pb-20 pb-12">
+    <div className="lg:pt-20 pt-12 lg:pb-20 pb-12 footer">
       <div className="flex gap-4 mb-6 justify-center">
         <SocialMedia/>
       </div>
