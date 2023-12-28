@@ -102,7 +102,7 @@ export default function EslOneKualaLumpur() {
             <p>There are a lot of things you can do in the booth, there are Airbrush Tattoo, Intel Solo Mid 1v1, Intel
               Racing Area, DHL spin, DHL VR Game, Tarot Reading, etc.</p>
             <p>There are so many food you can choose to, you can get Nasi Goreng, Malaysian Food, and Mexican Food like
-              Taco. The foods are pretty cheap it for this kind of event, it was start from around <b>RM 10 (IDR
+              Taco. The foods are pretty cheap for this kind of event, it was start from around <b>RM 10 (IDR
                 34.000)</b>. You can also get free Monster Energy drink.</p>
             <p>ESL One merch has various variations. There are Team Jerseys, ESL Apparels, Hero T-Shirts, Plushies,
               Gacha Plushies, etc. I came at the third day so it was almost sold out. I bought the last Team Secret
