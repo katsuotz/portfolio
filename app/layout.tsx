@@ -3,6 +3,8 @@ import {Outfit} from 'next/font/google'
 
 const outfit = Outfit({subsets: ['latin']})
 
+import Script from "next/script"
+
 export const metadata = {
   title: 'Irfan Fakhri - Software Engineer | Katsuotz',
   description: 'Experienced full-stack developer with over 5 years of industry expertise, actively engaged in startups and freelancing on side projects.',
@@ -27,6 +29,16 @@ export default function RootLayout(
     <main className="relative">
       {children}
     </main>
+    <Script src="https://www.googletagmanager.com/gtag/js?id=G-E8CK2FG8Z2" />
+    <Script id="google-analytics">
+      {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-E8CK2FG8Z2');
+        `}
+    </Script>
     </body>
     </html>
   )
