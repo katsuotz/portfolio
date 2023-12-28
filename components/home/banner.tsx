@@ -1,10 +1,11 @@
 'use client'
 
 import Id from "@/components/home/id";
-import {ArrowDownCircle, MailIcon, MapIcon} from "lucide-react";
+import {ArrowDownCircle, MailIcon, MapIcon, ScrollTextIcon} from "lucide-react";
 import { Typewriter } from 'react-simple-typewriter'
 import Atropos from 'atropos/react';
 import SocialMedia from "@/components/home/social-media";
+import Link from "next/link";
 
 export default function Banner() {
   const year = new Date().getFullYear()
@@ -58,6 +59,13 @@ export default function Banner() {
       <div className="absolute top-0 left-0 pl-10 pt-10">
         <p className="flex items-center intro-y"><MailIcon className="w-4 h-4 mr-2"/> m.irfan.fakhri66@gmail.com</p>
         <p className="flex items-center intro-y"><MapIcon className="w-4 h-4 mr-2"/> Indonesia</p>
+      </div>
+      <div className="absolute bottom-0 left-0 pl-10 pb-10">
+        <p className="flex items-center intro-y">
+          <Link href="/log" className="flex items-center border-b hover:border-b-white border-transparent border-dotted">
+            <ScrollTextIcon className="w-4 h-4 mr-2"/> Logs
+          </Link>
+        </p>
       </div>
     </section>
   )
