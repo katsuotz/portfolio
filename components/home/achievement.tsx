@@ -74,7 +74,7 @@ export default function Achievement() {
                       </a>
                     </TooltipTrigger>
                     <TooltipContent>
-                      See Certificate
+                      View Certificate
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>

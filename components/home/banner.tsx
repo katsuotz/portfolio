@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Banner() {
   const year = new Date().getFullYear()
-  const startYear = 2018
+  const startYear = 2019
 
   const scrollPage = () => {
     window.scrollTo({
