@@ -26,21 +26,21 @@ export interface ProjectType {
 export default function ProjectItem({project}: { project:ProjectType }) {
   return (
     <Dialog>
-      <DialogTrigger className="col col-span-12 sm:col-span-3 rounded-3xl group/project intro-y">
+      <DialogTrigger className="col col-span-12 sm:col-span-6 md:col-span-3 rounded-3xl group/project intro-y">
         <Atropos
           rotateTouch={false}
           className="atropos-project"
         >
           <div
             className="px-4 sm:h-[350px] h-[240px] bg-background-gradient rounded-3xl flex flex-col justify-center cursor-pointer relative">
-            <ExternalLinkIcon className="absolute top-6 right-6 group-hover/project:opacity-100 opacity-0 transition-all duration-500"/>
+            <ExternalLinkIcon className="absolute top-6 right-6 group-hover/project:md:opacity-100 opacity-0 transition-all duration-500"/>
             <div className="flex flex-col items-center relative">
-              <Image src={project.logo} alt="" width={80} height={80} className="h-20 w-auto mb-8 group-hover/project:scale-110 group-hover/project:-translate-y-10 transition-all duration-300"/>
-              <div className="text-center group-hover/project:-translate-y-14 group-hover/project:scale-105 transition-all duration-300">
+              <Image src={project.logo} alt="" width={80} height={80} className="h-20 w-auto mb-8 group-hover/project:md:scale-110 group-hover/project:md:-translate-y-10 transition-all duration-300"/>
+              <div className="text-center group-hover/project:md:-translate-y-14 group-hover/project:md:scale-105 transition-all duration-300">
                 <p className="font-bold text-xl">{project.name}</p>
                 <p className="font-bold text-xl">{project.year}</p>
               </div>
-              <p className="absolute text-center px-4 bottom-0 opacity-0 translate-y-[100%] group-hover/project:opacity-100 group-hover/project:bottom-12 transition-all duration-300">
+              <p className="absolute text-center px-4 bottom-0 opacity-0 translate-y-[100%] group-hover/project:md:opacity-100 group-hover/project:bottom-12 transition-all duration-300">
                 {project.description}
               </p>
             </div>
@@ -53,7 +53,9 @@ export default function ProjectItem({project}: { project:ProjectType }) {
           <DialogDescription className="pb-2 text-white text-[1rem]">
             {project.description}
           </DialogDescription>
-          <Image src={project.image} alt="" width="1000" height="600" className="rounded-lg"/>
+          <div className="flex justify-center">
+            <Image src={project.image} alt="" width="1000" height="600" className="rounded-lg"/>
+          </div>
           <div className="flex gap-2 justify-end mt-4">
             <DialogClose aria-label="Close">
               <Button variant="ghost">

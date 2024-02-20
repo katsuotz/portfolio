@@ -8,12 +8,22 @@ import Link from "next/link";
 export default function Project({showAllProjects = false}) {
   const projects: ProjectType[] = [
     {
+      logo: '/project/transkripid.svg',
+      name: 'Transkrip.id',
+      year: '2024',
+      description: 'A project to Transcribe Audio/Video to Text with AI Technology.',
+      image: '/project/transkripid.jpg',
+      url: 'https://transkrip.id/',
+      highlight: true,
+    },
+    {
       logo: '/project/dota.png',
       name: 'Dreamocel Portfolio',
       year: '2023',
       description: 'A single page portfolio website for Professional Esports Dota 2 Player.',
       image: '/project/dreamocel-web.jpg',
       url: 'https://dreamocel.katsuotz.com/',
+      highlight: true,
     },
     {
       logo: '/project/ppdb.png',
@@ -59,15 +69,17 @@ export default function Project({showAllProjects = false}) {
       logo: '/achievement/kemdikbud.png',
       name: 'Virtual Exhibition LKS',
       year: '2020',
-      description: 'A 3d virtual showcase exhibition in Ministry of Education and Culture Indonesia yearly event for Vocational School',
+      description: 'A 3d virtual showcase exhibition in Ministry of Education and Culture Indonesia yearly event for Vocational School.',
       image: '/project/virtual-exhibition.png',
+      highlight: true,
     },
     {
       logo: '/achievement/kemnaker.png',
       name: 'eModul',
       year: '2020',
-      description: 'Online e-book library for Ministry of Manpower Indonesia',
+      description: 'Online e-book library for Ministry of Manpower Indonesia.',
       image: '/project/emodul.png',
+      highlight: true,
     },
     {
       logo: '/work/someah.jpg',
@@ -121,7 +133,7 @@ export default function Project({showAllProjects = false}) {
           { !showAllProjects ?
             <Atropos
               rotateTouch={false}
-              className="col col-span-12 sm:col-span-3 atropos-project group/project intro-y"
+              className="col col-span-12 xs:col-span-6 md:col-span-3 atropos-project group/project intro-y"
             >
               <Link href="/projects">
                 <div
