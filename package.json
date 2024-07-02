@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "start-server": "next start -p 2006"
+    "start-server": "next start -p 2007"
   },
   "dependencies": {
     "@radix-ui/react-collapsible": "^1.0.3",
