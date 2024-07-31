@@ -17,20 +17,20 @@ export default function Project({showAllProjects = false}) {
       highlight: true,
     },
     {
+      logo: '/project/ppdb.webp',
+      name: 'PPDB Jawa Barat',
+      year: '2019 - 2024',
+      description: 'An all-in-one web app for students in West Java, enabling seamless high school registration by providing a user-friendly platform.',
+      image: '/project/ppdb-1.png',
+      highlight: true,
+    },
+    {
       logo: '/project/dota.png',
       name: 'Dreamocel Portfolio',
       year: '2023',
       description: 'A single page portfolio website for Professional Esports Dota 2 Player.',
       image: '/project/dreamocel-web.jpg',
       url: 'https://dreamocel.katsuotz.com/',
-      highlight: true,
-    },
-    {
-      logo: '/project/ppdb.png',
-      name: 'PPDB Jawa Barat',
-      year: '2019 - 2023',
-      description: 'An all-in-one web app for students in West Java, enabling seamless high school registration by providing a user-friendly platform.',
-      image: '/project/ppdb-1.jpg',
       highlight: true,
     },
     {
