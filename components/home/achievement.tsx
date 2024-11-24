@@ -70,7 +70,7 @@ export default function Achievement() {
                   <div>
                     <p className="font-bold tracking-wide">{achievement.position}</p>
                     <p>{achievement.title}</p>
-                    <p className="font-light text-sm text-gray-400">{achievement.organizer} - {achievement.year}</p>
+                    <p className="font-light text-sm text-gray-600 dark:text-gray-400">{achievement.organizer} - {achievement.year}</p>
                   </div>
                 </div>
                 <TooltipProvider delayDuration={0} key={key}>

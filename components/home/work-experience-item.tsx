@@ -27,11 +27,11 @@ export default function WorkExperienceItem({experience}: { experience:WorkExperi
           {experience.position.map((position, key) => {
             return <div key={key}>
               <p className="font-medium text-sm sm:text-[1rem] mt-1">{position.title}</p>
-              <p className="font-light text-sm text-gray-400 mt-1">{position.date}</p>
+              <p className="font-light text-sm text-gray-600 dark:text-gray-400 mt-1">{position.date}</p>
             </div>
           })}
         </div>
-        <p className="mt-2 text-gray-400">{experience.description}</p>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">{experience.description}</p>
       </div>
     </div>
   )

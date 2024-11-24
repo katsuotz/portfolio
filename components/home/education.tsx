@@ -19,7 +19,7 @@ export default function Education() {
                 <Image unoptimized={true} width={200} height={200} src="/education/unikom.png" alt="Universitas Komputer Indonesia" className="w-24 h-24"/>
               </div>
               <p className="font-bold tracking-wide text-2xl sm:text-3xl">Universitas Komputer Indonesia</p>
-              <p className="font-light text-xl text-gray-400">Bachelor Degree</p>
+              <p className="font-light text-xl text-gray-600 dark:text-gray-400">Bachelor Degree</p>
               <p className="text-xl">Information System</p>
               <p className="font-semibold text-xl">2023</p>
             </div>
@@ -30,7 +30,7 @@ export default function Education() {
                 <Image unoptimized={true} width={200} height={200} src="/education/smkn4.png" alt="SMK Negeri 4 Bandung" className="w-24 h-24"/>
               </div>
               <p className="font-bold tracking-wide text-2xl sm:text-3xl">SMK Negeri 4 Bandung</p>
-              <p className="font-light text-xl text-gray-400">Vocational High School</p>
+              <p className="font-light text-xl text-gray-600 dark:text-gray-400">Vocational High School</p>
               <p className="text-xl">Software Engineering</p>
               <p className="font-semibold text-xl">2018</p>
             </div>
