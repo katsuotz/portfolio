@@ -20,7 +20,7 @@ export default function Banner() {
   }
 
   return (
-    <section className="h-dvh h-screen w-full relative flex justify-center items-center">
+    <section className="h-dvh w-full relative flex justify-center items-center">
       <div className="absolute flex h-full w-full overflow-hidden">
         <Meteors number={30}/>
       </div>
