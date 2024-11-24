@@ -1,5 +1,3 @@
-@import 'atropos/atropos.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -181,15 +179,6 @@
 
 .swiper-pagination-bullet {
   background: #fff!important;
-}
-
-.atropos-banner .atropos-inner {
-  @apply p-10;
-  overflow: visible!important;
-}
-
-.atropos-project .atropos-rotate {
-  @apply rounded-3xl overflow-hidden;
 }
 
 .back-to-top rect {
