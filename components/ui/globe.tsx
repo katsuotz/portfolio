@@ -36,8 +36,6 @@ export default function Globe({
 }) {
   const { isDarkMode } = useGlobalState();
 
-  const [globe, setGlobe] = useState(null);
-
   let phi = 2.0;
   let width = 0;
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -70,11 +68,9 @@ export default function Globe({
     [phi, r, width],
   );
 
-  const onResize = () => {
-    if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth;
-    }
-  };
+  const onResize = useCallback(() => {
+    width = canvasRef.current!.offsetWidth;
+  }, []);
 
 
   useEffect(() => {

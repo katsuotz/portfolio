@@ -1,8 +1,18 @@
 import {createContext, useState, useContext, useEffect, useMemo} from 'react';
 
-const GlobalStateContext = createContext();
+interface GlobalStateContextInterface {
+  globalState: any;
+  setGlobalState: (state: any) => void;
+  isDarkMode: boolean;
+}
 
-export const GlobalStateProvider = ({ children }) => {
+const GlobalStateContext = createContext<GlobalStateContextInterface>({
+  globalState: {},
+  setGlobalState: () => {},
+  isDarkMode: false,
+});
+
+export const GlobalStateProvider = ({ children }: { children: React.ReactNode }) => {
   const [globalState, setGlobalState] = useState({
     theme: 'dark',
   });
@@ -16,6 +26,7 @@ export const GlobalStateProvider = ({ children }) => {
       if (savedDarkMode !== null) {
         setGlobalState({ theme: savedDarkMode === 'true' ? 'dark' : 'light' });
       } else if (window.matchMedia) {
+        // @ts-ignore
         setGlobalState({ theme: window.matchMedia('(prefers-color-scheme: dark)').matches === 'true' ? 'dark' : 'light' });
       }
     }

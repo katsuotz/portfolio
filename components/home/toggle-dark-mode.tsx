@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {flushSync} from "react-dom";
 import {useGlobalState} from "@/context/GlobalStateContext";
 
-export default function Banner() {
+export default function ToggleDarkMode() {
   const { globalState, setGlobalState } = useGlobalState();
 
   const [isDarkMode, setIsDarkMode] = useState(globalState.theme === 'dark');

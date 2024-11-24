@@ -5,7 +5,7 @@ import {ArrowLeftCircleIcon} from "lucide-react";
 import BackToTop from "@/components/home/back-to-top";
 import ToggleDarkMode from "@/components/home/toggle-dark-mode";
 
-export default function Home() {
+export default function Projects() {
   return (
     <>
       <ToggleDarkMode/>
