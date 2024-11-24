@@ -1,3 +1,5 @@
+import ToggleDarkMode from "@/components/home/toggle-dark-mode";
+
 export const metadata = {
   title: 'Logs | Katsuotz',
   description: 'Katsuotz\'s Logs.',
@@ -13,7 +15,8 @@ export default function LogLayout(
   }) {
   return (
     <div className="log" style={{fontFamily: 'monospace'}}>
-      <div className="container mt-10 flex justify-center gap-5 log-nav">
+      <ToggleDarkMode/>
+      <div className="container pt-10 flex justify-center gap-5 log-nav">
         <Link href="/" className="text-white flex items-center text-sm border-b border-dotted border-white">
           Home
         </Link>

@@ -13,6 +13,7 @@ interface SkillType {
   logo: string
   name: string
   className?: string
+  gray?: boolean
 }
 
 export default function Skills() {
@@ -45,7 +46,8 @@ export default function Skills() {
     {
       logo: '/skills/next.png',
       name: 'Next.js',
-      className: 'w-auto h-6'
+      className: 'w-auto h-6',
+      gray: true,
     },
     {
       logo: '/skills/go.png',
@@ -54,6 +56,7 @@ export default function Skills() {
     {
       logo: '/skills/php.png',
       name: 'PHP',
+      gray: true,
     },
     {
       logo: '/skills/laravel.png',
@@ -70,7 +73,8 @@ export default function Skills() {
     {
       logo: '/skills/mongo.png',
       name: 'MongoDB',
-      className: 'w-auto h-8'
+      className: 'w-auto h-8',
+      gray: true,
     },
   ]
 
@@ -86,7 +90,7 @@ export default function Skills() {
           {skills.map((skill,key) => {
             return <TooltipProvider delayDuration={0} key={key}>
               <Tooltip>
-                <TooltipTrigger aria-label={skill.name}><Image key={key} loading="lazy" src={skill.logo} width={100} height={100} alt="" className={skill.className || 'w-auto h-12'}/></TooltipTrigger>
+                <TooltipTrigger aria-label={skill.name}><Image key={key} loading="lazy" src={skill.logo} width={100} height={100} alt="" className={`${skill.className || 'w-auto h-12'} ${skill.gray ? 'invert dark:invert-0' : ''}`}/></TooltipTrigger>
                 <TooltipContent>
                   <p>{skill.name}</p>
                 </TooltipContent>

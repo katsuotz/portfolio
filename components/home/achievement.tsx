@@ -11,6 +11,7 @@ interface AchievementType {
   organizer: string
   year: string
   url: string
+  gray?: boolean,
 }
 
 export default function Achievement() {
@@ -22,6 +23,7 @@ export default function Achievement() {
       organizer: 'WorldSkills India',
       year: '2020',
       url: 'https://drive.google.com/drive/folders/1sTD1GAHAHJDOBkiFuiP5bqEFFXgWaey-?usp=drive_link',
+      gray: true,
     },
     {
       logo: '/achievement/hago.png',
@@ -60,8 +62,10 @@ export default function Achievement() {
         <div className="grid grid-cols-12 gap-6">
           {achievements.map((achievement, key) => {
             return <div className="col-span-12 sm:col-span-6" key={key}>
-              <div className="flex flex-col items-center justify-center px-4 py-6 text-center bg-background-gradient rounded-3xl relative">
-                <Image loading="lazy" src={achievement.logo} width={64} height={64} alt="" className="w-auto h-14 mb-4"/>
+              <div className="flex flex-col items-center justify-center px-4 py-6 text-center bg-accent-foreground dark:bg-background-gradient rounded-3xl relative">
+                <Image loading="lazy" src={achievement.logo} width={64} height={64} alt={achievement.organizer}
+                       className={`w-auto h-14 mb-4 ${achievement.gray ? 'invert dark:invert-0' : ''}`}
+                />
                 <p className="font-bold tracking-wide">{achievement.position}</p>
                 <p className="">{achievement.title}</p>
                 <p className="font-light text-sm text-gray-400">{achievement.organizer}</p>

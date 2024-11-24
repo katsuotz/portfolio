@@ -7,10 +7,10 @@
 }
 
 .log a:hover {
-    @apply text-white;
+    @apply dark:text-white;
 }
 
 .log-nav a,
 .footer a {
-    @apply text-white;
+    @apply dark:text-white;
 }

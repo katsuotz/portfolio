@@ -21,9 +21,10 @@ export default function RootLayout(
   }) {
 
   return (
-    <html lang="en">
+    <html className="dark" lang="en">
     <head>
-      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+      <meta httpEquiv="x-ua-compatible" content="ie=edge"/>
+      <link rel="icon" href="/favicon.ico"/>
     </head>
     <body className={outfit.className}>
     <main className="relative">

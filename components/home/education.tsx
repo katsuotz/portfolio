@@ -14,7 +14,7 @@ export default function Education() {
       <div className="container">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 sm:col-span-6">
-            <div className="flex flex-col px-10 pb-6 pt-16 bg-background-gradient rounded-3xl relative">
+            <div className="flex flex-col px-10 pb-6 pt-16 bg-accent-foreground dark:bg-background-gradient rounded-3xl relative">
               <div className="p-4 rounded-[2.4rem] absolute left-10 top-0 -translate-y-1/2">
                 <Image unoptimized={true} width={200} height={200} src="/education/unikom.png" alt="Universitas Komputer Indonesia" className="w-24 h-24"/>
               </div>
@@ -25,7 +25,7 @@ export default function Education() {
             </div>
           </div>
           <div className="col-span-12 sm:col-span-6 mt-12 sm:mt-0">
-            <div className="flex flex-col px-10 pb-6 pt-16 bg-background-gradient rounded-3xl relative">
+            <div className="flex flex-col px-10 pb-6 pt-16 bg-accent-foreground dark:bg-background-gradient rounded-3xl relative">
               <div className="p-4 rounded-[2.4rem] absolute left-10 top-0 -translate-y-1/2">
                 <Image unoptimized={true} width={200} height={200} src="/education/smkn4.png" alt="SMK Negeri 4 Bandung" className="w-24 h-24"/>
               </div>

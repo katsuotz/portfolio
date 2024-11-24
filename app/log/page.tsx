@@ -9,7 +9,7 @@ export default function Log() {
         <h3
           className="text-3xl sm:text-3xl font-bold mb-8 flex items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
           {/*<CableCarIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>*/}
-          Katsuotz's Logs
+          Otz's Logs
         </h3>
 
         <div className="container max-w-[600px]">

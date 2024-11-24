@@ -137,7 +137,7 @@ export default function Project({showAllProjects = false}) {
             >
               <Link href="/projects">
                 <div
-                  className="px-4 sm:h-[350px] h-[240px] bg-background-gradient rounded-3xl flex flex-col items-center justify-center cursor-pointer relative">
+                  className="px-4 sm:h-[350px] h-[240px] bg-accent-foreground dark:bg-background-gradient rounded-3xl flex flex-col items-center justify-center cursor-pointer relative">
                   <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5]"/>
                   <p className="font-bold text-xl">More</p>
                 </div>
