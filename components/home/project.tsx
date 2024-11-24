@@ -130,9 +130,9 @@ export default function Project({showAllProjects = false}) {
             })
           }
           { !showAllProjects ?
-              <Link href="/projects">
+              <Link href="/projects" className="col col-span-12 xs:col-span-6 md:col-span-3 atropos-project group/project intro-y">
                 <div
-                  className="px-4 sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]">
+                  className="px-4 w-full sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]">
                   <div className="flex flex-col items-center relative">
                   <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5]"/>
                   <p className="font-bold text-xl">More</p>
