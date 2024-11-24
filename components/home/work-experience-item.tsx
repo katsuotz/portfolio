@@ -10,20 +10,24 @@ export interface WorkExperienceType {
   description: string
   position: WorkExperiencePosition[]
   logo: string
+  flag: string
 }
 
 export default function WorkExperienceItem({experience}: { experience:WorkExperienceType }) {
   return (
-    <div className="sm:w-[450px] w-screen px-5">
+    <div className="sm:w-[450px] w-screen px-3">
       <div
-        className="flex flex-col items-center justify-center px-4 py-6 text-center bg-accent-foreground dark:bg-background-gradient rounded-3xl">
-        <Image src={experience.logo} alt="" width={40} height={40} className="w-auto h-10 mb-1.5"/>
-        <p className="mb-2 tracking-wider">{experience.company}</p>
+        className="relative mx-auto min-h-fit overflow-hidden rounded-2xl p-4 transition-all duration-200 ease-in-out hover:scale-[103%] bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
+        <Image src={experience.logo} alt="" width={40} height={40} className="w-auto h-10"/>
+        <div className="flex items-center mt-2">
+          <Image src={experience.flag} alt="" width={40} height={40} className="w-auto h-3 mr-2"/>
+          <p className="tracking-wider">{experience.company}</p>
+        </div>
         <div className="flex gap-6">
           {experience.position.map((position, key) => {
             return <div key={key}>
-              <p className="font-light text-sm text-gray-400">{position.date}</p>
-              <p className="font-medium text-sm sm:text-[1rem]">{position.title}</p>
+              <p className="font-medium text-sm sm:text-[1rem] mt-1">{position.title}</p>
+              <p className="font-light text-sm text-gray-400 mt-1">{position.date}</p>
             </div>
           })}
         </div>

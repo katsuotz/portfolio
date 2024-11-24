@@ -27,7 +27,7 @@ export const GlobalStateProvider = ({ children }: { children: React.ReactNode })
         setGlobalState({ theme: savedDarkMode === 'true' ? 'dark' : 'light' });
       } else if (window.matchMedia) {
         // @ts-ignore
-        setGlobalState({ theme: window.matchMedia('(prefers-color-scheme: dark)').matches === 'true' ? 'dark' : 'light' });
+        setGlobalState({ theme: window.matchMedia('(prefers-color-scheme: dark)').matches === true ? 'dark' : 'light' });
       }
     }
     setIsClient(true);

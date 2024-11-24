@@ -32,7 +32,7 @@ export default function ProjectItem({project}: { project:ProjectType }) {
           className="atropos-project"
         >
           <div
-            className="px-4 sm:h-[350px] h-[240px] bg-accent-foreground dark:bg-background-gradient rounded-3xl flex flex-col justify-center cursor-pointer relative">
+            className="px-4 sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]">
             <ExternalLinkIcon className="absolute top-6 right-6 group-hover/project:md:opacity-100 opacity-0 transition-all duration-500"/>
             <div className="flex flex-col items-center relative">
               <Image src={project.logo} alt="" width={80} height={80} className="h-20 w-auto mb-8 group-hover/project:md:scale-110 group-hover/project:md:-translate-y-10 transition-all duration-300"/>

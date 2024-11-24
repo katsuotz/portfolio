@@ -10,7 +10,18 @@ import {Laptop2Icon} from "lucide-react";
 export default function WorkExperience() {
   const experiences: WorkExperienceType[] = [
     {
+      logo: '/work/farmbyte.png',
+      flag: '/flag/my.svg',
+      company: 'FarmByte',
+      position: [{
+        title: 'Frontend Developer',
+        date: 'Sept 2024 - Now',
+      }],
+      description: 'Crafting intuitive web applications with reusable components, API integration, and optimized business logic to empower farmers and drive innovation.',
+    },
+    {
       logo: '/work/paxel.png',
+      flag: '/flag/id.png',
       company: 'Paxel Indonesia',
       position: [{
         title: 'Full-Stack Developer',
@@ -20,15 +31,17 @@ export default function WorkExperience() {
     },
     {
       logo: '/work/lexigo.jpg',
+      flag: '/flag/au.png',
       company: 'Lexigo',
       position: [{
-        title: 'Frontend Developer - Freelance',
+        title: 'Frontend Developer',
         date: 'Aug 2022 - Feb 2023',
       }],
       description: 'Create translation and localization web apps with cloud-based technology to enable organizations to communicate with confidence.',
     },
     {
       logo: '/work/sgara.png',
+      flag: '/flag/id.png',
       company: 'Sgara (PT. Transformasi Digital Laut)',
       position: [
         {
@@ -43,6 +56,7 @@ export default function WorkExperience() {
     },
     {
       logo: '/project/edunex.png',
+      flag: '/flag/id.png',
       company: 'Cognisia',
       position: [
         {
@@ -54,6 +68,7 @@ export default function WorkExperience() {
     },
     {
       logo: '/work/someah.jpg',
+      flag: '/flag/id.png',
       company: 'Someah Kreatif Nusantara',
       position: [{
         title: 'Full-Stack Developer',
@@ -64,7 +79,7 @@ export default function WorkExperience() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-8 pt-6 lg:pb-20 pb-16 lg:mt-32">
+    <section className="relative flex flex-col justify-center items-center lg:pt-8 pt-6 lg:pb-20 pb-16 lg:mt-52">
       <h3 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center">
         <Laptop2Icon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>
         Work Experience
@@ -73,13 +88,15 @@ export default function WorkExperience() {
       <div className="w-full">
         <Swiper
           modules={[Pagination, Mousewheel]}
-          pagination={{ clickable: true }}
+          pagination={{clickable: true}}
           slidesPerView={'auto'}
           spaceBetween={0}
           mousewheel
         >
           {experiences.map((experience, key) => {
-            return <SwiperSlide key={key} className={key === 0 ? 'sm:ml-80' : ''}><WorkExperienceItem experience={experience}/></SwiperSlide>
+            return <SwiperSlide key={key} className={key === 0 ? 'sm:ml-80' : ''}>
+              <WorkExperienceItem experience={experience}/>
+            </SwiperSlide>
           })}
         </Swiper>
       </div>

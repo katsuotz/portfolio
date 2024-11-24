@@ -15,7 +15,6 @@ export default function LogLayout(
   }) {
   return (
     <div className="log" style={{fontFamily: 'monospace'}}>
-      <ToggleDarkMode/>
       <div className="container pt-10 flex justify-center gap-5 log-nav">
         <Link href="/" className="text-white flex items-center text-sm border-b border-dotted border-white">
           Home
