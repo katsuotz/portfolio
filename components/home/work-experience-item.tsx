@@ -31,7 +31,7 @@ export default function WorkExperienceItem({experience}: { experience:WorkExperi
             </div>
           })}
         </div>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">{experience.description}</p>
+        <p className="mt-1 text-gray-600 dark:text-gray-400">{experience.description}</p>
       </div>
     </div>
   )
