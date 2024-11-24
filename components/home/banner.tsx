@@ -25,11 +25,11 @@ export default function Banner() {
         <Meteors number={30}/>
       </div>
       <div className="absolute top-24">
-        <p className="text-xl sm:text-2xl text-center intro-y">
+        <p className="text-xl sm:text-2xl text-center intro-y mt-10 lg:mt-0">
           Muhammad Irfan Fakhri
         </p>
         <h1
-          className="text-4xl sm:text-7xl lg:text-[8rem] font-black leading-[65px] lg:leading-[160px] tracking-wider flex flex-wrap justify-center lg:gap-5 gap-2 mt-10 lg:-mt-5 intro-y bg-gradient-to-r from-[#8FC3F2] via-[#B9B6FF] to-[#D9BBFF] bg-clip-text text-transparent">
+          className="text-4xl sm:text-7xl lg:text-[8rem] font-black leading-normal sm:leading-[65px] lg:leading-[160px] tracking-wider flex flex-wrap justify-center lg:gap-5 gap-2 lg:-mt-5 intro-y bg-gradient-to-r from-[#8FC3F2] via-[#B9B6FF] to-[#D9BBFF] bg-clip-text text-transparent">
           Katsuotz
         </h1>
         <div className="text-2xl sm:text-3xl intro-y">
