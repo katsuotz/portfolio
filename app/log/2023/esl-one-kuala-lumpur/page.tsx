@@ -26,60 +26,60 @@ export default function EslOneKualaLumpur() {
         </h3>
 
         <div className="container max-w-[900px]">
-          <p>Few months ago, my friend and I went to Bali Major to watch Dota 2 Tournament. The Bali Major event was
-            kinda okay but I think the vibe was really chill because the venue wasn't that big. When ESL announced that
-            they will make new event called ESL One Kuala Lumpur 2023 and the venue is much more bigger and much cheaper
-            than Bali Major, so why don't we give it a try.</p>
+          <p>A few months ago, my friend and I went to the Bali Major to watch a Dota 2 tournament. The Bali Major event
+            was decent, but the vibe felt quite chill because the venue wasn’t very big. When ESL announced a new event
+            called ESL One Kuala Lumpur 2023, with a much larger and more affordable venue than the Bali Major, we
+            thought, why not give it a try?</p>
 
           <div>
             <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Ticket Comparison</h4>
-            <p className="font-bold text-sm">Bali Major Standard Ticket: ~IDR 7.200.000</p>
-            <p className="font-bold text-sm">ESL One Standard Ticket: ~IDR 630.000</p>
-            <p>You can literally buy more than 10 ESL tickets for a single ticket in Bali Major.</p>
+            <p className="font-bold text-sm">Bali Major Standard Ticket: ~IDR 7,200,000</p>
+            <p className="font-bold text-sm">ESL One Standard Ticket: ~IDR 630,000</p>
+            <p>You can literally buy more than 10 ESL tickets for the price of one Bali Major ticket.</p>
           </div>
 
           <div>
             <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Place to Stay</h4>
-            <p>I stay near the venue at Airbnb called Arte Mont Kiara, it's about 10 minutes walk to ESL One KL venue at
-              Malaysia International Trade and Exhibition Centre (MITEC).</p>
-            <p>It's like an apart. The price was <b>IDR 3.900.000</b> for 7 nights and because we stayed together (3
-              people) it's only <b>IDR 186.000 a night</b>.</p>
-            <p>Arte Mont Kiara: <a href="https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA"
-                                   target="_blank">🔗 https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA</a></p>
+            <p>I stayed near the venue at an Airbnb called Arte Mont Kiara. It’s about a 10-minute walk to the ESL One
+              KL venue at the Malaysia International Trade and Exhibition Centre (MITEC).</p>
+            <p>It’s an apartment-style accommodation. The total price was <b>IDR 3,900,000</b> for 7 nights. Since we
+              stayed together (3 people), it only cost <b>IDR 186,000 per night</b> each.</p>
+            <p>Arte Mont Kiara: <a href="https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA" target="_blank">🔗
+              https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA</a></p>
             <p>MITEC: <a href="https://maps.app.goo.gl/Z5ZdVFfPU9gTVEe1A" target="_blank">🔗
               https://maps.app.goo.gl/Z5ZdVFfPU9gTVEe1A</a></p>
             <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/arte-mitec.jpg"
                    alt="Arte Mont Kiara to MITEC" className="w-full"/>
-            <p className="text-center">Maps from Arte Mont Kiara to MITEC</p>
+            <p className="text-center">Map from Arte Mont Kiara to MITEC</p>
           </div>
 
           <div>
             <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Venue</h4>
-            <p>This is the first time I came to e-sport event with this big stage. There are so many things I can see
-              live. From above, I can see players, host, panel, and caster clearly, so I can feel the vibe much better
-              here.</p>
-            <p>For reference: When I came to Bali Major, the panel and caster aren't even in the venue. They cast the
-              event from hotel which is very weird.</p>
+            <p>This was my first time attending an e-sports event with such a big stage. There were so many things to
+              see live. From my seat, I could clearly see the players, hosts, panelists, and casters, which made the
+              experience much more immersive.</p>
+            <p>For reference, when I attended the Bali Major, the panelists and casters weren’t even at the venue. They
+              cast the event from a hotel, which felt very odd.</p>
             <Carousel>
               <CarouselContent>
                 <CarouselItem>
                   <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-1.jpg"
-                         alt="Arte Mont Kiara to MITEC" className="w-full"/>
+                         alt="ESL One KL Venue" className="w-full"/>
                   <p className="text-center">ESL One KL Venue</p>
                 </CarouselItem>
                 <CarouselItem>
                   <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-2.jpg"
-                         alt="Malaysia International Trade and Exhibition Centre" className="w-full"/>
+                         alt="ESL One KL Venue (Outside)" className="w-full"/>
                   <p className="text-center">ESL One KL Venue (Outside)</p>
                 </CarouselItem>
                 <CarouselItem>
                   <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-3.jpg"
-                         alt="Malaysia International Trade and Exhibition Centre" className="w-full"/>
+                         alt="ESL One KL Venue (Outside)" className="w-full"/>
                   <p className="text-center">ESL One KL Venue (Outside)</p>
                 </CarouselItem>
                 <CarouselItem>
                   <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-4.jpg"
-                         alt="Caninus Marci" className="w-full"/>
+                         alt="Marci Caninus Drawing" className="w-full"/>
                   <p className="text-center">Marci - Caninus Drawing</p>
                 </CarouselItem>
               </CarouselContent>
@@ -90,7 +90,8 @@ export default function EslOneKualaLumpur() {
 
           <div>
             <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Watching Experience</h4>
-            <p>I think this was the best live event with so many cool effects that I ever watch. There are so many different vfx for a big ultimate. The caster hype was also really amazing! And the venue vibe? Couldn't be any better.</p>
+            <p>This was the best live event I’ve ever attended, with so many cool effects for big ultimates. The
+              caster’s enthusiasm was amazing, and the overall venue vibe was unbeatable!</p>
             <div className="flex">
               <iframe width="600" height="300" src="https://www.youtube.com/embed/_4iuQcMY86I?si=Jo9Eth19YEL-4vE5"
                       title="ESL One Kuala Lumpur Watching Experience" frameBorder="0"
@@ -101,17 +102,17 @@ export default function EslOneKualaLumpur() {
 
           <div>
             <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Booth, Foods, and Merch</h4>
-            <p>Booth? Foods? Merch? ESL just nailed it.</p>
-            <p>There are a lot of things you can do in the booth, there are Airbrush Tattoo, Intel Solo Mid 1v1, Intel
-              Racing Area, DHL spin, DHL VR Game, Tarot Reading, etc.</p>
-            <p>There are so many food you can choose to, you can get Nasi Goreng, Malaysian Food, and Mexican Food like
-              Taco. The foods are pretty cheap for this kind of event, it was start from around <b>RM 10 (IDR
-                34.000)</b>. You can also get free Monster Energy drink.</p>
-            <p>ESL One merch has various variations. There are Team Jerseys, ESL Apparels, Hero T-Shirts, Plushies,
-              Gacha Plushies, etc. I came at the third day so it was almost sold out. I bought the last Team Secret
-              jersey for XS size and some plushies. For the price, jerseys are pretty expensive as usual <b>RM 270 - 320 (IDR 900.000 - 1.100.000)</b>,
-              plushies was pretty cheap because it was buy 1 free 1 and it was only RM 20 - 40 (RM 69.000 - 138.000). Same with Hero T-Shirts it was very cheap and it was also buy 1 free 1 for only <b>RM 38 (IDR 128.000)</b>
-            </p>
+            <p>The booths, food, and merchandise were fantastic at ESL One.</p>
+            <p>The booths offered various activities like airbrush tattoos, Intel Solo Mid 1v1, Intel Racing Area, DHL
+              Spin, DHL VR Game, Tarot Reading, and more.</p>
+            <p>The food options were plentiful, including Nasi Goreng, Malaysian dishes, and Mexican food like tacos.
+              The prices were reasonable for such an event, starting at around <b>RM 10 (IDR 34,000)</b>. Free Monster
+              Energy drinks were also available.</p>
+            <p>ESL One merchandise included team jerseys, ESL apparel, hero T-shirts, plushies, and gacha plushies. By
+              the third day, most items were sold out. I managed to buy the last Team Secret jersey in XS and some
+              plushies. Jerseys were priced at <b>RM 270–320 (IDR 900,000–1,100,000)</b>, while plushies were affordable
+              at RM 20–40 (IDR 69,000–138,000) with a buy-1-get-1 deal. Hero T-shirts were also on sale with the same
+              deal for only <b>RM 38 (IDR 128,000)</b>.</p>
             <div className="flex">
               <iframe width="600" height="300" src="https://www.youtube.com/embed/2pmUzfIVzeo?si=eDKfSQk9MOAgDFGw"
                       title="ESL Kuala Lumpur Booth" frameBorder="0"
@@ -122,10 +123,11 @@ export default function EslOneKualaLumpur() {
 
           <div>
             <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Vlog</h4>
-            <p>When I was in KL, I streamed while walking from my apart to the venue. You can check it out the VOD from
-              my stream below, it was a new wonderful experience for me.</p>
+            <p>While in KL, I streamed my walk from the apartment to the venue. You can check out the VOD from my stream
+              below. It was a wonderful experience for me.</p>
             <p>ESL One KL Venue Review:
-              <a href="https://www.twitch.tv/videos/2006148619" target="_blank">🔗 https://www.twitch.tv/videos/2006148619</a>
+              <a href="https://www.twitch.tv/videos/2006148619" target="_blank">🔗
+                https://www.twitch.tv/videos/2006148619</a>
             </p>
           </div>
         </div>
