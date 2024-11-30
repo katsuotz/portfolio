@@ -11,10 +11,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import ToggleDarkMode from "@/components/home/toggle-dark-mode";
+import {GlobalStateProvider} from "@/context/GlobalStateContext";
 
 export default function EslOneKualaLumpur() {
   return (
-    <>
+    <GlobalStateProvider>
+      <ToggleDarkMode/>
       <div className="relative flex flex-col justify-center items-center lg:pt-12 pt-12 lg:pb-20 pb-12">
         <h1
           className="text-3xl sm:text-3xl font-bold mb-8 flex items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
@@ -25,7 +28,7 @@ export default function EslOneKualaLumpur() {
           <section>
             <h2 className="text-lg font-bold flex items-center text-blue-500">Itinerary Overview</h2>
             <p>Here’s my two weeks itinerary plan:</p>
-            <ul className="pl-6 text-gray-300 list-disc list-inside">
+            <ul className="pl-6 text-gray-600 dark:text-gray-300 list-disc list-inside">
               <li><strong>Day 1:</strong> Flight from Jakarta to Christchurch.</li>
               <li><strong>Day 2-4:</strong> Exploring Tekapo, Lake Pukaki, and Mount Cook.</li>
               <li><strong>Day 5-6:</strong> Adventuring in Wanaka, including the famous Roys Peak hike.</li>
@@ -45,7 +48,7 @@ export default function EslOneKualaLumpur() {
           <section>
             <h2 className="text-lg font-bold flex items-center text-blue-500">Budget Breakdown</h2>
 
-            <span className="italic text-gray-300">Rate: 1 NZD = IDR 9,700</span>
+            <span className="italic text-gray-600 dark:text-gray-300">Rate: 1 NZD = IDR 9,700</span>
 
             <h3 className="font-bold">1. Flights (Round Trip)</h3>
             <p><strong>Cost:</strong> IDR 11,500,000</p>
@@ -81,7 +84,7 @@ export default function EslOneKualaLumpur() {
             <p>One of the highlights of the South Island is the range of free activities, such as hiking. However, I
               also
               splurged on a few iconic paid activities:</p>
-            <ul className="pl-6 text-gray-300 list-disc list-inside">
+            <ul className="pl-6 text-gray-600 dark:text-gray-300 list-disc list-inside">
               <li><strong>Milford Sound Cruise:</strong> IDR 776,000–1,746,000 (80–180 NZD)</li>
               <li><strong>Skydiving:</strong> IDR 2,910,000–5,335,000 (300–550 NZD) + optional photo/video package for
                 IDR
@@ -150,7 +153,7 @@ export default function EslOneKualaLumpur() {
 
           <section>
             <h2 className="text-lg font-bold flex items-center text-blue-500">Tips</h2>
-            <ul className="pl-6 text-gray-300 list-disc list-inside">
+            <ul className="pl-6 text-gray-600 dark:text-gray-300 list-disc list-inside">
               <li><strong>Mix Free and Paid Activities:</strong> Enjoy hiking and scenic views while splurging on one
                 or
                 two
@@ -183,6 +186,6 @@ export default function EslOneKualaLumpur() {
 
       <BackToTop/>
       <Footer/>
-    </>
+    </GlobalStateProvider>
   )
 }
