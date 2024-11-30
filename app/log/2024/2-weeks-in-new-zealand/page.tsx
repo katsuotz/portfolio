@@ -14,7 +14,7 @@ import {
 import ToggleDarkMode from "@/components/home/toggle-dark-mode";
 import {GlobalStateProvider} from "@/context/GlobalStateContext";
 
-export default function EslOneKualaLumpur() {
+export default function TwoWeeksNewZealand() {
   return (
     <GlobalStateProvider>
       <ToggleDarkMode/>
@@ -48,53 +48,53 @@ export default function EslOneKualaLumpur() {
           <section>
             <h2 className="text-lg font-bold flex items-center text-blue-500">Budget Breakdown</h2>
 
-            <span className="italic text-gray-600 dark:text-gray-300">Rate: 1 NZD = IDR 9,700</span>
+            <span className="italic text-gray-600 dark:text-gray-300">Rate: 1 NZD = IDR 9.700</span>
 
             <h3 className="font-bold">1. Flights (Round Trip)</h3>
-            <p><strong>Cost:</strong> IDR 11,500,000</p>
+            <p><strong>Cost:</strong> IDR 11.500.000</p>
             <p>I booked my round-trip flight from Jakarta to Christchurch with a transit in Melbourne. Early booking
               helped
               me secure this price.</p>
 
             <h3 className="font-bold">2. Campervan Rental</h3>
-            <p><strong>Daily Rate:</strong> IDR 700,000–1,400,000<br/>
+            <p><strong>Daily Rate:</strong> IDR 700.000–1.400.000<br/>
               <strong>Duration:</strong> 14 days<br/>
-              <strong>Total:</strong> IDR 9,800,000–19,600,000</p>
+              <strong>Total:</strong> IDR 9.800.000–19.600.000</p>
             <p>The campervan was my home on wheels, saving money on accommodations while providing the flexibility to
               travel at my own pace. You can saved a lot of money if you travel by more than 2 persons.</p>
 
             <h3 className="font-bold">3. Fuel</h3>
-            <p><strong>Total Cost:</strong> IDR 1,000,000</p>
+            <p><strong>Total Cost:</strong> IDR 1.000.000</p>
             <p>Driving a campervan across the South Island involved long distances, but efficient route planning helped
               keep
               fuel costs reasonable.</p>
 
             <h3 className="font-bold">4. Food</h3>
-            <p><strong>Daily Budget:</strong> IDR 71,000–107,000<br/>
-              <strong>Total for 14 Days:</strong> IDR 1,000,000–1,500,000</p>
+            <p><strong>Daily Budget:</strong> IDR 71.000–107.000<br/>
+              <strong>Total for 14 Days:</strong> IDR 1.000.000–1.500.000</p>
             <p>Most meals were prepared in the campervan’s kitchen, with occasional indulgences in local eateries.</p>
 
             <h3 className="font-bold">5. Campsites</h3>
             <p>While many campsites in New Zealand are free, I occasionally opted for paid sites with better facilities
               or
               stunning views.</p>
-            <p><strong>Cost:</strong> IDR 0–485,000 per night (Free–50 NZD)<br/></p>
+            <p><strong>Cost:</strong> IDR 0–485.000 per night (Free–50 NZD)<br/></p>
 
             <h3 className="font-bold">6. Activities</h3>
             <p>One of the highlights of the South Island is the range of free activities, such as hiking. However, I
               also
               splurged on a few iconic paid activities:</p>
             <ul className="pl-6 text-gray-600 dark:text-gray-300 list-disc list-inside">
-              <li><strong>Milford Sound Cruise:</strong> IDR 776,000–1,746,000 (80–180 NZD)</li>
-              <li><strong>Skydiving:</strong> IDR 2,910,000–5,335,000 (300–550 NZD) + optional photo/video package for
+              <li><strong>Milford Sound Cruise:</strong> IDR 776.000–1.746.000 (80–180 NZD)</li>
+              <li><strong>Skydiving:</strong> IDR 2.910.000–5.335.000 (300–550 NZD) + optional photo/video package for
                 IDR
-                2,415,300–4,355,300 (249–449 NZD)
+                2.415.300–4.355.300 (249–449 NZD)
               </li>
-              <li><strong>Bungee Jumping:</strong> IDR 3,104,000–3,783,000 (320–390 NZD)</li>
-              <li><strong>Franz Josef Helicopter Ride:</strong> IDR 2,425,000–4,850,000 (250–500 NZD)</li>
-              <li><strong>Akaroa Dolphin/Penguin Viewing:</strong> IDR 1,164,000 (120 NZD)</li>
-              <li><strong>Penguin Viewing in Oamaru:</strong> IDR 194,000 (20 NZD)</li>
-              <li><strong>Miscellaneous Activities:</strong> IDR 97,000–485,000 (10–50 NZD)</li>
+              <li><strong>Bungee Jumping:</strong> IDR 3.104.000–3.783.000 (320–390 NZD)</li>
+              <li><strong>Franz Josef Helicopter Ride:</strong> IDR 2.425.000–4.850.000 (250–500 NZD)</li>
+              <li><strong>Akaroa Dolphin/Penguin Viewing:</strong> IDR 1.164.000 (120 NZD)</li>
+              <li><strong>Penguin Viewing in Oamaru:</strong> IDR 194.000 (20 NZD)</li>
+              <li><strong>Miscellaneous Activities:</strong> IDR 97.000–485.000 (10–50 NZD)</li>
             </ul>
           </section>
 
@@ -108,28 +108,28 @@ export default function EslOneKualaLumpur() {
               </tr>
               <tr>
                 <td>Flights</td>
-                <td>11,500,000</td>
+                <td>11.500.000</td>
               </tr>
               <tr>
                 <td>Campervan</td>
-                <td>9,800,000–19,600,000</td>
+                <td>9.800.000–19.600.000</td>
               </tr>
               <tr>
                 <td>Fuel</td>
-                <td>1,000,000</td>
+                <td>1.000.000</td>
               </tr>
               <tr>
                 <td>Food</td>
-                <td>1,000,000–1,500,000</td>
+                <td>1.000.000–1.500.000</td>
               </tr>
               <tr>
                 <td>Activities and others</td>
-                <td>5,000,000~20,000,000</td>
+                <td>5.000.000~20.000.000</td>
               </tr>
               </tbody>
             </table>
-            <p className="italic mt-2">In total, I spent around IDR 50,000,000 more or less. I would say that IDR
-              40,000,000 is enough if have a tight budget. I also visited New Zealand on November which is almost summer
+            <p className="italic mt-2">In total, I spent around IDR 50.000.000 more or less. I would say that IDR
+              40.000.000 is enough if have a tight budget. I also visited New Zealand on November which is almost summer
               and it's almost the peak season. You can try to visit before November or after February for much cheaper
               price.</p>
           </section>

@@ -1,7 +1,7 @@
 export const metadata = {
-  title: 'ESL One Kuala Lumpur 2023 | Katsuotz',
-  description: 'ESL One Kuala Lumpur 2023 Experience.',
-  keywords: 'esl, esl one, esl one kl, esl one kuala lumpur, kuala lumpur, malaysia'
+  title: '2 Weeks in New Zealand | Katsuotz',
+  description: 'New Zealand Campervan Experience.',
+  keywords: 'new zealand, campervan, travelling, backpacking, road trip'
 }
 
 export default function LogLayout(
