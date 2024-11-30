@@ -24,7 +24,7 @@ export default function EslOneKualaLumpur() {
         <div className="container max-w-[900px] flex flex-col gap-4">
           <section>
             <h2 className="text-lg font-bold flex items-center text-blue-500">Itinerary Overview</h2>
-            <p>Here’s how my two weeks were spent:</p>
+            <p>Here’s my two weeks itinerary plan:</p>
             <ul className="pl-6 text-gray-300 list-disc list-inside">
               <li><strong>Day 1:</strong> Flight from Jakarta to Christchurch.</li>
               <li><strong>Day 2-4:</strong> Exploring Tekapo, Lake Pukaki, and Mount Cook.</li>
