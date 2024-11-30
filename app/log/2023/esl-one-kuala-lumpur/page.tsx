@@ -22,7 +22,7 @@ export default function EslOneKualaLumpur() {
           ESL One Kuala Lumpur Experience
         </h3>
 
-        <div className="container max-w-[600px]">
+        <div className="container max-w-[900px]">
           <p>Few months ago, my friend and I went to Bali Major to watch Dota 2 Tournament. The Bali Major event was
             kinda okay but I think the vibe was really chill because the venue wasn't that big. When ESL announced that
             they will make new event called ESL One Kuala Lumpur 2023 and the venue is much more bigger and much cheaper

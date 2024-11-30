@@ -19,6 +19,12 @@ export default function Log() {
 
         <div className="container max-w-[600px]">
           <div>
+            <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">2024</h4>
+            <p>
+              <Link href="/log/2024/2-weeks-in-new-zealand">🔗 2 Weeks in New Zealand (2024/11/30)</Link>
+            </p>
+          </div>
+          <div>
             <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">2023</h4>
             <p>
               <Link href="/log/2023/esl-one-kuala-lumpur">🔗 ESL One Kuala Lumpur (2023/12/17)</Link>
