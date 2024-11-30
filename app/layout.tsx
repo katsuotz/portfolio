@@ -7,10 +7,10 @@ import Script from "next/script"
 import {Metadata} from "next";
 
 export const metadata:Metadata = {
-  title: 'Irfan Fakhri - Software Engineer | Katsuotz',
+  title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
   description: 'Experienced full-stack developer with over 5 years of industry expertise, actively engaged in startups and freelancing on side projects.',
   keywords: 'web design, web, web apps, html, css, js, ts, node.js, next, vue, react, go, golang, php, laravel, mongodb, sql, mysql, postgre',
-  authors: [{ name: 'Irfan Fakhri' }, { name: 'Katsuotz' }],
+  authors: [{ name: 'Muhammad Irfan Fakhri' }, { name: 'Katsuotz' }],
 }
 
 export const viewport = 'width=device-width, initial-scale=1';
