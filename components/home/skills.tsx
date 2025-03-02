@@ -50,6 +50,14 @@ export default function Skills() {
       gray: true,
     },
     {
+      logo: '/skills/svelte.png',
+      name: 'Svelte',
+    },
+    {
+      logo: '/skills/vitest.svg',
+      name: 'Vitest',
+    },
+    {
       logo: '/skills/go.png',
       name: 'Golang',
     },
