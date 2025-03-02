@@ -20,13 +20,14 @@ export default function EslOneKualaLumpur() {
       <ToggleDarkMode/>
       <section className="relative flex flex-col justify-center items-center lg:pt-12 pt-12 lg:pb-20 pb-12">
         <h3
-          className="text-3xl sm:text-3xl font-bold mb-8 flex items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
+          className="text-3xl sm:text-3xl font-bold flex items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
           {/*<CableCarIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>*/}
           ESL One Kuala Lumpur Experience
         </h3>
+        <p className="mt-2 !mb-4 text-white/80">2023/12/17</p>
 
         <div className="container max-w-[900px]">
-          <p>A few months ago, my friend and I went to the Bali Major to watch a Dota 2 tournament. The Bali Major event
+          <p>A few months ago beore ESL One Kuala Lumpur 2023, my friend and I went to the Bali Major to watch a Dota 2 tournament. The Bali Major event
             was decent, but the vibe felt quite chill because the venue wasn’t very big. When ESL announced a new event
             called ESL One Kuala Lumpur 2023, with a much larger and more affordable venue than the Bali Major, we
             thought, why not give it a try?</p>
