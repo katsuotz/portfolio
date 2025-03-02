@@ -84,6 +84,10 @@ export default function Skills() {
       className: 'w-auto h-8',
       gray: true,
     },
+    {
+      logo: '/skills/redis.webp',
+      name: 'Redis',
+    },
   ]
 
   return (
@@ -93,7 +97,7 @@ export default function Skills() {
         Skills
       </h3>
 
-      <div className="container lg:max-w-[800px]">
+      <div className="container lg:max-w-[820px]">
         <div className="flex flex-wrap gap-x-6 gap-y-8 justify-center">
           {skills.map((skill,key) => {
             return <TooltipProvider delayDuration={0} key={key}>
