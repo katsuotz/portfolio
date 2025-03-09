@@ -58,7 +58,7 @@ export default function Project({showAllProjects = false}) {
       highlight: true,
     },
     {
-      logo: '/education/unikom.png',
+      logo: '/education/unikom.webp',
       name: 'Cisco Network Education',
       year: '2021',
       description: 'A web app for managing Unikom students who have taken a network class.',

@@ -16,7 +16,7 @@ export default function Education() {
           <div className="col-span-12 sm:col-span-6">
             <div className="flex flex-col px-10 pb-6 pt-16 relative mx-auto w-full rounded-2xl p-4 transition-all duration-200 ease-in-out hover:scale-[103%] bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
               <div className="p-4 rounded-[2.4rem] absolute left-10 top-0 -translate-y-1/2">
-                <Image unoptimized={true} width={200} height={200} src="/education/unikom.png" alt="Universitas Komputer Indonesia" className="w-24 h-24"/>
+                <Image unoptimized={true} width={200} height={200} src="/education/unikom.webp" alt="Universitas Komputer Indonesia" className="w-24 h-24"/>
               </div>
               <p className="font-bold tracking-wide text-2xl sm:text-3xl">Universitas Komputer Indonesia</p>
               <p className="font-light text-xl text-gray-600 dark:text-gray-400">Bachelor Degree</p>
@@ -27,7 +27,7 @@ export default function Education() {
           <div className="col-span-12 sm:col-span-6 mt-12 sm:mt-0">
             <div className="flex flex-col px-10 pb-6 pt-16 relative mx-auto w-full rounded-2xl p-4 transition-all duration-200 ease-in-out hover:scale-[103%] bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
               <div className="p-4 rounded-[2.4rem] absolute left-10 top-0 -translate-y-1/2">
-                <Image unoptimized={true} width={200} height={200} src="/education/smkn4.png" alt="SMK Negeri 4 Bandung" className="w-24 h-24"/>
+                <Image unoptimized={true} width={200} height={200} src="/education/smkn4.webp" alt="SMK Negeri 4 Bandung" className="w-24 h-24"/>
               </div>
               <p className="font-bold tracking-wide text-2xl sm:text-3xl">SMK Negeri 4 Bandung</p>
               <p className="font-light text-xl text-gray-600 dark:text-gray-400">Vocational High School</p>
