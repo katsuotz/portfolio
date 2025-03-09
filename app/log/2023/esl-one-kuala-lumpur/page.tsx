@@ -19,28 +19,29 @@ export default function EslOneKualaLumpur() {
     <GlobalStateProvider>
       <ToggleDarkMode/>
       <section className="relative flex flex-col justify-center items-center lg:pt-12 pt-12 lg:pb-20 pb-12">
-        <h3
-          className="text-3xl sm:text-3xl font-bold flex items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
-          {/*<CableCarIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>*/}
-          ESL One Kuala Lumpur Experience
-        </h3>
-        <p className="mt-2 !mb-4 text-white/80">2023/12/17</p>
+        <div className="container max-w-[900px] flex flex-col gap-4">
+          <h1
+            className="text-3xl sm:text-3xl text-center font-bold flex justify-center items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
+            {/*<CableCarIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>*/}
+            ESL One Kuala Lumpur Experience
+          </h1>
+          <p className="text-center text-white/80">2023/12/17</p>
 
-        <div className="container max-w-[900px]">
-          <p>A few months ago beore ESL One Kuala Lumpur 2023, my friend and I went to the Bali Major to watch a Dota 2 tournament. The Bali Major event
+          <p>A few months ago beore ESL One Kuala Lumpur 2023, my friend and I went to the Bali Major to watch a Dota 2
+            tournament. The Bali Major event
             was decent, but the vibe felt quite chill because the venue wasn’t very big. When ESL announced a new event
             called ESL One Kuala Lumpur 2023, with a much larger and more affordable venue than the Bali Major, we
             thought, why not give it a try?</p>
 
           <div>
-            <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Ticket Comparison</h4>
+            <h4 className="text-lg font-bold flex items-center text-blue-500">Ticket Comparison</h4>
             <p className="font-bold text-sm">Bali Major Standard Ticket: ~IDR 7,200,000</p>
             <p className="font-bold text-sm">ESL One Standard Ticket: ~IDR 630,000</p>
             <p>You can literally buy more than 10 ESL tickets for the price of one Bali Major ticket.</p>
           </div>
 
           <div>
-            <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Place to Stay</h4>
+            <h4 className="text-lg font-bold flex items-center text-blue-500">Place to Stay</h4>
             <p>I stayed near the venue at an Airbnb called Arte Mont Kiara. It’s about a 10-minute walk to the ESL One
               KL venue at the Malaysia International Trade and Exhibition Centre (MITEC).</p>
             <p>It’s an apartment-style accommodation. The total price was <b>IDR 3,900,000</b> for 7 nights. Since we
@@ -55,42 +56,44 @@ export default function EslOneKualaLumpur() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Venue</h4>
+            <h4 className="text-lg font-bold flex items-center text-blue-500">Venue</h4>
             <p>This was my first time attending an e-sports event with such a big stage. There were so many things to
               see live. From my seat, I could clearly see the players, hosts, panelists, and casters, which made the
               experience much more immersive.</p>
             <p>For reference, when I attended the Bali Major, the panelists and casters weren’t even at the venue. They
               cast the event from a hotel, which felt very odd.</p>
-            <Carousel>
-              <CarouselContent>
-                <CarouselItem>
-                  <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-1.jpg"
-                         alt="ESL One KL Venue" className="w-full"/>
-                  <p className="text-center">ESL One KL Venue</p>
-                </CarouselItem>
-                <CarouselItem>
-                  <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-2.jpg"
-                         alt="ESL One KL Venue (Outside)" className="w-full"/>
-                  <p className="text-center">ESL One KL Venue (Outside)</p>
-                </CarouselItem>
-                <CarouselItem>
-                  <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-3.jpg"
-                         alt="ESL One KL Venue (Outside)" className="w-full"/>
-                  <p className="text-center">ESL One KL Venue (Outside)</p>
-                </CarouselItem>
-                <CarouselItem>
-                  <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-4.jpg"
-                         alt="Marci Caninus Drawing" className="w-full"/>
-                  <p className="text-center">Marci - Caninus Drawing</p>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious/>
-              <CarouselNext/>
-            </Carousel>
+            <div className="px-8 lg:px-0 pt-4">
+              <Carousel>
+                <CarouselContent>
+                  <CarouselItem>
+                    <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-1.jpg"
+                           alt="ESL One KL Venue" className="w-full"/>
+                    <p className="text-center">ESL One KL Venue</p>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-2.jpg"
+                           alt="ESL One KL Venue (Outside)" className="w-full"/>
+                    <p className="text-center">ESL One KL Venue (Outside)</p>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-3.jpg"
+                           alt="ESL One KL Venue (Outside)" className="w-full"/>
+                    <p className="text-center">ESL One KL Venue (Outside)</p>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image unoptimized={true} width={0} height={0} src="/log/kuala-lumpur/esl-one-4.jpg"
+                           alt="Marci Caninus Drawing" className="w-full"/>
+                    <p className="text-center">Marci - Caninus Drawing</p>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious/>
+                <CarouselNext/>
+              </Carousel>
+            </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Watching Experience</h4>
+            <h4 className="text-lg font-bold flex items-center text-blue-500">Watching Experience</h4>
             <p>This was the best live event I’ve ever attended, with so many cool effects for big ultimates. The
               caster’s enthusiasm was amazing, and the overall venue vibe was unbeatable!</p>
             <div className="flex">
@@ -102,7 +105,7 @@ export default function EslOneKualaLumpur() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Booth, Foods, and Merch</h4>
+            <h4 className="text-lg font-bold flex items-center text-blue-500">Booth, Foods, and Merch</h4>
             <p>The booths, food, and merchandise were fantastic at ESL One.</p>
             <p>The booths offered various activities like airbrush tattoos, Intel Solo Mid 1v1, Intel Racing Area, DHL
               Spin, DHL VR Game, Tarot Reading, and more.</p>
@@ -123,7 +126,7 @@ export default function EslOneKualaLumpur() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">Vlog</h4>
+            <h4 className="text-lg font-bold flex items-center text-blue-500">Vlog</h4>
             <p>While in KL, I streamed my walk from the apartment to the venue. You can check out the VOD from my stream
               below. It was a wonderful experience for me.</p>
             <p>ESL One KL Venue Review:

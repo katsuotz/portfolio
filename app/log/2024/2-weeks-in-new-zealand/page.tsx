@@ -19,99 +19,101 @@ export default function TwoWeeksNewZealand() {
     <GlobalStateProvider>
       <ToggleDarkMode/>
       <div className="relative flex flex-col justify-center items-center lg:pt-12 pt-12 lg:pb-20 pb-12">
-        <h1
-          className="text-3xl sm:text-3xl font-bold flex items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
-          {/*<CableCarIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>*/}
-          Exploring New Zealand's South Island in 2 Weeks
-        </h1>
-        <p className="mt-2 !mb-4 text-white/80">2024/11/30</p>
         <div className="container max-w-[900px] flex flex-col gap-4">
+          <h1
+            className="text-3xl sm:text-3xl text-center font-bold flex justify-center items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
+            {/*<CableCarIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>*/}
+            Exploring New Zealand's South Island in 2 Weeks
+          </h1>
+          <p className="text-center text-white/80">2024/11/30</p>
           <section>
-            <Carousel>
-              <CarouselContent>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/mt cook.jpg"
-                           alt="Mt. Cook" className="h-[400px] w-auto"/>
-                    <p className="text-center">Mt. Cook</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0}
-                           src="/log/new-zealand/lake tekapo - the church of the good shepherd.jpg"
-                           alt="Lake Tekapo" className="h-[400px] w-auto"/>
-                    <p className="text-center">Lake Tekapo</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0}
-                           src="/log/new-zealand/the church of the good shepherd.jpg"
-                           alt="The Church of The Good Shepherd" className="h-[400px] w-auto"/>
-                    <p className="text-center">The Church of The Good Shepherd</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/christchurch - tram.jpg"
-                           alt="Christchurch - Tram" className="h-[400px] w-auto"/>
-                    <p className="text-center">Christchurch - Tram</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/countryside.jpg"
-                           alt="Central Otago Countryside" className="h-[400px] w-auto"/>
-                    <p className="text-center">Central Otago Countryside</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/lindis pass viewpoint.jpg"
-                           alt="Lindis Pass Viewpoint" className="h-[400px] w-auto"/>
-                    <p className="text-center">Lindis Pass Viewpoint</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/campsite.jpg"
-                           alt="Campsite" className="h-[400px] w-auto"/>
-                    <p className="text-center">Campsite</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/hitchhikers.jpg"
-                           alt="Campervan" className="h-[400px] w-auto"/>
-                    <p className="text-center">Me and My Friend met Manon, Hitchiker from French</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/lake tekapo - lavender.jpg"
-                           alt="Campervan" className="h-[400px] w-auto"/>
-                    <p className="text-center">Lavender</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/sheep.jpg"
-                           alt="Campervan" className="h-[400px] w-auto"/>
-                    <p className="text-center">Farmer's Sheep</p>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="flex justify-center">
-                  <div>
-                    <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/penguin.jpg"
-                           alt="Penguin at Oamaru" className="h-[400px] w-auto"/>
-                    <p className="text-center">Penguin at Oamaru</p>
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious/>
-              <CarouselNext/>
-            </Carousel>
+            <div className="px-8 lg:px-0">
+              <Carousel>
+                <CarouselContent>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/mt cook.jpg"
+                             alt="Mt. Cook" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Mt. Cook</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0}
+                             src="/log/new-zealand/lake tekapo - the church of the good shepherd.jpg"
+                             alt="Lake Tekapo" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Lake Tekapo</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0}
+                             src="/log/new-zealand/the church of the good shepherd.jpg"
+                             alt="The Church of The Good Shepherd" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">The Church of The Good Shepherd</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/christchurch - tram.jpg"
+                             alt="Christchurch - Tram" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Christchurch - Tram</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/countryside.jpg"
+                             alt="Central Otago Countryside" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Central Otago Countryside</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/lindis pass viewpoint.jpg"
+                             alt="Lindis Pass Viewpoint" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Lindis Pass Viewpoint</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/campsite.jpg"
+                             alt="Campsite" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Campsite</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/hitchhikers.jpg"
+                             alt="Campervan" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Me and My Friend met Manon, Hitchiker from French</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/lake tekapo - lavender.jpg"
+                             alt="Campervan" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Lavender</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/sheep.jpg"
+                             alt="Campervan" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Farmer's Sheep</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="flex justify-center">
+                    <div>
+                      <Image unoptimized={true} width={0} height={0} src="/log/new-zealand/penguin.jpg"
+                             alt="Penguin at Oamaru" className="h-[320px] lg:h-[400px] w-auto object-contain"/>
+                      <p className="text-center">Penguin at Oamaru</p>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious/>
+                <CarouselNext/>
+              </Carousel>
+            </div>
 
             <h2 className="text-lg font-bold flex items-center text-blue-500">Itinerary Overview</h2>
             <p>Here’s my two weeks itinerary plan:</p>
