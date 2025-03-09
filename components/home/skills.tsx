@@ -19,19 +19,19 @@ interface SkillType {
 export default function Skills() {
   const skills: SkillType[] = [
     {
-      logo: '/skills/js.png',
+      logo: '/skills/js.webp',
       name: 'JavaScript',
     },
     {
-      logo: '/skills/ts.png',
+      logo: '/skills/ts.webp',
       name: 'TypeScript',
     },
     {
-      logo: '/skills/node.png',
+      logo: '/skills/node.webp',
       name: 'Node.js',
     },
     {
-      logo: '/skills/vue.png',
+      logo: '/skills/vue.webp',
       name: 'Vue',
     },
     {
@@ -40,34 +40,34 @@ export default function Skills() {
       className: 'w-auto h-16'
     },
     {
-      logo: '/skills/react.png',
+      logo: '/skills/react.webp',
       name: 'React',
     },
     {
-      logo: '/skills/next.png',
+      logo: '/skills/next.webp',
       name: 'Next.js',
       className: 'w-auto h-6',
       gray: true,
     },
     {
-      logo: '/skills/svelte.png',
+      logo: '/skills/svelte.webp',
       name: 'Svelte',
     },
     {
-      logo: '/skills/vitest.svg',
+      logo: '/skills/vitest.webp',
       name: 'Vitest',
     },
     {
-      logo: '/skills/go.png',
+      logo: '/skills/go.webp',
       name: 'Golang',
     },
     {
-      logo: '/skills/php.png',
+      logo: '/skills/php.webp',
       name: 'PHP',
       gray: true,
     },
     {
-      logo: '/skills/laravel.png',
+      logo: '/skills/laravel.webp',
       name: 'Laravel',
     },
     {
@@ -75,11 +75,11 @@ export default function Skills() {
       name: 'MySQL',
     },
     {
-      logo: '/skills/postgre.png',
+      logo: '/skills/postgre.webp',
       name: 'PostgreSQL',
     },
     {
-      logo: '/skills/mongo.png',
+      logo: '/skills/mongo.webp',
       name: 'MongoDB',
       className: 'w-auto h-8',
       gray: true,
