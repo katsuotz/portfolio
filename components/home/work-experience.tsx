@@ -10,7 +10,7 @@ import {Laptop2Icon} from "lucide-react";
 export default function WorkExperience() {
   const experiences: WorkExperienceType[] = [
     {
-      logo: '/work/farmbyte.png',
+      logo: '/work/farmbyte.webp',
       flag: '/flag/my.svg',
       company: 'FarmByte',
       position: [{

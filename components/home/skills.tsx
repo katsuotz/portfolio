@@ -71,7 +71,7 @@ export default function Skills() {
       name: 'Laravel',
     },
     {
-      logo: '/skills/mysql.png',
+      logo: '/skills/mysql.webp',
       name: 'MySQL',
     },
     {
