@@ -85,7 +85,7 @@ export default function Skills() {
       gray: true,
     },
     {
-      logo: '/skills/redis.webp',
+      logo: '/skills/redis.svg',
       name: 'Redis',
     },
   ]
