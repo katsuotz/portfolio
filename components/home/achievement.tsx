@@ -17,7 +17,7 @@ interface AchievementType {
 export default function Achievement() {
   const achievements: AchievementType[] = [
     {
-      logo: '/achievement/worldskillsindia.png',
+      logo: '/achievement/worldskillsindia.webp',
       position: '1st Position',
       title: 'Virtual Skills Competition - International Online Exhibition',
       organizer: 'WorldSkills India',
@@ -26,7 +26,7 @@ export default function Achievement() {
       gray: true,
     },
     {
-      logo: '/achievement/hago.png',
+      logo: '/achievement/hago.webp',
       position: 'Best Student Game Developer',
       title: 'Jawara Games Indonesia',
       organizer: 'Hago Indonesia',
@@ -34,7 +34,7 @@ export default function Achievement() {
       url: 'https://drive.google.com/file/d/18y72Ec0a8OiRyIYYDJorMAAKELELNTMp/view?usp=drive_link',
     },
     {
-      logo: '/achievement/kemnaker.png',
+      logo: '/achievement/kemnaker.webp',
       position: '1st Winner',
       title: 'National Selection Web Technologies',
       organizer: 'Ministry of Manpower Indonesia',
@@ -42,7 +42,7 @@ export default function Achievement() {
       url: 'https://drive.google.com/file/d/19qznZ5Urq5sVVPcESLdVkNpgImlD4i1s/view?usp=drive_link',
     },
     {
-      logo: '/achievement/kemdikbud.png',
+      logo: '/achievement/kemdikbud.webp',
       position: 'Gold Medal',
       title: 'LKS Web Design & Development',
       organizer: 'Ministry of Education and Culture Indonesia',

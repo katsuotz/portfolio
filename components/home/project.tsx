@@ -65,7 +65,7 @@ export default function Project({showAllProjects = false}) {
       image: '/project/ccna.png',
     },
     {
-      logo: '/achievement/kemdikbud.png',
+      logo: '/achievement/kemdikbud.webp',
       name: 'Virtual Exhibition LKS',
       year: '2020',
       description: 'A 3d virtual showcase exhibition in Ministry of Education and Culture Indonesia yearly event for Vocational School.',
@@ -73,7 +73,7 @@ export default function Project({showAllProjects = false}) {
       highlight: true,
     },
     {
-      logo: '/achievement/kemnaker.png',
+      logo: '/achievement/kemnaker.webp',
       name: 'eModul',
       year: '2020',
       description: 'Online e-book library for Ministry of Manpower Indonesia.',
