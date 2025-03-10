@@ -96,7 +96,7 @@ export default function Project({showAllProjects = false}) {
       url: 'https://katsuotz.itch.io/middle-space',
     },
     {
-      logo: '/education/smkn4.png',
+      logo: '/education/smkn4.webp',
       name: 'eSchool',
       year: '2017 - 2018',
       description: 'A web app to manage all aspects of school including student enrollment, teacher management, subject allocation, and scheduling.',
@@ -104,7 +104,7 @@ export default function Project({showAllProjects = false}) {
       url: 'https://eschool.smkn4bdg.sch.id/',
     },
     {
-      logo: '/education/smkn4.png',
+      logo: '/education/smkn4.webp',
       name: 'SMKN 4 Landing Page',
       year: '2017',
       description: 'A customizable Landing Page and CMS for SMKN 4 Bandung.',
