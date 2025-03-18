@@ -2,22 +2,27 @@ stages:
   - build
   - deploy
 
+variables:
+  DEPLOY_PATH: "/opt/katsuotz-portfolio"
+  IMAGE_NAME: "katsuotz-portfolio"
+
+before_script:
+  - docker --version  # Check if Docker is installed
+  - mkdir -p $DEPLOY_PATH
+  - cd $DEPLOY_PATH
+
 build:
   stage: build
-  image: docker:latest
-  services:
-    - docker:dind
+  tags:
+    - docker
   script:
-    - docker build -t my-app .
-    - docker save my-app -o my-app.tar
-  artifacts:
-    paths:
-      - my-app.tar
+    - docker build -t $IMAGE_NAME .
 
 deploy:
   stage: deploy
-  only:
-    - main
+  tags:
+    - docker
   script:
-    - scp my-app.tar root@your-vps-ip:/root/
-    - ssh root@your-vps-ip "docker load -i /root/my-app.tar && docker run -d --rm -p 80:3000 --name my-app my-app"
+    - docker stop $IMAGE_NAME || true
+    - docker rm $IMAGE_NAME || true
+    - docker run -d --name $IMAGE_NAME -p 80:4000 --restart=always $IMAGE_NAME
