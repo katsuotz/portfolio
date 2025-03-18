@@ -9,7 +9,7 @@ export default function Footer() {
         <SocialMedia/>
       </div>
       <footer className="relative flex flex-col justify-center items-center">
-        <p className="text-gray-600 dark:text-gray-400 tracking-wide">&copy; {new Date().getFullYear()} <span className="text-black dark:text-white font-medium">Irfan Fakhri</span>. katsuotz.com</p>
+        <p className="text-gray-600 dark:text-gray-300 tracking-wide">&copy; {new Date().getFullYear()} <span className="text-black dark:text-white font-medium">Irfan Fakhri</span>. katsuotz.com</p>
       </footer>
     </div>
   )
