@@ -54,7 +54,7 @@ export default function Skills() {
       name: 'Svelte',
     },
     {
-      logo: '/skills/vitest.svg',
+      logo: '/skills/vitest.webp',
       name: 'Vitest',
     },
     {
