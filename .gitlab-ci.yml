@@ -1,15 +1,24 @@
+stages:
+  - build
+  - deploy
+
 variables:
-  GIT_STRATEGY: none
-  CI_COMMIT_MESSAGE: $CI_COMMIT_MESSAGE
+  DEPLOY_PATH: "/opt/katsuotz-portfolio"
+  IMAGE_NAME: "katsuotz-portfolio"
 
-deploy_prod:
+build:
   stage: build
+  tags:
+    - docker
   script:
-    - cd /var/www/project/irpon/portfolio
-    - git pull
-    - npm i --frozen-lock
-    # - cat $env_prod > .env
-    - npm run build
-    # - pm2 start "yarn start" --name irvanlg-portfolio
-    - pm2 restart irpon-portfolio --update-env
+    - docker build -t $IMAGE_NAME .
 
+deploy:
+  stage: deploy
+  tags:
+    - docker
+  script:
+    - docker stop $IMAGE_NAME || true
+    - docker rm $IMAGE_NAME || true
+    - docker build -t $IMAGE_NAME .
+    - docker run -d --name $IMAGE_NAME -p 80:3000 --restart=always $IMAGE_NAME
