@@ -9,6 +9,5 @@ deploy:
   script:
     - cd /var/www/portfolio
     - git pull origin master
-    - npm ci
+    - npm ci --prefer-offline
     - npm run build
-    - pm2 restart next-app || pm2 start "npm run start" --name next-app
