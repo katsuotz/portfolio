@@ -1,28 +1,14 @@
-stages:
-  - build
-  - deploy
-
 variables:
-  DEPLOY_PATH: "/opt/katsuotz-portfolio"
-  IMAGE_NAME: "katsuotz-portfolio"
+  GIT_STRATEGY: none
+  CI_COMMIT_MESSAGE: $CI_COMMIT_MESSAGE
 
-before_script:
-  - docker --version  # Check if Docker is installed
-  - mkdir -p $DEPLOY_PATH
-  - cd $DEPLOY_PATH
-
-build:
+deploy_prod:
   stage: build
-  tags:
-    - docker
   script:
-    - docker build -t $IMAGE_NAME .
-
-deploy:
-  stage: deploy
-  tags:
-    - docker
-  script:
-    - docker stop $IMAGE_NAME || true
-    - docker rm $IMAGE_NAME || true
-    - docker run -d --name $IMAGE_NAME -p 80:4000 --restart=always $IMAGE_NAME
+    - cd /var/www/portfolio
+    - git pull
+    - npm i --frozen-lock
+    # - cat $env_prod > .env
+    - npm run build
+    # - pm2 start "yarn start" --name irvanlg-portfolio
+    - pm2 restart next-app
