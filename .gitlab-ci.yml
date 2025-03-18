@@ -1,12 +1,28 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  DEPLOY_PATH: "/opt/katsuotz-portfolio"
+  IMAGE_NAME: "katsuotz-portfolio"
+
+before_script:
+  - docker --version  # Check if Docker is installed
+  - mkdir -p $DEPLOY_PATH
+  - cd $DEPLOY_PATH
+
 build:
   stage: build
   tags:
     - docker
-  image: docker:latest
-  services:
-    - docker:dind
-  variables:
-    DOCKER_HOST: tcp://localhost:2375
-    DOCKER_TLS_CERTDIR: ""
   script:
     - docker build -t $IMAGE_NAME .
+
+deploy:
+  stage: deploy
+  tags:
+    - docker
+  script:
+    - docker stop $IMAGE_NAME || true
+    - docker rm $IMAGE_NAME || true
+    - docker run -d --name $IMAGE_NAME -p 80:4000 --restart=always $IMAGE_NAME
