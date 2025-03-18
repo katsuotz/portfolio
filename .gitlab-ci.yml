@@ -4,11 +4,12 @@ variables:
 
 deploy_prod:
   stage: build
+  tags:
+    - shell
   script:
     - cd /var/www/portfolio
-    - git pull
-    - npm i --frozen-lock
-    # - cat $env_prod > .env
+    - git config --global credential.helper store
+    - git pull origin main
+    - npm ci
     - npm run build
-    # - pm2 start "yarn start" --name irvanlg-portfolio
-    - pm2 restart next-app
+    - pm2 restart next-app || pm2 start "npm run start" --name next-app
