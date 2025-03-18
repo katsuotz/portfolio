@@ -2,7 +2,7 @@ variables:
   GIT_STRATEGY: none
   CI_COMMIT_MESSAGE: $CI_COMMIT_MESSAGE
 
-deploy_prod:
+deploy:
   stage: build
   tags:
     - shell
