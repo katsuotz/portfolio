@@ -9,7 +9,7 @@ deploy_prod:
   script:
     - cd /var/www/portfolio
     - git config --global credential.helper store
-    - git pull origin main
+    - git pull origin master
     - npm ci
     - npm run build
     - pm2 restart next-app || pm2 start "npm run start" --name next-app
