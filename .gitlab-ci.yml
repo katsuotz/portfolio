@@ -8,7 +8,6 @@ deploy_prod:
     - shell
   script:
     - cd /var/www/portfolio
-    - git config --global credential.helper store
     - git pull origin master
     - npm ci
     - npm run build
