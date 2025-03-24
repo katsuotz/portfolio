@@ -9,5 +9,5 @@ deploy:
   script:
     - cd /var/www/portfolio
     - git pull origin master
-    - npm ci --prefer-offline
+    - npm ci --prefer-offline --no-fund --no-audit
     - npm run build
