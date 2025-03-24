@@ -20,6 +20,9 @@ export default function LogLayout(
         <Link href="/projects" className="text-white flex items-center text-sm border-b-2 border-dotted border-blue-400 dark:border-white">
           Projects
         </Link>
+        <Link href="/showcase" className="text-white flex items-center text-sm border-b-2 border-dotted border-blue-400 dark:border-white">
+          Showcase
+        </Link>
         <Link href="/log" className="text-white flex items-center text-sm border-b-2 border-dotted border-blue-400 dark:border-white">
           Logs
         </Link>
