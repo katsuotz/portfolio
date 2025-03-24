@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
-// @ts-ignore
-// import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import {vscDarkPlus} from "react-syntax-highlighter/dist/esm/styles/prism";
-import {CheckIcon, CheckSquareIcon, CopyIcon} from "lucide-react";
+import {CheckIcon, CopyIcon} from "lucide-react";
 
 type CodeBlockProps = {
   code: string;
