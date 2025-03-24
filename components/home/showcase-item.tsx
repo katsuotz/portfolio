@@ -55,7 +55,7 @@ export default function ShowcaseItem({showcase}: { showcase: ShowcaseType }) {
           (showCode ?
             <div className="px-4 w-full py-4">
               <div className="flex gap-2">
-                {
+                {showcase.src.length > 1 &&
                   showcase.src.map((src: any, index: number) =>
                     <Button key={index} className="flex-grow rounded-full mb-4"
                             variant={indexCode === index ? 'default' : 'outline'}
