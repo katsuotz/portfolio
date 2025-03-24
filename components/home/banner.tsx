@@ -54,7 +54,7 @@ export default function Banner() {
         <Globe className="lg:-bottom-[12rem] top-[unset] bottom-24"/>
       </div>
 
-      <div className="absolute  left-1/2 -translate-x-1/2 bottom-10 flex justify-center mt-14">
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-28 md:bottom-10 flex justify-center mt-14">
         <RainbowButton onClick={scrollPage} className="intro-y">
           <ArrowDown className="size-5 mr-2"/>
           See More
@@ -65,7 +65,7 @@ export default function Banner() {
         <p className="flex items-center intro-y"><MailIcon className="w-4 h-4 mr-2"/> m.irfan.fakhri66@gmail.com</p>
         <p className="flex items-center intro-y"><MapIcon className="w-4 h-4 mr-2"/> Indonesia</p>
       </div>
-      <div className="absolute bottom-0 right-0 pr-10 pb-10 flex gap-6">
+      <div className="absolute bottom-0 md:right-0 md:pr-10 pb-10 flex gap-6">
         <p className="flex items-center intro-y">
           <Link href="/showcase"
                 className="flex items-center border-b hover:border-b-white border-transparent border-dotted">
