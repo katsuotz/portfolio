@@ -1,6 +1,6 @@
 'use client'
 
-import {ArrowDown, MailIcon, MapIcon, ScrollTextIcon} from "lucide-react";
+import {ArrowDown, MailIcon, MapIcon, ScrollTextIcon, TvMinimalPlayIcon} from "lucide-react";
 import {Typewriter} from 'react-simple-typewriter'
 import SocialMedia from "@/components/home/social-media";
 import Link from "next/link";
@@ -65,7 +65,13 @@ export default function Banner() {
         <p className="flex items-center intro-y"><MailIcon className="w-4 h-4 mr-2"/> m.irfan.fakhri66@gmail.com</p>
         <p className="flex items-center intro-y"><MapIcon className="w-4 h-4 mr-2"/> Indonesia</p>
       </div>
-      <div className="absolute bottom-0 left-0 pl-10 pb-10">
+      <div className="absolute bottom-0 right-0 pr-10 pb-10 flex gap-6">
+        <p className="flex items-center intro-y">
+          <Link href="/showcase"
+                className="flex items-center border-b hover:border-b-white border-transparent border-dotted">
+            <TvMinimalPlayIcon className="w-4 h-4 mr-2"/> Showcase
+          </Link>
+        </p>
         <p className="flex items-center intro-y">
           <Link href="/log"
                 className="flex items-center border-b hover:border-b-white border-transparent border-dotted">
