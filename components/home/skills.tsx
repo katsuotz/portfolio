@@ -114,9 +114,7 @@ export default function Skills() {
                       className={`${skill.className || 'w-auto h-12'} ${skill.gray ? 'invert dark:invert-0' : ''}`}
                     />
                   </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{skill.name}</p>
-                  </TooltipContent>
+                  <TooltipContent>{skill.name}</TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             )
