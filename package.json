@@ -7,7 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "start-server": "next start -p 2006"
+    "format": "prettier . --write",
+    "start-server": "next start -p 2006",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,tsx,ts}": [
+      "prettier . --write"
+    ]
   },
   "dependencies": {
     "@radix-ui/react-collapsible": "^1.0.3",
@@ -37,7 +44,10 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.2.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "postcss": "^8.4.49",
+    "prettier": "3.5.3",
     "tailwindcss": "^4.0.16",
     "typescript": "^5.8.2"
   }

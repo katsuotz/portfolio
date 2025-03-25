@@ -1,269 +1,268 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Cube</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .scene {
+        margin: 0 100px;
+      }
+
+      .cube {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform: rotateX(-30deg) rotateY(60deg);
+        transform-style: preserve-3d;
+      }
+
+      .cube > div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .cube > div > span {
+        flex: 0 0 33.3333%;
+        height: 33.33333%;
+        border: 2px solid #fff;
+      }
+
+      .front {
+        transform: translateZ(100px);
+        background-color: #fa5252;
+      }
+
+      .back {
+        transform: translateZ(-100px);
+        background-color: #f76707;
+      }
+
+      .top {
+        transform: rotateX(90deg) translateZ(100px);
+        background-color: #fab005;
+      }
+
+      .bottom {
+        transform: rotateX(90deg) translateZ(-100px);
+        background-color: #7950f2;
+      }
+
+      .left {
+        transform: rotateY(90deg) translateZ(-100px);
+        background-color: #4c6ef5;
+      }
+
+      .right {
+        transform: rotateY(90deg) translateZ(100px);
+        background-color: #12b886;
+      }
+
+      .rotateY > .cube {
+        animation: rotateYAnimation 4s infinite;
+        animation-delay: 0.5s;
+      }
+
+      .rotateX > .cube {
+        animation: rotateXAnimation 4s infinite;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes rotateYAnimation {
+        0% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, 0);
         }
-
-        html, body {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        25% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, -90deg);
         }
-
-        .scene {
-            margin: 0 100px;
+        50% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, -180deg);
         }
-
-        .cube {
-            width: 200px;
-            height: 200px;
-            position: relative;
-            transform: rotateX(-30deg) rotateY(60deg);
-            transform-style: preserve-3d;
+        75% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, -270deg);
         }
-
-        .cube > div {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: .9;
-            display: flex;
-            flex-wrap: wrap;
+        100% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, -360deg);
         }
+      }
 
-        .cube > div > span {
-            flex: 0 0 33.3333%;
-            height: 33.33333%;
-            border: 2px solid #fff;
+      @keyframes rotateXAnimation {
+        0% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 0, 0, 0);
         }
-
-        .front {
-            transform: translateZ(100px);
-            background-color: #fa5252;
+        25% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(1, 0, 0, -90deg);
         }
-
-
-        .back {
-            transform: translateZ(-100px);
-            background-color: #f76707;
+        50% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(1, 0, 0, -180deg);
         }
-
-        .top {
-            transform: rotateX(90deg) translateZ(100px);
-            background-color: #fab005;
+        75% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(1, 0, 0, -270deg);
         }
-
-        .bottom {
-            transform: rotateX(90deg) translateZ(-100px);
-            background-color: #7950f2;
+        100% {
+          transform: rotateX(-30deg) rotateY(60deg) rotate3d(1, 0, 0, -360deg);
         }
-
-        .left {
-            transform: rotateY(90deg) translateZ(-100px);
-            background-color: #4c6ef5;
-        }
-
-        .right {
-            transform: rotateY(90deg) translateZ(100px);
-            background-color: #12b886;
-        }
-
-        .rotateY > .cube {
-            animation: rotateYAnimation 4s infinite;
-            animation-delay: .5s;
-        }
-
-
-        .rotateX > .cube {
-            animation: rotateXAnimation 4s infinite;
-            animation-delay: .5s;
-        }
-
-        @keyframes rotateYAnimation {
-            0% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, 0);
-            }
-            25% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, -90deg);
-            }
-            50% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, -180deg);
-            }
-            75% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, -270deg);
-            }
-            100% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 1, 0, -360deg);
-            }
-        }
-
-        @keyframes rotateXAnimation {
-            0% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(0, 0, 0, 0);
-            }
-            25% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(1, 0, 0, -90deg);
-            }
-            50% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(1, 0, 0, -180deg);
-            }
-            75% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(1, 0, 0, -270deg);
-            }
-            100% {
-                transform: rotateX(-30deg) rotateY(60deg) rotate3d(1, 0, 0, -360deg);
-            }
-        }
+      }
     </style>
-</head>
-<body>
-<div class="scene rotateY">
-    <div class="cube">
+  </head>
+  <body>
+    <div class="scene rotateY">
+      <div class="cube">
         <div class="front">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="back">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="right">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="left">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="top">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="bottom">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </div>
     </div>
-</div>
-<div class="scene rotateX">
-    <div class="cube">
+    <div class="scene rotateX">
+      <div class="cube">
         <div class="front">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="back">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="right">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="left">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="top">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="bottom">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>
