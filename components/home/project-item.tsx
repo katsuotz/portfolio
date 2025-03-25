@@ -59,10 +59,10 @@ export default function ProjectItem({project}: { project:ProjectType }) {
             </DialogClose>
             {
               project.url ?
-                <Link href={project.url} target="_blank" className={buttonVariants({ variant: "default" })}>
-                  <ExternalLinkIcon className="w-4 h-4 mr-2"/>
+                <Button variant="default">
+                  <ExternalLinkIcon className="w-4 h-4 mr-2 stroke-current"/>
                   Visit
-                </Link>
+                </Button>
                 : ''
             }
           </div>
