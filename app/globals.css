@@ -128,9 +128,13 @@
     @apply border-border dark:text-white;
   }
 
-  :is(svg, svg *) {
+  :is(svg) {
     color: unset !important;
     stroke: currentColor !important;
+  }
+
+  :is(svg.stroke-none) {
+    stroke: none !important;
   }
 
   body {
