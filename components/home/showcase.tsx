@@ -25,7 +25,7 @@ export default function Showcase() {
       ],
       className: 'col-span-12 md:col-span-6 h-full',
       cardClassName: 'h-full',
-      iframeClassName: 'w-full flex-grow',
+      iframeClassName: 'w-full grow',
       highlight: true,
       livePreview: true,
     },

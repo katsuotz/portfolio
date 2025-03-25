@@ -57,7 +57,7 @@ export default function ShowcaseItem({showcase}: { showcase: ShowcaseType }) {
               <div className="flex gap-2">
                 {showcase.src.length > 1 &&
                   showcase.src.map((src: any, index: number) =>
-                    <Button key={index} className="flex-grow rounded-full mb-4"
+                    <Button key={index} className="grow rounded-full mb-4"
                             variant={indexCode === index ? 'default' : 'outline'}
                             onClick={() => loadCode(index)}>{src.type}</Button>
                   )
@@ -73,7 +73,7 @@ export default function ShowcaseItem({showcase}: { showcase: ShowcaseType }) {
                  width={480}
                  height={480}
                  unoptimized={true}
-                 className="w-full h-full object-cover brightness-75 group-hover/showcase:brightness-90 group-hover/showcase:md:scale-110 transition-all duration-300"/>
+                 className="w-full h-full object-cover brightness-75 group-hover/showcase:brightness-90 md:group-hover/showcase:scale-110 transition-all duration-300"/>
         }
 
         <div
@@ -84,9 +84,9 @@ export default function ShowcaseItem({showcase}: { showcase: ShowcaseType }) {
           <div className="flex justify-center w-full gap-4 px-4 pt-4">
             {
               showcase.livePreview && <>
-                <Button className="flex-grow rounded-full mb-4" variant={showCode ? 'outline' : 'default'}
+                <Button className="grow rounded-full mb-4" variant={showCode ? 'outline' : 'default'}
                         onClick={() => setShowCode(!showCode)}>Preview</Button>
-                <Button className="flex-grow rounded-full mb-4" variant={showCode ? 'default' : 'outline'}
+                <Button className="grow rounded-full mb-4" variant={showCode ? 'default' : 'outline'}
                         onClick={() => setShowCode(!showCode)}>Code</Button>
               </>
             }

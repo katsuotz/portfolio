@@ -3,7 +3,6 @@
 import Footer from "@/components/home/footer";
 import BackToTop from "@/components/home/back-to-top";
 import Image from "next/image";
-import '@/app/log/log.css'
 import {
   Carousel,
   CarouselContent,

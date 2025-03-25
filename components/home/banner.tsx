@@ -4,9 +4,9 @@ import {ArrowDown, MailIcon, MapIcon, ScrollTextIcon, TvMinimalPlayIcon} from "l
 import {Typewriter} from 'react-simple-typewriter'
 import SocialMedia from "@/components/home/social-media";
 import Link from "next/link";
-import Globe from "@/components/ui/globe";
-import Meteors from "@/components/ui/meteors";
-import {RainbowButton} from "@/components/ui/rainbow-button";
+import Globe from "@/components/magicui/globe";
+import {Meteors} from "@/components/magicui/meteors";
+import {ShimmerButton} from "@/components/magicui/shimmer-button";
 
 export default function Banner() {
   const year = new Date().getFullYear()
@@ -25,11 +25,11 @@ export default function Banner() {
         <Meteors number={30}/>
       </div>
       <div className="absolute top-24">
-        <p className="text-xl sm:text-2xl text-center intro-y mt-10 lg:mt-0">
+        <p className="text-lg sm:text-2xl text-center intro-y mt-10 lg:mt-0 leading-tight sm:leading-normal">
           Muhammad Irfan Fakhri
         </p>
         <h1
-          className="text-4xl sm:text-7xl lg:text-[8rem] font-black leading-normal sm:leading-[65px] lg:leading-[160px] tracking-wider flex flex-wrap justify-center lg:gap-5 gap-2 lg:-mt-5 intro-y bg-gradient-to-r from-[#8FC3F2] via-[#B9B6FF] to-[#D9BBFF] bg-clip-text text-transparent">
+          className="text-5xl sm:text-7xl lg:text-[8rem] font-black leading-tight sm:leading-[65px] lg:leading-[160px] tracking-wider flex flex-wrap justify-center lg:gap-5 gap-2 lg:-mt-5 intro-y bg-linear-to-r from-[#8FC3F2] via-[#B9B6FF] to-[#D9BBFF] bg-clip-text text-transparent">
           Katsuotz
         </h1>
         <div className="text-2xl sm:text-3xl intro-y">
@@ -51,14 +51,15 @@ export default function Banner() {
 
       <div
         className="relative flex size-full 3xl:max-w-[1200px] max-w-3xl items-center justify-center rounded-lg">
-        <Globe className="lg:-bottom-[12rem] top-[unset] bottom-24"/>
+        <Globe className="sm:-bottom-[12rem] sm:top-[unset] bottom-unset mt-10 sm:mt-0 top-1/2 -translate-y-1/2 sm:translate-y-0"/>
       </div>
 
       <div className="absolute left-1/2 -translate-x-1/2 bottom-28 md:bottom-10 flex justify-center mt-14">
-        <RainbowButton onClick={scrollPage} className="intro-y">
-          <ArrowDown className="size-5 mr-2"/>
+        <ShimmerButton onClick={scrollPage} className="intro-y">
+          <ArrowDown className="size-5 mr-2 dark:stroke-black"/>
           See More
-        </RainbowButton>
+        </ShimmerButton>
+
       </div>
 
       <div className="absolute top-0 left-0 pl-10 pt-10">

@@ -28,14 +28,14 @@ export default function ProjectItem({project}: { project:ProjectType }) {
       <DialogTrigger className="col col-span-12 sm:col-span-6 md:col-span-3 rounded-3xl group/project intro-y">
           <div
             className="px-4 sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]">
-            <ExternalLinkIcon className="absolute top-6 right-6 group-hover/project:md:opacity-100 opacity-0 transition-all duration-500"/>
+            <ExternalLinkIcon className="absolute top-6 right-6 md:group-hover/project:opacity-100 opacity-0 transition-all duration-500"/>
             <div className="flex flex-col items-center relative">
-              <Image src={project.logo} alt="" width={80} height={80} className="h-20 w-auto mb-8 group-hover/project:md:scale-110 group-hover/project:md:-translate-y-10 transition-all duration-300"/>
-              <div className="text-center group-hover/project:md:-translate-y-14 group-hover/project:md:scale-105 transition-all duration-300">
+              <Image src={project.logo} alt="" width={80} height={80} className="h-20 w-auto mb-8 md:group-hover/project:scale-110 md:group-hover/project:-translate-y-10 transition-all duration-300"/>
+              <div className="text-center md:group-hover/project:-translate-y-14 md:group-hover/project:scale-105 transition-all duration-300">
                 <p className="font-bold text-xl">{project.name}</p>
                 <p className="font-bold text-xl">{project.year}</p>
               </div>
-              <p className="absolute text-center px-4 bottom-0 opacity-0 translate-y-[100%] group-hover/project:md:opacity-100 group-hover/project:bottom-12 transition-all duration-300">
+              <p className="absolute text-center px-4 bottom-0 opacity-0 translate-y-[100%] md:group-hover/project:opacity-100 group-hover/project:bottom-12 transition-all duration-300">
                 {project.description}
               </p>
             </div>

@@ -2,7 +2,6 @@
 
 import Footer from "@/components/home/footer";
 import BackToTop from "@/components/home/back-to-top";
-import '@/app/log/log.css'
 import Link from "next/link";
 import {GlobalStateProvider} from "@/context/GlobalStateContext";
 import ToggleDarkMode from "@/components/home/toggle-dark-mode";

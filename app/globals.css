@@ -1,6 +1,120 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --breakpoint-3xl: 2400px;
+
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --animate-meteor: meteor 5s linear infinite;
+    --animate-shimmer-slide: shimmer-slide var(--speed, 3s) ease-in-out infinite alternate;
+    --animate-spin-around: spin-around calc(var(--speed, 3s) * 2) infinite linear;
+
+    @keyframes meteor {
+        0% {
+            transform: rotate(var(--angle)) translateX(0);
+            opacity: 1;
+        }
+        70% {
+            opacity: 1;
+        }
+        100% {
+            transform: rotate(var(--angle)) translateX(-500px);
+            opacity: 0;
+        }
+    }
+    @keyframes shimmer-slide {
+        to {
+            transform: translate(calc(100cqw - 100%), 0);
+        }
+    }
+    @keyframes spin-around {
+        0% {
+            transform: translateZ(0) rotate(0);
+        }
+        25% {
+            transform: translateZ(0) rotate(90deg);
+        }
+        75% {
+            transform: translateZ(0) rotate(270deg);
+        }
+        100% {
+            transform: translateZ(0) rotate(360deg);
+        }
+    }
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+    @media (width >= --theme(--breakpoint-3xl)) {
+        max-width: none;
+    }
+    @media (width >= 1536px) {
+        max-width: 1536px;
+    }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+
+    * {
+        @apply border-border dark:text-white;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+}
 
 @layer base {
     :root {
@@ -76,33 +190,11 @@
 
         --swiper-pagination-bottom: -30px;
     }
-
-    .dark {
-        --color-1: 0 100% 63%;
-        --color-2: 270 100% 63%;
-        --color-3: 210 100% 63%;
-        --color-4: 195 100% 63%;
-        --color-5: 90 100% 63%;
-    }
-}
-
-@layer base {
-    * {
-        @apply border-border;
-    }
-
-    body {
-        @apply bg-background text-foreground;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
 }
 
 :root {
     --switch-duration: 1.75s;
-    --switch-name: scale
+    --switch-name: scale;
 }
 
 .-animated {
@@ -240,3 +332,20 @@
 /*    scrollbar-width: thin;*/
 /*    scrollbar-color: transparent transparent;*/
 /*}*/
+
+.log p, .log img {
+    margin-bottom: .5rem;
+}
+
+.log a {
+    @apply text-blue-400;
+}
+
+.log a:hover {
+    @apply dark:text-white;
+}
+
+.log-nav a,
+.footer a {
+    @apply dark:text-white;
+}
