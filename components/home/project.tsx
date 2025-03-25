@@ -93,7 +93,7 @@ export default function Project({showAllProjects = false}) {
       year: '2019',
       description: 'Middle Space is an exhilarating shooter space game where players take on the role of a high-tech aircraft spaceship navigating through the vast cosmos.',
       image: '/project/middle-space-gameplay.jpg',
-      url: 'https://middle-spacek.katsuotz.com',
+      url: 'https://middle-space.katsuotz.com',
     },
     {
       logo: '/education/smkn4.webp',
