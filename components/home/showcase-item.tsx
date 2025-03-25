@@ -125,6 +125,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
                   as={Link}
                   href={showcase.url}
                   target="_blank"
+                  rel="noreferrer"
                   className="rounded-full"
                   variant="default"
                 >
@@ -134,6 +135,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
                   as={Link}
                   href={showcase.src}
                   target="_blank"
+                  rel="noreferrer"
                   className="rounded-full"
                   variant="default"
                 >

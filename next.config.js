@@ -2,9 +2,6 @@
 const nextConfig = {
   output: 'export',
   reactStrictMode: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: { unoptimized: true },
 }
 

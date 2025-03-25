@@ -54,7 +54,7 @@
     ctx.closePath();
   }
 
-  function stopDrag(e) {
+  function stopDrag() {
     canvas.onmousemove = null;
     canvas.onmouseup = null;
 

@@ -19,7 +19,11 @@ export default function SocialMedia() {
       <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild={true}>
-            <a href="https://github.com/katsuotz/" target="_blank">
+            <a
+              href="https://github.com/katsuotz/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <GithubIcon className="w-6 h-6" />
             </a>
           </TooltipTrigger>
@@ -29,7 +33,11 @@ export default function SocialMedia() {
       <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild={true}>
-            <a href="https://www.linkedin.com/in/irfan-fakhri/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/irfan-fakhri/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <LinkedinIcon className="w-6 h-6" />
             </a>
           </TooltipTrigger>
@@ -39,7 +47,11 @@ export default function SocialMedia() {
       <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild={true}>
-            <a href="https://www.instagram.com/katsuotz/" target="_blank">
+            <a
+              href="https://www.instagram.com/katsuotz/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <InstagramIcon className="w-6 h-6" />
             </a>
           </TooltipTrigger>
@@ -49,7 +61,11 @@ export default function SocialMedia() {
       <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild={true}>
-            <a href="mailto:m.irfan.fakhri66@gmail.com" target="_blank">
+            <a
+              href="mailto:m.irfan.fakhri66@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <AtSignIcon className="w-6 h-6" />
             </a>
           </TooltipTrigger>

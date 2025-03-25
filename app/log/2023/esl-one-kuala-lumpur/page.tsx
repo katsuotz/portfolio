@@ -69,6 +69,7 @@ export default function EslOneKualaLumpur() {
               <a
                 href="https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA"
                 target="_blank"
+                rel="noreferrer"
               >
                 🔗 https://maps.app.goo.gl/YwBq2zbKQLUCQMyTA
               </a>
@@ -78,6 +79,7 @@ export default function EslOneKualaLumpur() {
               <a
                 href="https://maps.app.goo.gl/Z5ZdVFfPU9gTVEe1A"
                 target="_blank"
+                rel="noreferrer"
               >
                 🔗 https://maps.app.goo.gl/Z5ZdVFfPU9gTVEe1A
               </a>
@@ -234,7 +236,11 @@ export default function EslOneKualaLumpur() {
             </p>
             <p>
               ESL One KL Venue Review:
-              <a href="https://www.twitch.tv/videos/2006148619" target="_blank">
+              <a
+                href="https://www.twitch.tv/videos/2006148619"
+                target="_blank"
+                rel="noreferrer"
+              >
                 🔗 https://www.twitch.tv/videos/2006148619
               </a>
             </p>

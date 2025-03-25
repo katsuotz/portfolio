@@ -41,20 +41,12 @@ export default function Globe({
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const pointerInteracting = useRef(null)
   const pointerInteractionMovement = useRef(0)
-  const [r, setR] = useState(0)
+  const [r] = useState(0)
 
   const updatePointerInteraction = (value: any) => {
     pointerInteracting.current = value
     if (canvasRef.current) {
       canvasRef.current.style.cursor = value ? 'grabbing' : 'grab'
-    }
-  }
-
-  const updateMovement = (clientX: any) => {
-    if (pointerInteracting.current !== null) {
-      const delta = clientX - pointerInteracting.current
-      pointerInteractionMovement.current = delta
-      setR(delta / 200)
     }
   }
 

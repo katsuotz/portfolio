@@ -94,7 +94,12 @@ export default function Achievement() {
                         className="absolute top-4 right-4"
                         asChild={true}
                       >
-                        <a href={achievement.url} className="" target="_blank">
+                        <a
+                          href={achievement.url}
+                          className=""
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <LinkIcon className="w-4 h-4" />
                         </a>
                       </TooltipTrigger>

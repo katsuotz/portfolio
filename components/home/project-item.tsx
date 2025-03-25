@@ -72,6 +72,7 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
               <Link
                 href={project.url}
                 target="_blank"
+                rel="noreferrer"
                 className={buttonVariants({ variant: 'default' })}
               >
                 <ExternalLinkIcon className="w-4 h-4 mr-2" />
