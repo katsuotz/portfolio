@@ -7,7 +7,6 @@ deploy:
   tags:
     - shell
   script:
-    - sudo chown -R gitlab-runner:gitlab-runner /var/www/portfolio
     - cd /var/www/portfolio
     - git pull origin master
     - npm ci --prefer-offline --no-fund --no-audit
