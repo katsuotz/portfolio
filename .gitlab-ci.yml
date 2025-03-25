@@ -8,6 +8,8 @@ deploy:
     - shell
   script:
     - cd /var/www/portfolio
+    - git stash
+    - git stash clear
     - git pull origin master
     - npm ci --prefer-offline --no-fund --no-audit
     - npm run build
