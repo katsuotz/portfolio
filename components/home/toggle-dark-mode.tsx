@@ -33,7 +33,7 @@ export default function ToggleDarkMode() {
 
   return (
     <div className="absolute top-0 right-0 pr-10 pt-10 z-10">
-      <link rel="preload" as="image" href="/alulpls.webp" fetchPriority="low" />
+      <link rel="preload" as="image" href="/emotes.gif" fetchPriority="low" />
       <span
         className="inline-flex items-center justify-center rounded-xl text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 w-9 cursor-pointer"
         onClick={() => toggleDarkMode(!isDarkMode)}

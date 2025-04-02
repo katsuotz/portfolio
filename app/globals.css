@@ -238,8 +238,8 @@
 }
 
 ::view-transition-new(root) {
-  -webkit-mask: url(/alulpls.webp) center / 0 no-repeat;
-  mask: url(/alulpls.webp) center / 0 no-repeat;
+  -webkit-mask: url(/emotes.gif) center / 0 no-repeat;
+  mask: url(/emotes.gif) center / 0 no-repeat;
   animation: var(--switch-name) var(--switch-duration);
 }
 
@@ -254,12 +254,12 @@
     mask-size: 0;
   }
   10% {
-    -webkit-mask-size: 50vmax;
-    mask-size: 50vmax;
+    -webkit-mask-size: 20vmax;
+    mask-size: 20vmax;
   }
   90% {
-    -webkit-mask-size: 50vmax;
-    mask-size: 50vmax;
+    -webkit-mask-size: 20vmax;
+    mask-size: 20vmax;
   }
   to {
     -webkit-mask-size: 2000vmax;
@@ -308,6 +308,10 @@
 }
 
 .swiper-pagination-bullet {
+ background: var(--color-foreground)!important;
+}
+
+.dark .swiper-pagination-bullet {
   background: #fff !important;
 }
 
