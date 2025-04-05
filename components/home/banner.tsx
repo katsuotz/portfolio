@@ -44,6 +44,7 @@ export default function Banner() {
                 'Software Engineer',
                 'Full-Stack Developer',
                 'Frontend Developer',
+                'Backend Developer',
               ]}
               loop={0}
               typeSpeed={50}

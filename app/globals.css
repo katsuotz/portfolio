@@ -308,7 +308,7 @@
 }
 
 .swiper-pagination-bullet {
- background: var(--color-foreground)!important;
+  background: var(--color-foreground) !important;
 }
 
 .dark .swiper-pagination-bullet {
