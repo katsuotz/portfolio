@@ -27,6 +27,10 @@ export default function Skills() {
       name: 'TypeScript',
     },
     {
+      logo: '/skills/tailwindcss.svg',
+      name: 'TailwindCSS',
+    },
+    {
       logo: '/skills/node.webp',
       name: 'Node.js',
     },
