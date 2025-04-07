@@ -6,6 +6,6 @@ export const metadata = {
   authors: [{ name: 'Muhammad Irfan Fakhri' }, { name: 'Katsuotz' }],
 }
 
-export default function LogLayout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
