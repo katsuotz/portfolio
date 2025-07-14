@@ -72,20 +72,20 @@ export default function TwoWeeksNewZealand() {
                   <th>Stack</th>
                 </tr>
                 <tr>
-                  <td>Server</td>
+                  <td>📦 Infra</td>
                   <td>
-                    Docker, Kubernetes, Nginx, MinIO, Varnish, Cloudflare CDN
+                    Docker, Kubernetes, Nginx, Varnish, Cloudflare CDN, MinIO
                   </td>
                 </tr>
                 <tr>
-                  <td>Backend</td>
+                  <td>⚙️ Backend</td>
                   <td>
                     Golang, go-chi, PostgreSQL with Replication, PGBouncer,
                     Redis
                   </td>
                 </tr>
                 <tr>
-                  <td>Frontend</td>
+                  <td>🧠 Frontend</td>
                   <td>Vue.js, TailwindCSS, Vite</td>
                 </tr>
               </tbody>
