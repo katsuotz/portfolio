@@ -18,6 +18,17 @@ export default function Log() {
         <div className="container max-w-[600px]">
           <div>
             <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">
+              2025
+            </h4>
+            <p>
+              <Link href="/log/2025/full-stack-web-performance-optimization-frontend-backend-database-strategies">
+                🔗 Full-Stack Web Performance Optimization: Frontend, Backend,
+                and Database Strategies (2024/11/30)
+              </Link>
+            </p>
+          </div>
+          <div>
+            <h4 className="text-lg font-bold flex items-center text-blue-500 mt-4">
               2024
             </h4>
             <p>
