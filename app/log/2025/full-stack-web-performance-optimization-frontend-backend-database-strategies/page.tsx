@@ -68,10 +68,6 @@ export default function TwoWeeksNewZealand() {
             <table>
               <tbody>
                 <tr>
-                  <th></th>
-                  <th>Stack</th>
-                </tr>
-                <tr>
                   <td>📦 Infra</td>
                   <td>
                     Docker, Kubernetes, Nginx, Varnish, Cloudflare CDN, MinIO
