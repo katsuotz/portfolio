@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export default function LogLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="log" style={{ fontFamily: 'monospace' }}>
+    <div className="log">
       <div className="container pt-10 flex justify-center gap-5 log-nav">
         <Link
           href="/"
@@ -25,7 +25,7 @@ export default function LogLayout({ children }: { children: React.ReactNode }) {
           href="/showcase"
           className="text-white flex items-center text-sm border-b-2 border-dotted border-blue-400 dark:border-white"
         >
-          Showcase
+          Showcases
         </Link>
         <Link
           href="/log"

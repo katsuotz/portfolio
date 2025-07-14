@@ -84,7 +84,7 @@ export default function Banner() {
             href="/showcase"
             className="flex items-center border-b hover:border-b-white border-transparent border-dotted"
           >
-            <TvMinimalPlayIcon className="w-4 h-4 mr-2" /> Showcase
+            <TvMinimalPlayIcon className="w-4 h-4 mr-2" /> Showcases
           </Link>
         </p>
         <p className="flex items-center intro-y">

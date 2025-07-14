@@ -371,10 +371,14 @@
 /*    scrollbar-width: thin;*/
 /*    scrollbar-color: transparent transparent;*/
 /*}*/
+.log {
+  @apply font-mono text-sm leading-relaxed dark:text-gray-300  p-4 rounded-lg;
+  line-height: 1.7;
+}
 
 .log p,
 .log img {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .log a {
@@ -383,6 +387,28 @@
 
 .log a:hover {
   @apply dark:text-white;
+}
+
+.log h2 {
+  @apply text-xl;
+}
+
+.log h3 {
+  @apply text-lg;
+}
+
+.log h2,
+.log h3 {
+  @apply text-blue-500 font-bold mt-6 mb-2;
+}
+
+.log table {
+  @apply w-full border-collapse text-left my-4;
+}
+
+.log th,
+.log td {
+  @apply border border-gray-600 px-3 py-2;
 }
 
 .log-nav a,
