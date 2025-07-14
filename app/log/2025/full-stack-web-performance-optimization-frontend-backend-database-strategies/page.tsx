@@ -57,7 +57,7 @@ export default function TwoWeeksNewZealand() {
               unoptimized={true}
               width={0}
               height={0}
-              src="/log/spmb-jabar/google-analytics.jpg"
+              src="/log/spmb-jabar/google-analytics.webp"
               alt="Google Analytics SPMB Jawa Barat 2025"
               className="h-[320px] lg:h-[400px] w-auto object-contain"
             />
