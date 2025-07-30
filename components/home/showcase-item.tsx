@@ -121,26 +121,20 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
             )}
             {showcase.url && (
               <>
-                <Button
-                  as={Link}
-                  href={showcase.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full"
-                  variant="default"
-                >
-                  Try it now!
-                </Button>
-                <Button
-                  as={Link}
-                  href={showcase.src}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full"
-                  variant="default"
-                >
-                  Source Code
-                </Button>
+                <a href={showcase.url} target="_blank" rel="noreferrer">
+                  <Button
+                    href={showcase.url}
+                    className="rounded-full"
+                    variant="default"
+                  >
+                    Try it now!
+                  </Button>
+                </a>
+                <a href={showcase.src} target="_blank" rel="noreferrer">
+                  <Button className="rounded-full" variant="default">
+                    Source Code
+                  </Button>
+                </a>
               </>
             )}
           </div>
