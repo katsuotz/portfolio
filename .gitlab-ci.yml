@@ -11,5 +11,5 @@ deploy:
     - git stash
     - git stash clear
     - git pull origin master
-    - npm ci --prefer-offline --no-fund --no-audit
-    - npm run build
+    - bun install --frozen-lockfile --offline
+    - bun run build
