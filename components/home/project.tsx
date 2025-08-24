@@ -130,10 +130,10 @@ export default function Project({ showAllProjects = false }) {
 
   return (
     <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12">
-      <h3 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center">
+      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center">
         <MonitorSmartphoneIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4" />
         Projects
-      </h3>
+      </h2>
 
       <div className="container">
         <div className="grid grid-cols-12 gap-6 sm:gap-8">

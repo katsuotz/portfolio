@@ -6,10 +6,10 @@ import Image from 'next/image'
 export default function Education() {
   return (
     <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12">
-      <h3 className="text-3xl sm:text-5xl font-bold mb-24 flex items-center">
+      <h2 className="text-3xl sm:text-5xl font-bold mb-24 flex items-center">
         <GraduationCapIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4" />
         Education
-      </h3>
+      </h2>
 
       <div className="container">
         <div className="grid grid-cols-12 gap-6">

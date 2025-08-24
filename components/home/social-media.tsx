@@ -24,6 +24,7 @@ export default function SocialMedia() {
               target="_blank"
               rel="noreferrer"
             >
+              <span className="sr-only">Github</span>
               <GithubIcon className="w-6 h-6" />
             </a>
           </TooltipTrigger>
@@ -38,6 +39,7 @@ export default function SocialMedia() {
               target="_blank"
               rel="noreferrer"
             >
+              <span className="sr-only">LinkedIn</span>
               <LinkedinIcon className="w-6 h-6" />
             </a>
           </TooltipTrigger>
@@ -52,6 +54,7 @@ export default function SocialMedia() {
               target="_blank"
               rel="noreferrer"
             >
+              <span className="sr-only">Instagram</span>
               <InstagramIcon className="w-6 h-6" />
             </a>
           </TooltipTrigger>
@@ -66,6 +69,7 @@ export default function SocialMedia() {
               target="_blank"
               rel="noreferrer"
             >
+              <span className="sr-only">Email</span>
               <AtSignIcon className="w-6 h-6" />
             </a>
           </TooltipTrigger>
