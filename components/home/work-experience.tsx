@@ -26,7 +26,7 @@ export default function WorkExperience() {
     },
     {
       logo: '/work/paxel.png',
-      flag: '/flag/id.png',
+      flag: '/flag/id.webp',
       company: 'Paxel Indonesia',
       position: [
         {
@@ -39,7 +39,7 @@ export default function WorkExperience() {
     },
     {
       logo: '/work/lexigo.jpg',
-      flag: '/flag/au.png',
+      flag: '/flag/au.webp',
       company: 'Lexigo',
       position: [
         {
@@ -52,7 +52,7 @@ export default function WorkExperience() {
     },
     {
       logo: '/work/sgara.png',
-      flag: '/flag/id.png',
+      flag: '/flag/id.webp',
       company: 'Sgara (PT. Transformasi Digital Laut)',
       position: [
         {
@@ -69,7 +69,7 @@ export default function WorkExperience() {
     },
     {
       logo: '/project/edunex.png',
-      flag: '/flag/id.png',
+      flag: '/flag/id.webp',
       company: 'Cognisia',
       position: [
         {
@@ -82,7 +82,7 @@ export default function WorkExperience() {
     },
     {
       logo: '/work/someah.jpg',
-      flag: '/flag/id.png',
+      flag: '/flag/id.webp',
       company: 'Someah Kreatif Nusantara',
       position: [
         {

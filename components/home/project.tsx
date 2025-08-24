@@ -22,11 +22,11 @@ export default function Project({ showAllProjects = false }) {
       year: '2019 - 2024',
       description:
         'An all-in-one web app for students in West Java, enabling seamless high school registration by providing a user-friendly platform.',
-      image: '/project/ppdb-1.png',
+      image: '/project/ppdb-1.webp',
       highlight: true,
     },
     {
-      logo: '/project/dota.png',
+      logo: '/project/dota.webp',
       name: 'Dreamocel Portfolio',
       year: '2023',
       description:
@@ -36,7 +36,7 @@ export default function Project({ showAllProjects = false }) {
       highlight: true,
     },
     {
-      logo: '/project/cek-reputasi.png',
+      logo: '/project/cek-reputasi.webp',
       name: 'Cek Reputasi',
       year: '2023',
       description:
@@ -44,7 +44,7 @@ export default function Project({ showAllProjects = false }) {
       image: '/project/cek-reputasi-1.jpg',
     },
     {
-      logo: '/project/sgara-book.png',
+      logo: '/project/sgara-book.webp',
       name: 'Sgara Book',
       year: '2020 - 2022',
       description:
@@ -54,7 +54,7 @@ export default function Project({ showAllProjects = false }) {
       highlight: true,
     },
     {
-      logo: '/project/edunex.png',
+      logo: '/project/edunex.webp',
       name: 'Edunex ITB',
       year: '2020 - 2022',
       description:
@@ -69,7 +69,7 @@ export default function Project({ showAllProjects = false }) {
       year: '2021',
       description:
         'A web app for managing Unikom students who have taken a network class.',
-      image: '/project/ccna.png',
+      image: '/project/ccna.webp',
     },
     {
       logo: '/achievement/kemdikbud.webp',
@@ -77,7 +77,7 @@ export default function Project({ showAllProjects = false }) {
       year: '2020',
       description:
         'A 3d virtual showcase exhibition in Ministry of Education and Culture Indonesia yearly event for Vocational School.',
-      image: '/project/virtual-exhibition.png',
+      image: '/project/virtual-exhibition.webp',
       highlight: true,
     },
     {
@@ -85,7 +85,7 @@ export default function Project({ showAllProjects = false }) {
       name: 'eModul',
       year: '2020',
       description: 'Online e-book library for Ministry of Manpower Indonesia.',
-      image: '/project/emodul.png',
+      image: '/project/emodul.webp',
       highlight: true,
     },
     {
@@ -94,10 +94,10 @@ export default function Project({ showAllProjects = false }) {
       year: '2020',
       description:
         "A web application designed to monitor the COVID virus's transmission within Indonesia.",
-      image: '/project/pantau-covid.png',
+      image: '/project/pantau-covid.webp',
     },
     {
-      logo: '/project/middle-space.png',
+      logo: '/project/middle-space.webp',
       name: 'Middle Space',
       year: '2019',
       description:
