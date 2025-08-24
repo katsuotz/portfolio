@@ -45,7 +45,7 @@ export default function WorkExperienceItem({
                 <p className="font-medium text-sm sm:text-[1rem] mt-1">
                   {position.title}
                 </p>
-                <p className="font-light text-sm text-gray-600 dark:text-gray-400 mt-1">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                   {position.date}
                 </p>
               </div>

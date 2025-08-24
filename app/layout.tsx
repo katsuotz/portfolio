@@ -1,7 +1,11 @@
 import '@/app/globals.css'
 import { Outfit } from 'next/font/google'
 
-const outfit = Outfit({ subsets: ['latin'] })
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  display: 'swap',
+})
 
 import Script from 'next/script'
 import { Metadata } from 'next'

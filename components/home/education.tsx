@@ -28,7 +28,7 @@ export default function Education() {
               <p className="font-bold tracking-wide text-2xl sm:text-3xl">
                 Universitas Komputer Indonesia
               </p>
-              <p className="font-light text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Bachelor Degree
               </p>
               <p className="text-xl">Information System</p>
@@ -50,7 +50,7 @@ export default function Education() {
               <p className="font-bold tracking-wide text-2xl sm:text-3xl">
                 SMK Negeri 4 Bandung
               </p>
-              <p className="font-light text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Vocational High School
               </p>
               <p className="text-xl">Software Engineering</p>
