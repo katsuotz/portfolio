@@ -37,10 +37,7 @@ jobs:
 
             # Go to app directory
             cd "$APP_DIR"
-
             # Pull latest code safely
             git pull origin "$BRANCH"
-
-            bun install --no-progress
-
+            bun install --frozen-lockfile --offline
             bun run build
