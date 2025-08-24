@@ -56,13 +56,13 @@ export default function Banner() {
           Katsuotz
         </h1>
         <div className="text-2xl sm:text-3xl intro-y">
-          <div className="text-center min-h-[32px] sm:min-h-[36px]">
+          <div className="text-center min-h-[32px] sm:min-h-[36px] font-bold">
             <TextType
               text={[
-                'Software Engineer',
-                'Full-Stack Developer',
-                'Frontend Developer',
-                'Backend Developer',
+                'Software Engineer 👷‍♂️',
+                'Full-Stack Developer 🐧',
+                'Frontend Developer ✨',
+                'Backend Developer 🛠️',
               ]}
               typingSpeed={75}
               pauseDuration={1500}
