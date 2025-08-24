@@ -40,10 +40,10 @@ export default function Banner() {
         />
       </div>
       <div className="absolute top-1/2 -translate-y-1/2 pb-20">
-        <p className="text-lg sm:text-2xl lg:text-5xl text-center intro-y mt-10 lg:mt-0 leading-tight sm:leading-normal">
+        <p className="text-2xl sm:text-2xl lg:text-5xl text-center intro-y mt-10 lg:mt-0 leading-tight sm:leading-normal">
           Muhammad Irfan Fakhri
         </p>
-        <h1 className="text-5xl sm:text-7xl lg:text-[14rem] font-black leading-tight tracking-wider flex flex-wrap justify-center lg:gap-5 gap-2 lg:-mt-5 intro-y bg-linear-to-r from-[#FF6B6B] via-[#FFB347] to-[#FFD93D] dark:from-[#7ECDC8] dark:via-[#5E92C9] dark:to-[#FF9FFC] bg-clip-text text-transparent">
+        <h1 className="text-7xl sm:text-7xl lg:text-[14rem] font-black leading-tight tracking-wider flex flex-wrap justify-center lg:gap-5 gap-2 lg:-mt-5 intro-y bg-linear-to-r from-[#FF6B6B] via-[#FFB347] to-[#FFD93D] dark:from-[#7ECDC8] dark:via-[#5E92C9] dark:to-[#FF9FFC] bg-clip-text text-transparent">
           Katsuotz
         </h1>
         <div className="text-2xl sm:text-3xl intro-y">
