@@ -30,7 +30,7 @@ export default function Banner() {
     <section className="h-dvh w-full relative flex justify-center items-center">
       <div className="w-full h-dvh absolute opacity-50">
         <Dither
-          waveColor={[0.5, 0.5, 0.5]}
+          waveColor={[0.47, 0.5, 0.5]}
           disableAnimation={false}
           enableMouseInteraction={false}
           mouseRadius={0}
