@@ -11,9 +11,17 @@ import {
 import SocialMedia from '@/components/home/social-media'
 import Link from 'next/link'
 import { ShimmerButton } from '@/components/magicui/shimmer-button'
-import Dither from '@/components/reactbits/Dither/Dither'
 import { Button } from '@/components/ui/button'
-import TextType from '@/components/reactbits/TextType/TextType'
+import dynamic from 'next/dynamic'
+const Dither = dynamic(() => import('@/components/reactbits/Dither/Dither'), {
+  ssr: false,
+})
+const TextType = dynamic(
+  () => import('@/components/reactbits/TextType/TextType'),
+  {
+    ssr: false,
+  }
+)
 
 export default function Banner() {
   const year = new Date().getFullYear()
