@@ -8,12 +8,12 @@ import {
   ScrollTextIcon,
   TvMinimalPlayIcon,
 } from 'lucide-react'
-import { Typewriter } from 'react-simple-typewriter'
 import SocialMedia from '@/components/home/social-media'
 import Link from 'next/link'
 import { ShimmerButton } from '@/components/magicui/shimmer-button'
 import Dither from '@/components/reactbits/Dither/Dither'
 import { Button } from '@/components/ui/button'
+import TextType from '@/components/reactbits/TextType/TextType'
 
 export default function Banner() {
   const year = new Date().getFullYear()
@@ -48,20 +48,20 @@ export default function Banner() {
           Katsuotz
         </h1>
         <div className="text-2xl sm:text-3xl intro-y">
-          <p className="text-center min-h-[32px] sm:min-h-[36px]">
-            <Typewriter
-              words={[
+          <div className="text-center min-h-[32px] sm:min-h-[36px]">
+            <TextType
+              text={[
                 'Software Engineer',
                 'Full-Stack Developer',
                 'Frontend Developer',
                 'Backend Developer',
               ]}
-              loop={0}
-              typeSpeed={50}
-              deleteSpeed={35}
-              delaySpeed={1500}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
             />
-          </p>
+          </div>
           <p className="text-center">{year - startYear}+ years experience</p>
         </div>
         <div className="flex justify-center gap-4 mt-6 intro-y">
