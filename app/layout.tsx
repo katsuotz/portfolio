@@ -30,8 +30,11 @@ export default function RootLayout({
       </head>
       <body className={outfit.className}>
         <main className="relative">{children}</main>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-E8CK2FG8Z2" />
-        <Script id="google-analytics">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-E8CK2FG8Z2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
