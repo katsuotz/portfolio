@@ -10,9 +10,9 @@ import {
 import { Typewriter } from 'react-simple-typewriter'
 import SocialMedia from '@/components/home/social-media'
 import Link from 'next/link'
-import Globe from '@/components/magicui/globe'
-import { Meteors } from '@/components/magicui/meteors'
 import { ShimmerButton } from '@/components/magicui/shimmer-button'
+import Dither from '@/components/reactbits/Dither/Dither'
+import { Button } from '@/components/ui/button'
 
 export default function Banner() {
   const year = new Date().getFullYear()
@@ -27,14 +27,23 @@ export default function Banner() {
 
   return (
     <section className="h-dvh w-full relative flex justify-center items-center">
-      <div className="absolute flex h-full w-full overflow-hidden">
-        <Meteors number={30} />
+      <div className="w-full h-dvh absolute opacity-50">
+        <Dither
+          waveColor={[0.5, 0.5, 0.5]}
+          disableAnimation={false}
+          enableMouseInteraction={false}
+          mouseRadius={0}
+          colorNum={4}
+          waveAmplitude={0.3}
+          waveFrequency={4}
+          waveSpeed={0.05}
+        />
       </div>
-      <div className="absolute top-24">
-        <p className="text-lg sm:text-2xl text-center intro-y mt-10 lg:mt-0 leading-tight sm:leading-normal">
+      <div className="absolute top-1/2 -translate-y-1/2 pb-20">
+        <p className="text-lg sm:text-2xl lg:text-5xl text-center intro-y mt-10 lg:mt-0 leading-tight sm:leading-normal">
           Muhammad Irfan Fakhri
         </p>
-        <h1 className="text-5xl sm:text-7xl lg:text-[8rem] font-black leading-tight sm:leading-[65px] lg:leading-[160px] tracking-wider flex flex-wrap justify-center lg:gap-5 gap-2 lg:-mt-5 intro-y bg-linear-to-r from-[#8FC3F2] via-[#B9B6FF] to-[#D9BBFF] bg-clip-text text-transparent">
+        <h1 className="text-5xl sm:text-7xl lg:text-[14rem] font-black leading-tight tracking-wider flex flex-wrap justify-center lg:gap-5 gap-2 lg:-mt-5 intro-y bg-linear-to-r from-[#FF6B6B] via-[#FFB347] to-[#FFD93D] dark:from-[#7ECDC8] dark:via-[#5E92C9] dark:to-[#FF9FFC] bg-clip-text text-transparent">
           Katsuotz
         </h1>
         <div className="text-2xl sm:text-3xl intro-y">
@@ -57,10 +66,19 @@ export default function Banner() {
         <div className="flex justify-center gap-4 mt-6 intro-y">
           <SocialMedia />
         </div>
-      </div>
 
-      <div className="relative flex size-full 3xl:max-w-[1200px] max-w-3xl items-center justify-center rounded-lg">
-        <Globe className="sm:-bottom-[12rem] sm:top-[unset] bottom-unset mt-10 sm:mt-0 top-1/2 -translate-y-1/2 sm:translate-y-0" />
+        <div className="flex justify-center intro-y gap-4 mt-10">
+          <Link href="/showcase" passHref>
+            <Button className="rounded-full" variant="default">
+              <TvMinimalPlayIcon className="w-4 h-4" /> Showcases
+            </Button>
+          </Link>
+          <Link href="/log" passHref>
+            <Button className="rounded-full" variant="default">
+              <ScrollTextIcon className="w-4 h-4" /> Logs
+            </Button>
+          </Link>
+        </div>
       </div>
 
       <div className="absolute left-1/2 -translate-x-1/2 bottom-28 md:bottom-10 flex justify-center mt-14">
@@ -76,24 +94,6 @@ export default function Banner() {
         </p>
         <p className="flex items-center intro-y">
           <MapIcon className="w-4 h-4 mr-2" /> Indonesia
-        </p>
-      </div>
-      <div className="absolute bottom-0 md:right-0 md:pr-10 pb-10 flex gap-6">
-        <p className="flex items-center intro-y">
-          <Link
-            href="/showcase"
-            className="flex items-center border-b hover:border-b-white border-transparent border-dotted"
-          >
-            <TvMinimalPlayIcon className="w-4 h-4 mr-2" /> Showcases
-          </Link>
-        </p>
-        <p className="flex items-center intro-y">
-          <Link
-            href="/log"
-            className="flex items-center border-b hover:border-b-white border-transparent border-dotted"
-          >
-            <ScrollTextIcon className="w-4 h-4 mr-2" /> Logs
-          </Link>
         </p>
       </div>
     </section>
