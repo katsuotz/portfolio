@@ -61,7 +61,7 @@ export default function Banner() {
               text={[
                 'Software Engineer 👷‍♂️',
                 'Full-Stack Developer 🐧',
-                'Frontend Developer ✨',
+                'Frontend Developer 🎨',
                 'Backend Developer 🛠️',
               ]}
               typingSpeed={75}
