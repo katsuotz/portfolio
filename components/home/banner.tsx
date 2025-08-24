@@ -2,6 +2,7 @@
 
 import {
   ArrowDown,
+  HammerIcon,
   MailIcon,
   MapIcon,
   ScrollTextIcon,
@@ -39,7 +40,7 @@ export default function Banner() {
           waveSpeed={0.05}
         />
       </div>
-      <div className="absolute top-1/2 -translate-y-1/2 pb-20">
+      <div className="absolute top-1/2 -translate-y-1/2 pb-20 px-8">
         <p className="text-2xl sm:text-2xl lg:text-5xl text-center intro-y mt-10 lg:mt-0 leading-tight sm:leading-normal">
           Muhammad Irfan Fakhri
         </p>
@@ -67,7 +68,12 @@ export default function Banner() {
           <SocialMedia />
         </div>
 
-        <div className="flex justify-center intro-y gap-4 mt-10">
+        <div className="flex flex-wrap justify-center intro-y gap-4 mt-10">
+          <Link href="/projects" passHref>
+            <Button className="rounded-full" variant="default">
+              <HammerIcon className="w-4 h-4" /> Projects
+            </Button>
+          </Link>
           <Link href="/showcase" passHref>
             <Button className="rounded-full" variant="default">
               <TvMinimalPlayIcon className="w-4 h-4" /> Showcases
