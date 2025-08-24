@@ -1,0 +1,46 @@
+name: Deploy Katsuotz Portfolio
+
+on:
+  push:
+    branches: ['master']
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: env
+
+    steps:
+      - name: 🚀 SSH into server and deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script_stop: true
+          script: |
+            set -euo pipefail
+
+            # === Settings (edit to match your server paths) ===
+            APP_DIR="/var/www/portfolio"
+            BRANCH="master"
+
+            # Ensure Bun is on PATH (adjust if you use another shell/profile)
+            export BUN_INSTALL="$HOME/.bun"
+            export PATH="$BUN_INSTALL/bin:$PATH"
+            command -v bun >/dev/null || { echo "Bun not found on server PATH"; exit 1; }
+
+            # Go to app directory
+            cd "$APP_DIR"
+
+            # Pull latest code safely
+            git pull origin "$BRANCH"
+
+            bun install --no-progress
+
+            bun run build
