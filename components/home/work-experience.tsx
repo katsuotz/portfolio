@@ -25,7 +25,7 @@ export default function WorkExperience() {
         'Crafting intuitive web applications with reusable components, API integration, and optimized business logic to empower farmers and drive innovation.',
     },
     {
-      logo: '/work/paxel.png',
+      logo: '/work/paxel.webp',
       flag: '/flag/id.webp',
       company: 'Paxel Indonesia',
       position: [
@@ -38,7 +38,7 @@ export default function WorkExperience() {
         'Enhance and maintain logistics shipment apps to optimize operations and ensure seamless flow within customers, business and warehouses.',
     },
     {
-      logo: '/work/lexigo.jpg',
+      logo: '/work/lexigo.webp',
       flag: '/flag/au.webp',
       company: 'Lexigo',
       position: [
@@ -51,7 +51,7 @@ export default function WorkExperience() {
         'Create translation and localization web apps with cloud-based technology to enable organizations to communicate with confidence.',
     },
     {
-      logo: '/work/sgara.png',
+      logo: '/work/sgara.webp',
       flag: '/flag/id.webp',
       company: 'Sgara (PT. Transformasi Digital Laut)',
       position: [
@@ -68,7 +68,7 @@ export default function WorkExperience() {
         'Create a one-stop platform for shrimp farming with data-driven farm advisory and marketplace solution form shrimp farmers.',
     },
     {
-      logo: '/project/edunex.png',
+      logo: '/project/edunex.webp',
       flag: '/flag/id.webp',
       company: 'Cognisia',
       position: [
@@ -81,7 +81,7 @@ export default function WorkExperience() {
         'Developed a custom Web-based Learning Management System (LMS) for Bandung Institute Technology (ITB).',
     },
     {
-      logo: '/work/someah.jpg',
+      logo: '/work/someah.webp',
       flag: '/flag/id.webp',
       company: 'Someah Kreatif Nusantara',
       position: [
