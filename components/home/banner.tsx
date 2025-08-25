@@ -13,6 +13,7 @@ import Link from 'next/link'
 import { ShimmerButton } from '@/components/magicui/shimmer-button'
 import { Button } from '@/components/ui/button'
 import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 const Dither = dynamic(() => import('@/components/reactbits/Dither/Dither'), {
   ssr: false,
 })
@@ -34,9 +35,25 @@ export default function Banner() {
     })
   }
 
+  const [pixelSize, setPixelSize] = useState(6)
+
+  useEffect(() => {
+    const updatePixelSize = () => {
+      if (window.innerWidth < 768) {
+        setPixelSize(6)
+      } else {
+        setPixelSize(2.5)
+      }
+    }
+
+    updatePixelSize()
+    window.addEventListener('resize', updatePixelSize)
+    return () => window.removeEventListener('resize', updatePixelSize)
+  }, [])
+
   return (
-    <section className="h-dvh w-full relative flex justify-center items-center overflow-x-hidden">
-      <div className="w-full h-dvh absolute opacity-50 pointer-events-none scale-150 sm:scale-100">
+    <section className="h-dvh w-full relative flex justify-center items-center overflow-hidden">
+      <div className="w-full h-dvh absolute opacity-50 pointer-events-none">
         <Dither
           waveColor={[0.47, 0.5, 0.5]}
           disableAnimation={false}
@@ -46,6 +63,7 @@ export default function Banner() {
           waveAmplitude={0.3}
           waveFrequency={4}
           waveSpeed={0.03}
+          pixelSize={pixelSize}
         />
       </div>
       <div className="absolute top-1/2 -translate-y-1/2 pb-20 px-8">
