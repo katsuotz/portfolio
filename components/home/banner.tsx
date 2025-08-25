@@ -35,8 +35,8 @@ export default function Banner() {
   }
 
   return (
-    <section className="h-dvh w-full relative flex justify-center items-center">
-      <div className="w-full h-dvh absolute opacity-50">
+    <section className="h-dvh w-full relative flex justify-center items-center overflow-x-hidden">
+      <div className="w-full h-dvh absolute opacity-50 pointer-events-none scale-150 sm:scale-100">
         <Dither
           waveColor={[0.47, 0.5, 0.5]}
           disableAnimation={false}
@@ -45,7 +45,7 @@ export default function Banner() {
           colorNum={4}
           waveAmplitude={0.3}
           waveFrequency={4}
-          waveSpeed={0.05}
+          waveSpeed={0.03}
         />
       </div>
       <div className="absolute top-1/2 -translate-y-1/2 pb-20 px-8">

@@ -96,7 +96,7 @@ export default function WorkExperience() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-8 pt-6 lg:pb-20 pb-16 lg:mt-52">
+    <section className="relative flex flex-col justify-center items-center lg:pt-8 pt-20 lg:pb-20 pb-16 lg:mt-20">
       <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center">
         <Laptop2Icon className="w-8 h-8 sm:w-10 sm:h-10 mr-4" />
         Work Experience
