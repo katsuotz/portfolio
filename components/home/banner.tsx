@@ -14,6 +14,7 @@ import { ShimmerButton } from '@/components/magicui/shimmer-button'
 import { Button } from '@/components/ui/button'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
+import { useGlobalState } from '@/context/GlobalStateContext'
 const Dither = dynamic(() => import('@/components/reactbits/Dither/Dither'), {
   ssr: false,
 })
@@ -51,11 +52,15 @@ export default function Banner() {
     return () => window.removeEventListener('resize', updatePixelSize)
   }, [])
 
+  const { globalState } = useGlobalState()
+
   return (
     <section className="w-full h-svh relative flex justify-center items-center overflow-hidden">
-      <div className="w-full h-svh absolute opacity-25 dark:opacity-50 pointer-events-none">
+      <div className="w-full h-svh absolute opacity-40 dark:opacity-50 pointer-events-none">
         <Dither
-          waveColor={[0.47, 0.5, 0.5]}
+          waveColor={
+            globalState.theme === 'dark' ? [0.3, 0.3, 0.8] : [0.4, 0.4, 0.8]
+          }
           disableAnimation={false}
           enableMouseInteraction={false}
           mouseRadius={0}
@@ -70,8 +75,9 @@ export default function Banner() {
         <p className="text-2xl sm:text-2xl lg:text-5xl text-center intro-y mt-10 lg:mt-0 leading-tight sm:leading-normal">
           Muhammad Irfan Fakhri
         </p>
-        <h1 className="text-7xl sm:text-7xl lg:text-[14rem] font-black leading-tight tracking-wider flex flex-wrap justify-center lg:gap-5 gap-2 lg:-mt-5 intro-y bg-linear-to-r from-[#FF6B6B] via-[#FFB347] to-[#FFD93D] dark:from-[#7ECDC8] dark:via-[#5E92C9] dark:to-[#FF9FFC] bg-clip-text text-transparent">
-          Katsuotz
+        <h1 className="text-7xl sm:text-7xl lg:text-[14rem] font-black leading-tight tracking-wider flex flex-wrap justify-center lg:-mt-5 intro-y bg-linear-to-r from-[#E44C99] via-[#E44C99] to-[#01AA13] bg-clip-text text-transparent">
+          <span className="text-[#E44C99]">Katsu</span>
+          <span className="text-[#01AA13]">otz</span>
         </h1>
         <div className="text-2xl sm:text-3xl intro-y">
           <div className="text-center min-h-[32px] sm:min-h-[36px] font-bold">
