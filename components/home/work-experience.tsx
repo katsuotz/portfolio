@@ -12,13 +12,26 @@ import { Laptop2Icon } from 'lucide-react'
 export default function WorkExperience() {
   const experiences: WorkExperienceType[] = [
     {
+      logo: '/work/biofarma.webp',
+      flag: '/flag/id.webp',
+      company: 'Biofarma',
+      position: [
+        {
+          title: 'Frontend Developer',
+          date: 'Feb 2024 - Now',
+        },
+      ],
+      description:
+        'Building a secure and intuitive platform to track medicine serialization and delivery, ensuring authenticity and compliance across the supply chain.',
+    },
+    {
       logo: '/work/farmbyte.webp',
       flag: '/flag/my.svg',
       company: 'FarmByte',
       position: [
         {
           title: 'Frontend Developer',
-          date: 'Sept 2024 - Now',
+          date: 'Oct 2024 - Aug 2025',
         },
       ],
       description:
@@ -31,7 +44,7 @@ export default function WorkExperience() {
       position: [
         {
           title: 'Full-Stack Developer',
-          date: 'Sept 2022 - Now',
+          date: 'Sept 2022 - Aug 2025',
         },
       ],
       description:
