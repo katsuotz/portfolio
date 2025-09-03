@@ -66,7 +66,7 @@ export default function WorkExperience() {
     {
       logo: '/work/sgara.webp',
       flag: '/flag/id.webp',
-      company: 'Sgara (PT. Transformasi Digital Laut)',
+      company: 'Sgara',
       position: [
         {
           title: 'Frontend Developer',
