@@ -26,19 +26,17 @@ jobs:
           script: |
             set -euo pipefail
 
-            # === Settings (edit to match your server paths) ===
             APP_DIR="/var/www/portfolio"
             BRANCH="master"
 
-            # Ensure Bun is on PATH (adjust if you use another shell/profile)
             export BUN_INSTALL="$HOME/.bun"
             export PATH="$BUN_INSTALL/bin:$PATH"
             command -v bun >/dev/null || { echo "Bun not found on server PATH"; exit 1; }
 
-            # Go to app directory
             cd "$APP_DIR"
-            # Pull latest code safely
             git fetch
             git reset --hard "origin/$BRANCH"
             bun install --frozen-lockfile --offline
             bun run build
+            
+            sudo systemctl restart nginx
