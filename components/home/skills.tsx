@@ -66,6 +66,10 @@ export default function Skills() {
       name: 'Golang',
     },
     {
+      logo: '/skills/python.webp',
+      name: 'Python',
+    },
+    {
       logo: '/skills/php.webp',
       name: 'PHP',
       gray: true,
