@@ -38,5 +38,5 @@ jobs:
             git reset --hard "origin/$BRANCH"
             bun install --frozen-lockfile --offline
             bun run build
-            
+
             sudo systemctl restart nginx
