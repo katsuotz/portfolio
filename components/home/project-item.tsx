@@ -31,8 +31,9 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
           <ExternalLinkIcon className="absolute top-6 right-6 md:group-hover/project:opacity-100 opacity-0 transition-all duration-500" />
           <div className="flex flex-col items-center relative">
             <Image
+              loading="lazy"
               src={project.logo}
-              alt=""
+              alt={project.name}
               width={80}
               height={80}
               className="h-20 w-auto mb-8 md:group-hover/project:scale-110 md:group-hover/project:-translate-y-10 transition-all duration-300"
@@ -55,8 +56,9 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
           </DialogDescription>
           <div className="flex justify-center">
             <Image
+              loading="lazy"
               src={project.image}
-              alt=""
+              alt={project.name}
               width="1000"
               height="600"
               className="rounded-lg"

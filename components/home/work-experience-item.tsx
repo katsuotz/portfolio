@@ -8,6 +8,7 @@ export interface WorkExperiencePosition {
 export interface WorkExperienceType {
   company: string
   description: string
+  country: string
   position: WorkExperiencePosition[]
   logo: string
   flag: string
@@ -24,8 +25,9 @@ export default function WorkExperienceItem({
         <div className="flex justify-between">
           <div className="flex items-center">
             <Image
+              loading="lazy"
               src={experience.flag}
-              alt=""
+              alt={experience.country}
               width={40}
               height={40}
               className="w-auto h-4 mr-2"
@@ -33,8 +35,9 @@ export default function WorkExperienceItem({
             <p className="tracking-wider">{experience.company}</p>
           </div>
           <Image
+            loading="lazy"
             src={experience.logo}
-            alt=""
+            alt={experience.company}
             width={40}
             height={40}
             className="w-auto h-10"

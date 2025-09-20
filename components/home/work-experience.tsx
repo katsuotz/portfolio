@@ -28,6 +28,7 @@ export default function WorkExperience() {
       logo: '/work/farmbyte.webp',
       flag: '/flag/my.svg',
       company: 'FarmByte',
+      country: 'Malaysia',
       position: [
         {
           title: 'Frontend Developer',
@@ -40,6 +41,7 @@ export default function WorkExperience() {
     {
       logo: '/work/paxel.webp',
       flag: '/flag/id.webp',
+      country: 'Indonesia',
       company: 'Paxel Indonesia',
       position: [
         {
@@ -54,6 +56,7 @@ export default function WorkExperience() {
       logo: '/work/lexigo.webp',
       flag: '/flag/au.webp',
       company: 'Lexigo',
+      country: 'Australia',
       position: [
         {
           title: 'Frontend Developer',
@@ -66,6 +69,7 @@ export default function WorkExperience() {
     {
       logo: '/work/sgara.webp',
       flag: '/flag/id.webp',
+      country: 'Indonesia',
       company: 'Sgara',
       position: [
         {
@@ -83,6 +87,7 @@ export default function WorkExperience() {
     {
       logo: '/project/edunex.webp',
       flag: '/flag/id.webp',
+      country: 'Indonesia',
       company: 'Cognisia',
       position: [
         {
@@ -96,6 +101,7 @@ export default function WorkExperience() {
     {
       logo: '/work/someah.webp',
       flag: '/flag/id.webp',
+      country: 'Indonesia',
       company: 'Someah Kreatif Nusantara',
       position: [
         {

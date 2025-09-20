@@ -81,6 +81,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
           ))}
         {!showcase.livePreview && showcase.image && (
           <Image
+            loading="lazy"
             src={showcase.image}
             alt={showcase.name}
             width={480}

@@ -118,7 +118,7 @@ export default function Skills() {
                       src={skill.logo}
                       width={100}
                       height={100}
-                      alt=""
+                      alt={skill.name}
                       className={`${skill.className || 'w-auto h-12'} ${skill.gray ? 'invert dark:invert-0' : ''}`}
                     />
                   </TooltipTrigger>
