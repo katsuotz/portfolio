@@ -7,22 +7,40 @@ import Link from 'next/link'
 export default function Project({ showAllProjects = false }) {
   const projects: ProjectType[] = [
     {
+      logo: '/work/farmbyte.webp',
+      name: 'FarmByte OMS',
+      year: '2025',
+      description:
+        'A platform to manage orders from quotation to logistics, inbound, and grading.',
+      image: '/project/farmbyte_oms.webp',
+      highlight: true,
+    },
+    {
+      logo: '/project/spmb.webp',
+      name: 'SPMB/PPDB Jawa Barat',
+      year: '2019 - 2025',
+      description:
+        'An all-in-one web app for students in West Java, enabling seamless high school registration by providing a user-friendly platform with over 1 million users.',
+      image: '/project/ppdb-1.webp',
+      highlight: true,
+    },
+    {
+      logo: '/work/paxel.webp',
+      name: 'Paxel CMS',
+      year: '2022 - 2025',
+      description:
+        'A logistics CMS that manages first-mile pickup, middle-mile, and last-mile delivery to ensure smooth and reliable operations.',
+      image: '/project/paxel-cms.webp',
+      highlight: true,
+    },
+    {
       logo: '/project/transkripid.svg',
       name: 'Transkrip.id',
       year: '2024',
       description:
         'A project to Transcribe Audio/Video to Text with AI Technology.',
-      image: '/project/transkripid.jpg',
+      image: '/project/transkripid.webp',
       url: 'https://transkrip.id/',
-      highlight: true,
-    },
-    {
-      logo: '/project/ppdb.webp',
-      name: 'PPDB Jawa Barat',
-      year: '2019 - 2024',
-      description:
-        'An all-in-one web app for students in West Java, enabling seamless high school registration by providing a user-friendly platform.',
-      image: '/project/ppdb-1.webp',
       highlight: true,
     },
     {
@@ -41,7 +59,7 @@ export default function Project({ showAllProjects = false }) {
       year: '2023',
       description:
         'UI Slicing Web App for analyzing political election data, offering insights into candidate historical data.',
-      image: '/project/cek-reputasi-1.jpg',
+      image: '/project/cek-reputasi-1.webp',
     },
     {
       logo: '/project/sgara-book.webp',
@@ -49,7 +67,7 @@ export default function Project({ showAllProjects = false }) {
       year: '2020 - 2022',
       description:
         'An AI-driven farm management system to monitor farms on a daily basis from day one to harvest.',
-      image: '/project/sgara-book-1.jpg',
+      image: '/project/sgara-book-1.webp',
       url: 'https://book.sgara.id/',
       highlight: true,
     },
@@ -59,7 +77,7 @@ export default function Project({ showAllProjects = false }) {
       year: '2020 - 2022',
       description:
         'A customizable LMS designed for students and lecturers in ITB (Bandung Institute of Technology).',
-      image: '/project/edunex-1.jpg',
+      image: '/project/edunex-1.webp',
       url: 'https://edunex.itb.ac.id/',
       highlight: true,
     },
@@ -78,7 +96,7 @@ export default function Project({ showAllProjects = false }) {
       description:
         'A 3d virtual showcase exhibition in Ministry of Education and Culture Indonesia yearly event for Vocational School.',
       image: '/project/virtual-exhibition.webp',
-      highlight: true,
+      highlight: false,
     },
     {
       logo: '/achievement/kemnaker.webp',
@@ -86,10 +104,10 @@ export default function Project({ showAllProjects = false }) {
       year: '2020',
       description: 'Online e-book library for Ministry of Manpower Indonesia.',
       image: '/project/emodul.webp',
-      highlight: true,
+      highlight: false,
     },
     {
-      logo: '/work/someah.jpg',
+      logo: '/work/someah.webp',
       name: 'Pantau Covid-19',
       year: '2020',
       description:
@@ -111,7 +129,7 @@ export default function Project({ showAllProjects = false }) {
       year: '2017 - 2018',
       description:
         'A web app to manage all aspects of school including student enrollment, teacher management, subject allocation, and scheduling.',
-      image: '/project/eschool.jpg',
+      image: '/project/eschool.webp',
       url: 'https://eschool.smkn4bdg.sch.id/',
     },
     {
@@ -119,7 +137,7 @@ export default function Project({ showAllProjects = false }) {
       name: 'SMKN 4 Landing Page',
       year: '2017',
       description: 'A customizable Landing Page and CMS for SMKN 4 Bandung.',
-      image: '/project/smkn4-landing-page.jpg',
+      image: '/project/smkn4-landing-page.webp',
       url: 'https://smkn4bdg.sch.id/',
     },
   ]
