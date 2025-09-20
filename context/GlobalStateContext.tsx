@@ -31,14 +31,6 @@ export const GlobalStateProvider = ({
       const savedDarkMode = localStorage.getItem('dark-mode')
       if (savedDarkMode !== null) {
         setGlobalState({ theme: savedDarkMode === 'true' ? 'dark' : 'light' })
-      } else if (window.matchMedia) {
-        // @ts-ignore
-        setGlobalState({
-          theme:
-            window.matchMedia('(prefers-color-scheme: dark)').matches === true
-              ? 'dark'
-              : 'light',
-        })
       }
     }
     setIsClient(true)
