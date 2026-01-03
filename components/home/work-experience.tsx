@@ -12,6 +12,20 @@ import { Laptop2Icon } from 'lucide-react'
 export default function WorkExperience() {
   const experiences: WorkExperienceType[] = [
     {
+      logo: '/work/nvp.webp',
+      flag: '/flag/id.webp',
+      company: 'Native Productions',
+      country: 'Indonesia',
+      position: [
+        {
+          title: 'Full-Stack Developer',
+          date: 'Dec 2025 - Now',
+        },
+      ],
+      description:
+        'Built customizable and scalable enterprise applications with tailored workflows and advanced reporting to support client-specific business logic.',
+    },
+    {
       logo: '/work/shieldbase.webp',
       flag: '/flag/my.svg',
       company: 'Shieldbase',
@@ -19,11 +33,11 @@ export default function WorkExperience() {
       position: [
         {
           title: 'Software Engineer',
-          date: 'Feb 2024 - Now',
+          date: 'Aug 2025 - Now',
         },
       ],
       description:
-        'Developing an enterprise-grade AI workspace that unifies models, data, and agents into a secure, scalable platform.',
+        'Developed an enterprise-grade AI workspace that unifies models, data, and agents into a secure and scalable platform.',
     },
     {
       logo: '/work/biofarma.webp',
@@ -37,7 +51,7 @@ export default function WorkExperience() {
         },
       ],
       description:
-        'Building a secure and intuitive platform to track medicine serialization and delivery, ensuring authenticity and compliance across the supply chain.',
+        'Built a secure and intuitive platform to track medicine serialization and delivery, ensuring authenticity and regulatory compliance across the supply chain.',
     },
     {
       logo: '/work/farmbyte.webp',
@@ -51,13 +65,13 @@ export default function WorkExperience() {
         },
       ],
       description:
-        'Crafting intuitive web applications with reusable components, API integration, and optimized business logic to empower farmers and drive innovation.',
+        'Crafted intuitive web applications with reusable components, API integrations, and optimized business logic to empower farmers and drive innovation.',
     },
     {
       logo: '/work/paxel.webp',
       flag: '/flag/id.webp',
       country: 'Indonesia',
-      company: 'Paxel Indonesia',
+      company: 'Paxel',
       position: [
         {
           title: 'Full-Stack Developer',
@@ -65,7 +79,7 @@ export default function WorkExperience() {
         },
       ],
       description:
-        'Enhance and maintain logistics shipment apps to optimize operations and ensure seamless flow within customers, business and warehouses.',
+        'Enhanced and maintained logistics and shipment applications to ensure a seamless flow between customers, businesses, and warehouses.',
     },
     {
       logo: '/work/lexigo.webp',
@@ -79,7 +93,7 @@ export default function WorkExperience() {
         },
       ],
       description:
-        'Create translation and localization web apps with cloud-based technology to enable organizations to communicate with confidence.',
+        'Created translation and localization web applications using cloud-based technologies to help organizations communicate with confidence.',
     },
     {
       logo: '/work/sgara.webp',
@@ -97,7 +111,7 @@ export default function WorkExperience() {
         },
       ],
       description:
-        'Create a one-stop platform for shrimp farming with data-driven farm advisory and marketplace solution form shrimp farmers.',
+        'Built a one-stop platform for shrimp farming with data-driven farm advisory services and a marketplace solution for shrimp farmers.',
     },
     {
       logo: '/project/edunex.webp',
@@ -111,7 +125,7 @@ export default function WorkExperience() {
         },
       ],
       description:
-        'Developed a custom Web-based Learning Management System (LMS) for Bandung Institute Technology (ITB).',
+        'Developed a custom web-based Learning Management System (LMS) for the Bandung Institute of Technology (ITB).',
     },
     {
       logo: '/work/someah.webp',
@@ -125,7 +139,7 @@ export default function WorkExperience() {
         },
       ],
       description:
-        'Developed custom web applications based on client requirements, utilizing a full stack development approach to handle both frontend and backend components.',
+        'Developed custom web applications based on client requirements, using a full-stack approach to handle both frontend and backend components.',
     },
   ]
 
