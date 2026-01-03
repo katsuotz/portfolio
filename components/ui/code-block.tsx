@@ -5,7 +5,7 @@ import { CheckIcon, CopyIcon } from 'lucide-react'
 
 type CodeBlockProps = {
   code: string
-  language?: 'tsx' | 'typescript' | 'javascript' | 'json' | string
+  language?: string
 }
 
 const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'tsx' }) => {

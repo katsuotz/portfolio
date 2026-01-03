@@ -29,7 +29,6 @@ interface TextTypeProps {
   pauseDuration?: number
   deletingSpeed?: number
   loop?: boolean
-  textColors?: string[]
   variableSpeed?: { min: number; max: number }
   onSentenceComplete?: (sentence: string, index: number) => void
   startOnVisible?: boolean
@@ -50,7 +49,6 @@ const TextType = ({
   cursorCharacter = '|',
   cursorClassName = '',
   cursorBlinkDuration = 0.5,
-  textColors = [],
   variableSpeed,
   onSentenceComplete,
   startOnVisible = false,

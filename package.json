@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 8080",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "bun --bun next dev -p 8080",
+    "build": "bun --bun next build",
+    "start": "bun --bun next start",
     "format": "oxfmt . --write",
-    "start-server": "next start -p 2006",
+    "lint": "oxlint --type-aware --type-check",
+    "lint:fix": "oxlint --type-aware --type-check --fix",
+    "start-server": "bunx next start -p 2006",
     "prepare": "husky"
   },
   "dependencies": {
@@ -43,13 +44,14 @@
     "lint-staged": "^15.5.2",
     "oxfmt": "^0.21.0",
     "oxlint": "^1.36.0",
+    "oxlint-tsgolint": "^0.10.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },
   "lint-staged": {
     "*.{js,tsx,ts}": [
-      "oxlint",
+      "oxlint --type-aware --type-check --fix",
       "oxfmt . --write"
     ]
   }

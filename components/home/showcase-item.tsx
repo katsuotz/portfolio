@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { useEffect, useState } from 'react'
 import CodeBlock from '@/components/ui/code-block'
@@ -37,7 +36,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
 
   useEffect(() => {
     if (showCode) {
-      loadCode()
+      void loadCode()
     }
   }, [showCode])
 
