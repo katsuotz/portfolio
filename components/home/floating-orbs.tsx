@@ -1,7 +1,7 @@
 'use client'
 
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useState, useEffect } from 'react'
 import * as THREE from 'three'
 import {
   EffectComposer,
@@ -16,11 +16,13 @@ function Orb({
   color,
   scale,
   speed,
+  isMobile,
 }: {
   position: [number, number, number]
   color: string
   scale: number
   speed: number
+  isMobile: boolean
 }) {
   const meshRef = useRef<THREE.Mesh>(null)
   const initialY = position[1]
@@ -36,15 +38,8 @@ function Orb({
 
   return (
     <mesh ref={meshRef} position={position} scale={scale}>
-      <icosahedronGeometry args={[1, 1]} />
-      <meshStandardMaterial
-        color={color}
-        transparent
-        opacity={0.6}
-        wireframe
-        emissive={color}
-        emissiveIntensity={0.3}
-      />
+      <icosahedronGeometry args={[1, isMobile ? 0 : 1]} />
+      <meshBasicMaterial color={color} transparent opacity={0.6} wireframe />
     </mesh>
   )
 }
@@ -54,11 +49,13 @@ function GlowOrb({
   color,
   scale,
   speed,
+  isMobile,
 }: {
   position: [number, number, number]
   color: string
   scale: number
   speed: number
+  isMobile: boolean
 }) {
   const meshRef = useRef<THREE.Mesh>(null)
   const initialPos = useMemo(() => [...position], [position])
@@ -74,21 +71,15 @@ function GlowOrb({
 
   return (
     <mesh ref={meshRef} position={position} scale={scale}>
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial
-        color={color}
-        transparent
-        opacity={0.4}
-        emissive={color}
-        emissiveIntensity={0.5}
-      />
+      <sphereGeometry args={[1, isMobile ? 8 : 32, isMobile ? 8 : 32]} />
+      <meshBasicMaterial color={color} transparent opacity={0.4} />
     </mesh>
   )
 }
 
-function ParticleField() {
+function ParticleField({ isMobile }: { isMobile: boolean }) {
   const particlesRef = useRef<THREE.Points>(null)
-  const particleCount = 100
+  const particleCount = isMobile ? 30 : 100
 
   const positions = useMemo(() => {
     const pos = new Float32Array(particleCount * 3)
@@ -126,47 +117,69 @@ function ParticleField() {
   )
 }
 
-export default function FloatingOrbs() {
+function Scene({ isMobile }: { isMobile: boolean }) {
   return (
-    <div className="absolute inset-0 pointer-events-none">
-      <Canvas
-        camera={{ position: [0, 0, 5], fov: 75 }}
-        style={{ background: 'transparent' }}
-        gl={{ alpha: true, antialias: true }}
-      >
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
+    <>
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={1} />
+      {!isMobile && (
         <pointLight
           position={[-10, -10, -10]}
           intensity={0.5}
           color="#FF6B6B"
         />
+      )}
 
-        <Orb position={[-3, 1, -2]} color="#FF6B6B" scale={0.8} speed={0.8} />
-        <Orb position={[3, -1, -1]} color="#7ECDC8" scale={0.6} speed={1.2} />
-        <Orb position={[0, 2, -3]} color="#FFB347" scale={0.5} speed={1} />
+      <Orb
+        position={[-3, 1, -2]}
+        color="#FF6B6B"
+        scale={0.8}
+        speed={0.8}
+        isMobile={isMobile}
+      />
+      <Orb
+        position={[3, -1, -1]}
+        color="#7ECDC8"
+        scale={0.6}
+        speed={1.2}
+        isMobile={isMobile}
+      />
+      {!isMobile && (
+        <Orb
+          position={[0, 2, -3]}
+          color="#FFB347"
+          scale={0.5}
+          speed={1}
+          isMobile={isMobile}
+        />
+      )}
 
-        <GlowOrb
-          position={[-2, -1.5, 0]}
-          color="#5E92C9"
-          scale={0.3}
-          speed={1.5}
-        />
-        <GlowOrb
-          position={[2.5, 1.5, -1]}
-          color="#FF9FFC"
-          scale={0.25}
-          speed={1.8}
-        />
+      <GlowOrb
+        position={[-2, -1.5, 0]}
+        color="#5E92C9"
+        scale={0.3}
+        speed={1.5}
+        isMobile={isMobile}
+      />
+      <GlowOrb
+        position={[2.5, 1.5, -1]}
+        color="#FF9FFC"
+        scale={0.25}
+        speed={1.8}
+        isMobile={isMobile}
+      />
+      {!isMobile && (
         <GlowOrb
           position={[1, -2, -2]}
           color="#FFD93D"
           scale={0.35}
           speed={1.3}
+          isMobile={isMobile}
         />
-        <ParticleField />
+      )}
+      <ParticleField isMobile={isMobile} />
 
-        {/* Post-processing effects */}
+      {!isMobile && (
         <EffectComposer>
           <Bloom
             intensity={0.5}
@@ -182,6 +195,36 @@ export default function FloatingOrbs() {
           />
           <Noise blendFunction={BlendFunction.SOFT_LIGHT} opacity={0.15} />
         </EffectComposer>
+      )}
+    </>
+  )
+}
+
+export default function FloatingOrbs() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 75 }}
+        style={{ background: 'transparent' }}
+        gl={{
+          alpha: true,
+          antialias: !isMobile,
+          powerPreference: 'high-performance',
+        }}
+        dpr={isMobile ? 0.75 : [1, 2]}
+      >
+        <Scene isMobile={isMobile} />
       </Canvas>
     </div>
   )
