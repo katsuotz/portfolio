@@ -249,7 +249,7 @@ export default function EslOneKualaLumpur() {
       </section>
 
       <BackToTop />
-      <Footer />
+      <Footer showGradient={false} />
     </GlobalStateProvider>
   )
 }

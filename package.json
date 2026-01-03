@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun --bun next dev -p 8080",
+    "dev": "bun --bun next dev -p 8081",
     "build": "bun --bun next build",
     "start": "bun --bun next start",
     "format": "oxfmt . --write",

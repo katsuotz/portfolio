@@ -147,9 +147,9 @@ export default function Project({ showAllProjects = false }) {
     : projects.filter((e) => e.highlight)
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center">
-        <MonitorSmartphoneIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4" />
+    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 section-gradient">
+      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title">
+        <MonitorSmartphoneIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-blue-500 dark:text-blue-400" />
         Projects
       </h2>
 
@@ -164,7 +164,7 @@ export default function Project({ showAllProjects = false }) {
               className="col col-span-12 xs:col-span-6 md:col-span-3 group/project intro-y"
             >
               <span className="sr-only">View All Projects</span>
-              <div className="px-4 w-full sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]">
+              <div className="px-4 w-full sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl glass-card-enhanced">
                 <div className="flex flex-col items-center relative">
                   <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5]" />
                   <p className="font-bold text-xl">More</p>

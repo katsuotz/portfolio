@@ -99,14 +99,14 @@ export default function Skills() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center">
-        <Code2Icon className="w-8 h-8 sm:w-10 sm:h-10 mr-4" />
+    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 section-gradient-alt">
+      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title">
+        <Code2Icon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-emerald-500 dark:text-emerald-400" />
         Skills
       </h2>
 
-      <div className="container lg:max-w-[820px]">
-        <div className="flex flex-wrap gap-x-6 gap-y-8 justify-center">
+      <div className="container lg:max-w-[900px]">
+        <div className="glass-card-enhanced rounded-3xl p-8 flex flex-wrap gap-x-8 gap-y-10 justify-center">
           {skills.map((skill, key) => {
             return (
               <TooltipProvider delayDuration={0} key={key}>

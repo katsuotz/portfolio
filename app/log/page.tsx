@@ -51,7 +51,7 @@ export default function Log() {
       </section>
 
       <BackToTop />
-      <Footer />
+      <Footer showGradient={false} />
     </GlobalStateProvider>
   )
 }

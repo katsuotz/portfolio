@@ -39,4 +39,4 @@ jobs:
             bun install --frozen-lockfile --offline
             bun run build
 
-            sudo systemctl restart nginx
+            sudo systemctl reload nginx

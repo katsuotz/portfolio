@@ -488,7 +488,7 @@ export default function TwoWeeksNewZealand() {
       </div>
 
       <BackToTop />
-      <Footer />
+      <Footer showGradient={false} />
     </GlobalStateProvider>
   )
 }
