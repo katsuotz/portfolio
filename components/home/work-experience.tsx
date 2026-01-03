@@ -11,19 +11,34 @@ import { Laptop2Icon } from 'lucide-react'
 
 export default function WorkExperience() {
   const experiences: WorkExperienceType[] = [
-    // {
-    //   logo: '/work/biofarma.webp',
-    //   flag: '/flag/id.webp',
-    //   company: 'Biofarma',
-    //   position: [
-    //     {
-    //       title: 'Frontend Developer',
-    //       date: 'Feb 2024 - Now',
-    //     },
-    //   ],
-    //   description:
-    //     'Building a secure and intuitive platform to track medicine serialization and delivery, ensuring authenticity and compliance across the supply chain.',
-    // },
+    {
+      logo: '/work/shieldbase.webp',
+      flag: '/flag/my.svg',
+      company: 'Shieldbase',
+      country: 'Malaysia',
+      position: [
+        {
+          title: 'Software Engineer',
+          date: 'Feb 2024 - Now',
+        },
+      ],
+      description:
+        'Developing an enterprise-grade AI workspace that unifies models, data, and agents into a secure, scalable platform.',
+    },
+    {
+      logo: '/work/biofarma.webp',
+      flag: '/flag/id.webp',
+      company: 'Biofarma',
+      country: 'Indonesia',
+      position: [
+        {
+          title: 'Frontend Developer',
+          date: 'Feb 2024 - Now',
+        },
+      ],
+      description:
+        'Building a secure and intuitive platform to track medicine serialization and delivery, ensuring authenticity and compliance across the supply chain.',
+    },
     {
       logo: '/work/farmbyte.webp',
       flag: '/flag/my.svg',
