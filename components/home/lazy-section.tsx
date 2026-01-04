@@ -43,7 +43,7 @@ export default function LazySection({
   }, [rootMargin])
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={`virtual-section ${className}`}>
       {hasLoaded
         ? children
         : placeholder || (

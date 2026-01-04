@@ -3,13 +3,7 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useRef, useMemo, useState, useEffect } from 'react'
 import * as THREE from 'three'
-import {
-  EffectComposer,
-  Bloom,
-  ChromaticAberration,
-  Noise,
-} from '@react-three/postprocessing'
-import { BlendFunction } from 'postprocessing'
+import { EffectComposer, Bloom } from '@react-three/postprocessing'
 
 function Orb({
   position,
@@ -79,7 +73,7 @@ function GlowOrb({
 
 function ParticleField({ isMobile }: { isMobile: boolean }) {
   const particlesRef = useRef<THREE.Points>(null)
-  const particleCount = isMobile ? 30 : 100
+  const particleCount = isMobile ? 20 : 75
 
   const positions = useMemo(() => {
     const pos = new Float32Array(particleCount * 3)
@@ -120,16 +114,6 @@ function ParticleField({ isMobile }: { isMobile: boolean }) {
 function Scene({ isMobile }: { isMobile: boolean }) {
   return (
     <>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} intensity={1} />
-      {!isMobile && (
-        <pointLight
-          position={[-10, -10, -10]}
-          intensity={0.5}
-          color="#FF6B6B"
-        />
-      )}
-
       <Orb
         position={[-3, 1, -2]}
         color="#FF6B6B"
@@ -187,13 +171,6 @@ function Scene({ isMobile }: { isMobile: boolean }) {
             luminanceSmoothing={0.9}
             mipmapBlur
           />
-          <ChromaticAberration
-            blendFunction={BlendFunction.NORMAL}
-            offset={new THREE.Vector2(0.002, 0.002)}
-            radialModulation={true}
-            modulationOffset={0.5}
-          />
-          <Noise blendFunction={BlendFunction.SOFT_LIGHT} opacity={0.15} />
         </EffectComposer>
       )}
     </>

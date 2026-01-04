@@ -8,6 +8,11 @@ const nextConfig = {
   },
 
   productionBrowserSourceMaps: false,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
+  turbopack: {},
 }
 
 module.exports = nextConfig

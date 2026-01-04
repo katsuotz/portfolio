@@ -501,41 +501,41 @@
 }
 
 /* Section backgrounds */
-.section-gradient {
-  background: linear-gradient(
-    180deg,
-    rgba(248, 250, 252, 0) 0%,
-    rgba(241, 245, 249, 0.5) 50%,
-    rgba(248, 250, 252, 0) 100%
-  );
-}
+/*.section-gradient {*/
+/*  background: linear-gradient(*/
+/*    180deg,*/
+/*    rgba(248, 250, 252, 0) 0%,*/
+/*    rgba(241, 245, 249, 0.5) 50%,*/
+/*    rgba(248, 250, 252, 0) 100%*/
+/*  );*/
+/*}*/
 
-.dark .section-gradient {
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0) 0%,
-    rgba(30, 41, 59, 0.3) 50%,
-    rgba(15, 23, 42, 0) 100%
-  );
-}
+/*.dark .section-gradient {*/
+/*  background: linear-gradient(*/
+/*    180deg,*/
+/*    rgba(15, 23, 42, 0) 0%,*/
+/*    rgba(30, 41, 59, 0.3) 50%,*/
+/*    rgba(15, 23, 42, 0) 100%*/
+/*  );*/
+/*}*/
 
-.section-gradient-alt {
-  background: linear-gradient(
-    180deg,
-    rgba(248, 250, 252, 0) 0%,
-    rgba(237, 233, 254, 0.3) 50%,
-    rgba(248, 250, 252, 0) 100%
-  );
-}
+/*.section-gradient-alt {*/
+/*  background: linear-gradient(*/
+/*    180deg,*/
+/*    rgba(248, 250, 252, 0) 0%,*/
+/*    rgba(237, 233, 254, 0.3) 50%,*/
+/*    rgba(248, 250, 252, 0) 100%*/
+/*  );*/
+/*}*/
 
-.dark .section-gradient-alt {
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0) 0%,
-    rgba(88, 28, 135, 0.1) 50%,
-    rgba(15, 23, 42, 0) 100%
-  );
-}
+/*.dark .section-gradient-alt {*/
+/*  background: linear-gradient(*/
+/*    180deg,*/
+/*    rgba(15, 23, 42, 0) 0%,*/
+/*    rgba(88, 28, 135, 0.1) 50%,*/
+/*    rgba(15, 23, 42, 0) 100%*/
+/*  );*/
+/*}*/
 
 /* Glass card enhanced */
 .glass-card-enhanced {
@@ -594,6 +594,12 @@
 
 .dark .icon-glow {
   filter: drop-shadow(0 0 12px rgba(147, 51, 234, 0.5));
+}
+
+/* Virtual scroll - content-visibility optimization */
+.virtual-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 /* Mobile performance optimizations */
