@@ -4,10 +4,10 @@ import {
   ArrowDown,
   HammerIcon,
   MailIcon,
-  MapIcon,
   ScrollTextIcon,
   TvMinimalPlayIcon,
   SparklesIcon,
+  MapPinIcon,
 } from 'lucide-react'
 import SocialMedia from '@/components/home/social-media'
 import Link from 'next/link'
@@ -199,13 +199,13 @@ export default function Banner() {
 
       {/* Contact info with glass card */}
       <div className="absolute top-0 left-0 pl-4 sm:pl-10 pt-10">
-        <div className="glass-card rounded-xl px-4 py-3 space-y-1">
-          <p className="flex items-center intro-y text-sm text-slate-600 dark:text-slate-300">
+        <div className="glass-card rounded-xl px-4 py-3 space-y-1 intro-y">
+          <p className="flex items-center text-sm text-slate-600 dark:text-slate-300">
             <MailIcon className="w-4 h-4 mr-2 text-purple-500" />{' '}
             m.irfan.fakhri66@gmail.com
           </p>
-          <p className="flex items-center intro-y text-sm text-slate-600 dark:text-slate-300">
-            <MapIcon className="w-4 h-4 mr-2 text-cyan-500" /> Indonesia
+          <p className="flex items-center text-sm text-slate-600 dark:text-slate-300">
+            <MapPinIcon className="w-4 h-4 mr-2 text-cyan-500" /> Indonesia
           </p>
         </div>
       </div>
