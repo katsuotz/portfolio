@@ -491,13 +491,170 @@
   animation: gradient 4s ease infinite;
 }
 
+/* Dot grid pattern */
+.dot-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(148, 163, 184, 0.5) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+.dark .dot-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(148, 163, 184, 0.2) 1px,
+    transparent 1px
+  );
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* Aurora gradient strips */
+.aurora-strip {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: aurora 12s ease-in-out infinite alternate;
+}
+
+.aurora-strip-1 {
+  width: 60%;
+  height: 40%;
+  top: -10%;
+  left: 10%;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.3),
+    rgba(236, 72, 153, 0.2),
+    transparent
+  );
+  animation-delay: 0s;
+}
+
+.aurora-strip-2 {
+  width: 50%;
+  height: 35%;
+  bottom: 5%;
+  right: 5%;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.25),
+    rgba(139, 92, 246, 0.2),
+    transparent
+  );
+  animation-delay: -4s;
+}
+
+.aurora-strip-3 {
+  width: 40%;
+  height: 30%;
+  top: 40%;
+  left: 40%;
+  background: linear-gradient(
+    135deg,
+    rgba(251, 146, 60, 0.15),
+    rgba(236, 72, 153, 0.15),
+    transparent
+  );
+  animation-delay: -8s;
+}
+
+.dark .aurora-strip {
+  opacity: 0.3;
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) rotate(3deg) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 15px) rotate(-2deg) scale(0.97);
+  }
+  100% {
+    transform: translate(10px, -10px) rotate(1deg) scale(1.02);
+  }
+}
+
+/* Gradient border badge */
+.gradient-border-badge {
+  position: relative;
+  padding: 1px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899, #f97316, #8b5cf6);
+  background-size: 300% 300%;
+  animation: gradient-border-rotate 4s ease infinite;
+}
+
+@keyframes gradient-border-rotate {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Gradient border button */
+.gradient-border-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #334155 !important;
+  border: 1px solid rgba(139, 92, 246, 0.2) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.dark .gradient-border-btn {
+  background: rgba(15, 23, 42, 0.8) !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(139, 92, 246, 0.25) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-border-btn:hover {
+  border-color: rgba(139, 92, 246, 0.5) !important;
+  box-shadow:
+    0 4px 20px rgba(139, 92, 246, 0.12),
+    0 0 0 1px rgba(139, 92, 246, 0.1);
+  transform: translateY(-1px) scale(1.03);
+}
+
+.dark .gradient-border-btn:hover {
+  border-color: rgba(139, 92, 246, 0.5) !important;
+  box-shadow:
+    0 4px 25px rgba(139, 92, 246, 0.2),
+    0 0 0 1px rgba(139, 92, 246, 0.15);
+}
+
+/* Subtle gradient border for cards */
+.border-gradient-subtle {
+  border: 1px solid rgba(139, 92, 246, 0.12) !important;
+}
+
+.dark .border-gradient-subtle {
+  border: 1px solid rgba(139, 92, 246, 0.15) !important;
+}
+
 /* Banner title glow effect */
 .banner-title {
-  filter: drop-shadow(0 0 30px rgba(126, 205, 200, 0.3));
+  filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.25));
 }
 
 .dark .banner-title {
-  filter: drop-shadow(0 0 40px rgba(126, 205, 200, 0.4));
+  filter: drop-shadow(0 0 40px rgba(139, 92, 246, 0.35));
 }
 
 /* Section backgrounds */
@@ -612,6 +769,15 @@
     animation: none;
   }
 
+  .aurora-strip {
+    animation: none;
+    filter: blur(60px);
+  }
+
+  .gradient-border-btn:hover {
+    transform: none;
+  }
+
   .glass-card-enhanced {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -631,13 +797,16 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-blob,
   .animate-gradient,
+  .aurora-strip,
+  .gradient-border-badge,
   .intro-y,
   .animate-pulse,
   .animate-bounce {
     animation: none !important;
   }
 
-  .glass-card-enhanced:hover {
+  .glass-card-enhanced:hover,
+  .gradient-border-btn:hover {
     transform: none;
   }
 }
