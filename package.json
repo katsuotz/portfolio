@@ -51,7 +51,7 @@
   "lint-staged": {
     "*.{js,tsx,ts}": [
       "oxlint --type-aware --type-check --fix",
-      "oxfmt . --write"
+      "oxfmt"
     ]
   }
 }
