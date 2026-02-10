@@ -66,18 +66,15 @@ export default function Banner() {
 
         {/* Main content */}
         <div className="absolute top-1/2 -translate-y-1/2 pb-20 px-4 sm:px-8 w-full max-w-5xl mx-auto">
-          {/* Animated gradient border badge */}
           <div className="flex justify-center mb-6 intro-y">
-            <div className="gradient-border-badge">
-              <div className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span className="text-sm font-semibold tracking-wide bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 dark:from-purple-400 dark:via-pink-400 dark:to-orange-300 bg-clip-text text-transparent">
-                  Available for hire
-                </span>
-              </div>
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-200 dark:border-emerald-800/50 bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-sm text-slate-600 dark:text-slate-300">
+                Available for hire
+              </span>
             </div>
           </div>
 
