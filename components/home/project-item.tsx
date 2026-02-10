@@ -27,8 +27,8 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
     <Dialog>
       <DialogTrigger className="col col-span-12 sm:col-span-6 md:col-span-3 rounded-3xl group/project intro-y">
         <span className="sr-only">{project.name}</span>
-        <div className="px-4 sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl glass-card-enhanced">
-          <ExternalLinkIcon className="absolute top-6 right-6 md:group-hover/project:opacity-100 opacity-0 transition-all duration-500" />
+        <div className="px-4 sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl glass-card-enhanced hover:border-blue-500/30 dark:hover:border-blue-400/30 transition-all duration-300">
+          <ExternalLinkIcon className="absolute top-6 right-6 md:group-hover/project:opacity-100 opacity-0 transition-all duration-500 text-blue-500 dark:text-blue-400" />
           <div className="flex flex-col items-center relative">
             <Image
               loading="lazy"
@@ -39,10 +39,14 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
               className="h-20 w-auto mb-8 md:group-hover/project:scale-110 md:group-hover/project:-translate-y-10 transition-all duration-300"
             />
             <div className="text-center md:group-hover/project:-translate-y-14 md:group-hover/project:scale-105 transition-all duration-300">
-              <p className="font-bold text-xl">{project.name}</p>
-              <p className="font-bold text-xl">{project.year}</p>
+              <p className="font-bold text-xl text-slate-800 dark:text-slate-100">
+                {project.name}
+              </p>
+              <p className="font-bold text-xl text-blue-600 dark:text-blue-400 mt-1">
+                {project.year}
+              </p>
             </div>
-            <p className="absolute text-center px-4 bottom-0 opacity-0 translate-y-[100%] md:group-hover/project:opacity-100 group-hover/project:bottom-12 transition-all duration-300">
+            <p className="absolute text-center px-4 bottom-0 opacity-0 translate-y-[100%] md:group-hover/project:opacity-100 group-hover/project:bottom-12 transition-all duration-300 text-slate-600 dark:text-slate-300 font-medium">
               {project.description}
             </p>
           </div>

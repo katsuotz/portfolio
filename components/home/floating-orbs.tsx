@@ -111,9 +111,38 @@ function ParticleField({ isMobile }: { isMobile: boolean }) {
   )
 }
 
-function Scene({ isMobile }: { isMobile: boolean }) {
+function Scene({
+  isMobile,
+  mousePosition,
+}: {
+  isMobile: boolean
+  mousePosition: React.MutableRefObject<{ x: number; y: number }>
+}) {
+  const groupRef = useRef<THREE.Group>(null)
+
+  useFrame(() => {
+    if (groupRef.current) {
+      // Smooth rotation based on mouse position
+      // Target rotation
+      const targetRotationX = -mousePosition.current.y * 0.5
+      const targetRotationY = mousePosition.current.x * 0.5
+
+      // Linear interpolation for smoothness
+      groupRef.current.rotation.x = THREE.MathUtils.lerp(
+        groupRef.current.rotation.x,
+        targetRotationX,
+        0.05
+      )
+      groupRef.current.rotation.y = THREE.MathUtils.lerp(
+        groupRef.current.rotation.y,
+        targetRotationY,
+        0.05
+      )
+    }
+  })
+
   return (
-    <>
+    <group ref={groupRef}>
       <Orb
         position={[-3, 1, -2]}
         color="#FF6B6B"
@@ -173,20 +202,34 @@ function Scene({ isMobile }: { isMobile: boolean }) {
           />
         </EffectComposer>
       )}
-    </>
+    </group>
   )
 }
 
 export default function FloatingOrbs() {
   const [isMobile, setIsMobile] = useState(false)
+  const mousePosition = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
     checkMobile()
+
+    const handleMouseMove = (event: MouseEvent) => {
+      mousePosition.current = {
+        x: (event.clientX / window.innerWidth) * 2 - 1,
+        y: -(event.clientY / window.innerHeight) * 2 + 1,
+      }
+    }
+
     window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      window.removeEventListener('resize', checkMobile)
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
   }, [])
 
   return (
@@ -201,7 +244,7 @@ export default function FloatingOrbs() {
         }}
         dpr={isMobile ? 0.75 : [1, 2]}
       >
-        <Scene isMobile={isMobile} />
+        <Scene isMobile={isMobile} mousePosition={mousePosition} />
       </Canvas>
     </div>
   )

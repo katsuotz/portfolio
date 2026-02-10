@@ -25,14 +25,18 @@ export default function Education() {
                   className="w-24 h-24"
                 />
               </div>
-              <p className="font-bold tracking-wide text-2xl sm:text-3xl">
+              <p className="font-bold tracking-wide text-2xl sm:text-3xl text-slate-800 dark:text-slate-100">
                 Universitas Komputer Indonesia
               </p>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-slate-600 dark:text-slate-400 mt-2 font-medium">
                 Bachelor Degree
               </p>
-              <p className="text-xl">Information System</p>
-              <p className="font-semibold text-xl">2023</p>
+              <p className="text-xl text-slate-700 dark:text-slate-300 mt-1">
+                Information System
+              </p>
+              <p className="font-semibold text-xl text-cyan-600 dark:text-blue-400 mt-4">
+                2023
+              </p>
             </div>
           </div>
           <div className="col-span-12 sm:col-span-6 mt-12 sm:mt-0">
@@ -47,14 +51,18 @@ export default function Education() {
                   className="w-24 h-24"
                 />
               </div>
-              <p className="font-bold tracking-wide text-2xl sm:text-3xl">
+              <p className="font-bold tracking-wide text-2xl sm:text-3xl text-slate-800 dark:text-slate-100">
                 SMK Negeri 4 Bandung
               </p>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-slate-600 dark:text-slate-400 mt-2 font-medium">
                 Vocational High School
               </p>
-              <p className="text-xl">Software Engineering</p>
-              <p className="font-semibold text-xl">2018</p>
+              <p className="text-xl text-slate-700 dark:text-slate-300 mt-1">
+                Software Engineering
+              </p>
+              <p className="font-semibold text-xl text-cyan-600 dark:text-blue-400 mt-4">
+                2018
+              </p>
             </div>
           </div>
         </div>

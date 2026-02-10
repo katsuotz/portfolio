@@ -145,7 +145,7 @@ export default function WorkExperience() {
 
   return (
     <section className="relative flex flex-col justify-center items-center lg:pt-8 pt-20 lg:pb-20 pb-16 lg:mt-20 section-gradient">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title">
+      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-400 dark:from-purple-400 dark:to-purple-200">
         <Laptop2Icon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-purple-500 dark:text-purple-400" />
         Work Experience
       </h2>

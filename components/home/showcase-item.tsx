@@ -49,7 +49,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
     >
       <div
         className={cn(
-          'flex flex-col justify-center relative overflow-hidden rounded-3xl border  dark:border-0 border-gray-950/[.1] bg-gray-950/[.01] dark:border-gray-50/[.1] dark:bg-gray-50/[.10]',
+          'flex flex-col justify-center relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-all duration-300 hover:border-slate-400 dark:hover:border-slate-600 hover:shadow-lg',
           showcase.cardClassName
         )}
       >
@@ -97,7 +97,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
               : 'w-full'
           )}
         >
-          <p className="font-bold text-sm sm:text-xl mt-4 text-center whitespace-nowrap">
+          <p className="font-bold text-sm sm:text-xl mt-4 text-center whitespace-nowrap text-slate-800 dark:text-slate-100">
             {showcase.name}
           </p>
           <div className="flex justify-center w-full gap-4 px-4 pt-4">
