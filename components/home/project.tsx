@@ -164,10 +164,12 @@ export default function Project({ showAllProjects = false }) {
               className="col col-span-12 xs:col-span-6 md:col-span-3 group/project intro-y"
             >
               <span className="sr-only">View All Projects</span>
-              <div className="px-4 w-full sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl glass-card-enhanced">
+              <div className="px-4 w-full sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl glass-card-enhanced hover:border-blue-500/30 dark:hover:border-blue-400/30 transition-all duration-300">
                 <div className="flex flex-col items-center relative">
-                  <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5]" />
-                  <p className="font-bold text-xl">More</p>
+                  <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5] text-slate-700 dark:text-slate-300 group-hover/project:text-blue-500 dark:group-hover/project:text-blue-400 transition-colors" />
+                  <p className="font-bold text-xl text-slate-800 dark:text-slate-100">
+                    More
+                  </p>
                 </div>
               </div>
             </Link>

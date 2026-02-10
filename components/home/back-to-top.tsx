@@ -26,9 +26,15 @@ export default function BackToTop() {
   }
 
   return (
-    <ArrowUpSquareIcon
-      onClick={scrollToTop}
-      className={`w-10 h-10 cursor-pointer fixed bottom-10 right-10 z-10 back-to-top transition-all ${showBackToTop ? '' : 'opacity-0 pointer-events-none'}`}
-    />
+    <div
+      className={`fixed bottom-10 right-10 z-10 transition-all duration-300 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+    >
+      <div
+        onClick={scrollToTop}
+        className="p-3 rounded-2xl glass-card-enhanced hover:border-purple-500/30 dark:hover:border-purple-400/30 transition-all duration-300 cursor-pointer group"
+      >
+        <ArrowUpSquareIcon className="w-6 h-6 text-slate-600 dark:text-slate-400 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors" />
+      </div>
+    </div>
   )
 }

@@ -648,6 +648,18 @@
   border: 1px solid rgba(139, 92, 246, 0.15) !important;
 }
 
+/* Social icon hover - override global SVG color:unset */
+.social-icon-link:hover :is(svg, svg *) {
+  color: white !important;
+  stroke: white !important;
+}
+
+/* Tooltip arrow SVG fix - override global SVG stroke rule */
+[data-slot="tooltip-content"] > :is(svg, svg *) {
+  stroke: none !important;
+}
+
+
 /* Banner title glow effect */
 .banner-title {
   filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.25));

@@ -68,7 +68,7 @@ export default function Achievement() {
           {achievements.map((achievement, key) => {
             return (
               <div className="col-span-12" key={key}>
-                <div className="relative mx-auto min-h-fit w-full max-w-[600px] rounded-2xl p-4 glass-card-enhanced">
+                <div className="relative mx-auto min-h-fit w-full max-w-[600px] rounded-2xl p-4 glass-card-enhanced hover:border-amber-500/30 dark:hover:border-amber-400/30 transition-all duration-300">
                   <div className="flex gap-6 items-center">
                     <Image
                       loading="lazy"
@@ -79,11 +79,13 @@ export default function Achievement() {
                       className={`w-auto h-14 ${achievement.gray ? 'invert dark:invert-0' : ''}`}
                     />
                     <div>
-                      <p className="font-bold tracking-wide">
+                      <p className="font-bold tracking-wide text-lg sm:text-xl text-slate-800 dark:text-slate-100">
                         {achievement.position}
                       </p>
-                      <p>{achievement.title}</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                      <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-medium">
+                        {achievement.title}
+                      </p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                         {achievement.organizer} - {achievement.year}
                       </p>
                     </div>
@@ -103,10 +105,15 @@ export default function Achievement() {
                           <span className="sr-only">
                             {achievement.title} Certificate
                           </span>
-                          <LinkIcon className="w-4 h-4" />
+                          <LinkIcon className="w-4 h-4 text-amber-500 dark:text-amber-400 hover:text-amber-600 dark:hover:text-amber-300 transition-colors" />
                         </a>
                       </TooltipTrigger>
-                      <TooltipContent>View Certificate</TooltipContent>
+                      <TooltipContent
+                        className="!bg-slate-900 !text-white border-0 text-xs [&>span]:!text-white"
+                        arrowClassName="!fill-slate-900 !bg-slate-900"
+                      >
+                        View Certificate
+                      </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 </div>

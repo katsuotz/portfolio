@@ -119,10 +119,15 @@ export default function Skills() {
                       width={100}
                       height={100}
                       alt={skill.name}
-                      className={`${skill.className || 'w-auto h-12'} ${skill.gray ? 'invert dark:invert-0' : ''}`}
+                      className={`${skill.className || 'w-auto h-12'} ${skill.gray ? 'invert dark:invert-0' : ''} hover:scale-110 transition-transform duration-300`}
                     />
                   </TooltipTrigger>
-                  <TooltipContent>{skill.name}</TooltipContent>
+                  <TooltipContent
+                    className="!bg-slate-900 !text-white border-0 text-xs [&>span]:!text-white"
+                    arrowClassName="!fill-slate-900 !bg-slate-900"
+                  >
+                    {skill.name}
+                  </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             )
