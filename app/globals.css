@@ -114,7 +114,7 @@
     @apply border-border dark:text-white;
   }
 
-  :is(svg, svg *) {
+  :is(svg:not(.mesh-svg), svg:not(.mesh-svg) *) {
     color: unset !important;
     stroke: currentColor !important;
   }
@@ -791,6 +791,47 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
+}
+
+/* Constellation mesh styles */
+.mesh-line {
+  stroke: rgba(139, 92, 246, 0.3);
+}
+
+.mesh-ring {
+  stroke: rgba(139, 92, 246, 0.2);
+}
+
+.mesh-line-stop-1 {
+  stop-color: #8b5cf6;
+}
+
+.mesh-line-stop-2 {
+  stop-color: #ec4899;
+}
+
+.mesh-line-stop-3 {
+  stop-color: #8b5cf6;
+}
+
+.dark .mesh-line {
+  stroke: rgba(34, 211, 238, 0.25);
+}
+
+.dark .mesh-ring {
+  stroke: rgba(129, 140, 248, 0.2);
+}
+
+.dark .mesh-line-stop-1 {
+  stop-color: #22d3ee;
+}
+
+.dark .mesh-line-stop-2 {
+  stop-color: #818cf8;
+}
+
+.dark .mesh-line-stop-3 {
+  stop-color: #22d3ee;
 }
 
 /* Respect reduced motion preference */
