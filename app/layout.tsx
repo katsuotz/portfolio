@@ -17,6 +17,19 @@ export const metadata: Metadata = {
   keywords:
     'web design, web, web apps, html, css, js, ts, node.js, next, vue, react, go, golang, php, laravel, mongodb, sql, mysql, postgre',
   authors: [{ name: 'Muhammad Irfan Fakhri' }, { name: 'Katsuotz' }],
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'none',
+  },
+  openGraph: {
+    title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
+    description:
+      'Experienced full-stack developer with over 5 years of industry expertise, actively engaged in startups and freelancing on side projects.',
+    url: 'https://katsuotz.com',
+    siteName: 'Katsuotz',
+    type: 'website',
+  },
 }
 
 export const viewport = 'width=device-width, initial-scale=1'
