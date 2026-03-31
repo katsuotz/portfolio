@@ -1,15 +1,15 @@
 'use client'
 
 import {
-  ArrowDown,
+  ArrowDownIcon,
   HammerIcon,
-  MailIcon,
-  ScrollTextIcon,
-  TvMinimalPlayIcon,
+  EnvelopeIcon,
+  ScrollIcon,
+  MonitorPlayIcon,
   MapPinIcon,
-  GithubIcon,
-  LinkedinIcon,
-} from 'lucide-react'
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+} from '@phosphor-icons/react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import dynamic from 'next/dynamic'
@@ -133,17 +133,17 @@ export default function Banner() {
             <div className="flex items-center gap-1 px-2 border-b sm:border-b-0 sm:border-r border-white/10 pb-2 sm:pb-0 sm:pr-4">
               <SocialLink
                 href="https://github.com/katsuotz/"
-                icon={<GithubIcon className="w-5 h-5" />}
+                icon={<GithubLogoIcon className="w-5 h-5" weight="regular" />}
                 label="Github"
               />
               <SocialLink
                 href="https://www.linkedin.com/in/irfan-fakhri/"
-                icon={<LinkedinIcon className="w-5 h-5" />}
+                icon={<LinkedinLogoIcon className="w-5 h-5" weight="regular" />}
                 label="LinkedIn"
               />
               <SocialLink
                 href="mailto:m.irfan.fakhri66@gmail.com"
-                icon={<MailIcon className="w-5 h-5" />}
+                icon={<EnvelopeIcon className="w-5 h-5" weight="regular" />}
                 label="Email"
               />
             </div>
@@ -153,7 +153,10 @@ export default function Banner() {
               <Link href="/showcase" passHref>
                 <DockButton
                   icon={
-                    <TvMinimalPlayIcon className="w-4! h-4! sm:w-5! sm:h-5!" />
+                    <MonitorPlayIcon
+                      className="w-4! h-4! sm:w-5! sm:h-5!"
+                      weight="regular"
+                    />
                   }
                 >
                   Showcase
@@ -162,7 +165,10 @@ export default function Banner() {
               <Link href="/log" passHref>
                 <DockButton
                   icon={
-                    <ScrollTextIcon className="w-4! h-4! sm:w-5! sm:h-5!" />
+                    <ScrollIcon
+                      className="w-4! h-4! sm:w-5! sm:h-5!"
+                      weight="regular"
+                    />
                   }
                 >
                   Logs
@@ -176,9 +182,12 @@ export default function Banner() {
                 onClick={scrollPage}
                 variant="ghost"
                 size="icon"
-                className="rounded-xl hover:bg-white/5 text-gray-500 hover:text-violet-400 transition-colors"
+                className="rounded-xl hover:bg-white/5 text-gray-400 hover:text-violet-400 transition-colors"
               >
-                <ArrowDown className="w-4 h-4 animate-bounce" />
+                <ArrowDownIcon
+                  className="w-4 h-4 animate-bounce"
+                  weight="regular"
+                />
               </Button>
             </div>
           </div>
@@ -188,10 +197,15 @@ export default function Banner() {
         <div className="absolute top-8 left-8 hidden md:block z-20">
           <div className="flex flex-col gap-2 text-xs tracking-widest uppercase font-light text-gray-500">
             <span className="flex items-center gap-2">
-              <MapPinIcon className="w-3 h-3 text-violet-500/70" /> Indonesia
+              <MapPinIcon
+                className="w-3 h-3 text-violet-500/70"
+                weight="light"
+              />{' '}
+              Indonesia
             </span>
             <span className="flex items-center gap-2">
-              <MailIcon className="w-3 h-3" /> m.irfan.fakhri66@gmail.com
+              <EnvelopeIcon className="w-3 h-3" weight="light" />{' '}
+              m.irfan.fakhri66@gmail.com
             </span>
           </div>
         </div>
@@ -246,7 +260,7 @@ function DockButton({
       className={`dock-button-text h-9 px-4 rounded-xl bg-transparent hover:bg-white/5 border border-transparent text-gray-400 hover:text-violet-400 transition-all duration-300 text-sm font-light tracking-wide ${className}`}
     >
       <span className="flex items-center gap-2">
-        <span className="opacity-70">{icon}</span>
+        <span>{icon}</span>
         <span>{children}</span>
       </span>
     </Button>

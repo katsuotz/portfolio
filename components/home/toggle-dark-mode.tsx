@@ -1,6 +1,6 @@
 'use client'
 
-import { MoonStarIcon, SunIcon } from 'lucide-react'
+import { MoonStarsIcon, SunIcon } from '@phosphor-icons/react'
 import { useEffect, useState } from 'react'
 import { flushSync } from 'react-dom'
 import { useGlobalState } from '@/context/GlobalStateContext'
@@ -39,9 +39,15 @@ export default function ToggleDarkMode() {
         onClick={() => toggleDarkMode(!isDarkMode)}
       >
         {isDarkMode ? (
-          <SunIcon className="w-5 h-5 text-slate-400 group-hover:text-amber-400 transition-colors" />
+          <SunIcon
+            className="w-5 h-5 text-slate-400 group-hover:text-amber-400 transition-colors"
+            weight="light"
+          />
         ) : (
-          <MoonStarIcon className="w-5 h-5 text-slate-600 group-hover:text-blue-500 transition-colors" />
+          <MoonStarsIcon
+            className="w-5 h-5 text-slate-600 group-hover:text-blue-500 transition-colors"
+            weight="light"
+          />
         )}
       </div>
     </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { Code2Icon } from 'lucide-react'
+import { CodeIcon } from '@phosphor-icons/react'
 import Image from 'next/image'
 import {
   Tooltip,
@@ -54,7 +54,10 @@ export default function Skills() {
       className="relative flex flex-col justify-center items-center py-12 sm:py-32 w-full max-w-5xl mx-auto px-4 sm:px-6"
     >
       <div className="flex items-center justify-center gap-4 mb-10 sm:mb-16 intro-y w-full">
-        <Code2Icon className="w-8 h-8 sm:w-12 sm:h-12 text-violet-500 shrink-0" />
+        <CodeIcon
+          className="w-8 h-8 sm:w-14 sm:h-14 text-violet-500 shrink-0"
+          weight="regular"
+        />
         <h2 className="text-3xl sm:text-6xl font-serif font-bold text-[#FAFAFA] tracking-tight text-center whitespace-nowrap">
           Tech Stack
         </h2>
@@ -76,7 +79,7 @@ export default function Skills() {
                       width={80}
                       height={80}
                       alt={skill.name}
-                      className={`${skill.className || 'w-auto h-8'} ${skill.gray ? 'invert dark:invert-0' : ''} opacity-70 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-sm`}
+                      className={`${skill.className || 'w-auto h-8'} ${skill.gray ? 'invert dark:invert-0' : ''} opacity-80 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-sm`}
                     />
                   </div>
                 </TooltipTrigger>

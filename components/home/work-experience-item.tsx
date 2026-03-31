@@ -36,7 +36,7 @@ export default function WorkExperienceItem({
       </div>
 
       {/* Card Content */}
-      <div className="flex-1 rounded-2xl bg-white/2 backdrop-blur-xl border border-white/5 p-6 hover:bg-white/4 hover:border-white/10 transition-all duration-300 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
+      <div className="flex-1 rounded-2xl bg-white/2 backdrop-blur-xl border border-white/5 p-6 hover:bg-white/4 hover:border-violet-500/30 transition-all duration-300 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
           <div>
             <div className="flex items-center gap-3 mb-1">
@@ -61,7 +61,8 @@ export default function WorkExperienceItem({
                   alt={experience.country}
                   width={16}
                   height={16}
-                  className="w-4 h-auto"
+                  className="w-4"
+                  style={{ height: 'auto' }}
                 />
                 <span className="text-[10px] text-gray-400 uppercase tracking-wider hidden sm:inline-block">
                   {experience.country}
@@ -69,7 +70,7 @@ export default function WorkExperienceItem({
               </div>
             </div>
 
-            <div className="flex flex-col gap-3 mt-3">
+            <div className="flex flex-col gap-1 mt-3">
               {experience.position.map((position, key) => (
                 <div
                   key={key}

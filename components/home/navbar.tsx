@@ -1,13 +1,13 @@
 'use client'
 
 import {
-  Briefcase,
-  GraduationCap,
-  Trophy,
-  Code2,
-  Hammer,
-  ArrowDown,
-} from 'lucide-react'
+  BriefcaseIcon,
+  GraduationCapIcon,
+  TrophyIcon,
+  CodeIcon,
+  DevicesIcon,
+  ArrowDownIcon,
+} from '@phosphor-icons/react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
@@ -55,35 +55,35 @@ export default function Navbar() {
             href="#work-experience"
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
-            <Briefcase className="size-4" />
+            <BriefcaseIcon className="size-4" weight="regular" />
             <span className="hidden sm:inline">Work Experience</span>
           </Link>
           <Link
             href="#education"
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
-            <GraduationCap className="size-4" />
+            <GraduationCapIcon className="size-4" weight="regular" />
             <span className="hidden sm:inline">Education</span>
           </Link>
           <Link
             href="#achievement"
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
-            <Trophy className="size-4" />
+            <TrophyIcon className="size-4" weight="regular" />
             <span className="hidden sm:inline">Achievement</span>
           </Link>
           <Link
             href="#tech-stack"
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
-            <Code2 className="size-4" />
+            <CodeIcon className="size-4" weight="regular" />
             <span className="hidden sm:inline">Tech Stack</span>
           </Link>
           <Link
             href="#work"
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
-            <Hammer className="size-4" />
+            <DevicesIcon className="size-4" weight="regular" />
             <span className="hidden sm:inline">Selected Works</span>
           </Link>
         </div>

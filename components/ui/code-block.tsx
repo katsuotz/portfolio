@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { CheckIcon, CopyIcon } from 'lucide-react'
+import { CheckIcon, CopyIcon } from '@phosphor-icons/react'
 
 type CodeBlockProps = {
   code: string
@@ -24,7 +24,11 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'tsx' }) => {
         className="absolute top-4 right-4 p-1.5 rounded-md text-sm hover:bg-zinc-700 transition text-white"
         title="Copy to clipboard"
       >
-        {copied ? <CheckIcon size={20} /> : <CopyIcon size={20} />}
+        {copied ? (
+          <CheckIcon size={20} weight="light" />
+        ) : (
+          <CopyIcon size={20} weight="light" />
+        )}
       </button>
 
       <div className="max-h-[420px] overflow-auto custom-scrollbar">

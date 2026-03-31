@@ -7,11 +7,11 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import {
-  AtSignIcon,
-  GithubIcon,
-  InstagramIcon,
-  LinkedinIcon,
-} from 'lucide-react'
+  EnvelopeIcon,
+  GithubLogoIcon,
+  InstagramLogoIcon,
+  LinkedinLogoIcon,
+} from '@phosphor-icons/react'
 
 export default function SocialMedia() {
   return (
@@ -25,7 +25,7 @@ export default function SocialMedia() {
               rel="noreferrer"
             >
               <span className="sr-only">Github</span>
-              <GithubIcon className="w-6 h-6" />
+              <GithubLogoIcon className="w-6 h-6" weight="light" />
             </a>
           </TooltipTrigger>
           <TooltipContent>Github</TooltipContent>
@@ -40,7 +40,7 @@ export default function SocialMedia() {
               rel="noreferrer"
             >
               <span className="sr-only">LinkedIn</span>
-              <LinkedinIcon className="w-6 h-6" />
+              <LinkedinLogoIcon className="w-6 h-6" weight="light" />
             </a>
           </TooltipTrigger>
           <TooltipContent>LinkedIn</TooltipContent>
@@ -55,7 +55,7 @@ export default function SocialMedia() {
               rel="noreferrer"
             >
               <span className="sr-only">Instagram</span>
-              <InstagramIcon className="w-6 h-6" />
+              <InstagramLogoIcon className="w-6 h-6" weight="light" />
             </a>
           </TooltipTrigger>
           <TooltipContent>Instagram</TooltipContent>
@@ -70,7 +70,7 @@ export default function SocialMedia() {
               rel="noreferrer"
             >
               <span className="sr-only">Email</span>
-              <AtSignIcon className="w-6 h-6" />
+              <EnvelopeIcon className="w-6 h-6" weight="light" />
             </a>
           </TooltipTrigger>
           <TooltipContent>Email</TooltipContent>

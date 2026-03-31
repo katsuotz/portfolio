@@ -1,6 +1,6 @@
 'use client'
 
-import { LayoutGridIcon, MonitorSmartphoneIcon } from 'lucide-react'
+import { GridFourIcon, DevicesIcon } from '@phosphor-icons/react'
 import ProjectItem, { ProjectType } from '@/components/home/project-item'
 import Link from 'next/link'
 
@@ -152,7 +152,10 @@ export default function Project({ showAllProjects = false }) {
       className="relative flex flex-col justify-center items-center py-12 sm:py-32 w-full max-w-7xl mx-auto px-4 sm:px-6"
     >
       <div className="flex items-center justify-center gap-4 mb-10 sm:mb-20 intro-y w-full">
-        <MonitorSmartphoneIcon className="w-8 h-8 sm:w-12 sm:h-12 text-violet-500 shrink-0" />
+        <DevicesIcon
+          className="w-8 h-8 sm:w-16 sm:h-16 text-violet-500 shrink-0"
+          weight="regular"
+        />
         <h2 className="text-3xl sm:text-7xl font-serif font-black text-[#FAFAFA] tracking-tighter text-center whitespace-nowrap">
           Selected Works
         </h2>
@@ -180,7 +183,10 @@ export default function Project({ showAllProjects = false }) {
                 <div className="absolute inset-0 bg-linear-to-br from-violet-500/5 to-transparent opacity-0 group-hover/project:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10 flex flex-col items-center gap-6">
                   <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover/project:border-violet-500/50 group-hover/project:scale-110 transition-all duration-300">
-                    <LayoutGridIcon className="w-10 h-10 text-gray-400 group-hover/project:text-violet-400 transition-colors" />
+                    <GridFourIcon
+                      className="w-10 h-10 text-gray-400 group-hover/project:text-violet-400 transition-colors"
+                      weight="light"
+                    />
                   </div>
                   <p className="font-serif font-bold tracking-wide text-3xl text-gray-300 group-hover/project:text-[#FAFAFA] transition-colors">
                     View Registry

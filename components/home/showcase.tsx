@@ -1,6 +1,6 @@
 'use client'
 
-import { TvMinimalPlayIcon } from 'lucide-react'
+import { MonitorPlayIcon } from '@phosphor-icons/react'
 import ShowcaseItem, { ShowcaseType } from '@/components/home/showcase-item'
 
 export default function Showcase() {
@@ -85,7 +85,10 @@ export default function Showcase() {
       className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12"
     >
       <h2 className="text-3xl sm:text-5xl font-bold mb-4 md:mb-12 flex items-center">
-        <TvMinimalPlayIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4" />
+        <MonitorPlayIcon
+          className="w-8 h-8 sm:w-12 sm:h-12 mr-4"
+          weight="regular"
+        />
         Showcases
       </h2>
 

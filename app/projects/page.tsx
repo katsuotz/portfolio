@@ -3,7 +3,7 @@
 import Project from '@/components/home/project'
 import Footer from '@/components/home/footer'
 import Link from 'next/link'
-import { ArrowLeftCircleIcon } from 'lucide-react'
+import { ArrowCircleLeftIcon } from '@phosphor-icons/react'
 import BackToTop from '@/components/home/back-to-top'
 import { GlobalStateProvider } from '@/context/GlobalStateContext'
 
@@ -15,7 +15,7 @@ export default function Projects() {
           href="/"
           className="inline-flex items-center text-sm font-medium text-gray-400 hover:text-violet-400 transition-colors bg-white/2 backdrop-blur-md border border-white/5 hover:border-violet-500/30 px-4 py-2 rounded-full w-fit"
         >
-          <ArrowLeftCircleIcon className="mr-2 w-4 h-4" />
+          <ArrowCircleLeftIcon className="mr-2 w-4 h-4" weight="light" />
           Back to Home
         </Link>
       </div>

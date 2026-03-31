@@ -1,5 +1,9 @@
 import Image from 'next/image'
-import { ExternalLinkIcon, XSquareIcon, ArrowRightIcon } from 'lucide-react'
+import {
+  ArrowSquareOutIcon,
+  XSquareIcon,
+  ArrowRightIcon,
+} from '@phosphor-icons/react'
 import {
   Dialog,
   DialogContent,
@@ -44,7 +48,10 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
             </div>
 
             <div className="w-10 h-10 rounded-full bg-white/3 flex items-center justify-center border border-white/5 text-gray-500 group-hover/project:bg-violet-600 group-hover/project:text-white group-hover/project:border-violet-500 transition-all duration-300">
-              <ArrowRightIcon className="w-4 h-4 -rotate-45 group-hover/project:rotate-0 transition-transform duration-300" />
+              <ArrowRightIcon
+                className="w-4 h-4 -rotate-45 group-hover/project:rotate-0 transition-transform duration-300"
+                weight="light"
+              />
             </div>
           </div>
 
@@ -115,7 +122,7 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
                 variant="ghost"
                 className="hover:bg-white/5 hover:text-white text-gray-400"
               >
-                <XSquareIcon className="w-4 h-4 mr-2" />
+                <XSquareIcon className="w-4 h-4 mr-2" weight="light" />
                 Close
               </Button>
             </DialogClose>
@@ -126,7 +133,7 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-violet-600 text-white hover:bg-violet-500 h-9 px-4 py-2 shadow-[0_0_15px_rgba(139,92,246,0.3)]"
               >
-                <ExternalLinkIcon className="w-4 h-4 mr-2" />
+                <ArrowSquareOutIcon className="w-4 h-4 mr-2" weight="light" />
                 Visit Project
               </Link>
             )}
