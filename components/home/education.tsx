@@ -18,9 +18,12 @@ export default function Education() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 w-full">
         {/* University */}
-        <div className="intro-y relative" style={{ animationDelay: '0.2s' }}>
-          <div className="flex flex-col h-full px-8 pb-8 pt-16 relative rounded-3xl bg-white/2 backdrop-blur-xl border border-white/5 hover:bg-white/4 hover:border-white/10 transition-all duration-300 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
-            <div className="absolute left-8 top-0 -translate-y-1/2 w-24 h-24 rounded-2xl bg-[#050505] border border-white/10 flex items-center justify-center shadow-xl overflow-hidden p-3 group-hover:border-violet-500/30 transition-colors">
+        <div
+          className="intro-y relative group"
+          style={{ animationDelay: '0.2s' }}
+        >
+          <div className="flex flex-col h-full px-8 pb-8 pt-16 relative rounded-3xl bg-white/2 backdrop-blur-xl border border-white/5 hover:bg-white/4 hover:border-violet-500/30 transition-all duration-300 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
+            <div className="absolute left-8 top-0 -translate-y-1/2 w-24 h-24 rounded-2xl bg-[#1a1a1a] flex items-center justify-center border border-white/5 overflow-hidden p-3 group-hover:border-violet-500/20 transition-all duration-300">
               <Image
                 unoptimized={true}
                 width={200}
@@ -54,11 +57,11 @@ export default function Education() {
 
         {/* High School */}
         <div
-          className="intro-y relative mt-12 md:mt-0"
+          className="intro-y relative group mt-12 md:mt-0"
           style={{ animationDelay: '0.3s' }}
         >
-          <div className="flex flex-col h-full px-8 pb-8 pt-16 relative rounded-3xl bg-white/2 backdrop-blur-xl border border-white/5 hover:bg-white/4 hover:border-white/10 transition-all duration-300 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
-            <div className="absolute left-8 top-0 -translate-y-1/2 w-24 h-24 rounded-2xl bg-[#050505] border border-white/10 flex items-center justify-center shadow-xl overflow-hidden p-3 group-hover:border-violet-500/30 transition-colors">
+          <div className="flex flex-col h-full px-8 pb-8 pt-16 relative rounded-3xl bg-white/2 backdrop-blur-xl border border-white/5 hover:bg-white/4 hover:border-violet-500/30 transition-all duration-300 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
+            <div className="absolute left-8 top-0 -translate-y-1/2 w-24 h-24 rounded-2xl bg-[#1a1a1a] flex items-center justify-center border border-white/5 overflow-hidden p-3 group-hover:border-violet-500/20 transition-all duration-300">
               <Image
                 unoptimized={true}
                 width={200}
