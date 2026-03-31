@@ -81,7 +81,7 @@ export default function Banner() {
             <p className="text-base sm:text-lg lg:text-3xl text-gray-400 font-medium tracking-[0.3em] uppercase mb-2">
               Muhammad Irfan Fakhri
             </p>
-            <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[20rem] font-serif font-black leading-[0.85] tracking-tighter select-none">
+            <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[20rem] font-serif font-black leading-[0.85] tracking-tight select-none">
               <span className="relative inline-block">
                 <span
                   className="absolute inset-0 blur-3xl opacity-20 bg-linear-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent select-none"
