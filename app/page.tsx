@@ -5,6 +5,7 @@ import Banner from '@/components/home/banner'
 import LazySection from '@/components/home/lazy-section'
 import Footer from '@/components/home/footer'
 import BackToTop from '@/components/home/back-to-top'
+import Navbar from '@/components/home/navbar'
 import { GlobalStateProvider } from '@/context/GlobalStateContext'
 
 const WorkExperience = dynamic(
@@ -25,6 +26,7 @@ const Project = dynamic(() => import('@/components/home/project'), {
 export default function Home() {
   return (
     <GlobalStateProvider>
+      <Navbar />
       <Banner />
       <LazySection>
         <WorkExperience />
@@ -39,7 +41,9 @@ export default function Home() {
         <Skills />
       </LazySection>
       <LazySection>
-        <Project showAllProjects={false} />
+        <div id="logs">
+          <Project showAllProjects={false} />
+        </div>
       </LazySection>
       <Footer />
       <BackToTop />

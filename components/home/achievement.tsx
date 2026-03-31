@@ -57,7 +57,10 @@ export default function Achievement() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center py-12 sm:py-32 w-full max-w-4xl mx-auto px-4 sm:px-6">
+    <section
+      id="achievement"
+      className="relative flex flex-col justify-center items-center py-12 sm:py-32 w-full max-w-4xl mx-auto px-4 sm:px-6"
+    >
       <div className="flex items-center justify-center gap-4 mb-10 sm:mb-20 intro-y w-full">
         <TrophyIcon className="w-8 h-8 sm:w-12 sm:h-12 text-violet-500 shrink-0" />
         <h2 className="text-3xl sm:text-7xl font-serif font-black text-[#FAFAFA] tracking-tighter text-center whitespace-nowrap">

@@ -80,7 +80,10 @@ export default function Showcase() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12">
+    <section
+      id="showcase"
+      className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12"
+    >
       <h2 className="text-3xl sm:text-5xl font-bold mb-4 md:mb-12 flex items-center">
         <TvMinimalPlayIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4" />
         Showcases

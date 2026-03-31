@@ -150,13 +150,6 @@ export default function Banner() {
 
             {/* Navigation */}
             <div className="flex flex-wrap justify-center sm:items-center gap-1 sm:gap-2">
-              <Link href="/projects" passHref>
-                <DockButton
-                  icon={<HammerIcon className="w-4! h-4! sm:w-5! sm:h-5!" />}
-                >
-                  Selected Works
-                </DockButton>
-              </Link>
               <Link href="/showcase" passHref>
                 <DockButton
                   icon={
