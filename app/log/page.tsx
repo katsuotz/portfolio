@@ -1,10 +1,10 @@
 'use client'
 
-import Footer from '@/components/home/footer'
 import BackToTop from '@/components/home/back-to-top'
 import Link from 'next/link'
 import { GlobalStateProvider } from '@/context/GlobalStateContext'
 import ToggleDarkMode from '@/components/home/toggle-dark-mode'
+import FooterLog from '@/components/home/footer-log'
 export default function Log() {
   return (
     <GlobalStateProvider>
@@ -51,7 +51,7 @@ export default function Log() {
       </section>
 
       <BackToTop />
-      <Footer showGradient={false} />
+      <FooterLog />
     </GlobalStateProvider>
   )
 }

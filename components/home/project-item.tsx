@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ExternalLinkIcon, XSquareIcon } from 'lucide-react'
+import { ExternalLinkIcon, XSquareIcon, ArrowRightIcon } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -9,7 +9,7 @@ import {
   DialogTrigger,
   DialogClose,
 } from '@/components/ui/dialog'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export interface ProjectType {
@@ -25,68 +25,110 @@ export interface ProjectType {
 export default function ProjectItem({ project }: { project: ProjectType }) {
   return (
     <Dialog>
-      <DialogTrigger className="col col-span-12 sm:col-span-6 md:col-span-3 rounded-3xl group/project intro-y">
+      <DialogTrigger className="w-full text-left group/project block h-full cursor-pointer">
         <span className="sr-only">{project.name}</span>
-        <div className="px-4 sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl glass-card-enhanced hover:border-blue-500/30 dark:hover:border-blue-400/30 transition-all duration-300">
-          <ExternalLinkIcon className="absolute top-6 right-6 md:group-hover/project:opacity-100 opacity-0 transition-all duration-500 text-blue-500 dark:text-blue-400" />
-          <div className="flex flex-col items-center relative">
-            <Image
-              loading="lazy"
-              src={project.logo}
-              alt={project.name}
-              width={80}
-              height={80}
-              className="h-20 w-auto mb-8 md:group-hover/project:scale-110 md:group-hover/project:-translate-y-10 transition-all duration-300"
-            />
-            <div className="text-center md:group-hover/project:-translate-y-14 md:group-hover/project:scale-105 transition-all duration-300">
-              <p className="font-bold text-xl text-slate-800 dark:text-slate-100">
-                {project.name}
-              </p>
-              <p className="font-bold text-xl text-blue-600 dark:text-blue-400 mt-1">
-                {project.year}
+        <div className="h-full min-h-[350px] p-8 flex flex-col relative overflow-hidden rounded-2xl bg-white/2 backdrop-blur-xl border border-white/5 hover:bg-white/4 hover:border-violet-500/30 transition-all duration-500 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
+          {/* Subtle hover gradient */}
+          <div className="absolute inset-0 bg-linear-to-br from-violet-500/5 to-transparent opacity-0 group-hover/project:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+          <div className="flex justify-between items-start mb-12 relative z-10">
+            <div className="w-16 h-16 rounded-xl bg-white/3 flex items-center justify-center border border-white/5 group-hover/project:border-violet-500/20 group-hover/project:scale-105 transition-all duration-500 shadow-lg p-2">
+              <Image
+                loading="lazy"
+                src={project.logo}
+                alt={project.name}
+                width={48}
+                height={48}
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <div className="w-10 h-10 rounded-full bg-white/3 flex items-center justify-center border border-white/5 text-gray-500 group-hover/project:bg-violet-600 group-hover/project:text-white group-hover/project:border-violet-500 transition-all duration-300">
+              <ArrowRightIcon className="w-4 h-4 -rotate-45 group-hover/project:rotate-0 transition-transform duration-300" />
+            </div>
+          </div>
+
+          <div className="mt-auto relative z-10">
+            <p className="text-violet-400 font-mono text-xs tracking-wider mb-2">
+              {project.year}
+            </p>
+            <h3 className="font-serif font-bold text-2xl text-[#FAFAFA] mb-3 group-hover/project:text-white transition-colors">
+              {project.name}
+            </h3>
+
+            {/* Description - visible on mobile, hover-reveal on desktop */}
+            <div className="hidden md:block h-0 group-hover/project:h-[70px] opacity-0 group-hover/project:opacity-100 overflow-hidden transition-all duration-500 ease-in-out">
+              <p className="text-gray-400 text-sm font-light line-clamp-3 leading-relaxed">
+                {project.description}
               </p>
             </div>
-            <p className="absolute text-center px-4 bottom-0 opacity-0 translate-y-[100%] md:group-hover/project:opacity-100 group-hover/project:bottom-12 transition-all duration-300 text-slate-600 dark:text-slate-300 font-medium">
-              {project.description}
-            </p>
+
+            <div className="md:hidden mt-2">
+              <p className="text-gray-400 text-sm font-light line-clamp-3 leading-relaxed">
+                {project.description}
+              </p>
+            </div>
           </div>
         </div>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="bg-[#050505] border-white/10 text-[#FAFAFA] sm:max-w-3xl">
         <DialogHeader>
-          <DialogTitle className="text-2xl">{project.name}</DialogTitle>
-          <DialogDescription className="pb-2 text-white text-[1rem]">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-white/3 flex items-center justify-center border border-white/5 p-2">
+              <Image
+                src={project.logo}
+                alt={project.name}
+                width={32}
+                height={32}
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div>
+              <DialogTitle className="text-3xl font-serif font-bold text-white tracking-tight">
+                {project.name}
+              </DialogTitle>
+              <p className="text-violet-400 font-mono text-sm">
+                {project.year}
+              </p>
+            </div>
+          </div>
+
+          <DialogDescription className="pb-4 text-gray-400 text-base leading-relaxed">
             {project.description}
           </DialogDescription>
-          <div className="flex justify-center">
+
+          <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl">
             <Image
               loading="lazy"
               src={project.image}
               alt={project.name}
               width="1000"
               height="600"
-              className="rounded-lg"
+              className="w-full h-auto object-cover"
             />
+            <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10 pointer-events-none" />
           </div>
-          <div className="flex gap-2 justify-end mt-4">
-            <DialogClose aria-label="Close">
-              <Button variant="ghost">
+
+          <div className="flex gap-3 justify-end mt-6">
+            <DialogClose aria-label="Close" asChild>
+              <Button
+                variant="ghost"
+                className="hover:bg-white/5 hover:text-white text-gray-400"
+              >
                 <XSquareIcon className="w-4 h-4 mr-2" />
                 Close
               </Button>
             </DialogClose>
-            {project.url ? (
+            {project.url && (
               <Link
                 href={project.url}
                 target="_blank"
                 rel="noreferrer"
-                className={buttonVariants({ variant: 'default' })}
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-violet-600 text-white hover:bg-violet-500 h-9 px-4 py-2 shadow-[0_0_15px_rgba(139,92,246,0.3)]"
               >
                 <ExternalLinkIcon className="w-4 h-4 mr-2" />
-                Visit
+                Visit Project
               </Link>
-            ) : (
-              ''
             )}
           </div>
         </DialogHeader>

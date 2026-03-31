@@ -57,69 +57,75 @@ export default function Achievement() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 section-gradient">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title">
-        <TrophyIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-amber-500 dark:text-amber-400" />
-        Achievement
-      </h2>
+    <section className="relative flex flex-col justify-center items-center py-12 sm:py-32 w-full max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="flex items-center justify-center gap-4 mb-10 sm:mb-20 intro-y w-full">
+        <TrophyIcon className="w-8 h-8 sm:w-12 sm:h-12 text-violet-500 shrink-0" />
+        <h2 className="text-3xl sm:text-7xl font-serif font-black text-[#FAFAFA] tracking-tighter text-center whitespace-nowrap">
+          Achievement
+        </h2>
+      </div>
 
-      <div className="container">
-        <div className="grid grid-cols-12 gap-6">
-          {achievements.map((achievement, key) => {
-            return (
-              <div className="col-span-12" key={key}>
-                <div className="relative mx-auto min-h-fit w-full max-w-[600px] rounded-2xl p-4 glass-card-enhanced hover:border-amber-500/30 dark:hover:border-amber-400/30 transition-all duration-300">
-                  <div className="flex gap-6 items-center">
-                    <Image
-                      loading="lazy"
-                      src={achievement.logo}
-                      width={64}
-                      height={64}
-                      alt={achievement.organizer}
-                      className={`w-auto h-14 ${achievement.gray ? 'invert dark:invert-0' : ''}`}
-                    />
-                    <div>
-                      <p className="font-bold tracking-wide text-lg sm:text-xl text-slate-800 dark:text-slate-100">
-                        {achievement.position}
-                      </p>
-                      <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-medium">
-                        {achievement.title}
-                      </p>
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                        {achievement.organizer} - {achievement.year}
-                      </p>
-                    </div>
-                  </div>
-                  <TooltipProvider delayDuration={0} key={key}>
-                    <Tooltip>
-                      <TooltipTrigger
-                        className="absolute top-4 right-4"
-                        asChild={true}
-                      >
-                        <a
-                          href={achievement.url}
-                          className=""
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <span className="sr-only">
-                            {achievement.title} Certificate
-                          </span>
-                          <LinkIcon className="w-4 h-4 text-amber-500 dark:text-amber-400 hover:text-amber-600 dark:hover:text-amber-300 transition-colors" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent
-                        className="!bg-slate-900 !text-white border-0 text-xs [&>span]:!text-white"
-                        arrowClassName="!fill-slate-900 !bg-slate-900"
-                      >
-                        View Certificate
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+      <div className="w-full">
+        <div className="grid grid-cols-1 gap-8">
+          {achievements.map((achievement, index) => (
+            <div
+              className="intro-y w-full"
+              key={index}
+              style={{ animationDelay: `${0.1 * index}s` }}
+            >
+              <div className="relative mx-auto w-full rounded-3xl p-6 sm:p-8 bg-white/2 backdrop-blur-xl border border-white/5 hover:bg-white/4 hover:border-violet-500/30 transition-all duration-300 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)] group flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
+                <div className="w-20 h-20 shrink-0 rounded-2xl bg-white/3 flex items-center justify-center border border-white/5 p-4 group-hover:border-violet-500/20 transition-all duration-300">
+                  <Image
+                    loading="lazy"
+                    src={achievement.logo}
+                    width={80}
+                    height={80}
+                    alt={achievement.organizer}
+                    className={`w-full h-full object-contain ${achievement.gray ? 'invert dark:invert-0 opacity-70' : ''}`}
+                  />
                 </div>
+
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
+                    <p className="font-bold tracking-wide text-xl sm:text-2xl text-[#FAFAFA] group-hover:text-violet-400 transition-colors">
+                      {achievement.position}
+                    </p>
+                    <span className="hidden sm:inline-block text-gray-600">
+                      •
+                    </span>
+                    <p className="text-base font-mono text-gray-500 font-medium">
+                      {achievement.year}
+                    </p>
+                  </div>
+                  <p className="text-lg sm:text-xl text-gray-300 font-medium mb-2">
+                    {achievement.title}
+                  </p>
+                  <p className="text-base text-gray-500 font-light">
+                    {achievement.organizer}
+                  </p>
+                </div>
+
+                <TooltipProvider delayDuration={0}>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a
+                        href={achievement.url}
+                        className="absolute top-6 right-6 sm:static sm:top-auto sm:right-auto sm:ml-auto w-12 h-12 rounded-full bg-white/3 border border-white/5 flex items-center justify-center hover:bg-violet-500/10 hover:border-violet-500/50 hover:text-violet-400 text-gray-400 transition-all duration-300"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span className="sr-only">
+                          {achievement.title} Certificate
+                        </span>
+                        <LinkIcon className="w-5 h-5" />
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>View Certificate</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

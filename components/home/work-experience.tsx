@@ -3,11 +3,7 @@
 import WorkExperienceItem, {
   WorkExperienceType,
 } from '@/components/home/work-experience-item'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Mousewheel, Pagination } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import { Laptop2Icon } from 'lucide-react'
+import { BriefcaseIcon } from 'lucide-react'
 
 export default function WorkExperience() {
   const experiences: WorkExperienceType[] = [
@@ -27,9 +23,9 @@ export default function WorkExperience() {
     },
     {
       logo: '/work/shieldbase.webp',
-      flag: '/flag/my.svg',
+      flag: '/flag/sg.webp',
       company: 'Shieldbase',
-      country: 'Malaysia',
+      country: 'Singapore',
       position: [
         {
           title: 'Software Engineer',
@@ -144,28 +140,27 @@ export default function WorkExperience() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-8 pt-20 lg:pb-20 pb-16 lg:mt-20 section-gradient">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-400 dark:from-purple-400 dark:to-purple-200">
-        <Laptop2Icon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-purple-500 dark:text-purple-400" />
-        Work Experience
-      </h2>
+    <section className="relative w-full max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-32">
+      <div className="flex items-center justify-center gap-4 mb-10 sm:mb-20 intro-y w-full">
+        <BriefcaseIcon className="w-8 h-8 sm:w-12 sm:h-12 text-violet-500 shrink-0" />
+        <h2 className="text-3xl sm:text-7xl font-serif font-black text-[#FAFAFA] tracking-tighter text-center whitespace-nowrap">
+          Work Experience
+        </h2>
+      </div>
 
-      <div className="w-full">
-        <Swiper
-          modules={[Pagination, Mousewheel]}
-          pagination={{ clickable: true }}
-          slidesPerView={'auto'}
-          spaceBetween={0}
-          mousewheel
-        >
-          {experiences.map((experience, key) => {
-            return (
-              <SwiperSlide key={key} className={key === 0 ? 'sm:ml-80' : ''}>
-                <WorkExperienceItem experience={experience} />
-              </SwiperSlide>
-            )
-          })}
-        </Swiper>
+      <div className="relative space-y-8">
+        {/* Timeline Line */}
+        <div className="absolute left-[31px] top-4 bottom-4 w-[2px] bg-linear-to-b from-violet-500/50 via-white/10 to-transparent hidden sm:block z-0" />
+
+        {experiences.map((experience, index) => (
+          <div
+            key={index}
+            className="intro-y relative z-10"
+            style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+          >
+            <WorkExperienceItem experience={experience} />
+          </div>
+        ))}
       </div>
     </section>
   )

@@ -1,7 +1,6 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import ToggleDarkMode from '@/components/home/toggle-dark-mode'
 import Banner from '@/components/home/banner'
 import LazySection from '@/components/home/lazy-section'
 import Footer from '@/components/home/footer'
@@ -26,7 +25,6 @@ const Project = dynamic(() => import('@/components/home/project'), {
 export default function Home() {
   return (
     <GlobalStateProvider>
-      <ToggleDarkMode />
       <Banner />
       <LazySection>
         <WorkExperience />

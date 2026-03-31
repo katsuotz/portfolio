@@ -1,6 +1,5 @@
 'use client'
 
-import Footer from '@/components/home/footer'
 import BackToTop from '@/components/home/back-to-top'
 import Image from 'next/image'
 import {
@@ -12,6 +11,7 @@ import {
 } from '@/components/ui/carousel'
 import ToggleDarkMode from '@/components/home/toggle-dark-mode'
 import { GlobalStateProvider } from '@/context/GlobalStateContext'
+import FooterLog from '@/components/home/footer-log'
 
 export default function TwoWeeksNewZealand() {
   return (
@@ -19,7 +19,7 @@ export default function TwoWeeksNewZealand() {
       <ToggleDarkMode />
       <div className="relative flex flex-col justify-center items-center lg:pt-12 pt-12 lg:pb-20 pb-12">
         <div className="container max-w-[900px] flex flex-col gap-4">
-          <h1 className="text-3xl sm:text-3xl text-center font-bold flex justify-center items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
+          <h1 className="text-3xl sm:text-3xl text-center font-bold flex justify-center items-center text-blue-500 [text-shadow:1px_1px_0_rgb(255_255_255/100%)]">
             {/*<CableCarIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>*/}
             Exploring New Zealand's South Island in 2 Weeks
           </h1>
@@ -488,7 +488,7 @@ export default function TwoWeeksNewZealand() {
       </div>
 
       <BackToTop />
-      <Footer showGradient={false} />
+      <FooterLog />
     </GlobalStateProvider>
   )
 }

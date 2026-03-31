@@ -5,17 +5,18 @@ import Footer from '@/components/home/footer'
 import Link from 'next/link'
 import { ArrowLeftCircleIcon } from 'lucide-react'
 import BackToTop from '@/components/home/back-to-top'
-import ToggleDarkMode from '@/components/home/toggle-dark-mode'
 import { GlobalStateProvider } from '@/context/GlobalStateContext'
 
 export default function Projects() {
   return (
     <GlobalStateProvider>
-      <ToggleDarkMode />
-      <div className="container pt-10">
-        <Link href="/" className="flex items-center text-lg">
-          <ArrowLeftCircleIcon className="mr-3 w-5 h-5" />
-          Back
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 pt-10">
+        <Link
+          href="/"
+          className="inline-flex items-center text-sm font-medium text-gray-400 hover:text-violet-400 transition-colors bg-white/2 backdrop-blur-md border border-white/5 hover:border-violet-500/30 px-4 py-2 rounded-full w-fit"
+        >
+          <ArrowLeftCircleIcon className="mr-2 w-4 h-4" />
+          Back to Home
         </Link>
       </div>
       <Project showAllProjects={true} />

@@ -1,9 +1,15 @@
 import '@/app/globals.css'
-import { Outfit } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
   display: 'swap',
 })
 
@@ -13,7 +19,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
   description:
-    'Experienced full-stack developer with over 5 years of industry expertise, actively engaged in startups and freelancing on side projects.',
+    'Experienced full-stack developer with over 7 years of industry expertise, actively engaged in startups and freelancing on side projects.',
   keywords:
     'web design, web, web apps, html, css, js, ts, node.js, next, vue, react, go, golang, php, laravel, mongodb, sql, mysql, postgre',
   authors: [{ name: 'Muhammad Irfan Fakhri' }, { name: 'Katsuotz' }],
@@ -25,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
     description:
-      'Experienced full-stack developer with over 5 years of industry expertise, actively engaged in startups and freelancing on side projects.',
+      'Experienced full-stack developer with over 7 years of industry expertise, actively engaged in startups and freelancing on side projects.',
     url: 'https://katsuotz.com',
     siteName: 'Katsuotz',
     type: 'website',
@@ -40,12 +46,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className="dark" lang="en">
+    <html className={`dark ${playfair.variable} ${inter.variable}`} lang="en">
       <head>
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={outfit.className}>
+      <body className="font-sans antialiased bg-[#050505] text-[#FAFAFA] selection:bg-violet-500/30">
         <main className="relative">{children}</main>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-E8CK2FG8Z2"

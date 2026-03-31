@@ -147,34 +147,47 @@ export default function Project({ showAllProjects = false }) {
     : projects.filter((e) => e.highlight)
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 section-gradient">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title">
-        <MonitorSmartphoneIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-blue-500 dark:text-blue-400" />
-        Projects
-      </h2>
+    <section className="relative flex flex-col justify-center items-center py-12 sm:py-32 w-full max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="flex items-center justify-center gap-4 mb-10 sm:mb-20 intro-y w-full">
+        <MonitorSmartphoneIcon className="w-8 h-8 sm:w-12 sm:h-12 text-violet-500 shrink-0" />
+        <h2 className="text-3xl sm:text-7xl font-serif font-black text-[#FAFAFA] tracking-tighter text-center whitespace-nowrap">
+          Selected Works
+        </h2>
+      </div>
 
-      <div className="container">
-        <div className="grid grid-cols-12 gap-6 sm:gap-8">
-          {filteredProject.map((project, key) => {
-            return <ProjectItem project={project} key={key} />
-          })}
-          {!showAllProjects ? (
+      <div className="w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {filteredProject.map((project, index) => (
+            <div
+              key={index}
+              className="intro-y"
+              style={{ animationDelay: `${0.1 * index}s` }}
+            >
+              <ProjectItem project={project} />
+            </div>
+          ))}
+          {!showAllProjects && (
             <Link
               href="/projects"
-              className="col col-span-12 xs:col-span-6 md:col-span-3 group/project intro-y"
+              className="group/project intro-y block h-full min-h-[350px]"
+              style={{ animationDelay: `${0.1 * filteredProject.length}s` }}
             >
               <span className="sr-only">View All Projects</span>
-              <div className="px-4 w-full sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl glass-card-enhanced hover:border-blue-500/30 dark:hover:border-blue-400/30 transition-all duration-300">
-                <div className="flex flex-col items-center relative">
-                  <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5] text-slate-700 dark:text-slate-300 group-hover/project:text-blue-500 dark:group-hover/project:text-blue-400 transition-colors" />
-                  <p className="font-bold text-xl text-slate-800 dark:text-slate-100">
-                    More
+              <div className="h-full w-full p-8 flex flex-col justify-center items-center relative overflow-hidden rounded-2xl bg-white/2 backdrop-blur-xl border border-white/5 hover:bg-white/4 hover:border-violet-500/30 transition-all duration-500 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
+                <div className="absolute inset-0 bg-linear-to-br from-violet-500/5 to-transparent opacity-0 group-hover/project:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10 flex flex-col items-center gap-6">
+                  <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover/project:border-violet-500/50 group-hover/project:scale-110 transition-all duration-300">
+                    <LayoutGridIcon className="w-10 h-10 text-gray-400 group-hover/project:text-violet-400 transition-colors" />
+                  </div>
+                  <p className="font-serif font-bold tracking-wide text-3xl text-gray-300 group-hover/project:text-[#FAFAFA] transition-colors">
+                    View Registry
+                  </p>
+                  <p className="text-gray-400 text-base font-medium">
+                    Explore all projects & experiments
                   </p>
                 </div>
               </div>
             </Link>
-          ) : (
-            ''
           )}
         </div>
       </div>

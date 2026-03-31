@@ -1,42 +1,35 @@
 @import 'tailwindcss';
 
 @plugin 'tailwindcss-animate';
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --breakpoint-3xl: 2400px;
-
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-
   --color-popover: hsl(var(--popover));
   --color-popover-foreground: hsl(var(--popover-foreground));
-
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
   --animate-shimmer-slide: shimmer-slide var(--speed, 3s) ease-in-out infinite
     alternate;
   --animate-spin-around: spin-around calc(var(--speed, 3s) * 2) infinite linear;
@@ -48,6 +41,7 @@
       transform: translate(calc(100cqw - 100%), 0);
     }
   }
+
   @keyframes spin-around {
     0% {
       transform: translateZ(0) rotate(0);
@@ -88,6 +82,7 @@
   @media (width >= --theme(--breakpoint-3xl)) {
     max-width: none;
   }
+
   @media (width >= 1536px) {
     max-width: 1536px;
   }
@@ -97,10 +92,10 @@
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
-
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+
 @layer base {
   *,
   ::after,
@@ -111,7 +106,7 @@
   }
 
   * {
-    @apply border-border dark:text-white;
+    @apply border-border;
   }
 
   :is(svg, svg *) {
@@ -136,74 +131,54 @@
   :root {
     --background: 0 100% 100%;
     --foreground: 0 0% 10%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 0 0% 5%;
     --popover-foreground: 210 40% 98%;
-
     /*--primary: 240 5.9% 10%;*/
     --primary: 210 40% 98%;
     --primary-foreground: 0 0% 98%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-
     --radius: 0.5rem;
-
     --color-1: 0 100% 63%;
     --color-2: 270 100% 63%;
     --color-3: 210 100% 63%;
     --color-4: 195 100% 63%;
     --color-5: 90 100% 63%;
-
     --swiper-pagination-bottom: -30px;
   }
 
   :root.dark {
     --background: 150 85% 1.5%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 0 0% 5%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-
     --radius: 0.5rem;
-
     --swiper-pagination-bottom: -30px;
   }
 }
@@ -252,7 +227,6 @@
     mask-size: 2000vmax;
   }
 }
-
 @keyframes scale-fast {
   0% {
     -webkit-mask-size: 0;
@@ -356,11 +330,11 @@
 .custom-scrollbar::-webkit-scrollbar-thumb {
   @apply rounded-full bg-white/30 hover:bg-white/60;
 }
-
 /*.custom-scrollbar {*/
 /*    scrollbar-width: thin;*/
 /*    scrollbar-color: transparent transparent;*/
 /*}*/
+
 .log {
   @apply font-mono text-sm leading-relaxed dark:text-gray-300  p-4 rounded-lg;
   line-height: 1.7;
@@ -655,10 +629,9 @@
 }
 
 /* Tooltip arrow SVG fix - override global SVG stroke rule */
-[data-slot="tooltip-content"] > :is(svg, svg *) {
+[data-slot='tooltip-content'] > :is(svg, svg *) {
   stroke: none !important;
 }
-
 
 /* Banner title glow effect */
 .banner-title {
@@ -678,7 +651,6 @@
 /*    rgba(248, 250, 252, 0) 100%*/
 /*  );*/
 /*}*/
-
 /*.dark .section-gradient {*/
 /*  background: linear-gradient(*/
 /*    180deg,*/
@@ -687,7 +659,6 @@
 /*    rgba(15, 23, 42, 0) 100%*/
 /*  );*/
 /*}*/
-
 /*.section-gradient-alt {*/
 /*  background: linear-gradient(*/
 /*    180deg,*/
@@ -696,7 +667,6 @@
 /*    rgba(248, 250, 252, 0) 100%*/
 /*  );*/
 /*}*/
-
 /*.dark .section-gradient-alt {*/
 /*  background: linear-gradient(*/
 /*    180deg,*/
@@ -776,33 +746,41 @@
   .animate-blob {
     animation: none;
   }
-
   .animate-gradient {
     animation: none;
   }
-
   .aurora-strip {
     animation: none;
     filter: blur(60px);
   }
-
   .gradient-border-btn:hover {
     transform: none;
   }
-
   .glass-card-enhanced {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
-
   .glass-card-enhanced:hover {
     transform: none;
   }
-
   .glass-card {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
+}
+
+/* Dock button color override for dark mode */
+.dark .dock-button-text,
+.dark .dock-button-text *,
+.dock-button-text,
+.dock-button-text * {
+  @apply text-gray-400!;
+}
+.dark .dock-button-text:hover,
+.dark .dock-button-text:hover *,
+.dock-button-text:hover,
+.dock-button-text:hover * {
+  @apply text-violet-400!;
 }
 
 /* Respect reduced motion preference */
@@ -816,7 +794,6 @@
   .animate-bounce {
     animation: none !important;
   }
-
   .glass-card-enhanced:hover,
   .gradient-border-btn:hover {
     transform: none;

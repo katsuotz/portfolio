@@ -1,0 +1,8 @@
+[install]
+# Disable npm and yarn usage
+npm = false
+yarn = false
+
+[install.lockfile]
+# Use bun.lock instead of package-lock.json
+print = "yarn"
