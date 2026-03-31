@@ -2,12 +2,6 @@
 
 import { Code2Icon } from 'lucide-react'
 import Image from 'next/image'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
 
 interface SkillType {
   logo: string
@@ -50,7 +44,7 @@ export default function Skills() {
     {
       logo: '/skills/next.webp',
       name: 'Next.js',
-      className: 'w-auto h-6',
+      className: 'w-auto h-8',
       gray: true,
     },
     {
@@ -89,7 +83,7 @@ export default function Skills() {
     {
       logo: '/skills/mongo.webp',
       name: 'MongoDB',
-      className: 'w-auto h-8',
+      className: 'w-auto h-10',
       gray: true,
     },
     {
@@ -99,37 +93,34 @@ export default function Skills() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 section-gradient-alt">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title">
-        <Code2Icon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-emerald-500 dark:text-emerald-400" />
+    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 bg-white dark:bg-zinc-950 border-t-4 border-black dark:border-white">
+      <h2 className="text-3xl sm:text-5xl font-black mb-16 flex items-center uppercase tracking-tighter text-black dark:text-white">
+        <Code2Icon className="w-10 h-10 sm:w-12 sm:h-12 mr-4" />
         Skills
       </h2>
 
-      <div className="container lg:max-w-[900px]">
-        <div className="glass-card-enhanced rounded-3xl p-8 flex flex-wrap gap-x-8 gap-y-10 justify-center">
+      <div className="container lg:max-w-5xl">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           {skills.map((skill, key) => {
             return (
-              <TooltipProvider delayDuration={0} key={key}>
-                <Tooltip>
-                  <TooltipTrigger aria-label={skill.name}>
-                    <Image
-                      key={key}
-                      loading="lazy"
-                      src={skill.logo}
-                      width={100}
-                      height={100}
-                      alt={skill.name}
-                      className={`${skill.className || 'w-auto h-12'} ${skill.gray ? 'invert dark:invert-0' : ''} hover:scale-110 transition-transform duration-300`}
-                    />
-                  </TooltipTrigger>
-                  <TooltipContent
-                    className="!bg-slate-900 !text-white border-0 text-xs [&>span]:!text-white"
-                    arrowClassName="!fill-slate-900 !bg-slate-900"
-                  >
-                    {skill.name}
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <div
+                key={key}
+                className="flex flex-col items-center justify-center gap-3 w-32 h-32 sm:w-40 sm:h-40 border-4 border-black dark:border-white bg-green-300 dark:bg-green-800 shadow-[8px_8px_0_0_#000] dark:shadow-[8px_8px_0_0_#fff] transition-transform hover:-translate-y-2 hover:translate-x-2 hover:shadow-none dark:hover:shadow-none"
+              >
+                <div className="bg-white dark:bg-black border-2 border-black dark:border-white p-2">
+                  <Image
+                    loading="lazy"
+                    src={skill.logo}
+                    width={100}
+                    height={100}
+                    alt={skill.name}
+                    className={`${skill.className || 'w-auto h-12'} ${skill.gray ? 'invert dark:invert-0' : ''} object-contain`}
+                  />
+                </div>
+                <span className="font-bold text-black dark:text-white uppercase text-xs sm:text-sm tracking-wide text-center px-2">
+                  {skill.name}
+                </span>
+              </div>
             )
           })}
         </div>

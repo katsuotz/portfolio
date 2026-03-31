@@ -48,7 +48,7 @@ export default function LazySection({
         ? children
         : placeholder || (
             <div className="min-h-[400px] flex items-center justify-center">
-              <div className="w-8 h-8 border-2 border-gray-300 dark:border-gray-600 border-t-purple-500 rounded-full animate-spin" />
+              <div className="w-16 h-16 border-4 border-black dark:border-white bg-black dark:bg-white animate-spin" />
             </div>
           )}
     </div>

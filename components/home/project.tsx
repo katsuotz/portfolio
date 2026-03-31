@@ -147,34 +147,32 @@ export default function Project({ showAllProjects = false }) {
     : projects.filter((e) => e.highlight)
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 section-gradient">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title">
-        <MonitorSmartphoneIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-blue-500 dark:text-blue-400" />
+    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 bg-zinc-100 dark:bg-zinc-900 border-t-4 border-black dark:border-white">
+      <h2 className="text-3xl sm:text-5xl font-black mb-16 flex items-center uppercase tracking-tighter text-black dark:text-white">
+        <MonitorSmartphoneIcon className="w-10 h-10 sm:w-12 sm:h-12 mr-4" />
         Projects
       </h2>
 
       <div className="container">
         <div className="grid grid-cols-12 gap-6 sm:gap-8">
           {filteredProject.map((project, key) => {
-            return <ProjectItem project={project} key={key} />
+            return <ProjectItem project={project} key={key} index={key} />
           })}
-          {!showAllProjects ? (
+          {!showAllProjects && (
             <Link
               href="/projects"
-              className="col col-span-12 xs:col-span-6 md:col-span-3 group/project intro-y"
+              className="col col-span-12 sm:col-span-6 lg:col-span-4"
             >
               <span className="sr-only">View All Projects</span>
-              <div className="px-4 w-full sm:h-[350px] h-[240px] flex flex-col justify-center relative cursor-pointer overflow-hidden rounded-3xl glass-card-enhanced hover:border-blue-500/30 dark:hover:border-blue-400/30 transition-all duration-300">
-                <div className="flex flex-col items-center relative">
-                  <LayoutGridIcon className="w-20 h-20 mb-8 stroke-[1.5] text-slate-700 dark:text-slate-300 group-hover/project:text-blue-500 dark:group-hover/project:text-blue-400 transition-colors" />
-                  <p className="font-bold text-xl text-slate-800 dark:text-slate-100">
-                    More
-                  </p>
+              <div className="px-4 w-full h-[280px] sm:h-[350px] flex flex-col justify-center items-center border-4 border-black dark:border-white bg-blue-300 dark:bg-blue-800 shadow-[8px_8px_0_0_#000] dark:shadow-[8px_8px_0_0_#fff] transition-transform hover:-translate-y-2 hover:translate-x-2 hover:shadow-none dark:hover:shadow-none cursor-pointer group">
+                <div className="bg-white dark:bg-black border-4 border-black dark:border-white p-4 mb-6 group-hover:scale-110 transition-transform">
+                  <LayoutGridIcon className="w-16 h-16 text-black dark:text-white" />
                 </div>
+                <p className="font-black text-3xl uppercase tracking-tighter text-black dark:text-white">
+                  View More
+                </p>
               </div>
             </Link>
-          ) : (
-            ''
           )}
         </div>
       </div>

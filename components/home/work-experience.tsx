@@ -144,24 +144,28 @@ export default function WorkExperience() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-8 pt-20 lg:pb-20 pb-16 lg:mt-20 section-gradient">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-400 dark:from-purple-400 dark:to-purple-200">
-        <Laptop2Icon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-purple-500 dark:text-purple-400" />
-        Work Experience
+    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-20 lg:pb-20 pb-16 bg-zinc-100 dark:bg-zinc-900 border-t-4 border-black dark:border-white">
+      <h2 className="text-3xl sm:text-5xl font-black mb-16 flex items-center uppercase tracking-tighter text-black dark:text-white">
+        <Laptop2Icon className="w-10 h-10 sm:w-12 sm:h-12 mr-4" />
+        Experience
       </h2>
 
-      <div className="w-full">
+      <div className="w-full brutal-swiper-container">
         <Swiper
           modules={[Pagination, Mousewheel]}
           pagination={{ clickable: true }}
           slidesPerView={'auto'}
-          spaceBetween={0}
+          spaceBetween={32}
           mousewheel
+          className="pb-16 px-4 sm:px-8"
         >
           {experiences.map((experience, key) => {
             return (
-              <SwiperSlide key={key} className={key === 0 ? 'sm:ml-80' : ''}>
-                <WorkExperienceItem experience={experience} />
+              <SwiperSlide
+                key={key}
+                className={`!w-auto ${key === 0 ? 'sm:ml-[10%]' : ''}`}
+              >
+                <WorkExperienceItem experience={experience} index={key} />
               </SwiperSlide>
             )
           })}

@@ -34,16 +34,17 @@ export default function ToggleDarkMode() {
   return (
     <div className="absolute top-0 right-0 pr-6 pt-6 z-20">
       <link rel="preload" as="image" href="/emotes.gif" fetchPriority="low" />
-      <div
-        className="glass-card-enhanced rounded-full p-2.5 cursor-pointer hover:border-amber-500/30 dark:hover:border-blue-400/30 transition-all duration-300 group"
+      <button
+        className="p-3 bg-white dark:bg-black border-4 border-black dark:border-white shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-1 hover:translate-x-1 hover:shadow-none dark:hover:shadow-none group"
         onClick={() => toggleDarkMode(!isDarkMode)}
+        aria-label="Toggle dark mode"
       >
         {isDarkMode ? (
-          <SunIcon className="w-5 h-5 text-slate-400 group-hover:text-amber-400 transition-colors" />
+          <SunIcon className="w-6 h-6 text-black dark:text-white" />
         ) : (
-          <MoonStarIcon className="w-5 h-5 text-slate-600 group-hover:text-blue-500 transition-colors" />
+          <MoonStarIcon className="w-6 h-6 text-black dark:text-white" />
         )}
-      </div>
+      </button>
     </div>
   )
 }

@@ -2,12 +2,6 @@
 
 import { LinkIcon, TrophyIcon } from 'lucide-react'
 import Image from 'next/image'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
 
 interface AchievementType {
   logo: string
@@ -57,65 +51,53 @@ export default function Achievement() {
   ]
 
   return (
-    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 section-gradient">
-      <h2 className="text-3xl sm:text-5xl font-bold mb-12 flex items-center section-title">
-        <TrophyIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4 icon-glow text-amber-500 dark:text-amber-400" />
+    <section className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12 bg-zinc-100 dark:bg-zinc-900 border-t-4 border-black dark:border-white">
+      <h2 className="text-3xl sm:text-5xl font-black mb-16 flex items-center uppercase tracking-tighter text-black dark:text-white">
+        <TrophyIcon className="w-10 h-10 sm:w-12 sm:h-12 mr-4" />
         Achievement
       </h2>
 
-      <div className="container">
-        <div className="grid grid-cols-12 gap-6">
+      <div className="container max-w-4xl">
+        <div className="flex flex-col gap-6">
           {achievements.map((achievement, key) => {
             return (
-              <div className="col-span-12" key={key}>
-                <div className="relative mx-auto min-h-fit w-full max-w-[600px] rounded-2xl p-4 glass-card-enhanced hover:border-amber-500/30 dark:hover:border-amber-400/30 transition-all duration-300">
-                  <div className="flex gap-6 items-center">
+              <div
+                key={key}
+                className="relative w-full border-4 border-black dark:border-white bg-white dark:bg-black p-4 sm:p-6 shadow-[8px_8px_0_0_#000] dark:shadow-[8px_8px_0_0_#fff] transition-transform hover:-translate-y-2 hover:translate-x-2 hover:shadow-none dark:hover:shadow-none group"
+              >
+                <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                  <div className="bg-zinc-100 dark:bg-zinc-800 border-2 border-black dark:border-white p-3 shrink-0">
                     <Image
                       loading="lazy"
                       src={achievement.logo}
                       width={64}
                       height={64}
                       alt={achievement.organizer}
-                      className={`w-auto h-14 ${achievement.gray ? 'invert dark:invert-0' : ''}`}
+                      className={`w-auto h-14 object-contain ${achievement.gray ? 'invert dark:invert-0' : ''}`}
                     />
-                    <div>
-                      <p className="font-bold tracking-wide text-lg sm:text-xl text-slate-800 dark:text-slate-100">
-                        {achievement.position}
-                      </p>
-                      <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-medium">
-                        {achievement.title}
-                      </p>
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                        {achievement.organizer} - {achievement.year}
+                  </div>
+                  <div className="flex-grow">
+                    <p className="font-black uppercase tracking-tight text-xl sm:text-2xl text-black dark:text-white leading-tight">
+                      {achievement.position}
+                    </p>
+                    <p className="text-lg text-black dark:text-white font-bold mt-1">
+                      {achievement.title}
+                    </p>
+                    <div className="inline-flex border-t-2 border-black dark:border-white pt-2 mt-2">
+                      <p className="text-base font-medium text-black dark:text-white uppercase">
+                        {achievement.organizer} • {achievement.year}
                       </p>
                     </div>
                   </div>
-                  <TooltipProvider delayDuration={0} key={key}>
-                    <Tooltip>
-                      <TooltipTrigger
-                        className="absolute top-4 right-4"
-                        asChild={true}
-                      >
-                        <a
-                          href={achievement.url}
-                          className=""
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <span className="sr-only">
-                            {achievement.title} Certificate
-                          </span>
-                          <LinkIcon className="w-4 h-4 text-amber-500 dark:text-amber-400 hover:text-amber-600 dark:hover:text-amber-300 transition-colors" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent
-                        className="!bg-slate-900 !text-white border-0 text-xs [&>span]:!text-white"
-                        arrowClassName="!fill-slate-900 !bg-slate-900"
-                      >
-                        View Certificate
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  <a
+                    href={achievement.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="absolute top-4 right-4 sm:relative sm:top-0 sm:right-0 bg-yellow-300 dark:bg-yellow-600 border-2 border-black dark:border-white p-3 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                    aria-label="View Certificate"
+                  >
+                    <LinkIcon className="w-6 h-6 text-black dark:text-white group-hover:text-white dark:group-hover:text-black" />
+                  </a>
                 </div>
               </div>
             )

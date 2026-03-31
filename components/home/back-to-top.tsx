@@ -27,14 +27,18 @@ export default function BackToTop() {
 
   return (
     <div
-      className={`fixed bottom-10 right-10 z-10 transition-all duration-300 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+      className={`fixed bottom-10 right-10 z-50 transition-all duration-300 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
     >
-      <div
+      <button
         onClick={scrollToTop}
-        className="p-3 rounded-2xl glass-card-enhanced hover:border-purple-500/30 dark:hover:border-purple-400/30 transition-all duration-300 cursor-pointer group"
+        className="p-3 sm:p-4 bg-yellow-300 dark:bg-yellow-600 border-4 border-black dark:border-white shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-1 hover:translate-x-1 hover:shadow-none dark:hover:shadow-none group flex flex-col items-center gap-1"
+        aria-label="Back to top"
       >
-        <ArrowUpSquareIcon className="w-6 h-6 text-slate-600 dark:text-slate-400 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors" />
-      </div>
+        <ArrowUpSquareIcon className="w-6 h-6 sm:w-8 sm:h-8 text-black dark:text-white" />
+        <span className="font-black uppercase text-[10px] sm:text-xs text-black dark:text-white tracking-tighter">
+          Top
+        </span>
+      </button>
     </div>
   )
 }
