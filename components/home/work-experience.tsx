@@ -8,20 +8,6 @@ import { BriefcaseIcon } from '@phosphor-icons/react'
 export default function WorkExperience() {
   const experiences: WorkExperienceType[] = [
     {
-      logo: '/work/nvp.webp',
-      flag: '/flag/id.webp',
-      company: 'Native Productions',
-      country: 'Indonesia',
-      position: [
-        {
-          title: 'Full-Stack Developer',
-          date: 'Dec 2025 - Now',
-        },
-      ],
-      description:
-        'Built customizable and scalable enterprise applications with tailored workflows and advanced reporting to support client-specific business logic.',
-    },
-    {
       logo: '/work/shieldbase.webp',
       flag: '/flag/sg.webp',
       company: 'Shieldbase',
@@ -48,6 +34,20 @@ export default function WorkExperience() {
       ],
       description:
         'Built a secure and intuitive platform to track medicine serialization and delivery, ensuring authenticity and regulatory compliance across the supply chain.',
+    },
+    {
+      logo: '/work/nvp.webp',
+      flag: '/flag/id.webp',
+      company: 'Native Productions',
+      country: 'Indonesia',
+      position: [
+        {
+          title: 'Full-Stack Developer',
+          date: 'Dec 2025 - Mar 2026',
+        },
+      ],
+      description:
+        'Built customizable and scalable enterprise applications with tailored workflows and advanced reporting to support client-specific business logic.',
     },
     {
       logo: '/work/farmbyte.webp',
@@ -158,11 +158,42 @@ export default function WorkExperience() {
         {/* Timeline Line */}
         <div className="absolute left-[31px] top-4 bottom-4 w-[2px] bg-linear-to-b from-violet-500/50 via-white/10 to-transparent hidden sm:block z-0" />
 
-        {experiences.map((experience, index) => (
+        {/* Current Roles */}
+        {experiences.slice(0, 2).map((experience, index) => (
           <div
             key={index}
             className="intro-y relative z-10"
             style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+          >
+            <WorkExperienceItem experience={experience} />
+          </div>
+        ))}
+
+        {/* Divider for Past Experiences */}
+        <div
+          className="intro-y relative z-10 flex items-center py-6 sm:py-8"
+          style={{ animationDelay: '0.3s' }}
+        >
+          <div className="hidden sm:flex flex-col items-center z-10">
+            <div className="w-14 h-14 rounded-full bg-[#0F0F0F] border border-white/10 flex items-center justify-center ml-0.5 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+              <div className="w-3 h-3 rounded-full bg-white/20" />
+            </div>
+          </div>
+          <div className="flex-1 sm:ml-6 flex items-center gap-4">
+            <div className="h-px flex-1 bg-linear-to-r from-transparent via-white/10 to-transparent sm:hidden" />
+            <h3 className="text-sm font-medium text-gray-400 uppercase tracking-[0.2em] px-4 sm:px-0">
+              Past Experience
+            </h3>
+            <div className="h-px flex-1 bg-linear-to-r from-white/10 to-transparent" />
+          </div>
+        </div>
+
+        {/* Past Roles */}
+        {experiences.slice(2).map((experience, index) => (
+          <div
+            key={index + 2}
+            className="intro-y relative z-10"
+            style={{ animationDelay: `${0.1 * (index + 4)}s` }}
           >
             <WorkExperienceItem experience={experience} />
           </div>
