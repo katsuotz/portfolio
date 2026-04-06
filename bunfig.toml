@@ -5,4 +5,3 @@ yarn = false
 
 [install.lockfile]
 # Use bun.lock instead of package-lock.json
-print = "yarn"

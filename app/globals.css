@@ -789,10 +789,13 @@
   .animate-gradient,
   .aurora-strip,
   .gradient-border-badge,
-  .intro-y,
   .animate-pulse,
   .animate-bounce {
     animation: none !important;
+  }
+  .intro-y {
+    opacity: 1 !important;
+    transform: none !important;
   }
   .glass-card-enhanced:hover,
   .gradient-border-btn:hover {
