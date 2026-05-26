@@ -65,12 +65,15 @@ export default function Banner() {
         <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-6 pb-24">
           {/* Status Badge */}
           <div className="intro-y mb-12">
-            <div className="group flex items-center gap-3 px-5 py-2 rounded-full border border-violet-500/20 bg-black/40 backdrop-blur-md shadow-[0_0_15px_-5px_rgba(139,92,246,0.3)] transition-all duration-300 cursor-default">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-violet-500 shadow-[0_0_8px_rgba(139,92,246,0.6)]"></span>
+            <div className="group flex items-center gap-2.5 px-5 py-2.5 rounded-lg border border-amber-500/10 bg-[#1a1814] shadow-sm transition-all duration-500 cursor-default hover:border-amber-500/20 hover:shadow-md">
+              <span
+                className="text-sm leading-none"
+                role="img"
+                aria-label="wave"
+              >
+                👋
               </span>
-              <span className="text-xs font-bold text-violet-200 tracking-wider uppercase">
+              <span className="text-xs font-medium text-amber-100/80 tracking-normal">
                 Available for new opportunities
               </span>
             </div>
