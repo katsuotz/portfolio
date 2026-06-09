@@ -20,6 +20,7 @@ export interface ProjectType {
   logo: string
   name: string
   year: string
+  tag: string
   description: string
   image: string
   url?: string
@@ -56,9 +57,15 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
           </div>
 
           <div className="mt-auto relative z-10">
-            <p className="text-violet-400 font-mono text-xs tracking-wider mb-2">
-              {project.year}
-            </p>
+            <div className="flex items-center gap-2.5 mb-3 text-sm">
+              <span className="font-medium text-violet-300 group-hover/project:text-violet-200 transition-colors duration-300">
+                {project.year}
+              </span>
+              <span className="h-3.5 w-px bg-white/15" />
+              <span className="font-light text-gray-400 group-hover/project:text-gray-300 transition-colors duration-300">
+                {project.tag}
+              </span>
+            </div>
             <h3 className="font-serif font-bold text-2xl text-[#FAFAFA] mb-3 group-hover/project:text-white transition-colors">
               {project.name}
             </h3>
@@ -94,9 +101,13 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
               <DialogTitle className="text-3xl font-serif font-bold text-white tracking-tight">
                 {project.name}
               </DialogTitle>
-              <p className="text-violet-400 font-mono text-sm">
-                {project.year}
-              </p>
+              <div className="flex items-center gap-2.5 mt-1.5 text-sm">
+                <span className="font-medium text-violet-300">
+                  {project.year}
+                </span>
+                <span className="h-3.5 w-px bg-white/15" />
+                <span className="font-light text-gray-400">{project.tag}</span>
+              </div>
             </div>
           </div>
 

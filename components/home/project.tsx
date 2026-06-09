@@ -7,9 +7,20 @@ import Link from 'next/link'
 export default function Project({ showAllProjects = false }) {
   const projects: ProjectType[] = [
     {
+      logo: '/work/shieldbase.webp',
+      name: 'Shieldbase AI',
+      year: '2025 - Now',
+      tag: 'AI',
+      description:
+        'A no-code platform for building and running AI-powered business workflows via a visual drag-and-drop builder.',
+      image: '/project/shieldbase.webp',
+      highlight: true,
+    },
+    {
       logo: '/work/farmbyte.webp',
       name: 'FarmByte OMS',
       year: '2025',
+      tag: 'Agritech',
       description:
         'A platform to manage orders from quotation to logistics, inbound, and grading.',
       image: '/project/farmbyte_oms.webp',
@@ -19,6 +30,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/project/spmb.webp',
       name: 'SPMB/PPDB Jawa Barat',
       year: '2019 - 2025',
+      tag: 'Education',
       description:
         'An all-in-one web app for students in West Java, enabling seamless high school registration by providing a user-friendly platform with over 1 million users.',
       image: '/project/ppdb-1.webp',
@@ -28,6 +40,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/work/paxel.webp',
       name: 'Paxel CMS',
       year: '2022 - 2025',
+      tag: 'Logistics',
       description:
         'A logistics CMS that manages first-mile pickup, middle-mile, and last-mile delivery to ensure smooth and reliable operations.',
       image: '/project/paxel-cms.webp',
@@ -37,6 +50,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/project/transkripid.svg',
       name: 'Transkrip.id',
       year: '2024',
+      tag: 'AI',
       description:
         'A project to Transcribe Audio/Video to Text with AI Technology.',
       image: '/project/transkripid.webp',
@@ -47,6 +61,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/project/dota.webp',
       name: 'Dreamocel Portfolio',
       year: '2023',
+      tag: 'Portfolio',
       description:
         'A single page portfolio website for Professional Esports Dota 2 Player.',
       image: '/project/dreamocel-web.jpg',
@@ -57,6 +72,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/project/cek-reputasi.webp',
       name: 'Cek Reputasi',
       year: '2023',
+      tag: 'Politics',
       description:
         'UI Slicing Web App for analyzing political election data, offering insights into candidate historical data.',
       image: '/project/cek-reputasi-1.webp',
@@ -65,6 +81,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/project/sgara-book.webp',
       name: 'Sgara Book',
       year: '2020 - 2022',
+      tag: 'Agritech',
       description:
         'An AI-driven farm management system to monitor farms on a daily basis from day one to harvest.',
       image: '/project/sgara-book-1.webp',
@@ -75,6 +92,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/project/edunex.webp',
       name: 'Edunex ITB',
       year: '2020 - 2022',
+      tag: 'Education',
       description:
         'A customizable LMS designed for students and lecturers in ITB (Bandung Institute of Technology).',
       image: '/project/edunex-1.webp',
@@ -85,6 +103,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/education/unikom.webp',
       name: 'Cisco Network Education',
       year: '2021',
+      tag: 'Education',
       description:
         'A web app for managing Unikom students who have taken a network class.',
       image: '/project/ccna.webp',
@@ -93,6 +112,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/achievement/kemdikbud.webp',
       name: 'Virtual Exhibition LKS',
       year: '2020',
+      tag: 'Education',
       description:
         'A 3d virtual showcase exhibition in Ministry of Education and Culture Indonesia yearly event for Vocational School.',
       image: '/project/virtual-exhibition.webp',
@@ -102,6 +122,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/achievement/kemnaker.webp',
       name: 'eModul',
       year: '2020',
+      tag: 'Education',
       description: 'Online e-book library for Ministry of Manpower Indonesia.',
       image: '/project/emodul.webp',
       highlight: false,
@@ -110,6 +131,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/work/someah.webp',
       name: 'Pantau Covid-19',
       year: '2020',
+      tag: 'Healthcare',
       description:
         "A web application designed to monitor the COVID virus's transmission within Indonesia.",
       image: '/project/pantau-covid.webp',
@@ -118,6 +140,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/project/middle-space.webp',
       name: 'Middle Space',
       year: '2019',
+      tag: 'Game',
       description:
         'Middle Space is an exhilarating shooter space game where players take on the role of a high-tech aircraft spaceship navigating through the vast cosmos.',
       image: '/project/middle-space-gameplay.jpg',
@@ -127,6 +150,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/education/smkn4.webp',
       name: 'eSchool',
       year: '2017 - 2018',
+      tag: 'Education',
       description:
         'A web app to manage all aspects of school including student enrollment, teacher management, subject allocation, and scheduling.',
       image: '/project/eschool.webp',
@@ -136,6 +160,7 @@ export default function Project({ showAllProjects = false }) {
       logo: '/education/smkn4.webp',
       name: 'SMKN 4 Landing Page',
       year: '2017',
+      tag: 'Education',
       description: 'A customizable Landing Page and CMS for SMKN 4 Bandung.',
       image: '/project/smkn4-landing-page.webp',
       url: 'https://smkn4bdg.sch.id/',
