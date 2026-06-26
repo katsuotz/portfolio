@@ -12,6 +12,7 @@ export default function WorkExperience() {
       flag: '/flag/sg.webp',
       company: 'Shieldbase',
       country: 'Singapore',
+      status: 'freelance',
       position: [
         {
           title: 'Software Engineer',
@@ -21,29 +22,31 @@ export default function WorkExperience() {
       description:
         'Developed an enterprise-grade AI workspace that unifies models, data, and agents into a secure and scalable platform.',
     },
-    {
-      logo: '/work/biofarma.webp',
-      flag: '/flag/id.webp',
-      company: 'Biofarma',
-      country: 'Indonesia',
-      position: [
-        {
-          title: 'Frontend Developer',
-          date: 'Feb 2024 - Now',
-        },
-      ],
-      description:
-        'Built a secure and intuitive platform to track medicine serialization and delivery, ensuring authenticity and regulatory compliance across the supply chain.',
-    },
+    // {
+    //   logo: '/work/biofarma.webp',
+    //   flag: '/flag/id.webp',
+    //   company: 'Biofarma',
+    //   country: 'Indonesia',
+    //   status: 'freelance',
+    //   position: [
+    //     {
+    //       title: 'Frontend Developer',
+    //       date: 'Feb 2024 - Now',
+    //     },
+    //   ],
+    //   description:
+    //     'Built a secure and intuitive platform to track medicine serialization and delivery, ensuring authenticity and regulatory compliance across the supply chain.',
+    // },
     {
       logo: '/work/nvp.webp',
       flag: '/flag/id.webp',
       company: 'Native Productions',
       country: 'Indonesia',
+      status: 'contract',
       position: [
         {
           title: 'Full-Stack Developer',
-          date: 'Dec 2025 - Mar 2026',
+          date: 'Dec 2025 - Now',
         },
       ],
       description:
@@ -54,6 +57,7 @@ export default function WorkExperience() {
       flag: '/flag/my.svg',
       company: 'FarmByte',
       country: 'Malaysia',
+      status: 'freelance',
       position: [
         {
           title: 'Frontend Developer',
@@ -68,6 +72,7 @@ export default function WorkExperience() {
       flag: '/flag/id.webp',
       country: 'Indonesia',
       company: 'Paxel',
+      status: 'fulltime',
       position: [
         {
           title: 'Full-Stack Developer',
@@ -82,6 +87,7 @@ export default function WorkExperience() {
       flag: '/flag/au.webp',
       company: 'Lexigo',
       country: 'Australia',
+      status: 'contract',
       position: [
         {
           title: 'Frontend Developer',
@@ -96,6 +102,7 @@ export default function WorkExperience() {
       flag: '/flag/id.webp',
       country: 'Indonesia',
       company: 'Sgara',
+      status: 'fulltime',
       position: [
         {
           title: 'Frontend Developer',
@@ -114,6 +121,7 @@ export default function WorkExperience() {
       flag: '/flag/id.webp',
       country: 'Indonesia',
       company: 'Cognisia',
+      status: 'freelance',
       position: [
         {
           title: 'Frontend Developer',
@@ -128,6 +136,7 @@ export default function WorkExperience() {
       flag: '/flag/id.webp',
       country: 'Indonesia',
       company: 'Someah Kreatif Nusantara',
+      status: 'contract',
       position: [
         {
           title: 'Full-Stack Developer',

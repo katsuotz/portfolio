@@ -9,9 +9,16 @@ export interface WorkExperienceType {
   company: string
   description: string
   country: string
+  status: 'contract' | 'freelance' | 'fulltime'
   position: WorkExperiencePosition[]
   logo: string
   flag: string
+}
+
+const statusLabels: Record<WorkExperienceType['status'], string> = {
+  contract: 'Contract',
+  freelance: 'Freelance',
+  fulltime: 'Full-time',
 }
 
 export default function WorkExperienceItem({
@@ -67,6 +74,9 @@ export default function WorkExperienceItem({
                 <span className="text-[10px] text-gray-400 uppercase tracking-wider hidden sm:inline-block">
                   {experience.country}
                 </span>
+              </div>
+              <div className="px-2 py-1 rounded-md bg-violet-500/10 border border-violet-400/20 text-[10px] text-violet-200 uppercase tracking-wider whitespace-nowrap">
+                {statusLabels[experience.status]}
               </div>
             </div>
 
