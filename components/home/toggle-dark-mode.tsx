@@ -1,44 +1,25 @@
 'use client'
 
 import { MoonStarsIcon, SunIcon } from '@phosphor-icons/react'
-import { useEffect, useState } from 'react'
-import { flushSync } from 'react-dom'
-import { useGlobalState } from '@/context/GlobalStateContext'
+import { useSiteTheme } from '@/hooks/use-site-theme'
 
 export default function ToggleDarkMode() {
-  const { globalState, setGlobalState } = useGlobalState()
-
-  const [isDarkMode, setIsDarkMode] = useState(globalState.theme === 'dark')
-
-  const toggleDarkMode = async (isDarkMode: boolean) => {
-    localStorage.setItem('dark-mode', isDarkMode.toString())
-    await document.startViewTransition(() => {
-      flushSync(() => {
-        setIsDarkMode(isDarkMode)
-      })
-    }).ready
-  }
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-    setGlobalState((prev: any) => ({
-      ...prev,
-      theme: isDarkMode ? 'dark' : 'light',
-    }))
-  }, [isDarkMode, setGlobalState])
+  const { theme, toggleTheme } = useSiteTheme()
+  const isDarkMode = theme === 'dark'
+  const label = isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
 
   return (
-    <div className="absolute top-0 right-0 pr-6 pt-6 z-20">
-      <link rel="preload" as="image" href="/emotes.gif" fetchPriority="low" />
-      <div
-        className="glass-card-enhanced rounded-full p-2.5 cursor-pointer hover:border-amber-500/30 dark:hover:border-blue-400/30 transition-all duration-300 group"
-        onClick={() => toggleDarkMode(!isDarkMode)}
+    <div className="absolute top-0 right-0 z-20 pt-6 pr-6">
+      <button
+        type="button"
+        aria-label={label}
+        title={label}
+        className="glass-card-enhanced group cursor-pointer rounded-full p-3 transition-all duration-300 hover:border-amber-500/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 dark:hover:border-blue-400/30"
+        onClick={toggleTheme}
       >
-        {isDarkMode ? (
+        {theme === null ? (
+          <span className="block size-5" aria-hidden="true" />
+        ) : isDarkMode ? (
           <SunIcon
             className="w-5 h-5 text-slate-400 group-hover:text-amber-400 transition-colors"
             weight="light"
@@ -49,7 +30,7 @@ export default function ToggleDarkMode() {
             weight="light"
           />
         )}
-      </div>
+      </button>
     </div>
   )
 }

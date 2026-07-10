@@ -20,6 +20,7 @@ export default function SocialMedia() {
         <Tooltip>
           <TooltipTrigger asChild={true}>
             <a
+              className="grid size-11 place-items-center"
               href="https://github.com/katsuotz/"
               target="_blank"
               rel="noreferrer"
@@ -35,6 +36,7 @@ export default function SocialMedia() {
         <Tooltip>
           <TooltipTrigger asChild={true}>
             <a
+              className="grid size-11 place-items-center"
               href="https://www.linkedin.com/in/irfan-fakhri/"
               target="_blank"
               rel="noreferrer"
@@ -50,6 +52,7 @@ export default function SocialMedia() {
         <Tooltip>
           <TooltipTrigger asChild={true}>
             <a
+              className="grid size-11 place-items-center"
               href="https://www.instagram.com/katsuotz/"
               target="_blank"
               rel="noreferrer"
@@ -65,6 +68,7 @@ export default function SocialMedia() {
         <Tooltip>
           <TooltipTrigger asChild={true}>
             <a
+              className="grid size-11 place-items-center"
               href="mailto:m.irfan.fakhri66@gmail.com"
               target="_blank"
               rel="noreferrer"

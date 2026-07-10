@@ -1,10 +1,27 @@
 'use client'
 
-import { GridFourIcon, DevicesIcon } from '@phosphor-icons/react'
+import { ArrowRightIcon } from '@phosphor-icons/react'
 import ProjectItem, { ProjectType } from '@/components/home/project-item'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
-export default function Project({ showAllProjects = false }) {
+export interface ProjectProps {
+  showAllProjects?: boolean
+  variant?: 'bento' | 'registry'
+}
+
+const bentoCellClasses = [
+  'md:col-span-7 md:row-span-4',
+  'md:col-span-5 md:row-span-3',
+  'md:col-span-5 md:row-span-3',
+  'md:col-span-7 md:row-span-4',
+]
+
+export default function Project({
+  showAllProjects = false,
+  variant = 'registry',
+}: ProjectProps) {
   const projects: ProjectType[] = [
     {
       logo: '/work/shieldbase.webp',
@@ -18,6 +35,7 @@ export default function Project({ showAllProjects = false }) {
     },
     {
       logo: '/work/farmbyte.webp',
+      logoClassName: 'scale-[0.78]',
       name: 'FarmByte OMS',
       year: '2025',
       tag: 'Agritech',
@@ -169,60 +187,111 @@ export default function Project({ showAllProjects = false }) {
 
   const filteredProject = showAllProjects
     ? projects
-    : projects.filter((e) => e.highlight)
+    : variant === 'bento'
+      ? projects.slice(0, 4)
+      : projects.filter((e) => e.highlight)
+
+  if (variant === 'bento') {
+    return (
+      <section
+        id="selected-work"
+        className="mx-auto w-full max-w-[96rem] scroll-mt-19 px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)]"
+      >
+        <div className="mb-[clamp(3rem,7vw,6rem)] grid items-end gap-[clamp(1.5rem,4vw,5rem)] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_minmax(18rem,48rem)_minmax(15rem,25rem)]">
+          <p
+            className={cn(
+              editorialType.micro,
+              'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
+            )}
+          >
+            01 / Selected work
+          </p>
+          <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,13vw,4.5rem)] leading-[0.94] font-normal tracking-[-0.06em] text-[var(--home-ink)] uppercase lg:text-[clamp(2.9rem,6vw,6.6rem)]">
+            Systems made useful.
+          </h2>
+          <p
+            className={cn(
+              editorialType.body,
+              'font-light text-[var(--home-muted)] md:col-start-2 lg:col-auto'
+            )}
+          >
+            A selection of platforms built for complex operations, from AI
+            workflows and agriculture to education and logistics.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-12 md:auto-rows-[minmax(9rem,auto)]">
+          {filteredProject.map((project, index) => (
+            <div
+              key={project.name}
+              className={`min-h-[26rem] max-[420px]:min-h-[23rem] ${bentoCellClasses[index]}`}
+            >
+              <ProjectItem project={project} variant="bento" />
+            </div>
+          ))}
+
+          <Link
+            href="/projects"
+            className="group/archive grid grid-cols-[1fr_auto] content-center gap-x-4 gap-y-1.5 border border-[var(--home-line)] p-6 text-[var(--home-ink)] transition-colors duration-200 hover:border-[var(--home-accent)] hover:bg-[var(--home-surface)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] md:col-span-5 md:row-span-1 motion-reduce:transition-none"
+          >
+            <span
+              className={cn(
+                editorialType.micro,
+                'col-start-1 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
+              )}
+            >
+              Project registry
+            </span>
+            <strong className="text-[clamp(1rem,1.7vw,1.35rem)] font-medium">
+              Explore the full archive
+            </strong>
+            <ArrowRightIcon
+              className="col-start-2 row-span-2 row-start-1 size-5 self-center transition-transform duration-200 group-hover/archive:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section
       id="work"
-      className="relative flex flex-col justify-center items-center py-12 sm:py-32 w-full max-w-7xl mx-auto px-4 sm:px-6"
+      className="mx-auto w-full max-w-[1500px] px-5 py-20 sm:px-8 sm:py-28 lg:px-12"
     >
-      <div className="flex items-center justify-center gap-4 mb-10 sm:mb-20 intro-y w-full">
-        <DevicesIcon
-          className="w-8 h-8 sm:w-16 sm:h-16 text-violet-500 shrink-0"
-          weight="regular"
-        />
-        <h2 className="text-3xl sm:text-7xl font-serif font-black text-[#FAFAFA] tracking-tighter text-center whitespace-nowrap">
-          Selected Works
-        </h2>
+      <div className="mb-12 grid gap-5 border-b border-[var(--home-line)] pb-8 md:grid-cols-[1fr_0.65fr] md:items-end">
+        <div>
+          <p
+            className={cn(
+              editorialType.micro,
+              'font-[family-name:var(--font-home-mono)] uppercase tracking-[0.18em] text-[var(--home-accent)]'
+            )}
+          >
+            Project registry
+          </p>
+          <h1 className="mt-4 text-balance font-[family-name:var(--font-home-display)] text-[clamp(3.4rem,8vw,8rem)] leading-[0.86] tracking-[-0.05em] text-[var(--home-ink)]">
+            Selected works.
+          </h1>
+        </div>
+        <p
+          className={cn(
+            editorialType.body,
+            'max-w-lg text-[var(--home-muted)] md:justify-self-end'
+          )}
+        >
+          Products, platforms, and experiments spanning AI, operations,
+          education, logistics, and the public sector.
+        </p>
       </div>
 
       <div className="w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredProject.map((project, index) => (
-            <div
-              key={index}
-              className="intro-y"
-              style={{ animationDelay: `${0.1 * index}s` }}
-            >
-              <ProjectItem project={project} />
+        <div className="grid grid-cols-1 gap-px border border-[var(--home-line)] bg-[var(--home-line)] md:grid-cols-2 xl:grid-cols-3">
+          {filteredProject.map((project) => (
+            <div key={project.name} className="min-w-0 bg-[var(--home-canvas)]">
+              <ProjectItem project={project} variant="registry" />
             </div>
           ))}
-          {!showAllProjects && (
-            <Link
-              href="/projects"
-              className="group/project intro-y block h-full min-h-[350px]"
-              style={{ animationDelay: `${0.1 * filteredProject.length}s` }}
-            >
-              <span className="sr-only">View All Projects</span>
-              <div className="h-full w-full p-8 flex flex-col justify-center items-center relative overflow-hidden rounded-2xl bg-white/2 backdrop-blur-xl border border-white/5 hover:bg-white/4 hover:border-violet-500/30 transition-all duration-500 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
-                <div className="absolute inset-0 bg-linear-to-br from-violet-500/5 to-transparent opacity-0 group-hover/project:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10 flex flex-col items-center gap-6">
-                  <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover/project:border-violet-500/50 group-hover/project:scale-110 transition-all duration-300">
-                    <GridFourIcon
-                      className="w-10 h-10 text-gray-400 group-hover/project:text-violet-400 transition-colors"
-                      weight="light"
-                    />
-                  </div>
-                  <p className="font-serif font-bold tracking-wide text-3xl text-gray-300 group-hover/project:text-[#FAFAFA] transition-colors">
-                    View Registry
-                  </p>
-                  <p className="text-gray-400 text-base font-medium">
-                    Explore all projects & experiments
-                  </p>
-                </div>
-              </div>
-            </Link>
-          )}
         </div>
       </div>
     </section>

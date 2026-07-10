@@ -10,12 +10,13 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import ToggleDarkMode from '@/components/home/toggle-dark-mode'
-import { GlobalStateProvider } from '@/context/GlobalStateContext'
 import FooterLog from '@/components/home/footer-log'
+import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
 export default function TwoWeeksNewZealand() {
   return (
-    <GlobalStateProvider>
+    <>
       <ToggleDarkMode />
       <div className="relative flex flex-col justify-center items-center lg:pt-12 pt-12 lg:pb-20 pb-12">
         <div className="container max-w-[900px] flex flex-col gap-4">
@@ -23,7 +24,14 @@ export default function TwoWeeksNewZealand() {
             {/*<CableCarIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>*/}
             Exploring New Zealand's South Island in 2 Weeks
           </h1>
-          <p className="text-center text-white/80">2024/11/30</p>
+          <p
+            className={cn(
+              'text-center text-slate-600 dark:text-white/80',
+              editorialType.secondary
+            )}
+          >
+            2024/11/30
+          </p>
           <section>
             <div className="px-8 lg:px-0">
               <Carousel>
@@ -345,7 +353,7 @@ export default function TwoWeeksNewZealand() {
 
           <section>
             <h3 className="font-bold mb-2">Grand Total</h3>
-            <table className="[&_th]:border [&_th]:border-white [&_td]:border [&_td]:border-white [&_td]:px-2">
+            <table className="[&_td]:border [&_td]:border-slate-400 [&_td]:px-2 [&_th]:border [&_th]:border-slate-400 dark:[&_td]:border-white dark:[&_th]:border-white">
               <tbody>
                 <tr>
                   <th>Expense</th>
@@ -489,6 +497,6 @@ export default function TwoWeeksNewZealand() {
 
       <BackToTop />
       <FooterLog />
-    </GlobalStateProvider>
+    </>
   )
 }

@@ -1,7 +1,6 @@
-'use client'
-
-import { MonitorPlayIcon } from '@phosphor-icons/react'
 import ShowcaseItem, { ShowcaseType } from '@/components/home/showcase-item'
+import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
 export default function Showcase() {
   const showcases: ShowcaseType[] = [
@@ -82,22 +81,34 @@ export default function Showcase() {
   return (
     <section
       id="showcase"
-      className="relative flex flex-col justify-center items-center lg:pt-20 pt-12 lg:pb-20 pb-12"
+      className="mx-auto w-full max-w-[1500px] px-5 py-20 sm:px-8 sm:py-28 lg:px-12"
     >
-      <h2 className="text-3xl sm:text-5xl font-bold mb-4 md:mb-12 flex items-center">
-        <MonitorPlayIcon
-          className="w-8 h-8 sm:w-12 sm:h-12 mr-4"
-          weight="regular"
-        />
-        Showcases
-      </h2>
-
-      <div className="container">
-        <p className="text-center mb-6 md:text-lg">
+      <div className="mb-12 grid gap-5 border-b border-[var(--home-line)] pb-8 md:grid-cols-[1fr_0.65fr] md:items-end">
+        <div>
+          <p
+            className={cn(
+              'font-[family-name:var(--font-home-mono)] uppercase tracking-[0.18em] text-[var(--home-accent)]',
+              editorialType.micro
+            )}
+          >
+            Interface studies
+          </p>
+          <h1 className="mt-4 text-balance font-[family-name:var(--font-home-display)] text-[clamp(3.4rem,8vw,8rem)] leading-[0.86] tracking-[-0.05em] text-[var(--home-ink)]">
+            Showcases.
+          </h1>
+        </div>
+        <p
+          className={cn(
+            'max-w-lg text-[var(--home-muted)] md:justify-self-end',
+            editorialType.body
+          )}
+        >
           Welcome to my showcase — a collection of projects I crafted from
           scratch during my competitive journey between 2018 and 2020.
         </p>
-        <div className="grid grid-cols-12 gap-6 sm:gap-8">
+      </div>
+      <div>
+        <div className="grid grid-cols-12 gap-5 sm:gap-6">
           {showcases.map((showcase, key) => {
             return <ShowcaseItem showcase={showcase} key={key} />
           })}

@@ -16,6 +16,24 @@ const playfair = Playfair_Display({
 import Script from 'next/script'
 import { Metadata } from 'next'
 
+const homeThemeInitializer = `
+  try {
+    const storedTheme = localStorage.getItem('home-theme');
+    const homeTheme = storedTheme === 'light' || storedTheme === 'dark'
+      ? storedTheme
+      : window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+    document.documentElement.dataset.homeTheme = homeTheme;
+    document.documentElement.classList.toggle('dark', homeTheme === 'dark');
+    const favicon = document.getElementById('theme-favicon');
+    if (favicon) favicon.setAttribute('href', homeTheme === 'dark' ? '/favicon-dark.svg?v=2' : '/favicon-light.svg?v=2');
+  } catch {
+    document.documentElement.dataset.homeTheme = 'light';
+    document.documentElement.classList.remove('dark');
+  }
+`
+
 export const metadata: Metadata = {
   title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
   description:
@@ -46,13 +64,26 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={`dark ${playfair.variable} ${inter.variable}`} lang="en">
+    <html
+      suppressHydrationWarning
+      className={`${playfair.variable} ${inter.variable}`}
+      lang="en"
+    >
       <head>
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          id="theme-favicon"
+          rel="icon"
+          type="image/svg+xml"
+          href="/favicon-light.svg?v=2"
+        />
+        <script
+          id="home-theme-initializer"
+          dangerouslySetInnerHTML={{ __html: homeThemeInitializer }}
+        />
       </head>
-      <body className="font-sans antialiased bg-[#050505] text-[#FAFAFA] selection:bg-violet-500/30">
-        <main className="relative">{children}</main>
+      <body className="bg-background text-foreground font-sans antialiased selection:bg-violet-500/30">
+        <div className="relative">{children}</div>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-E8CK2FG8Z2"
           strategy="afterInteractive"

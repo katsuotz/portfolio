@@ -183,69 +183,6 @@
   }
 }
 
-:root {
-  --switch-duration: 1.75s;
-  --switch-name: scale;
-}
-
-.-animated {
-  --switch-duration: 1s;
-  --switch-name: scale-fast;
-}
-
-::view-transition-group(root) {
-  animation-timing-function: var(--expo-in);
-  z-index: 100;
-}
-
-::view-transition-new(root) {
-  -webkit-mask: url(/emotes.gif) center / 0 no-repeat;
-  mask: url(/emotes.gif) center / 0 no-repeat;
-  animation: var(--switch-name) var(--switch-duration);
-}
-
-::view-transition-old(root),
-.dark::view-transition-old(root) {
-  animation: var(--switch-name) var(--switch-duration);
-}
-
-@keyframes scale {
-  0% {
-    -webkit-mask-size: 0;
-    mask-size: 0;
-  }
-  10% {
-    -webkit-mask-size: 20vmax;
-    mask-size: 20vmax;
-  }
-  90% {
-    -webkit-mask-size: 20vmax;
-    mask-size: 20vmax;
-  }
-  to {
-    -webkit-mask-size: 2000vmax;
-    mask-size: 2000vmax;
-  }
-}
-@keyframes scale-fast {
-  0% {
-    -webkit-mask-size: 0;
-    mask-size: 0;
-  }
-  10% {
-    -webkit-mask-size: 50vmax;
-    mask-size: 50vmax;
-  }
-  80% {
-    -webkit-mask-size: 50vmax;
-    mask-size: 50vmax;
-  }
-  to {
-    -webkit-mask-size: 2000vmax;
-    mask-size: 2000vmax;
-  }
-}
-
 .dark .dark\:bg-background-gradient {
   background: radial-gradient(
     75% 61.2% at 92.6% 6.9%,
@@ -336,8 +273,7 @@
 /*}*/
 
 .log {
-  @apply font-mono text-sm leading-relaxed dark:text-gray-300  p-4 rounded-lg;
-  line-height: 1.7;
+  @apply rounded-lg p-4 font-mono dark:text-gray-300;
 }
 
 .log p,
@@ -797,5 +733,181 @@
   .glass-card-enhanced:hover,
   .gradient-border-btn:hover {
     transform: none;
+  }
+}
+
+/* Editorial homepage ------------------------------------------------------ */
+:root {
+  --home-canvas: #f4f6f8;
+  --home-surface: #e7ebef;
+  --home-surface-raised: #ffffff;
+  --home-ink: #0a0d12;
+  --home-muted: #5c6673;
+  --home-accent: #2457f5;
+  --home-accent-hover: #1748d1;
+  --home-on-accent: #ffffff;
+  --home-line: rgba(10, 13, 18, 0.14);
+  --home-nav-bg: rgba(244, 246, 248, 0.82);
+  --home-shadow: rgba(10, 13, 18, 0.08);
+  --home-registration: rgba(10, 13, 18, 0.06);
+  --home-accent-ring: rgba(36, 87, 245, 0.14);
+  --home-accent-border: rgba(36, 87, 245, 0.55);
+  --home-index: rgba(92, 102, 115, 0.58);
+  --home-panel-tint: rgba(10, 13, 18, 0.03);
+  --home-subtle-line: rgba(10, 13, 18, 0.09);
+  --home-subtle-line-strong: rgba(10, 13, 18, 0.1);
+  --home-dialog-shadow: rgba(10, 13, 18, 0.2);
+  --home-dialog-media-shadow: rgba(10, 13, 18, 0.14);
+  --home-footer-kicker: rgba(255, 255, 255, 0.78);
+  --home-footer-muted: rgba(255, 255, 255, 0.56);
+  --home-footer-line: rgba(255, 255, 255, 0.38);
+  --home-footer-control-line: rgba(255, 255, 255, 0.42);
+  --home-footer-hover-bg: #ffffff;
+  --home-footer-hover-ink: #2457f5;
+}
+
+html[data-home-theme='dark'] {
+  --home-canvas: #0b0a08;
+  --home-surface: #15130f;
+  --home-surface-raised: #1b1813;
+  --home-ink: #f2eee6;
+  --home-muted: #aaa39a;
+  --home-accent: #f04e36;
+  --home-accent-hover: #ff654d;
+  --home-on-accent: #0b0a08;
+  --home-line: rgba(242, 238, 230, 0.16);
+  --home-nav-bg: rgba(11, 10, 8, 0.76);
+  --home-shadow: rgba(0, 0, 0, 0.24);
+  --home-registration: rgba(242, 238, 230, 0.06);
+  --home-accent-ring: rgba(240, 78, 54, 0.14);
+  --home-accent-border: rgba(240, 78, 54, 0.55);
+  --home-index: rgba(170, 163, 154, 0.55);
+  --home-panel-tint: rgba(242, 238, 230, 0.035);
+  --home-subtle-line: rgba(242, 238, 230, 0.09);
+  --home-subtle-line-strong: rgba(242, 238, 230, 0.1);
+  --home-dialog-shadow: rgba(0, 0, 0, 0.5);
+  --home-dialog-media-shadow: rgba(0, 0, 0, 0.36);
+  --home-footer-kicker: rgba(11, 10, 8, 0.7);
+  --home-footer-muted: rgba(11, 10, 8, 0.46);
+  --home-footer-line: rgba(11, 10, 8, 0.35);
+  --home-footer-control-line: rgba(11, 10, 8, 0.35);
+  --home-footer-hover-bg: #0b0a08;
+  --home-footer-hover-ink: #f04e36;
+}
+
+html:has(.home-editorial) {
+  scroll-behavior: auto;
+}
+
+html:has(.home-editorial) body {
+  background: var(--home-canvas);
+}
+
+html[data-home-theme='light']:has(.home-editorial) {
+  color-scheme: light;
+}
+
+html[data-home-theme='dark']:has(.home-editorial) {
+  color-scheme: dark;
+}
+
+.home-editorial :is(svg, svg *) {
+  color: currentColor !important;
+}
+
+.home-atmosphere {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: var(--home-canvas);
+}
+
+.home-atmosphere::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 72%;
+  width: 1px;
+  background: var(--home-registration);
+}
+
+html[data-home-theme='dark'] .home-atmosphere {
+  background:
+    radial-gradient(
+      circle at 78% 28%,
+      rgba(240, 78, 54, 0.14),
+      transparent 28%
+    ),
+    var(--home-canvas);
+}
+
+.home-atmosphere::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitchTiles'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.home-hero-reveal {
+  opacity: 0;
+  translate: 0 20px;
+  animation: home-hero-enter 700ms cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
+}
+
+.home-delay-1 {
+  animation-delay: 80ms;
+}
+
+.home-delay-2 {
+  animation-delay: 170ms;
+}
+
+.home-delay-3 {
+  animation-delay: 260ms;
+}
+
+.home-delay-4 {
+  animation-delay: 390ms;
+}
+
+@keyframes home-hero-enter {
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+.home-bento-dialog {
+  border-color: var(--home-line) !important;
+  background: var(--home-surface-raised) !important;
+  color: var(--home-ink) !important;
+  box-shadow: 0 28px 80px var(--home-dialog-shadow) !important;
+}
+
+.home-bento-dialog > [data-slot='dialog-close'] {
+  color: var(--home-muted);
+  --color-ring: var(--home-accent);
+  --color-ring-offset: var(--home-surface-raised);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-editorial,
+  .home-bento-dialog,
+  .home-editorial *,
+  .home-editorial *::before,
+  .home-editorial *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .home-hero-reveal {
+    opacity: 1;
+    translate: 0;
   }
 }

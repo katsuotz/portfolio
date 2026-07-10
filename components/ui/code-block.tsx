@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { CheckIcon, CopyIcon } from '@phosphor-icons/react'
+import { editorialType } from '@/lib/editorial-typography'
 
 type CodeBlockProps = {
   code: string
@@ -18,10 +19,13 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'tsx' }) => {
   }
 
   return (
-    <div className="bg-zinc-800 rounded-2xl p-4 pr-0 relative">
+    <div
+      className={`relative rounded-2xl bg-zinc-800 p-4 pr-0 ${editorialType.card}`}
+    >
       <button
         onClick={handleCopy}
-        className="absolute top-4 right-4 p-1.5 rounded-md text-sm hover:bg-zinc-700 transition text-white"
+        type="button"
+        className="absolute top-3 right-3 grid size-11 place-items-center rounded-md text-white transition hover:bg-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         title="Copy to clipboard"
       >
         {copied ? (
@@ -37,7 +41,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'tsx' }) => {
           style={vscDarkPlus}
           customStyle={{
             background: 'transparent',
-            fontSize: 14,
+            fontSize: 'inherit',
             padding: 0,
             margin: 0,
           }}

@@ -15,6 +15,8 @@ import {
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
 export interface ProjectType {
   logo: string
@@ -25,97 +27,191 @@ export interface ProjectType {
   image: string
   url?: string
   highlight?: boolean
+  logoClassName?: string
 }
 
-export default function ProjectItem({ project }: { project: ProjectType }) {
+export default function ProjectItem({
+  project,
+  variant = 'registry',
+}: {
+  project: ProjectType
+  variant?: 'bento' | 'registry'
+}) {
   return (
     <Dialog>
-      <DialogTrigger className="w-full text-left group/project block h-full cursor-pointer">
+      <DialogTrigger
+        className={`w-full text-left group/project block h-full cursor-pointer focus-visible:outline-none ${
+          variant === 'bento'
+            ? 'focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)]'
+            : 'focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[var(--home-accent)]'
+        }`}
+      >
         <span className="sr-only">{project.name}</span>
-        <div className="h-full min-h-[350px] p-8 flex flex-col relative overflow-hidden rounded-2xl bg-white/2 backdrop-blur-xl border border-white/5 hover:bg-white/4 hover:border-violet-500/30 transition-all duration-500 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
-          {/* Subtle hover gradient */}
-          <div className="absolute inset-0 bg-linear-to-br from-violet-500/5 to-transparent opacity-0 group-hover/project:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-          <div className="flex justify-between items-start mb-12 relative z-10">
-            <div className="w-16 h-16 rounded-xl bg-white/3 flex items-center justify-center border border-white/5 group-hover/project:border-violet-500/20 group-hover/project:scale-105 transition-all duration-500 shadow-lg p-2">
+        {variant === 'bento' ? (
+          <article className="relative isolate min-h-full overflow-hidden rounded-[0.6rem] border border-[var(--home-line)] bg-[var(--home-surface)] text-white">
+            <Image
+              loading="lazy"
+              src={project.image}
+              alt=""
+              width={1200}
+              height={760}
+              className="absolute inset-0 -z-2 h-full w-full object-cover [filter:saturate(0.68)_brightness(0.66)] transition-[transform,filter] duration-500 group-hover/project:scale-[1.025] group-hover/project:[filter:saturate(0.85)_brightness(0.72)] motion-reduce:transform-none motion-reduce:transition-none"
+            />
+            <div
+              className="absolute inset-0 -z-1 [background:linear-gradient(to_top,rgba(5,10,18,0.96),rgba(5,10,18,0.08)_72%)]"
+              aria-hidden="true"
+            />
+            <div
+              className={cn(
+                editorialType.micro,
+                'flex justify-between p-4 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-white/80 uppercase'
+              )}
+            >
+              <span>{project.tag}</span>
+              <span>{project.year}</span>
+            </div>
+            <div className="absolute inset-x-0 bottom-0 grid grid-cols-1 items-end gap-4 p-[clamp(1.25rem,2.5vw,2rem)] min-[421px]:grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto]">
+              <div className="flex size-11 place-items-center overflow-hidden rounded-[0.35rem] border border-white/20 bg-[rgba(5,10,18,0.76)] p-2 backdrop-blur-lg min-[421px]:size-13">
+                <Image
+                  loading="lazy"
+                  src={project.logo}
+                  alt=""
+                  width={44}
+                  height={44}
+                  className={cn(
+                    'max-h-full max-w-full object-contain',
+                    project.logoClassName
+                  )}
+                />
+              </div>
+              <div className="min-w-0">
+                <h3 className="font-[family-name:var(--font-home-display)] text-[clamp(1.45rem,2.7vw,3rem)] leading-[0.95] font-normal tracking-[-0.05em] text-white uppercase">
+                  {project.name}
+                </h3>
+                <p
+                  className={cn(
+                    editorialType.card,
+                    'mt-2.5 max-w-3xl text-white/70'
+                  )}
+                >
+                  {project.description}
+                </p>
+              </div>
+              <span
+                className="hidden size-11 place-items-center border border-white/25 text-lg text-white transition-[background-color,color,transform] duration-200 group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5 group-hover/project:bg-[var(--home-accent)] group-hover/project:text-[var(--home-on-accent)] md:grid motion-reduce:transform-none motion-reduce:transition-none"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </div>
+          </article>
+        ) : (
+          <article className="relative flex h-full min-h-[430px] flex-col overflow-hidden bg-[var(--home-canvas)] transition-colors duration-200 group-hover/project:bg-[var(--home-surface)] motion-reduce:transition-none">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#111318]">
               <Image
                 loading="lazy"
-                src={project.logo}
-                alt={project.name}
-                width={48}
-                height={48}
-                className="w-full h-full object-contain"
+                src={project.image}
+                alt=""
+                fill
+                sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover opacity-80 transition-transform duration-500 group-hover/project:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none"
               />
-            </div>
-
-            <div className="w-10 h-10 rounded-full bg-white/3 flex items-center justify-center border border-white/5 text-gray-500 group-hover/project:bg-violet-600 group-hover/project:text-white group-hover/project:border-violet-500 transition-all duration-300">
-              <ArrowRightIcon
-                className="w-4 h-4 -rotate-45 group-hover/project:rotate-0 transition-transform duration-300"
-                weight="light"
+              <div
+                className="absolute inset-0 bg-linear-to-t from-black/65 via-black/5 to-black/10"
+                aria-hidden="true"
               />
-            </div>
-          </div>
-
-          <div className="mt-auto relative z-10">
-            <div className="flex items-center gap-2.5 mb-3 text-sm">
-              <span className="font-medium text-violet-300 group-hover/project:text-violet-200 transition-colors duration-300">
-                {project.year}
-              </span>
-              <span className="h-3.5 w-px bg-white/15" />
-              <span className="font-light text-gray-400 group-hover/project:text-gray-300 transition-colors duration-300">
-                {project.tag}
-              </span>
-            </div>
-            <h3 className="font-serif font-bold text-2xl text-[#FAFAFA] mb-3 group-hover/project:text-white transition-colors">
-              {project.name}
-            </h3>
-
-            {/* Description - visible on mobile, hover-reveal on desktop */}
-            <div className="hidden md:block h-0 group-hover/project:h-[70px] opacity-0 group-hover/project:opacity-100 overflow-hidden transition-all duration-500 ease-in-out">
-              <p className="text-gray-400 text-sm font-light line-clamp-3 leading-relaxed">
-                {project.description}
-              </p>
+              <div
+                className={cn(
+                  editorialType.micro,
+                  'absolute inset-x-5 top-5 flex justify-between font-[family-name:var(--font-home-mono)] tracking-[0.14em] text-white uppercase'
+                )}
+              >
+                <span>{project.tag}</span>
+                <span>{project.year}</span>
+              </div>
             </div>
 
-            <div className="md:hidden mt-2">
-              <p className="text-gray-400 text-sm font-light line-clamp-3 leading-relaxed">
-                {project.description}
-              </p>
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <div className="mb-8 flex items-start justify-between gap-4">
+                <div className="flex size-14 shrink-0 items-center justify-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-surface-raised)] p-2">
+                  <Image
+                    loading="lazy"
+                    src={project.logo}
+                    alt={project.name}
+                    width={48}
+                    height={48}
+                    className={cn(
+                      'max-h-full max-w-full object-contain',
+                      project.logoClassName
+                    )}
+                  />
+                </div>
+                <div className="flex size-10 items-center justify-center border border-[var(--home-line)] text-[var(--home-muted)] transition-colors group-hover/project:border-[var(--home-accent)] group-hover/project:text-[var(--home-accent)] motion-reduce:transition-none">
+                  <ArrowRightIcon
+                    className="size-4 -rotate-45 transition-transform duration-200 group-hover/project:translate-x-0.5 group-hover/project:-translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none"
+                    weight="light"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-auto min-w-0">
+                <h2 className="text-balance font-[family-name:var(--font-home-display)] text-2xl leading-[0.95] tracking-[-0.03em] text-[var(--home-ink)] sm:text-3xl">
+                  {project.name}
+                </h2>
+                <p
+                  className={cn(
+                    editorialType.card,
+                    'mt-3 line-clamp-3 text-[var(--home-muted)]'
+                  )}
+                >
+                  {project.description}
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
+          </article>
+        )}
       </DialogTrigger>
-      <DialogContent className="bg-[#050505] border-white/10 text-[#FAFAFA] sm:max-w-3xl">
+      <DialogContent className="home-bento-dialog sm:max-w-3xl">
         <DialogHeader>
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-12 rounded-xl bg-white/3 flex items-center justify-center border border-white/5 p-2">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-surface)] p-2">
               <Image
                 src={project.logo}
                 alt={project.name}
                 width={32}
                 height={32}
-                className="w-full h-full object-contain"
+                className={cn(
+                  'max-h-full max-w-full object-contain',
+                  project.logoClassName
+                )}
               />
             </div>
             <div>
-              <DialogTitle className="text-3xl font-serif font-bold text-white tracking-tight">
+              <DialogTitle className="font-[family-name:var(--font-home-display)] text-3xl tracking-[-0.03em] text-[var(--home-ink)]">
                 {project.name}
               </DialogTitle>
-              <div className="flex items-center gap-2.5 mt-1.5 text-sm">
-                <span className="font-medium text-violet-300">
+              <div
+                className={cn(
+                  editorialType.secondary,
+                  'mt-1.5 flex items-center gap-2.5'
+                )}
+              >
+                <span className="font-[family-name:var(--font-home-mono)] text-[var(--home-accent)]">
                   {project.year}
                 </span>
-                <span className="h-3.5 w-px bg-white/15" />
-                <span className="font-light text-gray-400">{project.tag}</span>
+                <span className="h-3.5 w-px bg-[var(--home-line)]" />
+                <span className="text-[var(--home-muted)]">{project.tag}</span>
               </div>
             </div>
           </div>
 
-          <DialogDescription className="pb-4 text-gray-400 text-base leading-relaxed">
+          <DialogDescription
+            className={cn(editorialType.body, 'pb-4 text-[var(--home-muted)]')}
+          >
             {project.description}
           </DialogDescription>
 
-          <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+          <div className="relative overflow-hidden border border-[var(--home-line)] shadow-[0_20px_55px_var(--home-dialog-media-shadow)]">
             <Image
               loading="lazy"
               src={project.image}
@@ -124,14 +220,17 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
               height="600"
               className="w-full h-auto object-cover"
             />
-            <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10 pointer-events-none" />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
           </div>
 
           <div className="flex gap-3 justify-end mt-6">
             <DialogClose aria-label="Close" asChild>
               <Button
                 variant="ghost"
-                className="hover:bg-white/5 hover:text-white text-gray-400"
+                className={cn(
+                  editorialType.secondary,
+                  'min-h-11 border border-[var(--home-line)] text-[var(--home-muted)] hover:border-[var(--home-accent)] hover:bg-[var(--home-surface)] hover:text-[var(--home-accent)]'
+                )}
               >
                 <XSquareIcon className="w-4 h-4 mr-2" weight="light" />
                 Close
@@ -142,7 +241,10 @@ export default function ProjectItem({ project }: { project: ProjectType }) {
                 href={project.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-violet-600 text-white hover:bg-violet-500 h-9 px-4 py-2 shadow-[0_0_15px_rgba(139,92,246,0.3)]"
+                className={cn(
+                  editorialType.secondary,
+                  'inline-flex min-h-11 items-center justify-center whitespace-nowrap bg-[var(--home-accent)] px-4 py-2 font-medium text-[var(--home-on-accent)] transition-colors hover:bg-[var(--home-accent-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--home-accent)] motion-reduce:transition-none'
+                )}
               >
                 <ArrowSquareOutIcon className="w-4 h-4 mr-2" weight="light" />
                 Visit Project

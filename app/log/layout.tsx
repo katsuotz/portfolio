@@ -4,32 +4,51 @@ export const metadata = {
 }
 
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
 export default function LogLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="log">
-      <div className="container pt-10 flex justify-center gap-5 log-nav">
+    <div
+      className={cn(
+        'log [&_h2]:xl:text-2xl [&_h3]:xl:text-xl',
+        editorialType.logBody
+      )}
+    >
+      <div className="container flex flex-wrap justify-center gap-3 pt-10 sm:gap-5 log-nav">
         <Link
           href="/"
-          className="text-white flex items-center text-sm border-b-2 border-dotted border-blue-400 dark:border-white"
+          className={cn(
+            'flex min-h-11 items-center border-b-2 border-dotted border-blue-400 px-1 text-slate-800 dark:border-white dark:text-white',
+            editorialType.secondary
+          )}
         >
           Home
         </Link>
         <Link
           href="/projects"
-          className="text-white flex items-center text-sm border-b-2 border-dotted border-blue-400 dark:border-white"
+          className={cn(
+            'flex min-h-11 items-center border-b-2 border-dotted border-blue-400 px-1 text-slate-800 dark:border-white dark:text-white',
+            editorialType.secondary
+          )}
         >
           Projects
         </Link>
         <Link
           href="/showcase"
-          className="text-white flex items-center text-sm border-b-2 border-dotted border-blue-400 dark:border-white"
+          className={cn(
+            'flex min-h-11 items-center border-b-2 border-dotted border-blue-400 px-1 text-slate-800 dark:border-white dark:text-white',
+            editorialType.secondary
+          )}
         >
           Showcases
         </Link>
         <Link
           href="/log"
-          className="text-white flex items-center text-sm border-b-2 border-dotted border-blue-400 dark:border-white"
+          className={cn(
+            'flex min-h-11 items-center border-b-2 border-dotted border-blue-400 px-1 text-slate-800 dark:border-white dark:text-white',
+            editorialType.secondary
+          )}
         >
           Logs
         </Link>

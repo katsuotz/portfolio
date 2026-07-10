@@ -1,93 +1,110 @@
-'use client'
-
-import {
-  BriefcaseIcon,
-  GraduationCapIcon,
-  TrophyIcon,
-  CodeIcon,
-  DevicesIcon,
-  ArrowDownIcon,
-} from '@phosphor-icons/react'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import ThemeToggle from '@/components/home/theme-toggle'
 import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
-export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+export type EditorialRoute =
+  | 'home'
+  | 'projects'
+  | 'showcase'
+  | 'log'
+  | 'not-found'
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false)
-      } else {
-        setIsVisible(true)
-      }
-      setLastScrollY(currentScrollY)
-    }
+const homeLinks = [
+  { href: '#selected-work', label: 'Work' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#credentials', label: 'Credentials' },
+  { href: '/showcase', label: 'Showcases' },
+  { href: '/log', label: 'Log' },
+]
 
-    const handleMouseMove = (e: MouseEvent) => {
-      // Show navbar if mouse is within 100px of the bottom of the screen
-      if (window.innerHeight - e.clientY < 100) {
-        setIsVisible(true)
-      }
-    }
+const routeLinks = [
+  { href: '/', label: 'Home', route: 'home' },
+  { href: '/projects', label: 'Projects', route: 'projects' },
+  { href: '/showcase', label: 'Showcases', route: 'showcase' },
+  { href: '/log', label: 'Log', route: 'log' },
+] as const
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('mousemove', handleMouseMove)
-    }
-  }, [lastScrollY])
+export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
+  const isHome = route === 'home'
+  const links = isHome ? homeLinks : routeLinks
 
   return (
-    <div
-      className={cn(
-        'fixed bottom-8 left-1/2 z-50 -translate-x-1/2 transition-transform duration-300',
-        isVisible ? 'translate-y-0' : 'translate-y-[200%]'
-      )}
-    >
-      <nav className="flex items-center gap-4 rounded-full border border-white/10 bg-black/50 px-6 py-3 text-sm text-neutral-400 backdrop-blur-md">
-        <div className="flex items-center gap-6">
-          <Link
-            href="#work-experience"
-            className="flex items-center gap-2 hover:text-white transition-colors"
+    <header className="pointer-events-none fixed inset-x-4 top-4 z-60 flex justify-center max-md:inset-x-3 max-md:top-3">
+      <nav
+        className="pointer-events-auto grid min-h-15 w-full max-w-[90rem] grid-cols-[auto_1fr_auto] items-center rounded-xl border border-[var(--home-line)] bg-[var(--home-nav-bg)] py-0 pr-3 pl-5 shadow-[0_12px_48px_var(--home-shadow)] backdrop-blur-2xl transition-[background-color,border-color,box-shadow] duration-200 max-md:grid-cols-[auto_1fr] max-md:pl-4 motion-reduce:transition-none"
+        aria-label="Primary navigation"
+      >
+        {isHome ? (
+          <a
+            className="inline-flex min-h-11 items-center font-[family-name:var(--font-home-display)] text-base tracking-[-0.05em] text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] xl:text-lg"
+            href="#top"
+            aria-label="Katsuotz home"
           >
-            <BriefcaseIcon className="size-4" weight="regular" />
-            <span className="hidden sm:inline">Work Experience</span>
-          </Link>
+            K<span className="text-[var(--home-accent)]">/</span>O
+          </a>
+        ) : (
           <Link
-            href="#education"
-            className="flex items-center gap-2 hover:text-white transition-colors"
+            className="inline-flex min-h-11 items-center font-[family-name:var(--font-home-display)] text-base tracking-[-0.05em] text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] xl:text-lg"
+            href="/"
+            aria-label="Katsuotz home"
           >
-            <GraduationCapIcon className="size-4" weight="regular" />
-            <span className="hidden sm:inline">Education</span>
+            K<span className="text-[var(--home-accent)]">/</span>O
           </Link>
-          <Link
-            href="#achievement"
-            className="flex items-center gap-2 hover:text-white transition-colors"
+        )}
+
+        <div className="flex justify-center gap-[clamp(1.25rem,4vw,3.5rem)] max-md:hidden">
+          {links.map((link) => {
+            const className = cn(
+              editorialType.micro,
+              'relative inline-flex min-h-11 items-center font-[family-name:var(--font-home-mono)] tracking-[0.08em] uppercase transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-[var(--home-accent)] after:transition-transform after:duration-200 hover:text-[var(--home-ink)] hover:after:scale-x-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] motion-reduce:transition-none after:motion-reduce:transition-none',
+              'route' in link && link.route === route
+                ? 'text-[var(--home-accent)]'
+                : 'text-[var(--home-muted)]'
+            )
+
+            if (link.href.startsWith('#')) {
+              return (
+                <a key={link.href} href={link.href} className={className}>
+                  {link.label}
+                </a>
+              )
+            }
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={
+                  'route' in link && link.route === route ? 'page' : undefined
+                }
+                className={className}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
+        </div>
+
+        <div className="flex items-center gap-2 max-md:justify-self-end">
+          <a
+            className={cn(
+              editorialType.micro,
+              'flex min-h-11 items-center gap-6 rounded-[0.45rem] border border-[var(--home-line)] px-4 font-[family-name:var(--font-home-mono)] tracking-[0.08em] text-[var(--home-muted)] uppercase transition-colors duration-200 hover:text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] motion-reduce:transition-none'
+            )}
+            href="mailto:m.irfan.fakhri66@gmail.com"
           >
-            <TrophyIcon className="size-4" weight="regular" />
-            <span className="hidden sm:inline">Achievement</span>
-          </Link>
-          <Link
-            href="#tech-stack"
-            className="flex items-center gap-2 hover:text-white transition-colors"
-          >
-            <CodeIcon className="size-4" weight="regular" />
-            <span className="hidden sm:inline">Tech Stack</span>
-          </Link>
-          <Link
-            href="#work"
-            className="flex items-center gap-2 hover:text-white transition-colors"
-          >
-            <DevicesIcon className="size-4" weight="regular" />
-            <span className="hidden sm:inline">Selected Works</span>
-          </Link>
+            Let&apos;s talk
+            <span
+              className="text-base text-[var(--home-accent)]"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </a>
+          <ThemeToggle />
         </div>
       </nav>
-    </div>
+    </header>
   )
 }

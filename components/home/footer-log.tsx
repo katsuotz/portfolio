@@ -2,6 +2,7 @@
 
 import SocialMedia from '@/components/home/social-media'
 import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
 export default function FooterLog() {
   return (
@@ -12,7 +13,12 @@ export default function FooterLog() {
             <SocialMedia />
           </div>
           <footer className="relative flex flex-col justify-center items-center">
-            <p className="text-slate-600 dark:text-slate-400 tracking-wide !mb-0 text-sm font-medium">
+            <p
+              className={cn(
+                'text-slate-600 dark:text-slate-400 tracking-wide !mb-0 font-medium',
+                editorialType.secondary
+              )}
+            >
               &copy; {new Date().getFullYear()}{' '}
               <span className="font-bold text-slate-800 dark:text-slate-200">
                 Irfan Fakhri

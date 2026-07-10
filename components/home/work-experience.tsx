@@ -1,9 +1,8 @@
-'use client'
-
 import WorkExperienceItem, {
   WorkExperienceType,
 } from '@/components/home/work-experience-item'
-import { BriefcaseIcon } from '@phosphor-icons/react'
+import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
 export default function WorkExperience() {
   const experiences: WorkExperienceType[] = [
@@ -11,6 +10,8 @@ export default function WorkExperience() {
       logo: '/work/shieldbase.webp',
       flag: '/flag/sg.webp',
       company: 'Shieldbase',
+      headingClassName:
+        'lg:whitespace-nowrap lg:text-[clamp(2.4rem,3.5vw,3.6rem)]',
       country: 'Singapore',
       status: 'freelance',
       position: [
@@ -41,6 +42,8 @@ export default function WorkExperience() {
       logo: '/work/nvp.webp',
       flag: '/flag/id.webp',
       company: 'Native Productions',
+      headingClassName:
+        'text-[clamp(2.05rem,4.3vw,4.8rem)] lg:whitespace-nowrap lg:text-[clamp(1.9rem,2.7vw,3rem)]',
       country: 'Indonesia',
       status: 'contract',
       position: [
@@ -54,6 +57,7 @@ export default function WorkExperience() {
     },
     {
       logo: '/work/farmbyte.webp',
+      logoClassName: 'scale-[0.78]',
       flag: '/flag/my.svg',
       company: 'FarmByte',
       country: 'Malaysia',
@@ -150,63 +154,61 @@ export default function WorkExperience() {
 
   return (
     <section
-      id="work-experience"
-      className="relative w-full max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-32"
+      id="experience"
+      className="mx-auto w-full max-w-[96rem] scroll-mt-19 border-t border-[var(--home-line)] px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)]"
     >
-      <div className="flex items-center justify-center gap-4 mb-10 sm:mb-20 intro-y w-full">
-        <BriefcaseIcon
-          className="w-8 h-8 sm:w-16 sm:h-16 text-violet-500 shrink-0"
-          weight="regular"
-        />
-        <h2 className="text-3xl sm:text-7xl font-serif font-black text-[#FAFAFA] tracking-tighter text-center whitespace-nowrap">
-          Work Experience
+      <div className="mb-[clamp(3rem,7vw,6rem)] grid items-end gap-[clamp(1.5rem,4vw,5rem)] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_minmax(18rem,48rem)_minmax(15rem,25rem)]">
+        <p
+          className={cn(
+            editorialType.micro,
+            'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
+          )}
+        >
+          02 / Experience
+        </p>
+        <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,13vw,4.5rem)] leading-[0.94] font-normal tracking-[-0.06em] text-[var(--home-ink)] uppercase lg:text-[clamp(2.9rem,6vw,6.6rem)]">
+          Built with teams across borders.
         </h2>
+        <p
+          className={cn(
+            editorialType.body,
+            'font-light text-[var(--home-muted)] md:col-start-2 lg:col-auto'
+          )}
+        >
+          Product engineering experience spanning AI, logistics, agritech,
+          localization, education, and custom enterprise software.
+        </p>
       </div>
 
-      <div className="relative space-y-8">
-        {/* Timeline Line */}
-        <div className="absolute left-[31px] top-4 bottom-4 w-[2px] bg-linear-to-b from-violet-500/50 via-white/10 to-transparent hidden sm:block z-0" />
-
-        {/* Current Roles */}
-        {experiences.slice(0, 2).map((experience, index) => (
-          <div
-            key={index}
-            className="intro-y relative z-10"
-            style={{ animationDelay: `${0.1 * (index + 1)}s` }}
-          >
-            <WorkExperienceItem experience={experience} />
-          </div>
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-12">
+        {experiences.slice(0, 2).map((experience) => (
+          <WorkExperienceItem
+            key={experience.company}
+            experience={experience}
+            variant="featured"
+          />
         ))}
 
-        {/* Divider for Past Experiences */}
-        <div
-          className="intro-y relative z-10 flex items-center py-6 sm:py-8"
-          style={{ animationDelay: '0.3s' }}
-        >
-          <div className="hidden sm:flex flex-col items-center z-10">
-            <div className="w-14 h-14 rounded-full bg-[#0F0F0F] border border-white/10 flex items-center justify-center ml-0.5 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-              <div className="w-3 h-3 rounded-full bg-white/20" />
-            </div>
+        <div className="mt-6 border-t border-[var(--home-line)] md:col-span-12">
+          <div
+            className={cn(
+              editorialType.micro,
+              'flex items-center justify-between py-5 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
+            )}
+          >
+            <p>Earlier chapters</p>
+            <span className="text-[var(--home-muted)]">2017 — 2025</span>
           </div>
-          <div className="flex-1 sm:ml-6 flex items-center gap-4">
-            <div className="h-px flex-1 bg-linear-to-r from-transparent via-white/10 to-transparent sm:hidden" />
-            <h3 className="text-sm font-medium text-gray-400 uppercase tracking-[0.2em] px-4 sm:px-0">
-              Past Experience
-            </h3>
-            <div className="h-px flex-1 bg-linear-to-r from-white/10 to-transparent" />
+          <div>
+            {experiences.slice(2).map((experience) => (
+              <WorkExperienceItem
+                key={experience.company}
+                experience={experience}
+                variant="compact"
+              />
+            ))}
           </div>
         </div>
-
-        {/* Past Roles */}
-        {experiences.slice(2).map((experience, index) => (
-          <div
-            key={index + 2}
-            className="intro-y relative z-10"
-            style={{ animationDelay: `${0.1 * (index + 4)}s` }}
-          >
-            <WorkExperienceItem experience={experience} />
-          </div>
-        ))}
       </div>
     </section>
   )

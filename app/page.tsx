@@ -1,52 +1,16 @@
-'use client'
-
-import dynamic from 'next/dynamic'
 import Banner from '@/components/home/banner'
-import LazySection from '@/components/home/lazy-section'
-import Footer from '@/components/home/footer'
-import BackToTop from '@/components/home/back-to-top'
-import Navbar from '@/components/home/navbar'
-import { GlobalStateProvider } from '@/context/GlobalStateContext'
-
-const WorkExperience = dynamic(
-  () => import('@/components/home/work-experience'),
-  { ssr: true }
-)
-const Education = dynamic(() => import('@/components/home/education'), {
-  ssr: true,
-})
-const Achievement = dynamic(() => import('@/components/home/achievement'), {
-  ssr: true,
-})
-const Skills = dynamic(() => import('@/components/home/skills'), { ssr: true })
-const Project = dynamic(() => import('@/components/home/project'), {
-  ssr: true,
-})
+import Credentials from '@/components/home/credentials'
+import EditorialShell from '@/components/home/editorial-shell'
+import Project from '@/components/home/project'
+import WorkExperience from '@/components/home/work-experience'
 
 export default function Home() {
   return (
-    <GlobalStateProvider>
-      <Navbar />
+    <EditorialShell route="home">
       <Banner />
-      <LazySection>
-        <WorkExperience />
-      </LazySection>
-      <LazySection>
-        <Education />
-      </LazySection>
-      <LazySection>
-        <Achievement />
-      </LazySection>
-      <LazySection>
-        <Skills />
-      </LazySection>
-      <LazySection>
-        <div id="logs">
-          <Project showAllProjects={false} />
-        </div>
-      </LazySection>
-      <Footer />
-      <BackToTop />
-    </GlobalStateProvider>
+      <Project showAllProjects={false} variant="bento" />
+      <WorkExperience />
+      <Credentials />
+    </EditorialShell>
   )
 }

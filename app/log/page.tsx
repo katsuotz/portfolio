@@ -2,12 +2,11 @@
 
 import BackToTop from '@/components/home/back-to-top'
 import Link from 'next/link'
-import { GlobalStateProvider } from '@/context/GlobalStateContext'
 import ToggleDarkMode from '@/components/home/toggle-dark-mode'
 import FooterLog from '@/components/home/footer-log'
 export default function Log() {
   return (
-    <GlobalStateProvider>
+    <>
       <ToggleDarkMode />
       <section className="relative flex flex-col justify-center items-center lg:pt-12 pt-12 lg:pb-20 pb-12">
         <h1 className="text-3xl sm:text-3xl font-bold mb-8 flex items-center text-blue-500 [text-shadow:_1px_1px_0_rgb(255_255_255_/_100%)]">
@@ -52,6 +51,6 @@ export default function Log() {
 
       <BackToTop />
       <FooterLog />
-    </GlobalStateProvider>
+    </>
   )
 }

@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
 export interface WorkExperiencePosition {
   title: string
@@ -13,6 +15,8 @@ export interface WorkExperienceType {
   position: WorkExperiencePosition[]
   logo: string
   flag: string
+  logoClassName?: string
+  headingClassName?: string
 }
 
 const statusLabels: Record<WorkExperienceType['status'], string> = {
@@ -23,88 +27,161 @@ const statusLabels: Record<WorkExperienceType['status'], string> = {
 
 export default function WorkExperienceItem({
   experience,
+  variant,
 }: {
   experience: WorkExperienceType
+  variant: 'featured' | 'compact'
 }) {
+  if (variant === 'compact') {
+    return (
+      <article className="grid grid-cols-1 items-center gap-4 border-t border-[var(--home-subtle-line)] py-6 md:grid-cols-2 md:gap-8 lg:grid-cols-[minmax(15rem,1.1fr)_minmax(12rem,0.8fr)_minmax(18rem,1.5fr)] xl:py-7">
+        <div className="flex items-center gap-4">
+          <div className="grid size-11 shrink-0 place-items-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-2">
+            <Image
+              loading="lazy"
+              src={experience.logo}
+              alt=""
+              width={32}
+              height={32}
+              className={cn(
+                'max-h-full max-w-full object-contain',
+                experience.logoClassName
+              )}
+            />
+          </div>
+          <div className="min-w-0">
+            <h3 className="text-base font-medium xl:text-lg">
+              {experience.company}
+            </h3>
+            <span
+              className={cn(
+                editorialType.secondary,
+                'font-light text-[var(--home-muted)]'
+              )}
+            >
+              {experience.country} · {statusLabels[experience.status]}
+            </span>
+          </div>
+        </div>
+        <div>
+          {experience.position.map((position) => (
+            <p
+              className="flex flex-col"
+              key={`${position.title}-${position.date}`}
+            >
+              <strong className={cn(editorialType.card, 'font-medium')}>
+                {position.title}
+              </strong>
+              <span
+                className={cn(
+                  editorialType.micro,
+                  'font-[family-name:var(--font-home-mono)] text-[var(--home-muted)]'
+                )}
+              >
+                {position.date}
+              </span>
+            </p>
+          ))}
+        </div>
+        <p
+          className={cn(
+            editorialType.card,
+            'font-light text-[var(--home-muted)] md:col-span-2 md:pl-15 lg:col-span-1 lg:pl-0'
+          )}
+        >
+          {experience.description}
+        </p>
+      </article>
+    )
+  }
+
   return (
-    <div className="group flex flex-col sm:flex-row gap-6 w-full">
-      {/* Timeline Node - Desktop */}
-      <div className="hidden sm:flex flex-col items-center mt-2 z-10">
-        <div className="w-14 h-14 rounded-full bg-[#0F0F0F] border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:border-violet-500/50 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-300 ml-0.5">
+    <article className="col-span-1 flex min-h-[27rem] min-w-0 flex-col justify-between overflow-hidden rounded-[0.6rem] border border-[var(--home-line)] bg-[var(--home-surface)] p-[clamp(1.5rem,3vw,2.5rem)] transition-[background-color,color,border-color,transform] duration-200 hover:-translate-y-0.75 hover:border-[var(--home-accent-border)] md:col-span-6 lg:min-h-[31rem] motion-reduce:transform-none motion-reduce:transition-none">
+      <div className="flex items-center justify-between">
+        <div className="grid size-16 shrink-0 place-items-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-3">
           <Image
             loading="lazy"
             src={experience.logo}
-            alt={experience.company}
-            width={32}
-            height={32}
-            className="w-auto h-7 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+            alt=""
+            width={48}
+            height={48}
+            className={cn(
+              'max-h-full max-w-full object-contain',
+              experience.logoClassName
+            )}
           />
         </div>
+        <span
+          className={cn(
+            editorialType.micro,
+            'flex items-center gap-2.5 font-[family-name:var(--font-home-mono)] tracking-[0.07em] text-[var(--home-muted)] uppercase'
+          )}
+        >
+          <i
+            className="size-1.5 rounded-full bg-[var(--home-accent)] shadow-[0_0_0_4px_var(--home-accent-ring)]"
+            aria-hidden="true"
+          />{' '}
+          Current · {statusLabels[experience.status]}
+        </span>
       </div>
 
-      {/* Card Content */}
-      <div className="flex-1 rounded-2xl bg-white/2 backdrop-blur-xl border border-white/5 p-6 hover:bg-white/4 hover:border-violet-500/30 transition-all duration-300 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
-          <div>
-            <div className="flex items-center gap-3 mb-1">
-              {/* Mobile Logo */}
-              <div className="sm:hidden w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                <Image
-                  loading="lazy"
-                  src={experience.logo}
-                  alt={experience.company}
-                  width={24}
-                  height={24}
-                  className="w-auto h-5 object-contain"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-[#FAFAFA] tracking-wide">
-                {experience.company}
-              </h3>
-              <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-white/5 border border-white/5">
-                <Image
-                  loading="lazy"
-                  src={experience.flag}
-                  alt={experience.country}
-                  width={16}
-                  height={16}
-                  className="w-4"
-                  style={{ height: 'auto' }}
-                />
-                <span className="text-[10px] text-gray-400 uppercase tracking-wider hidden sm:inline-block">
-                  {experience.country}
-                </span>
-              </div>
-              <div className="px-2 py-1 rounded-md bg-violet-500/10 border border-violet-400/20 text-[10px] text-violet-200 uppercase tracking-wider whitespace-nowrap">
-                {statusLabels[experience.status]}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-1 mt-3">
-              {experience.position.map((position, key) => (
-                <div
-                  key={key}
-                  className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3"
-                >
-                  <span className="text-violet-400 font-medium">
-                    {position.title}
-                  </span>
-                  <span className="hidden sm:inline-block text-gray-600">
-                    •
-                  </span>
-                  <span className="text-sm text-gray-400 font-mono tracking-wide">
-                    {position.date}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+      <div className="mt-20 min-w-0">
+        <div className="min-w-0">
+          <p
+            className={cn(
+              editorialType.micro,
+              'flex items-center gap-2 font-[family-name:var(--font-home-mono)] tracking-[0.08em] text-[var(--home-muted)] uppercase [&_img]:h-auto [&_img]:w-4'
+            )}
+          >
+            <Image
+              loading="lazy"
+              src={experience.flag}
+              alt=""
+              width={18}
+              height={18}
+            />
+            {experience.country}
+          </p>
+          <h3
+            className={cn(
+              'mt-3 max-w-full text-balance break-words font-[family-name:var(--font-home-display)] text-[clamp(2.4rem,5vw,5.6rem)] leading-[0.88] tracking-[-0.045em] text-[var(--home-ink)] uppercase',
+              experience.headingClassName
+            )}
+          >
+            {experience.company}
+          </h3>
         </div>
 
-        <p className="text-gray-300 text-sm leading-relaxed font-light">
+        <div className="mt-8 border-t border-[var(--home-line)] pt-4">
+          {experience.position.map((position) => (
+            <p
+              className="flex items-center justify-between gap-4"
+              key={`${position.title}-${position.date}`}
+            >
+              <strong className="text-base font-medium xl:text-lg">
+                {position.title}
+              </strong>
+              <span
+                className={cn(
+                  editorialType.micro,
+                  'font-[family-name:var(--font-home-mono)] text-[var(--home-muted)]'
+                )}
+              >
+                {position.date}
+              </span>
+            </p>
+          ))}
+        </div>
+
+        <p
+          className={cn(
+            editorialType.card,
+            'mt-5 max-w-2xl font-light text-[var(--home-muted)]'
+          )}
+        >
           {experience.description}
         </p>
       </div>
-    </div>
+    </article>
   )
 }

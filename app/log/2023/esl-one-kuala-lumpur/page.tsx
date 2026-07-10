@@ -10,12 +10,13 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import ToggleDarkMode from '@/components/home/toggle-dark-mode'
-import { GlobalStateProvider } from '@/context/GlobalStateContext'
 import FooterLog from '@/components/home/footer-log'
+import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
 export default function EslOneKualaLumpur() {
   return (
-    <GlobalStateProvider>
+    <>
       <ToggleDarkMode />
       <section className="relative flex flex-col justify-center items-center lg:pt-12 pt-12 lg:pb-20 pb-12">
         <div className="container max-w-[900px] flex flex-col gap-4">
@@ -23,7 +24,14 @@ export default function EslOneKualaLumpur() {
             {/*<CableCarIcon className="w-8 h-8 sm:w-10 sm:h-10 mr-4"/>*/}
             ESL One Kuala Lumpur Experience
           </h1>
-          <p className="text-center text-white/80">2023/12/17</p>
+          <p
+            className={cn(
+              'text-center text-slate-600 dark:text-white/80',
+              editorialType.secondary
+            )}
+          >
+            2023/12/17
+          </p>
 
           <p>
             A few months ago beore ESL One Kuala Lumpur 2023, my friend and I
@@ -38,10 +46,10 @@ export default function EslOneKualaLumpur() {
             <h4 className="text-lg font-bold flex items-center text-blue-500">
               Ticket Comparison
             </h4>
-            <p className="font-bold text-sm">
+            <p className={cn('font-bold', editorialType.secondary)}>
               Bali Major Standard Ticket: ~IDR 7,200,000
             </p>
-            <p className="font-bold text-sm">
+            <p className={cn('font-bold', editorialType.secondary)}>
               ESL One Standard Ticket: ~IDR 630,000
             </p>
             <p>
@@ -250,6 +258,6 @@ export default function EslOneKualaLumpur() {
 
       <BackToTop />
       <FooterLog />
-    </GlobalStateProvider>
+    </>
   )
 }

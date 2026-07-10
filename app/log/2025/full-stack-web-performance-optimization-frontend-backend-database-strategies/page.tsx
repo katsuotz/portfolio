@@ -3,12 +3,13 @@
 import BackToTop from '@/components/home/back-to-top'
 import Image from 'next/image'
 import ToggleDarkMode from '@/components/home/toggle-dark-mode'
-import { GlobalStateProvider } from '@/context/GlobalStateContext'
 import FooterLog from '@/components/home/footer-log'
+import { cn } from '@/lib/utils'
+import { editorialType } from '@/lib/editorial-typography'
 
 export default function TwoWeeksNewZealand() {
   return (
-    <GlobalStateProvider>
+    <>
       <ToggleDarkMode />
       <div className="relative flex flex-col justify-center items-center lg:pt-12 pt-12 lg:pb-20 pb-12">
         <div className="container max-w-[900px] flex flex-col gap-4">
@@ -16,7 +17,14 @@ export default function TwoWeeksNewZealand() {
             🚀 Full-Stack Web Performance Optimization: Frontend, Backend, and
             Database Strategies
           </h1>
-          <p className="text-center text-white/80">2025/07/14</p>
+          <p
+            className={cn(
+              'text-center text-slate-600 dark:text-white/80',
+              editorialType.secondary
+            )}
+          >
+            2025/07/14
+          </p>
           <section>
             <h2>Introduction</h2>
             <p>
@@ -234,6 +242,6 @@ export default function TwoWeeksNewZealand() {
 
       <BackToTop />
       <FooterLog />
-    </GlobalStateProvider>
+    </>
   )
 }
