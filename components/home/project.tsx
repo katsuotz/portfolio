@@ -35,7 +35,6 @@ export default function Project({
     },
     {
       logo: '/work/farmbyte.webp',
-      logoClassName: 'scale-[0.78]',
       name: 'FarmByte OMS',
       year: '2025',
       tag: 'Agritech',
@@ -195,9 +194,9 @@ export default function Project({
     return (
       <section
         id="selected-work"
-        className="mx-auto w-full max-w-[96rem] scroll-mt-19 px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)]"
+        className="mx-auto w-full max-w-[96rem] scroll-mt-19 px-[max(1.25rem,4vw)] py-[clamp(5rem,10vw,9rem)]"
       >
-        <div className="mb-[clamp(3rem,7vw,6rem)] grid items-end gap-[clamp(1.5rem,4vw,5rem)] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_minmax(18rem,48rem)_minmax(15rem,25rem)]">
+        <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-[clamp(1.5rem,4vw,3rem)]">
           <p
             className={cn(
               editorialType.micro,
@@ -212,7 +211,7 @@ export default function Project({
           <p
             className={cn(
               editorialType.body,
-              'font-light text-[var(--home-muted)] md:col-start-2 lg:col-auto'
+              'max-w-[48ch] font-light text-[var(--home-muted)]'
             )}
           >
             A selection of platforms built for complex operations, from AI
@@ -260,7 +259,7 @@ export default function Project({
       id="work"
       className="mx-auto w-full max-w-[1500px] px-5 py-20 sm:px-8 sm:py-28 lg:px-12"
     >
-      <div className="mb-12 grid gap-5 border-b border-[var(--home-line)] pb-8 md:grid-cols-[1fr_0.65fr] md:items-end">
+      <div className="mb-12 grid max-w-[72rem] gap-5 border-b border-[var(--home-line)] pb-8">
         <div>
           <p
             className={cn(
@@ -277,7 +276,7 @@ export default function Project({
         <p
           className={cn(
             editorialType.body,
-            'max-w-lg text-[var(--home-muted)] md:justify-self-end'
+            'max-w-[52ch] text-[var(--home-muted)]'
           )}
         >
           Products, platforms, and experiments spanning AI, operations,

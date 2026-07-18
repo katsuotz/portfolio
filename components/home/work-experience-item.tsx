@@ -36,15 +36,15 @@ export default function WorkExperienceItem({
     return (
       <article className="grid grid-cols-1 items-center gap-4 border-t border-[var(--home-subtle-line)] py-6 md:grid-cols-2 md:gap-8 lg:grid-cols-[minmax(15rem,1.1fr)_minmax(12rem,0.8fr)_minmax(18rem,1.5fr)] xl:py-7">
         <div className="flex items-center gap-4">
-          <div className="grid size-11 shrink-0 place-items-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-2">
+          <div className="flex size-11 shrink-0 items-center justify-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-2">
             <Image
               loading="lazy"
               src={experience.logo}
               alt=""
-              width={32}
-              height={32}
+              width={44}
+              height={44}
               className={cn(
-                'max-h-full max-w-full object-contain',
+                'block max-h-full max-w-full object-contain',
                 experience.logoClassName
               )}
             />
@@ -96,17 +96,17 @@ export default function WorkExperienceItem({
   }
 
   return (
-    <article className="col-span-1 flex min-h-[27rem] min-w-0 flex-col justify-between overflow-hidden rounded-[0.6rem] border border-[var(--home-line)] bg-[var(--home-surface)] p-[clamp(1.5rem,3vw,2.5rem)] transition-[background-color,color,border-color,transform] duration-200 hover:-translate-y-0.75 hover:border-[var(--home-accent-border)] md:col-span-6 lg:min-h-[31rem] motion-reduce:transform-none motion-reduce:transition-none">
+    <article className="home-featured-experience col-span-1 flex min-h-[27rem] min-w-0 flex-col justify-between overflow-hidden rounded-[0.6rem] border border-[var(--home-line)] bg-[var(--home-surface)] p-[clamp(1.5rem,3vw,2.5rem)] transition-[background-color,color,border-color,transform] duration-200 hover:-translate-y-0.75 hover:border-[var(--home-accent-border)] md:col-span-6 lg:min-h-[31rem] motion-reduce:transform-none motion-reduce:transition-none">
       <div className="flex items-center justify-between">
-        <div className="grid size-16 shrink-0 place-items-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-3">
+        <div className="flex size-16 shrink-0 items-center justify-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-3">
           <Image
             loading="lazy"
             src={experience.logo}
             alt=""
-            width={48}
-            height={48}
+            width={44}
+            height={44}
             className={cn(
-              'max-h-full max-w-full object-contain',
+              'block max-h-full max-w-full object-contain',
               experience.logoClassName
             )}
           />

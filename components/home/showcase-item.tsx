@@ -62,7 +62,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
     >
       <div
         className={cn(
-          'relative flex flex-col justify-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-surface-raised)] transition-colors duration-200 hover:border-[var(--home-accent)] motion-reduce:transition-none',
+          'relative flex flex-col justify-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-surface-raised)] transition-[border-color,background-color] duration-200 hover:border-[var(--home-accent)] motion-reduce:transition-none',
           showcase.cardClassName
         )}
       >
@@ -93,6 +93,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
             <iframe
               src={showcase.src[0].src}
               title={`${showcase.name} interactive preview`}
+              loading="lazy"
               className={cn(
                 'border-0 bg-white focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[var(--home-accent)]',
                 showcase.iframeClassName
@@ -114,7 +115,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
         <div
           className={cn(
             showcase.image
-              ? 'absolute inset-x-0 bottom-0 bg-linear-to-t from-black/90 via-black/70 to-transparent px-5 pb-5 pt-16 text-white'
+              ? 'absolute inset-x-0 bottom-0 bg-black/75 px-5 pb-5 pt-8 text-white'
               : 'w-full border-t border-[var(--home-line)] bg-[var(--home-surface)] p-4 sm:p-5'
           )}
         >

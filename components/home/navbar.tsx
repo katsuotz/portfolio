@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ListIcon } from '@phosphor-icons/react/dist/ssr'
 import ThemeToggle from '@/components/home/theme-toggle'
 import { cn } from '@/lib/utils'
 import { editorialType } from '@/lib/editorial-typography'
@@ -32,7 +33,7 @@ export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
   return (
     <header className="pointer-events-none fixed inset-x-4 top-4 z-60 flex justify-center max-md:inset-x-3 max-md:top-3">
       <nav
-        className="pointer-events-auto grid min-h-15 w-full max-w-[90rem] grid-cols-[auto_1fr_auto] items-center rounded-xl border border-[var(--home-line)] bg-[var(--home-nav-bg)] py-0 pr-3 pl-5 shadow-[0_12px_48px_var(--home-shadow)] backdrop-blur-2xl transition-[background-color,border-color,box-shadow] duration-200 max-md:grid-cols-[auto_1fr] max-md:pl-4 motion-reduce:transition-none"
+        className="pointer-events-auto grid min-h-15 w-full max-w-[90rem] grid-cols-[auto_1fr_auto] items-center border border-[var(--home-line)] bg-[var(--home-canvas)] py-0 pr-3 pl-5 shadow-[0_12px_48px_var(--home-shadow)] transition-[background-color,border-color,box-shadow] duration-200 max-md:grid-cols-[auto_1fr] max-md:pl-4 motion-reduce:transition-none"
         aria-label="Primary navigation"
       >
         {isHome ? (
@@ -87,6 +88,48 @@ export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
         </div>
 
         <div className="flex items-center gap-2 max-md:justify-self-end">
+          <details className="relative hidden max-md:block">
+            <summary
+              aria-label="Primary navigation"
+              className="grid size-11 cursor-pointer list-none place-items-center border border-[var(--home-line)] text-[var(--home-muted)] transition-[color,background-color,border-color] duration-200 hover:border-[var(--home-accent)] hover:bg-[var(--home-surface)] hover:text-[var(--home-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--home-accent)] [&::-webkit-details-marker]:hidden motion-reduce:transition-none"
+            >
+              <ListIcon className="size-4" aria-hidden="true" />
+            </summary>
+            <div className="absolute top-[calc(100%+0.75rem)] right-0 grid min-w-56 gap-1 border border-[var(--home-line)] bg-[var(--home-canvas)] p-2 shadow-[0_18px_40px_var(--home-shadow)]">
+              {links.map((link) => {
+                const className = cn(
+                  editorialType.micro,
+                  'flex min-h-11 items-center border-b border-[var(--home-line)] px-3 font-[family-name:var(--font-home-mono)] tracking-[0.08em] uppercase last:border-b-0 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--home-accent)]',
+                  'route' in link && link.route === route
+                    ? 'text-[var(--home-accent)]'
+                    : 'text-[var(--home-muted)]'
+                )
+
+                if (link.href.startsWith('#')) {
+                  return (
+                    <a key={link.href} href={link.href} className={className}>
+                      {link.label}
+                    </a>
+                  )
+                }
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={
+                      'route' in link && link.route === route
+                        ? 'page'
+                        : undefined
+                    }
+                    className={className}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              })}
+            </div>
+          </details>
           <a
             className={cn(
               editorialType.micro,

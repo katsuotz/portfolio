@@ -11,15 +11,17 @@ const START_YEAR = 2019
 export default function Banner() {
   return (
     <section
-      className="relative isolate flex min-h-svh items-end overflow-hidden border-b border-[var(--home-line)] px-[max(1.25rem,4vw)] pt-[clamp(8rem,15vh,11rem)] pb-[clamp(2rem,5vh,4rem)] max-md:min-h-[46rem]"
+      className="relative isolate flex min-h-[100svh] items-end overflow-hidden border-b border-[var(--home-line)] px-[max(1.25rem,4vw)] pt-[clamp(7rem,14vh,10rem)] pb-[clamp(3rem,8vh,6rem)]"
       aria-labelledby="hero-title"
     >
       <div className="home-atmosphere" aria-hidden="true" />
 
+      <div className="noise-overlay home-hero-noise" aria-hidden="true" />
+
       <div
         className={cn(
           editorialType.micro,
-          'home-hero-reveal home-delay-1 absolute top-[clamp(6.5rem,14vh,9.5rem)] right-[max(1.25rem,4vw)] left-[max(1.25rem,4vw)] flex justify-between font-[family-name:var(--font-home-mono)] tracking-[0.08em] text-[var(--home-muted)] uppercase max-md:top-24 max-[420px]:justify-end'
+          'absolute top-[clamp(5.75rem,12vh,8rem)] right-[max(1.25rem,4vw)] left-[max(1.25rem,4vw)] flex justify-between font-[family-name:var(--font-home-mono)] tracking-[0.08em] text-[var(--home-muted)] uppercase max-[420px]:justify-end'
         )}
       >
         <p className="max-[420px]:hidden">Muhammad Irfan Fakhri</p>
@@ -30,7 +32,7 @@ export default function Banner() {
         <div
           className={cn(
             editorialType.micro,
-            'home-hero-reveal home-delay-2 mb-[clamp(1.25rem,3vh,2rem)] flex items-center gap-2.5 font-[family-name:var(--font-home-mono)] tracking-[0.08em] text-[var(--home-muted)] uppercase'
+            'mb-[clamp(1.25rem,3vh,2rem)] flex items-center gap-2.5 font-[family-name:var(--font-home-mono)] tracking-[0.08em] text-[var(--home-muted)] uppercase'
           )}
         >
           <span
@@ -40,7 +42,7 @@ export default function Banner() {
           Available for new opportunities
         </div>
 
-        <p className="home-hero-reveal home-delay-2 flex items-center gap-3 text-[clamp(0.9rem,1.4vw,1.3rem)] tracking-[-0.02em] text-[var(--home-ink)] max-md:gap-2 max-md:text-[0.82rem]">
+        <p className="flex flex-wrap items-center gap-3 text-[clamp(0.9rem,1.4vw,1.3rem)] tracking-[-0.02em] text-[var(--home-ink)] max-md:gap-2 max-md:text-[0.82rem]">
           <span>Software Engineer</span>
           <i className="not-italic text-[var(--home-accent)]">/</i>
           <span>Full-stack developer</span>
@@ -48,12 +50,12 @@ export default function Banner() {
 
         <h1
           id="hero-title"
-          className="home-hero-reveal home-delay-3 mt-[0.05em] w-full whitespace-nowrap font-[family-name:var(--font-home-display)] text-[clamp(4.2rem,17.3vw,19rem)] leading-[0.82] font-normal tracking-[-0.065em] text-[var(--home-ink)] uppercase max-md:text-[clamp(2.7rem,12vw,6rem)] max-md:tracking-[-0.095em]"
+          className="mt-[0.05em] w-full min-w-0 overflow-wrap-anywhere font-[family-name:var(--font-home-display)] text-[clamp(3.8rem,13vw,10rem)] leading-[0.92] font-normal tracking-[-0.065em] text-[var(--home-ink)] uppercase max-md:text-[clamp(3.1rem,16vw,6rem)] max-md:tracking-[-0.08em]"
         >
           Katsuotz
         </h1>
 
-        <div className="home-hero-reveal home-delay-4 mt-[clamp(2rem,5vh,4rem)] grid grid-cols-[minmax(16rem,36rem)_1fr] items-end gap-16 border-t border-[var(--home-line)] pt-5 max-md:mt-8 max-md:grid-cols-1 max-md:gap-7">
+        <div className="mt-[clamp(2rem,5vh,4rem)] grid grid-cols-[minmax(0,36rem)_minmax(0,1fr)] items-end gap-16 border-t border-[var(--home-line)] pt-5 max-md:mt-8 max-md:grid-cols-1 max-md:gap-7">
           <p
             className={cn(
               editorialType.body,
@@ -106,7 +108,7 @@ export default function Banner() {
       <p
         className={cn(
           editorialType.micro,
-          'home-hero-reveal home-delay-4 absolute right-[max(1.25rem,4vw)] bottom-4 font-[family-name:var(--font-home-mono)] tracking-[0.12em] text-[var(--home-index)] uppercase max-md:hidden'
+          'absolute right-[max(1.25rem,4vw)] bottom-4 font-[family-name:var(--font-home-mono)] tracking-[0.12em] text-[var(--home-index)] uppercase max-md:hidden'
         )}
         aria-hidden="true"
       >

@@ -1,0 +1,9 @@
+{
+  "date": "2026-07-18",
+  "framework": "Next.js 16 App Router with React 19 and Tailwind CSS 4",
+  "fonts": ["Archivo Black", "IBM Plex Sans", "IBM Plex Mono"],
+  "palette": "Existing editorial light cobalt and dark orange palettes",
+  "motion": "GSAP installed; non-log redesign uses restrained CSS state transitions",
+  "spacing": "4-point semantic scale",
+  "packageManager": "Bun"
+}

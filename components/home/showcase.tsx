@@ -83,7 +83,7 @@ export default function Showcase() {
       id="showcase"
       className="mx-auto w-full max-w-[1500px] px-5 py-20 sm:px-8 sm:py-28 lg:px-12"
     >
-      <div className="mb-12 grid gap-5 border-b border-[var(--home-line)] pb-8 md:grid-cols-[1fr_0.65fr] md:items-end">
+      <div className="mb-12 grid max-w-[72rem] gap-5 border-b border-[var(--home-line)] pb-8">
         <div>
           <p
             className={cn(
@@ -99,7 +99,7 @@ export default function Showcase() {
         </div>
         <p
           className={cn(
-            'max-w-lg text-[var(--home-muted)] md:justify-self-end',
+            'max-w-[52ch] text-[var(--home-muted)]',
             editorialType.body
           )}
         >

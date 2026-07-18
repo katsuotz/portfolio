@@ -48,7 +48,7 @@ export default function ProjectItem({
       >
         <span className="sr-only">{project.name}</span>
         {variant === 'bento' ? (
-          <article className="relative isolate min-h-full overflow-hidden rounded-[0.6rem] border border-[var(--home-line)] bg-[var(--home-surface)] text-white">
+          <article className="relative isolate min-h-full overflow-hidden whitespace-normal border border-[var(--home-line)] bg-[var(--home-surface)] text-white">
             <Image
               loading="lazy"
               src={project.image}
@@ -64,13 +64,17 @@ export default function ProjectItem({
             <div
               className={cn(
                 editorialType.micro,
-                'flex justify-between p-4 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-white/80 uppercase'
+                'flex min-w-0 flex-wrap justify-between gap-2 p-4 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-white uppercase'
               )}
             >
-              <span>{project.tag}</span>
-              <span>{project.year}</span>
+              <span className="border border-white/30 bg-black/60 px-2 py-1">
+                {project.tag}
+              </span>
+              <span className="border border-white/30 bg-black/60 px-2 py-1">
+                {project.year}
+              </span>
             </div>
-            <div className="absolute inset-x-0 bottom-0 grid grid-cols-1 items-end gap-4 p-[clamp(1.25rem,2.5vw,2rem)] min-[421px]:grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto]">
+            <div className="absolute inset-x-0 bottom-0 grid min-w-0 grid-cols-1 items-end gap-4 p-[clamp(1.25rem,2.5vw,2rem)] min-[421px]:grid-cols-[auto_minmax(0,1fr)] md:grid-cols-[auto_minmax(0,1fr)_auto]">
               <div className="flex size-11 place-items-center overflow-hidden rounded-[0.35rem] border border-white/20 bg-[rgba(5,10,18,0.76)] p-2 backdrop-blur-lg min-[421px]:size-13">
                 <Image
                   loading="lazy"
@@ -91,7 +95,7 @@ export default function ProjectItem({
                 <p
                   className={cn(
                     editorialType.card,
-                    'mt-2.5 max-w-3xl text-white/70'
+                    'mt-2.5 max-w-full text-white/75 [overflow-wrap:anywhere]'
                   )}
                 >
                   {project.description}
@@ -107,7 +111,7 @@ export default function ProjectItem({
           </article>
         ) : (
           <article className="relative flex h-full min-h-[430px] flex-col overflow-hidden bg-[var(--home-canvas)] transition-colors duration-200 group-hover/project:bg-[var(--home-surface)] motion-reduce:transition-none">
-            <div className="relative aspect-[16/10] overflow-hidden bg-[#111318]">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[var(--home-surface-raised)]">
               <Image
                 loading="lazy"
                 src={project.image}
@@ -123,11 +127,15 @@ export default function ProjectItem({
               <div
                 className={cn(
                   editorialType.micro,
-                  'absolute inset-x-5 top-5 flex justify-between font-[family-name:var(--font-home-mono)] tracking-[0.14em] text-white uppercase'
+                  'absolute inset-x-5 top-5 flex flex-wrap justify-between gap-2 font-[family-name:var(--font-home-mono)] tracking-[0.14em] text-white uppercase'
                 )}
               >
-                <span>{project.tag}</span>
-                <span>{project.year}</span>
+                <span className="border border-white/30 bg-black/60 px-2 py-1">
+                  {project.tag}
+                </span>
+                <span className="border border-white/30 bg-black/60 px-2 py-1">
+                  {project.year}
+                </span>
               </div>
             </div>
 
@@ -161,7 +169,7 @@ export default function ProjectItem({
                 <p
                   className={cn(
                     editorialType.card,
-                    'mt-3 line-clamp-3 text-[var(--home-muted)]'
+                    'mt-3 text-[var(--home-muted)]'
                   )}
                 >
                   {project.description}

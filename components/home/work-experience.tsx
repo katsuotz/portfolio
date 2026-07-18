@@ -57,7 +57,6 @@ export default function WorkExperience() {
     },
     {
       logo: '/work/farmbyte.webp',
-      logoClassName: 'scale-[0.78]',
       flag: '/flag/my.svg',
       company: 'FarmByte',
       country: 'Malaysia',
@@ -157,7 +156,7 @@ export default function WorkExperience() {
       id="experience"
       className="mx-auto w-full max-w-[96rem] scroll-mt-19 border-t border-[var(--home-line)] px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)]"
     >
-      <div className="mb-[clamp(3rem,7vw,6rem)] grid items-end gap-[clamp(1.5rem,4vw,5rem)] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_minmax(18rem,48rem)_minmax(15rem,25rem)]">
+      <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-[clamp(1.5rem,4vw,3rem)]">
         <p
           className={cn(
             editorialType.micro,
