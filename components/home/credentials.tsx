@@ -79,17 +79,27 @@ export default function Credentials() {
   return (
     <section
       id="credentials"
-      className="mx-auto w-full max-w-[96rem] scroll-mt-19 border-t border-[var(--home-line)] px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)]"
+      className="mx-auto w-full max-w-[96rem] scroll-mt-19 border-t border-[var(--home-line)] px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)] md:pl-[calc(max(1.25rem,4vw)+1.75rem)]"
     >
       <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-[clamp(1.5rem,4vw,3rem)]">
-        <p
-          className={cn(
-            'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase',
-            editorialType.micro
-          )}
-        >
-          03 / Credentials
-        </p>
+        <div className="flex items-center justify-between border-y border-[var(--home-line)] py-3">
+          <p
+            className={cn(
+              'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase',
+              editorialType.micro
+            )}
+          >
+            03 / Credentials
+          </p>
+          <span
+            className={cn(
+              'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-muted)] uppercase',
+              editorialType.micro
+            )}
+          >
+            Evidence index
+          </span>
+        </div>
         <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,13vw,4.5rem)] leading-[0.94] font-normal tracking-[-0.06em] text-[var(--home-ink)] uppercase lg:text-[clamp(2.9rem,6vw,6.6rem)]">
           Proof, practice, and the tools between.
         </h2>
@@ -105,7 +115,7 @@ export default function Credentials() {
       </div>
 
       <div className="grid grid-cols-1 gap-3 md:grid-cols-12">
-        <article className="home-ledger-panel rounded-[0.6rem] border border-[var(--home-line)] bg-[var(--home-surface)] transition-[background-color,color,border-color] duration-200 md:col-span-6 lg:col-span-5 motion-reduce:transition-none">
+        <article className="home-ledger-panel border border-[var(--home-line)] bg-[var(--home-surface)] transition-[background-color,color,border-color] duration-200 md:col-span-6 lg:col-span-5 motion-reduce:transition-none">
           <div
             className={cn(
               'flex justify-between gap-4 border-b border-[var(--home-line)] px-5 py-4 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase',
@@ -156,7 +166,7 @@ export default function Credentials() {
           </div>
         </article>
 
-        <article className="home-ledger-panel rounded-[0.6rem] border border-[var(--home-line)] bg-[var(--home-surface)] transition-[background-color,color,border-color] duration-200 md:col-span-6 lg:col-span-7 motion-reduce:transition-none">
+        <article className="home-ledger-panel border border-[var(--home-line)] bg-[var(--home-surface)] transition-[background-color,color,border-color] duration-200 md:col-span-6 lg:col-span-7 motion-reduce:transition-none">
           <div
             className={cn(
               'flex justify-between gap-4 border-b border-[var(--home-line)] px-5 py-4 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase',
@@ -207,7 +217,7 @@ export default function Credentials() {
           </div>
         </article>
 
-        <article className="home-ledger-panel rounded-[0.6rem] border border-[var(--home-line)] bg-[var(--home-surface)] transition-[background-color,color,border-color] duration-200 md:col-span-12 motion-reduce:transition-none">
+        <article className="home-ledger-panel border border-[var(--home-line)] bg-[var(--home-surface)] transition-[background-color,color,border-color] duration-200 md:col-span-12 motion-reduce:transition-none">
           <div
             className={cn(
               'flex justify-between gap-4 border-b border-[var(--home-line)] px-5 py-4 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase',

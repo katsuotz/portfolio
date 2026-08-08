@@ -11,13 +11,6 @@ export interface ProjectProps {
   variant?: 'bento' | 'registry'
 }
 
-const bentoCellClasses = [
-  'md:col-span-7 md:row-span-4',
-  'md:col-span-5 md:row-span-3',
-  'md:col-span-5 md:row-span-3',
-  'md:col-span-7 md:row-span-4',
-]
-
 export default function Project({
   showAllProjects = false,
   variant = 'registry',
@@ -194,18 +187,28 @@ export default function Project({
     return (
       <section
         id="selected-work"
-        className="mx-auto w-full max-w-[96rem] scroll-mt-19 px-[max(1.25rem,4vw)] py-[clamp(5rem,10vw,9rem)]"
+        className="relative mx-auto w-full max-w-[96rem] scroll-mt-19 px-[max(1.25rem,4vw)] py-[clamp(5rem,10vw,9rem)] md:pl-[calc(max(1.25rem,4vw)+1.75rem)]"
       >
-        <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-[clamp(1.5rem,4vw,3rem)]">
-          <p
-            className={cn(
-              editorialType.micro,
-              'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
-            )}
-          >
-            01 / Selected work
-          </p>
-          <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,13vw,4.5rem)] leading-[0.94] font-normal tracking-[-0.06em] text-[var(--home-ink)] uppercase lg:text-[clamp(2.9rem,6vw,6.6rem)]">
+        <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-5">
+          <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-y border-[var(--home-line)] py-3">
+            <p
+              className={cn(
+                editorialType.micro,
+                'font-[family-name:var(--font-home-mono)] tracking-[0.12em] text-[var(--home-accent)] uppercase'
+              )}
+            >
+              01 / Selected work
+            </p>
+            <span
+              className={cn(
+                editorialType.micro,
+                'text-right font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-muted)] uppercase'
+              )}
+            >
+              Replay archive · 04 signals
+            </span>
+          </div>
+          <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,13vw,4.5rem)] leading-[0.9] font-normal tracking-[-0.07em] text-[var(--home-ink)] uppercase lg:text-[clamp(2.9rem,6vw,6.6rem)]">
             Systems made useful.
           </h2>
           <p
@@ -219,33 +222,53 @@ export default function Project({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-12 md:auto-rows-[minmax(9rem,auto)]">
-          {filteredProject.map((project, index) => (
-            <div
-              key={project.name}
-              className={`min-h-[26rem] max-[420px]:min-h-[23rem] ${bentoCellClasses[index]}`}
-            >
-              <ProjectItem project={project} variant="bento" />
-            </div>
-          ))}
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.55fr)_minmax(19rem,0.85fr)]">
+          <div className="relative flex h-full min-h-0">
+            <span className="home-channel-rail absolute top-8 -left-8 hidden font-[family-name:var(--font-home-mono)] text-[0.65rem] tracking-[0.14em] text-[var(--home-muted)] uppercase md:block">
+              Active channel / 01
+            </span>
+            <ProjectItem project={filteredProject[0]} variant="bento" />
+          </div>
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-1">
+            {filteredProject.slice(1).map((project, index) => (
+              <div key={project.name} className="min-w-0">
+                <ProjectItem
+                  project={project}
+                  variant="bento"
+                  compact
+                  index={index + 2}
+                />
+              </div>
+            ))}
+          </div>
 
           <Link
             href="/projects"
-            className="group/archive grid grid-cols-[1fr_auto] content-center gap-x-4 gap-y-1.5 border border-[var(--home-line)] p-6 text-[var(--home-ink)] transition-colors duration-200 hover:border-[var(--home-accent)] hover:bg-[var(--home-surface)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] md:col-span-5 md:row-span-1 motion-reduce:transition-none"
+            className="group/archive mt-1 grid min-h-28 grid-cols-[auto_1fr_auto] items-center gap-4 border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-5 text-[var(--home-ink)] transition-colors duration-200 hover:border-[var(--home-accent)] hover:bg-[var(--home-surface)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] sm:p-6 motion-reduce:transition-none"
           >
             <span
               className={cn(
                 editorialType.micro,
-                'col-start-1 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
+                'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
               )}
             >
-              Project registry
+              Archive
             </span>
-            <strong className="text-[clamp(1rem,1.7vw,1.35rem)] font-medium">
-              Explore the full archive
-            </strong>
+            <span className="min-w-0">
+              <strong className="block text-[clamp(1rem,1.7vw,1.35rem)] font-medium">
+                Explore the full project registry
+              </strong>
+              <span
+                className={cn(
+                  editorialType.micro,
+                  'mt-1 block text-[var(--home-muted)]'
+                )}
+              >
+                Browse the complete project archive.
+              </span>
+            </span>
             <ArrowRightIcon
-              className="col-start-2 row-span-2 row-start-1 size-5 self-center transition-transform duration-200 group-hover/archive:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none"
+              className="size-5 shrink-0 transition-transform duration-200 group-hover/archive:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none"
               aria-hidden="true"
             />
           </Link>

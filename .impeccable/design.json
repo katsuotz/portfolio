@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-08T00:00:00.000Z",
+  "title": "Design System: Katsuotz Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "canvas-light": {
+        "role": "neutral",
+        "displayName": "Paper Field",
+        "canonical": "#F4F6F8",
+        "tonalRamp": ["#15181D", "#2D333B", "#464E58", "#606A76", "#7A8592", "#99A2AC", "#C5CBD1", "#F4F6F8"]
+      },
+      "surface-light": {
+        "role": "neutral",
+        "displayName": "Raised Paper",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#191919", "#333333", "#4C4C4C", "#666666", "#808080", "#999999", "#CCCCCC", "#FFFFFF"]
+      },
+      "deep-light": {
+        "role": "neutral",
+        "displayName": "Deep Paper",
+        "canonical": "#E7EBEF",
+        "tonalRamp": ["#17191B", "#303438", "#4A4F55", "#636A71", "#7C858D", "#A0A7AD", "#C5CBD0", "#E7EBEF"]
+      },
+      "ink-light": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0A0D12",
+        "tonalRamp": ["#0A0D12", "#252A32", "#3F4650", "#59616B", "#737B84", "#969DA5", "#C0C5C9", "#F4F6F8"]
+      },
+      "muted-light": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#5C6673",
+        "tonalRamp": ["#1E232A", "#333A43", "#48515C", "#5C6673", "#78828E", "#9BA3AC", "#C6CBD0", "#EEF0F2"]
+      },
+      "accent-light": {
+        "role": "primary",
+        "displayName": "Cobalt Signal",
+        "canonical": "#2457F5",
+        "tonalRamp": ["#071344", "#0B246F", "#1037A0", "#1747D0", "#2457F5", "#5C7FF7", "#A4B8FB", "#E2E8FF"]
+      },
+      "accent-dark": {
+        "role": "primary",
+        "displayName": "Orange Signal",
+        "canonical": "#F04E36",
+        "tonalRamp": ["#4A1008", "#7C1C0D", "#B02B18", "#D83A25", "#F04E36", "#F67B68", "#F9B2A6", "#FDE5E1"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Broadcast Display", "purpose": "Identity and section statements; large, compressed, and declarative." },
+      "body": { "displayName": "Readable Body", "purpose": "Descriptions and explanatory copy." },
+      "label": { "displayName": "Measured Label", "purpose": "Channels, dates, controls, and metadata only." }
+    },
+    "shadows": [
+      { "name": "masthead-ambient", "value": "0 12px 48px var(--home-shadow)", "purpose": "Keeps fixed navigation legible over the field." },
+      { "name": "active-replay", "value": "0 24px 60px var(--home-shadow)", "purpose": "Separates the primary replay frame from the canvas." }
+    ],
+    "motion": [
+      { "name": "ease-field", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Short state transitions for channel and action feedback." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Removes spatial movement while preserving functional state changes." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "767px" },
+      { "name": "wide", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single action that moves a visitor from the identity field into selected work.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#selected-work\">EXPLORE SELECTED WORK ↘</a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:10px; min-height:56px; padding:14px 20px; background:#2457F5; color:#fff; font:500 12px/1.45 'IBM Plex Mono',monospace; letter-spacing:.06em; text-transform:uppercase; transition:background-color .18s,transform .18s; } .ds-btn-primary:hover { background:#1748D1; transform:translateY(-2px); } .ds-btn-primary:focus-visible { outline:2px solid #2457F5; outline-offset:4px; }"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "A fixed, bordered route rail with mono labels and an always-available theme control.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-mark\" href=\"#top\">K/O</a><a class=\"ds-nav-link\" href=\"#selected-work\">WORK</a><button class=\"ds-nav-toggle\" type=\"button\">THEME</button></nav>",
+      "css": ".ds-nav { display:grid; grid-template-columns:auto 1fr auto; align-items:center; min-height:60px; padding:0 12px 0 20px; border:1px solid rgba(10,13,18,.14); background:#F4F6F8; color:#0A0D12; } .ds-nav-mark { font:400 18px/.95 'Archivo Black',sans-serif; letter-spacing:-.05em; } .ds-nav-link,.ds-nav-toggle { min-height:44px; display:inline-flex; align-items:center; justify-content:center; padding:0 12px; font:400 12px/1.45 'IBM Plex Mono',monospace; letter-spacing:.08em; text-transform:uppercase; color:#5C6673; } .ds-nav-link:hover,.ds-nav-toggle:hover { color:#0A0D12; } .ds-nav-link:focus-visible,.ds-nav-toggle:focus-visible { outline:2px solid #2457F5; outline-offset:4px; }"
+    },
+    {
+      "name": "Replay Frame",
+      "kind": "custom",
+      "refersTo": "replay-frame",
+      "description": "The dominant real project surface, with a channel/year lower-third and selectable neighboring signals.",
+      "html": "<article class=\"ds-replay\"><div class=\"ds-replay-meta\">CH 01 <span>AI · 2025 - NOW</span></div><div class=\"ds-replay-media\"></div><h3>SHIELDBASE AI</h3></article>",
+      "css": ".ds-replay { position:relative; overflow:hidden; border:1px solid rgba(10,13,18,.14); background:#fff; color:#0A0D12; } .ds-replay-meta { display:flex; justify-content:space-between; padding:16px; border-bottom:1px solid rgba(10,13,18,.14); font:400 12px/1.45 'IBM Plex Mono',monospace; letter-spacing:.1em; text-transform:uppercase; } .ds-replay-media { aspect-ratio:16/10; background:#15130F; } .ds-replay h3 { margin:0; padding:20px; font:400 clamp(1.7rem,3.5vw,4rem)/.95 'Archivo Black',sans-serif; letter-spacing:-.05em; text-transform:uppercase; }"
+    },
+    {
+      "name": "Evidence Panel",
+      "kind": "card",
+      "refersTo": "evidence-panel",
+      "description": "A flat, ruled panel for experience, credentials, recognition, and working stack evidence.",
+      "html": "<section class=\"ds-evidence\"><header>02 / EXPERIENCE <span>CROSS-BORDER RELAY</span></header><div class=\"ds-evidence-row\"><strong>Shieldbase</strong><span>SOFTWARE ENGINEER · AUG 2025 - NOW</span></div></section>",
+      "css": ".ds-evidence { border:1px solid rgba(10,13,18,.14); background:#fff; color:#0A0D12; } .ds-evidence header { display:flex; justify-content:space-between; gap:16px; padding:16px 20px; border-bottom:1px solid rgba(10,13,18,.14); color:#2457F5; font:400 12px/1.45 'IBM Plex Mono',monospace; letter-spacing:.1em; text-transform:uppercase; } .ds-evidence header span { color:#5C6673; } .ds-evidence-row { display:grid; gap:8px; padding:24px; border-bottom:1px solid rgba(10,13,18,.09); } .ds-evidence-row strong { font:500 20px/1.15 'IBM Plex Sans',sans-serif; } .ds-evidence-row span { color:#5C6673; font:400 12px/1.45 'IBM Plex Mono',monospace; letter-spacing:.06em; text-transform:uppercase; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Broadcast Field Guide",
+    "overview": "The portfolio treats each project as a replayable signal: a real interface, a working context, and the engineering judgment that made it useful. The visual language borrows the discipline of broadcast control surfaces without inventing scores, live telemetry, or game-like stakes. The surface is editorial and technical at once, with paper-like canvases, one active signal accent, thin rules, and a measured calibration grid.",
+    "keyCharacteristics": ["Hard-edged replay frames and evidence-led panels.", "Channel rails that support fast scanning and deep reading.", "One accent signal per theme, used for action and state.", "Editorial typography with mono labels reserved for metadata."],
+    "rules": [
+      { "name": "The Single Signal Rule", "body": "Use the active accent to identify action or state; do not scatter competing decorative colors across a surface.", "section": "colors" },
+      { "name": "The No-Costume Mono Rule", "body": "Mono appears when a value is a label, measure, date, channel, or control; it is not used to make ordinary prose look technical.", "section": "typography" }
+    ],
+    "dos": ["Do let real project screenshots and factual descriptions carry the proof.", "Do use channel labels, timing marks, and rules when they clarify sequence or state.", "Do keep light and dark themes structurally identical while resolving their signal accent.", "Do preserve keyboard focus, Escape dismissal, visible labels, and reduced-motion behavior."],
+    "donts": ["Don't invent scores, live telemetry, benchmarks, testimonials, or customer claims.", "Don't turn the broadcast metaphor into neon gaming HUDs, glowing edges, or decorative glass.", "Don't replace authored project imagery with generic gradients or stock scenes.", "Don't use mono for body copy or add motion that gates content."]
+  }
+}

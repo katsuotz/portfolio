@@ -34,6 +34,15 @@ const homeThemeInitializer = `
   }
 `
 
+const homeDirectionContract = `<!--
+THESIS: Let shipped work read like a broadcast replay, not a résumé wall.
+OWN-WORLD: Editorial paper, hard-edged replay frames, channel rails, lower-thirds, and cobalt/orange signals across light and dark themes.
+STORY: Visitors scan the active project, switch channels for proof, then continue into experience, credentials, or contact.
+FIRST VIEWPORT: A lower-third identity field establishes the engineer, the single selected-work action points into the dominant replay frame immediately below, and the channel rail carries through the page.
+FORM: Grounded direction 6, restrained broadcast-control overlay, staged as express aisle topology; seed 4227d941.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->`
+
 export const metadata: Metadata = {
   title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
   description:
@@ -83,6 +92,10 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-foreground font-sans antialiased selection:bg-violet-500/30">
+        <template
+          aria-hidden="true"
+          dangerouslySetInnerHTML={{ __html: homeDirectionContract }}
+        />
         <div className="relative">{children}</div>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-E8CK2FG8Z2"

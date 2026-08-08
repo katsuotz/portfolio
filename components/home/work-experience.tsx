@@ -154,17 +154,27 @@ export default function WorkExperience() {
   return (
     <section
       id="experience"
-      className="mx-auto w-full max-w-[96rem] scroll-mt-19 border-t border-[var(--home-line)] px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)]"
+      className="mx-auto w-full max-w-[96rem] scroll-mt-19 border-t border-[var(--home-line)] px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)] md:pl-[calc(max(1.25rem,4vw)+1.75rem)]"
     >
       <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-[clamp(1.5rem,4vw,3rem)]">
-        <p
-          className={cn(
-            editorialType.micro,
-            'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
-          )}
-        >
-          02 / Experience
-        </p>
+        <div className="flex items-center justify-between border-y border-[var(--home-line)] py-3">
+          <p
+            className={cn(
+              editorialType.micro,
+              'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
+            )}
+          >
+            02 / Experience
+          </p>
+          <span
+            className={cn(
+              editorialType.micro,
+              'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-muted)] uppercase'
+            )}
+          >
+            Cross-border relay
+          </span>
+        </div>
         <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,13vw,4.5rem)] leading-[0.94] font-normal tracking-[-0.06em] text-[var(--home-ink)] uppercase lg:text-[clamp(2.9rem,6vw,6.6rem)]">
           Built with teams across borders.
         </h2>
@@ -192,11 +202,13 @@ export default function WorkExperience() {
           <div
             className={cn(
               editorialType.micro,
-              'flex items-center justify-between py-5 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
+              'flex items-center justify-between gap-4 py-5 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
             )}
           >
-            <p>Earlier chapters</p>
-            <span className="text-[var(--home-muted)]">2017 — 2025</span>
+            <p>Earlier chapters / channel log</p>
+            <span className="shrink-0 text-[var(--home-muted)]">
+              2017 — 2025
+            </span>
           </div>
           <div>
             {experiences.slice(2).map((experience) => (

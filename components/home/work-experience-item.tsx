@@ -96,7 +96,7 @@ export default function WorkExperienceItem({
   }
 
   return (
-    <article className="home-featured-experience col-span-1 flex min-h-[27rem] min-w-0 flex-col justify-between overflow-hidden rounded-[0.6rem] border border-[var(--home-line)] bg-[var(--home-surface)] p-[clamp(1.5rem,3vw,2.5rem)] transition-[background-color,color,border-color,transform] duration-200 hover:-translate-y-0.75 hover:border-[var(--home-accent-border)] md:col-span-6 lg:min-h-[31rem] motion-reduce:transform-none motion-reduce:transition-none">
+    <article className="home-featured-experience col-span-1 flex min-h-[27rem] min-w-0 flex-col justify-between overflow-hidden border border-[var(--home-line)] bg-[var(--home-surface)] p-[clamp(1.5rem,3vw,2.5rem)] transition-[background-color,color,border-color,transform] duration-200 hover:-translate-y-0.75 hover:border-[var(--home-accent-border)] md:col-span-6 lg:min-h-[31rem] motion-reduce:transform-none motion-reduce:transition-none">
       <div className="flex items-center justify-between">
         <div className="flex size-16 shrink-0 items-center justify-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-3">
           <Image
@@ -117,11 +117,8 @@ export default function WorkExperienceItem({
             'flex items-center gap-2.5 font-[family-name:var(--font-home-mono)] tracking-[0.07em] text-[var(--home-muted)] uppercase'
           )}
         >
-          <i
-            className="size-1.5 rounded-full bg-[var(--home-accent)] shadow-[0_0_0_4px_var(--home-accent-ring)]"
-            aria-hidden="true"
-          />{' '}
-          Current · {statusLabels[experience.status]}
+          <i className="home-signal size-1.5 rounded-full" aria-hidden="true" />{' '}
+          Current channel · {statusLabels[experience.status]}
         </span>
       </div>
 

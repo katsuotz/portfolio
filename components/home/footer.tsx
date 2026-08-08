@@ -23,7 +23,7 @@ export default function Footer({
               editorialType.micro
             )}
           >
-            04 / Start a conversation
+            04 / Start a conversation · open channel
           </p>
           <h2 className="mt-12 max-w-[12ch] font-[family-name:var(--font-home-display)] text-[clamp(3.4rem,9.3vw,10rem)] leading-[0.86] font-normal tracking-[-0.07em] uppercase">
             Have a hard problem?
