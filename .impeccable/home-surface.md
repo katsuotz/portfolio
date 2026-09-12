@@ -1,23 +1,23 @@
 ## Scope
 
-Homepage landing surface for the portfolio. Visitor mode: Experience.
+Homepage portfolio. Visitor mode: Experience. Engineering leaders, recruiters, and collaborators should understand Muhammad's role and see shipped work in the first viewport.
 
-## Visitor and job
+## Direction contract
 
-Engineering leaders, recruiters, and collaborators arrive with a short scan window. They should understand Muhammad's software-engineering range, see real shipped work, and choose a project, experience, credential, or contact path.
+THESIS: Present real product interfaces immediately in an open image-and-caption gallery, then organize the supporting professional evidence into a clear, compact sequence.
 
-## Action and proof
+OWN-WORLD: Swiss-inspired product gallery with Geist Sans, neutral light and dark surfaces, blue actions in both themes, generous whitespace, and original-color imagery. IBM Plex Mono serves dates and technical metadata.
 
-Primary action: explore selected work. Proof: real project screenshots and descriptions, professional experience, credentials, recognition, and working stack already present in the route.
+REFERENCE: The opening composition follows the calm, open portfolio rhythm visible in [Helena Zhang's homepage](https://www.helenazhang.com/): a modest standalone identity and introduction, followed by separated image-and-caption entries.
 
-## Constraints
+STORY: Visitors read the standalone introduction, browse four selected projects beginning with Shieldbase AI, then scan experience, education, recognition, skills, photography, and contact links.
 
-Preserve factual copy, project data, dates, links, anchors, analytics, theme behavior, accessible dialogs, reduced motion, and static-export compatibility. Do not invent metrics, customer claims, statuses, or testimonials.
+FIRST VIEWPORT: A compact neutral masthead precedes a standalone introduction with the modest identity, factual role labels, primary action, and contact links visible at 1440 by 900. Selected work follows below; mobile keeps the introduction before the project grid.
 
-## Chosen direction
+FORM: User-approved Swiss-inspired open gallery; no random seed applies. Selected work uses a compact `clamp(2.2rem, 5vw, 4.5rem)` heading with its projects link on the same row, description beneath, and four project entries in a two-column desktop grid beginning with Shieldbase; each entry uses image, title, concise caption, and factual metadata without an enclosing filled card. Education, recognition, and skills remain plain grouped lists. Selecting a project opens its existing accessible details dialog.
 
-Restrained broadcast-control overlay fused with express-aisle scanning: one active replay frame, compact project channels, lower-thirds, segmented rules, and evidence-led experience/credentials bands. The memorable moment is switching from the active project to a neighboring channel without losing the page's reading position.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
-## Unresolved
+## Contracts
 
-No product-level decisions remain open for this surface.
+Keep factual content, project records and order, existing navigation and anchors, shared theme state, static export, and keyboard accessibility. Reuse the repository's original project screenshots and three photography previews.

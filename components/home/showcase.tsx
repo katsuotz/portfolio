@@ -10,7 +10,7 @@ export default function Showcase() {
       url: 'https://middle-space.katsuotz.com/',
       src: 'https://github.com/katsuotz/middle-space',
       cardClassName: 'h-full',
-      className: 'col-span-12 md:col-span-6',
+      className: 'col-span-12',
       highlight: true,
       livePreview: false,
     },
@@ -36,7 +36,7 @@ export default function Showcase() {
           src: '/code/cube.html',
         },
       ],
-      className: 'col-span-12',
+      className: 'col-span-12 md:col-span-6',
       iframeClassName: 'w-full min-h-[400px]',
       highlight: true,
       livePreview: true,
@@ -81,19 +81,11 @@ export default function Showcase() {
   return (
     <section
       id="showcase"
-      className="mx-auto w-full max-w-[1500px] px-5 py-20 sm:px-8 sm:py-28 lg:px-12"
+      className="mx-auto w-full max-w-[1440px] px-5 py-20 sm:px-8 sm:py-28 lg:px-16"
     >
       <div className="mb-12 grid max-w-[72rem] gap-5 border-b border-[var(--home-line)] pb-8">
         <div>
-          <p
-            className={cn(
-              'font-[family-name:var(--font-home-mono)] uppercase tracking-[0.18em] text-[var(--home-accent)]',
-              editorialType.micro
-            )}
-          >
-            Interface studies
-          </p>
-          <h1 className="mt-4 text-balance font-[family-name:var(--font-home-display)] text-[clamp(3.4rem,8vw,8rem)] leading-[0.86] tracking-[-0.05em] text-[var(--home-ink)]">
+          <h1 className="text-balance font-[family-name:var(--font-home-display)] text-[clamp(3.4rem,8vw,6rem)] leading-[0.86] font-normal tracking-[-0.04em] text-[var(--home-ink)]">
             Showcases.
           </h1>
         </div>

@@ -34,9 +34,9 @@ export default function WorkExperienceItem({
 }) {
   if (variant === 'compact') {
     return (
-      <article className="grid grid-cols-1 items-center gap-4 border-t border-[var(--home-subtle-line)] py-6 md:grid-cols-2 md:gap-8 lg:grid-cols-[minmax(15rem,1.1fr)_minmax(12rem,0.8fr)_minmax(18rem,1.5fr)] xl:py-7">
-        <div className="flex items-center gap-4">
-          <div className="flex size-11 shrink-0 items-center justify-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-2">
+      <article className="grid grid-cols-1 items-start gap-3 border-t border-[var(--home-subtle-line)] py-6 md:grid-cols-2 md:gap-x-8 md:gap-y-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-x-10 xl:py-7">
+        <div className="flex items-center gap-3">
+          <div className="flex size-9 shrink-0 items-center justify-center overflow-hidden border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-1.5">
             <Image
               loading="lazy"
               src={experience.logo}
@@ -63,13 +63,18 @@ export default function WorkExperienceItem({
             </span>
           </div>
         </div>
-        <div>
+        <div className="font-[family-name:var(--font-home-mono)] text-[var(--home-muted)]">
           {experience.position.map((position) => (
             <p
               className="flex flex-col"
               key={`${position.title}-${position.date}`}
             >
-              <strong className={cn(editorialType.card, 'font-medium')}>
+              <strong
+                className={cn(
+                  editorialType.card,
+                  'font-medium font-[family-name:var(--font-home-sans)] text-[var(--home-ink)]'
+                )}
+              >
                 {position.title}
               </strong>
               <span
@@ -86,7 +91,7 @@ export default function WorkExperienceItem({
         <p
           className={cn(
             editorialType.card,
-            'font-light text-[var(--home-muted)] md:col-span-2 md:pl-15 lg:col-span-1 lg:pl-0'
+            'font-light text-[var(--home-muted)] md:col-span-2 lg:col-span-1'
           )}
         >
           {experience.description}
@@ -118,7 +123,7 @@ export default function WorkExperienceItem({
           )}
         >
           <i className="home-signal size-1.5 rounded-full" aria-hidden="true" />{' '}
-          Current channel · {statusLabels[experience.status]}
+          {statusLabels[experience.status]}
         </span>
       </div>
 
@@ -141,7 +146,7 @@ export default function WorkExperienceItem({
           </p>
           <h3
             className={cn(
-              'mt-3 max-w-full text-balance break-words font-[family-name:var(--font-home-display)] text-[clamp(2.4rem,5vw,5.6rem)] leading-[0.88] tracking-[-0.045em] text-[var(--home-ink)] uppercase',
+              'mt-3 max-w-full text-balance break-words font-[family-name:var(--font-home-display)] text-[clamp(2.4rem,5vw,5.6rem)] leading-[0.88] tracking-[-0.04em] text-[var(--home-ink)]',
               experience.headingClassName
             )}
           >

@@ -1,5 +1,7 @@
 import '@/app/globals.css'
 import { Inter, Playfair_Display } from 'next/font/google'
+import Script from 'next/script'
+import { Metadata } from 'next'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,9 +15,6 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
-import Script from 'next/script'
-import { Metadata } from 'next'
-
 const homeThemeInitializer = `
   try {
     const storedTheme = localStorage.getItem('home-theme');
@@ -27,21 +26,12 @@ const homeThemeInitializer = `
     document.documentElement.dataset.homeTheme = homeTheme;
     document.documentElement.classList.toggle('dark', homeTheme === 'dark');
     const favicon = document.getElementById('theme-favicon');
-    if (favicon) favicon.setAttribute('href', homeTheme === 'dark' ? '/favicon-dark.svg?v=2' : '/favicon-light.svg?v=2');
+    if (favicon) favicon.setAttribute('href', homeTheme === 'dark' ? '/favicon-dark.svg?v=3' : '/favicon-light.svg?v=3');
   } catch {
     document.documentElement.dataset.homeTheme = 'light';
     document.documentElement.classList.remove('dark');
   }
 `
-
-const homeDirectionContract = `<!--
-THESIS: Let shipped work read like a broadcast replay, not a résumé wall.
-OWN-WORLD: Editorial paper, hard-edged replay frames, channel rails, lower-thirds, and cobalt/orange signals across light and dark themes.
-STORY: Visitors scan the active project, switch channels for proof, then continue into experience, credentials, or contact.
-FIRST VIEWPORT: A lower-third identity field establishes the engineer, the single selected-work action points into the dominant replay frame immediately below, and the channel rail carries through the page.
-FORM: Grounded direction 6, restrained broadcast-control overlay, staged as express aisle topology; seed 4227d941.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
--->`
 
 export const metadata: Metadata = {
   title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
@@ -84,18 +74,14 @@ export default function RootLayout({
           id="theme-favicon"
           rel="icon"
           type="image/svg+xml"
-          href="/favicon-light.svg?v=2"
+          href="/favicon-light.svg?v=3"
         />
         <script
           id="home-theme-initializer"
           dangerouslySetInnerHTML={{ __html: homeThemeInitializer }}
         />
       </head>
-      <body className="bg-background text-foreground font-sans antialiased selection:bg-violet-500/30">
-        <template
-          aria-hidden="true"
-          dangerouslySetInnerHTML={{ __html: homeDirectionContract }}
-        />
+      <body className="bg-background text-foreground font-sans antialiased selection:bg-[var(--color-accent)]/30">
         <div className="relative">{children}</div>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-E8CK2FG8Z2"

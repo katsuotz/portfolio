@@ -14,27 +14,19 @@ export default function Footer({
     return (
       <footer
         id="contact"
-        className="border-t border-[var(--home-line)] bg-[var(--home-accent)] px-[max(1.25rem,4vw)] pt-[clamp(5rem,10vw,10rem)] pb-6 text-[var(--home-on-accent)] transition-[background-color,color,border-color] duration-200 motion-reduce:transition-none"
+        className="mx-auto w-full max-w-[1440px] border-t border-[var(--home-line)] bg-[var(--home-canvas)] px-5 pt-16 pb-6 text-[var(--home-ink)] transition-[background-color,color,border-color] duration-200 md:px-8 md:pt-24 lg:px-16 motion-reduce:transition-none"
       >
         <div>
-          <p
-            className={cn(
-              'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-footer-kicker)] uppercase',
-              editorialType.micro
-            )}
-          >
-            04 / Start a conversation · open channel
-          </p>
-          <h2 className="mt-12 max-w-[12ch] font-[family-name:var(--font-home-display)] text-[clamp(3.4rem,9.3vw,10rem)] leading-[0.86] font-normal tracking-[-0.07em] uppercase">
+          <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(3rem,8vw,6rem)] leading-[0.86] font-normal tracking-[-0.04em]">
             Have a hard problem?
-            <span className="block text-[var(--home-footer-muted)]">
+            <span className="block text-[var(--home-muted)]">
               Let&apos;s make it clear.
             </span>
           </h2>
         </div>
 
         <a
-          className="mt-[clamp(4rem,9vw,8rem)] flex items-center justify-between border-y border-[var(--home-footer-line)] py-6 text-[clamp(1.1rem,3.3vw,3.5rem)] tracking-[-0.045em] text-[var(--home-on-accent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-on-accent)] max-[420px]:text-[0.92rem] [&_svg]:size-[clamp(1.5rem,3vw,3rem)] [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:-translate-y-1 hover:[&_svg]:translate-x-1 motion-reduce:[&_svg]:transform-none motion-reduce:[&_svg]:transition-none"
+          className="mt-12 flex items-center justify-between border-y border-[var(--home-line)] py-5 text-[clamp(1rem,2.5vw,2rem)] tracking-[-0.035em] text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] max-[420px]:text-[0.9rem] [&_svg]:size-6 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:-translate-y-1 hover:[&_svg]:translate-x-1 motion-reduce:[&_svg]:transform-none motion-reduce:[&_svg]:transition-none"
           href="mailto:m.irfan.fakhri66@gmail.com"
         >
           <span>m.irfan.fakhri66@gmail.com</span>
@@ -43,19 +35,19 @@ export default function Footer({
 
         <div
           className={cn(
-            'mt-16 grid grid-cols-1 items-center gap-8 font-[family-name:var(--font-home-mono)] tracking-[0.07em] uppercase min-[421px]:grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_1fr]',
+            'mt-12 grid grid-cols-1 items-center gap-8 font-[family-name:var(--font-home-mono)] tracking-[0.07em] text-[var(--home-muted)] uppercase min-[421px]:grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_1fr]',
             editorialType.micro
           )}
         >
           <p>© {new Date().getFullYear()} Muhammad Irfan Fakhri</p>
           <div
-            className="row-start-1 flex gap-4 min-[421px]:col-span-2 md:col-span-1 md:col-start-2 [&_a]:grid [&_a]:size-11 [&_a]:place-items-center [&_a]:border [&_a]:border-[var(--home-footer-control-line)] [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:bg-[var(--home-footer-hover-bg)] [&_a:hover]:text-[var(--home-footer-hover-ink)] [&_svg]:size-4"
+            className="row-start-1 flex gap-4 min-[421px]:col-span-2 md:col-span-1 md:col-start-2 [&_a]:grid [&_a]:size-11 [&_a]:place-items-center [&_a]:border [&_a]:border-[var(--home-line)] [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:border-[var(--home-accent)] [&_a:hover]:text-[var(--home-accent)] [&_svg]:size-4"
             aria-label="Social links"
           >
             <SocialMedia />
           </div>
           <a
-            className="inline-flex min-h-11 items-center justify-self-start focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-on-accent)] min-[421px]:col-start-2 min-[421px]:justify-self-end md:col-start-3"
+            className="inline-flex min-h-11 items-center justify-self-start text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] min-[421px]:col-start-2 min-[421px]:justify-self-end md:col-start-3"
             href="#top"
           >
             Back to top ↑

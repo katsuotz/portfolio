@@ -21,6 +21,6 @@ export function applyTheme(theme: ResolvedSiteTheme) {
     .querySelector<HTMLLinkElement>('#theme-favicon')
     ?.setAttribute(
       'href',
-      theme === 'dark' ? '/favicon-dark.svg?v=2' : '/favicon-light.svg?v=2'
+      theme === 'dark' ? '/favicon-dark.svg?v=3' : '/favicon-light.svg?v=3'
     )
 }

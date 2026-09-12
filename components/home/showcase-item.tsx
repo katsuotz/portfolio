@@ -81,6 +81,7 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
                         'grow',
                         indexCode === index && activeControlClassName
                       )}
+                      aria-pressed={indexCode === index}
                       onClick={() => loadCode(index)}
                     >
                       {src.type}
@@ -108,21 +109,21 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
             width={480}
             height={480}
             unoptimized={true}
-            className="h-full w-full object-cover brightness-75 transition-[filter,transform] duration-500 group-hover/showcase:brightness-90 md:group-hover/showcase:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none"
+            className="h-full w-full object-contain transition-transform duration-500 md:group-hover/showcase:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none"
           />
         )}
 
         <div
           className={cn(
             showcase.image
-              ? 'absolute inset-x-0 bottom-0 bg-black/75 px-5 pb-5 pt-8 text-white'
-              : 'w-full border-t border-[var(--home-line)] bg-[var(--home-surface)] p-4 sm:p-5'
+              ? 'w-full border-t border-[var(--home-line)] bg-[var(--home-canvas)] px-1 py-4 text-[var(--home-ink)]'
+              : 'w-full border-t border-[var(--home-line)] bg-[var(--home-canvas)] p-4 sm:p-5'
           )}
         >
           <p
             className={cn(
-              'text-balance text-center font-[family-name:var(--font-home-display)] text-lg tracking-[-0.02em] xl:text-xl',
-              showcase.image ? 'text-white' : 'text-[var(--home-ink)]'
+              'text-balance text-center font-[family-name:var(--font-home-sans)] text-lg font-medium tracking-[-0.02em] xl:text-xl',
+              'text-[var(--home-ink)]'
             )}
           >
             {showcase.name}
@@ -137,7 +138,8 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
                     'grow',
                     !showCode && activeControlClassName
                   )}
-                  onClick={() => setShowCode(!showCode)}
+                  aria-pressed={!showCode}
+                  onClick={() => setShowCode(false)}
                 >
                   Preview
                 </button>
@@ -148,7 +150,8 @@ export default function ShowcaseItem({ showcase }: { showcase: ShowcaseType }) {
                     'grow',
                     showCode && activeControlClassName
                   )}
-                  onClick={() => setShowCode(!showCode)}
+                  aria-pressed={showCode}
+                  onClick={() => setShowCode(true)}
                 >
                   Code
                 </button>

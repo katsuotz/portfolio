@@ -49,7 +49,7 @@
 - Reserve `app/globals.css` for Tailwind setup, global tokens, resets, shared utilities, and genuinely global behavior.
 - Avoid mixing Tailwind utilities with native CSS overrides for the same property.
 - Avoid `!important` unless required to override an external or portaled component and no cleaner variant API is available.
-- Reuse design tokens rather than repeating literal colors. The homepage Light palette is canvas `#F4F6F8`, surface `#E7EBEF`, ink `#0A0D12`, muted `#5C6673`, and cobalt `#2457F5`; Dark restores canvas `#0B0A08`, surface `#15130F`, ink `#F2EEE6`, muted `#AAA39A`, and orange `#F04E36`.
+- Reuse design tokens rather than repeating literal colors. The editorial Light palette is canvas `#F7F8FA`, raised surface `#FFFFFF`, inset surface `#ECEEF2`, ink `#151820`, muted `#596170`, and blue `#2448D8`; Dark uses canvas `#111318`, raised surface `#1B1E26`, inset surface `#242833`, ink `#F2F4F8`, muted `#A8B0BF`, and blue `#93ACFF`. Keep the color records and component examples in `design.md` and `.impeccable/design.json` synchronized with the runtime tokens.
 - Keep site theme state under the shared `home-theme` storage key. With no stored override, follow `prefers-color-scheme`; do not recreate or reuse the removed `dark-mode` key.
 - Preserve the existing component variants that isolate visual systems, including project `bento`/`registry` and footer `editorial`/`default` variants.
 - Apply the shared editorial tokens and shell to all non-log routes. Logs share the theme state and `.dark` class but keep their own styling.
@@ -57,7 +57,7 @@
 
 ## Design, Accessibility, and Performance
 
-- Maintain the established editorial layout: oversized typography, restrained color, asymmetric bento sections, subtle translucency, and limited purposeful motion.
+- Maintain the Swiss-inspired product gallery: Geist Sans typography, restrained blue accents, generous whitespace, aligned grids, large real screenshots, and limited purposeful motion. Reserve IBM Plex Mono for dates and technical metadata. Use a compact introduction with the first project visible immediately, neutral shared navigation and footer, and responsive image galleries.
 - Avoid generic AI-template patterns such as excessive glass cards, rounded containers, gradients, glows, and scroll-triggered animation on every section.
 - Use semantic HTML and preserve heading hierarchy, landmarks, skip links, labels, and descriptive accessible names.
 - All interactive elements must be keyboard accessible with visible focus states. Dialogs must support focus management and Escape dismissal.

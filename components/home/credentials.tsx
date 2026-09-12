@@ -79,28 +79,10 @@ export default function Credentials() {
   return (
     <section
       id="credentials"
-      className="mx-auto w-full max-w-[96rem] scroll-mt-19 border-t border-[var(--home-line)] px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)] md:pl-[calc(max(1.25rem,4vw)+1.75rem)]"
+      className="mx-auto w-full max-w-[1440px] scroll-mt-24 border-t border-[var(--home-line)] px-5 py-20 md:px-8 md:py-28 lg:px-16"
     >
       <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-[clamp(1.5rem,4vw,3rem)]">
-        <div className="flex items-center justify-between border-y border-[var(--home-line)] py-3">
-          <p
-            className={cn(
-              'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase',
-              editorialType.micro
-            )}
-          >
-            03 / Credentials
-          </p>
-          <span
-            className={cn(
-              'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-muted)] uppercase',
-              editorialType.micro
-            )}
-          >
-            Evidence index
-          </span>
-        </div>
-        <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,13vw,4.5rem)] leading-[0.94] font-normal tracking-[-0.06em] text-[var(--home-ink)] uppercase lg:text-[clamp(2.9rem,6vw,6.6rem)]">
+        <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,7vw,6rem)] leading-[0.94] font-normal tracking-[-0.04em] text-[var(--home-ink)]">
           Proof, practice, and the tools between.
         </h2>
         <p
@@ -114,24 +96,23 @@ export default function Credentials() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-12">
-        <article className="home-ledger-panel border border-[var(--home-line)] bg-[var(--home-surface)] transition-[background-color,color,border-color] duration-200 md:col-span-6 lg:col-span-5 motion-reduce:transition-none">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
+        <article className="md:col-span-1">
           <div
             className={cn(
-              'flex justify-between gap-4 border-b border-[var(--home-line)] px-5 py-4 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase',
+              'flex justify-between gap-4 border-b border-[var(--home-line)] py-4 font-[family-name:var(--font-home-sans)] font-medium text-[var(--home-ink)]',
               editorialType.micro
             )}
           >
             <span>Education</span>
-            <span className="text-[var(--home-muted)]">02 institutions</span>
           </div>
-          <div className="p-[clamp(1.5rem,3vw,2.5rem)]">
+          <div>
             {education.map((item) => (
               <div
-                className="grid grid-cols-[auto_1fr] gap-5 border-t border-[var(--home-line)] py-6 first:border-t-0"
+                className="grid grid-cols-[auto_1fr] gap-4 border-b border-[var(--home-line)] py-5 last:border-b-0"
                 key={item.school}
               >
-                <div className="grid size-18 place-items-center border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-2.5 [&_img]:h-full [&_img]:w-full [&_img]:object-contain">
+                <div className="grid size-12 place-items-center [&_img]:h-full [&_img]:w-full [&_img]:object-contain">
                   <Image
                     loading="lazy"
                     src={item.logo}
@@ -166,23 +147,22 @@ export default function Credentials() {
           </div>
         </article>
 
-        <article className="home-ledger-panel border border-[var(--home-line)] bg-[var(--home-surface)] transition-[background-color,color,border-color] duration-200 md:col-span-6 lg:col-span-7 motion-reduce:transition-none">
+        <article className="md:col-span-1">
           <div
             className={cn(
-              'flex justify-between gap-4 border-b border-[var(--home-line)] px-5 py-4 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase',
+              'flex justify-between gap-4 border-b border-[var(--home-line)] py-4 font-[family-name:var(--font-home-sans)] font-medium text-[var(--home-ink)]',
               editorialType.micro
             )}
           >
             <span>Recognition</span>
-            <span className="text-[var(--home-muted)]">2018 — 2020</span>
           </div>
-          <div className="px-[clamp(1.5rem,3vw,2.5rem)]">
+          <div>
             {achievements.map((achievement) => (
               <a
                 href={achievement.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group/award grid min-h-28 grid-cols-[3rem_1fr_auto] items-center gap-4 border-b border-[var(--home-subtle-line-strong)] py-4 last:border-b-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)]"
+                className="group/award grid min-h-20 grid-cols-[3rem_1fr_auto] items-center gap-4 border-b border-[var(--home-subtle-line-strong)] py-4 last:border-b-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)]"
                 key={achievement.title}
               >
                 <span
@@ -217,35 +197,34 @@ export default function Credentials() {
           </div>
         </article>
 
-        <article className="home-ledger-panel border border-[var(--home-line)] bg-[var(--home-surface)] transition-[background-color,color,border-color] duration-200 md:col-span-12 motion-reduce:transition-none">
+        <article className="md:col-span-2">
           <div
             className={cn(
-              'flex justify-between gap-4 border-b border-[var(--home-line)] px-5 py-4 font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase',
+              'flex justify-between gap-4 border-b border-[var(--home-line)] py-4 font-[family-name:var(--font-home-sans)] font-medium text-[var(--home-ink)]',
               editorialType.micro
             )}
           >
             <span>Working stack</span>
-            <span className="text-[var(--home-muted)]">18 technologies</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-[2fr_1.4fr_1fr]">
+          <div className="grid grid-cols-1 gap-x-12 md:grid-cols-3">
             {skillGroups.map((group) => (
               <div
-                className="border-t border-[var(--home-line)] p-[clamp(1.5rem,3vw,2.5rem)] first:border-t-0 md:min-h-56 md:border-t-0 md:border-l md:first:border-l-0"
+                className="border-b border-[var(--home-line)] py-5 last:border-b-0 md:border-b-0 md:border-l md:pl-6 md:first:border-l-0"
                 key={group.label}
               >
                 <p
                   className={cn(
-                    'mb-8 font-[family-name:var(--font-home-mono)] tracking-[0.08em] text-[var(--home-muted)] uppercase',
+                    'mb-4 font-[family-name:var(--font-home-sans)] font-medium text-[var(--home-ink)]',
                     editorialType.micro
                   )}
                 >
                   {group.label}
                 </p>
-                <ul className="flex flex-wrap gap-2">
+                <ul className="flex flex-wrap gap-x-4 gap-y-2">
                   {group.skills.map((skill) => (
                     <li
                       className={cn(
-                        'border border-[var(--home-line)] px-3 py-2 text-[var(--home-ink)]',
+                        'text-[var(--home-muted)]',
                         editorialType.secondary
                       )}
                       key={skill}

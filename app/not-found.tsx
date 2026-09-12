@@ -6,7 +6,7 @@ import { editorialType } from '@/lib/editorial-typography'
 export default function NotFound() {
   return (
     <EditorialShell route="not-found">
-      <section className="mx-auto flex min-h-[72vh] max-w-[1500px] flex-col justify-center px-5 py-24 sm:px-8 lg:px-12">
+      <section className="mx-auto flex min-h-[72vh] w-full max-w-[1440px] flex-col justify-center px-5 py-24 sm:px-8 lg:px-16">
         <p
           className={cn(
             'font-[family-name:var(--font-home-mono)] uppercase tracking-[0.18em] text-[var(--home-accent)]',
@@ -15,7 +15,7 @@ export default function NotFound() {
         >
           Error / 404
         </p>
-        <h1 className="mt-6 max-w-5xl text-balance font-[family-name:var(--font-home-display)] text-[clamp(4rem,14vw,12rem)] leading-[0.82] tracking-[-0.055em] text-[var(--home-ink)]">
+        <h1 className="mt-6 max-w-5xl text-balance font-[family-name:var(--font-home-display)] text-[clamp(4rem,10vw,6rem)] leading-[0.82] font-normal tracking-[-0.04em] text-[var(--home-ink)]">
           Page not found.
         </h1>
         <p

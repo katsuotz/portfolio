@@ -1,15 +1,13 @@
-import { Archivo_Black, IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google'
+import { Geist, IBM_Plex_Mono } from 'next/font/google'
 
-const display = Archivo_Black({
+const display = Geist({
   subsets: ['latin'],
-  weight: '400',
   variable: '--font-home-display',
   display: 'swap',
 })
 
-const sans = IBM_Plex_Sans({
+const sans = Geist({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-home-sans',
   display: 'swap',
 })

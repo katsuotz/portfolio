@@ -1,19 +1,27 @@
-/* Hallmark · genre: editorial · tone: technical field guide · anchor hue: cobalt/orange · macrostructure: multi-page editorial system · nav: N6 · footer: Ft5 */
+/* Swiss/product-gallery design tokens for non-log editorial routes. */
 
 :root {
-  --color-paper: #f4f6f8;
+  --color-paper: #f7f8fa;
   --color-paper-raised: #ffffff;
-  --color-paper-deep: #e7ebef;
-  --color-ink: #0a0d12;
-  --color-muted: #5c6673;
-  --color-rule: rgba(10, 13, 18, 0.14);
-  --color-rule-soft: rgba(10, 13, 18, 0.09);
-  --color-accent: #2457f5;
-  --color-accent-hover: #1748d1;
+  --color-paper-deep: #eceef2;
+  --color-ink: #151820;
+  --color-muted: #596170;
+  --color-rule: rgba(21, 24, 32, 0.14);
+  --color-rule-soft: rgba(21, 24, 32, 0.09);
+  --color-accent: #2448d8;
+  --color-accent-hover: #1938b5;
   --color-accent-ink: #ffffff;
-  --color-focus: #2457f5;
-  --color-panel-tint: rgba(10, 13, 18, 0.03);
-  --color-shadow: rgba(10, 13, 18, 0.08);
+  --color-focus: #2448d8;
+  --color-panel-tint: rgba(21, 24, 32, 0.03);
+  --color-shadow: rgba(21, 24, 32, 0.08);
+
+  --ui-background: var(--color-paper);
+  --ui-foreground: var(--color-ink);
+  --ui-accent: var(--color-accent);
+  --ui-accent-foreground: var(--color-accent-ink);
+  --ui-muted: var(--color-paper-deep);
+  --ui-muted-foreground: var(--color-muted);
+  --ui-border: var(--color-rule);
 
   --font-display: var(--font-home-display), sans-serif;
   --font-body: var(--font-home-sans), sans-serif;
@@ -43,23 +51,23 @@
   --dur-short: 180ms;
   --dur-medium: 280ms;
 
-  --radius-control: 0.45rem;
-  --radius-card: 0.6rem;
-  --radius-dialog: 0.8rem;
+  --radius-control: 0.25rem;
+  --radius-card: 0.5rem;
+  --radius-dialog: 0.5rem;
 }
 
 html[data-home-theme='dark'] {
-  --color-paper: #0b0a08;
-  --color-paper-raised: #1b1813;
-  --color-paper-deep: #15130f;
-  --color-ink: #f2eee6;
-  --color-muted: #aaa39a;
-  --color-rule: rgba(242, 238, 230, 0.16);
-  --color-rule-soft: rgba(242, 238, 230, 0.09);
-  --color-accent: #f04e36;
-  --color-accent-hover: #ff654d;
-  --color-accent-ink: #0b0a08;
-  --color-focus: #ff654d;
-  --color-panel-tint: rgba(242, 238, 230, 0.035);
+  --color-paper: #111318;
+  --color-paper-raised: #1b1e26;
+  --color-paper-deep: #242833;
+  --color-ink: #f2f4f8;
+  --color-muted: #a8b0bf;
+  --color-rule: rgba(242, 244, 248, 0.16);
+  --color-rule-soft: rgba(242, 244, 248, 0.09);
+  --color-accent: #93acff;
+  --color-accent-hover: #b2c3ff;
+  --color-accent-ink: #111318;
+  --color-focus: #b2c3ff;
+  --color-panel-tint: rgba(242, 244, 248, 0.035);
   --color-shadow: rgba(0, 0, 0, 0.24);
 }

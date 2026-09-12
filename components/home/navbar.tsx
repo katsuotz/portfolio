@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { ListIcon } from '@phosphor-icons/react/dist/ssr'
 import ThemeToggle from '@/components/home/theme-toggle'
@@ -52,8 +52,8 @@ function LinkSet({
         const className = cn(
           editorialType.micro,
           mobile
-            ? 'flex min-h-11 items-center border-b border-[var(--home-line)] px-3 font-[family-name:var(--font-home-mono)] tracking-[0.08em] uppercase last:border-b-0 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--home-accent)]'
-            : 'relative inline-flex min-h-11 items-center font-[family-name:var(--font-home-mono)] tracking-[0.08em] uppercase transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-[var(--home-accent)] after:transition-transform after:duration-200 hover:text-[var(--home-ink)] hover:after:scale-x-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] motion-reduce:transition-none after:motion-reduce:transition-none',
+            ? 'flex min-h-11 items-center border-b border-[var(--home-line)] px-3 font-[family-name:var(--font-home-sans)] tracking-[0.02em] last:border-b-0 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--home-accent)]'
+            : 'relative inline-flex min-h-11 items-center font-[family-name:var(--font-home-sans)] tracking-[0.01em] transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-[var(--home-accent)] after:transition-transform after:duration-200 hover:text-[var(--home-ink)] hover:after:scale-x-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] motion-reduce:transition-none after:motion-reduce:transition-none',
           active ? 'text-[var(--home-accent)]' : 'text-[var(--home-muted)]'
         )
 
@@ -90,16 +90,31 @@ export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
   const isHome = route === 'home'
   const links = isHome ? homeLinks : routeLinks
   const mobileDetailsRef = useRef<HTMLDetailsElement>(null)
+  const mobileSummaryRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const details = mobileDetailsRef.current
+    const summary = mobileSummaryRef.current
+    if (!details || !summary) return
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape' || !details.open) return
+      event.preventDefault()
+      details.open = false
+      summary.focus()
+    }
+    details.addEventListener('keydown', closeOnEscape)
+    return () => details.removeEventListener('keydown', closeOnEscape)
+  }, [])
 
   return (
-    <header className="pointer-events-none fixed inset-x-4 top-4 z-60 flex justify-center max-lg:inset-x-3 max-lg:top-3">
+    <header className="sticky top-0 z-40 flex justify-center border-b border-[var(--home-line)] bg-[var(--home-canvas)]">
       <nav
-        className="pointer-events-auto grid min-h-15 w-full max-w-[96rem] grid-cols-[auto_1fr_auto] items-center border border-[var(--home-line)] bg-[color-mix(in_srgb,var(--home-canvas)_92%,transparent)] py-0 pr-3 pl-5 shadow-[0_12px_48px_var(--home-shadow)] backdrop-blur-md transition-[background-color,border-color,box-shadow] duration-200 max-lg:grid-cols-[auto_1fr] max-lg:pl-4 motion-reduce:transition-none"
+        className="grid min-h-15 w-full max-w-[1440px] grid-cols-[auto_1fr_auto] items-center px-5 md:px-8 lg:px-16 max-lg:grid-cols-[auto_1fr]"
         aria-label="Primary navigation"
       >
         {isHome ? (
           <a
-            className="inline-flex min-h-11 items-center font-[family-name:var(--font-home-display)] text-base tracking-[-0.05em] text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] xl:text-lg"
+            className="inline-flex min-h-11 items-center font-[family-name:var(--font-home-display)] text-base tracking-[-0.03em] text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] xl:text-lg"
             href="#top"
             aria-label="Katsuotz home"
           >
@@ -107,7 +122,7 @@ export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
           </a>
         ) : (
           <Link
-            className="inline-flex min-h-11 items-center font-[family-name:var(--font-home-display)] text-base tracking-[-0.05em] text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] xl:text-lg"
+            className="inline-flex min-h-11 items-center font-[family-name:var(--font-home-display)] text-base tracking-[-0.03em] text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] xl:text-lg"
             href="/"
             aria-label="Katsuotz home"
           >
@@ -125,6 +140,7 @@ export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
             className="relative hidden max-lg:block"
           >
             <summary
+              ref={mobileSummaryRef}
               aria-label="Primary navigation"
               className="grid size-11 cursor-pointer list-none place-items-center border border-[var(--home-line)] text-[var(--home-muted)] transition-[color,background-color,border-color] duration-200 hover:border-[var(--home-accent)] hover:bg-[var(--home-surface)] hover:text-[var(--home-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--home-accent)] [&::-webkit-details-marker]:hidden motion-reduce:transition-none"
             >
@@ -144,7 +160,7 @@ export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
           <a
             className={cn(
               editorialType.micro,
-              'rounded-[0.45rem] flex min-h-11 items-center gap-4 border border-[var(--home-line)] px-4 font-[family-name:var(--font-home-mono)] tracking-[0.08em] text-[var(--home-muted)] uppercase transition-colors duration-200 hover:border-[var(--home-accent)] hover:text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] motion-reduce:transition-none max-[420px]:hidden'
+              'flex min-h-11 items-center gap-4 border border-[var(--home-line)] px-4 font-[family-name:var(--font-home-sans)] tracking-[0.01em] text-[var(--home-muted)] transition-colors duration-200 hover:border-[var(--home-accent)] hover:text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] motion-reduce:transition-none max-[420px]:hidden'
             )}
             href="mailto:m.irfan.fakhri66@gmail.com"
           >

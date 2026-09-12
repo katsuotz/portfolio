@@ -9,7 +9,7 @@ export default function Photography() {
   return (
     <section
       id="photography"
-      className="mx-auto w-full max-w-[96rem] scroll-mt-19 border-t border-[var(--home-line)] px-[max(1.25rem,4vw)] py-[clamp(6rem,12vw,11rem)] md:pl-[calc(max(1.25rem,4vw)+1.75rem)]"
+      className="mx-auto w-full max-w-[1440px] scroll-mt-24 border-t border-[var(--home-line)] px-5 py-20 md:px-8 md:py-28 lg:px-16"
       aria-labelledby="photography-title"
     >
       <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-[clamp(1.5rem,4vw,3rem)]">
@@ -30,7 +30,7 @@ export default function Photography() {
         </div>
         <h2
           id="photography-title"
-          className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,13vw,4.5rem)] leading-[0.94] font-normal tracking-[-0.06em] text-[var(--home-ink)] uppercase lg:text-[clamp(2.9rem,6vw,6.6rem)]"
+          className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,7vw,6rem)] leading-[0.94] font-normal tracking-[-0.04em] text-[var(--home-ink)]"
         >
           Beyond the screen.
         </h2>

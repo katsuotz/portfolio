@@ -1,6 +1,5 @@
 'use client'
 
-import { ArrowRightIcon } from '@phosphor-icons/react'
 import ProjectItem, { ProjectType } from '@/components/home/project-item'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
@@ -187,34 +186,24 @@ export default function Project({
     return (
       <section
         id="selected-work"
-        className="relative mx-auto w-full max-w-[96rem] scroll-mt-19 px-[max(1.25rem,4vw)] py-[clamp(5rem,10vw,9rem)] md:pl-[calc(max(1.25rem,4vw)+1.75rem)]"
+        className="mx-auto w-full max-w-[1440px] scroll-mt-24 px-5 py-12 sm:px-8 md:py-16 lg:px-16"
       >
-        <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-5">
-          <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-y border-[var(--home-line)] py-3">
-            <p
-              className={cn(
-                editorialType.micro,
-                'font-[family-name:var(--font-home-mono)] tracking-[0.12em] text-[var(--home-accent)] uppercase'
-              )}
+        <div className="border-b border-[var(--home-line)] py-5">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="font-[family-name:var(--font-home-display)] text-[clamp(2.2rem,5vw,4.5rem)] leading-[0.9] font-normal tracking-[-0.04em] text-[var(--home-ink)]">
+              Systems made useful.
+            </h2>
+            <Link
+              href="/projects"
+              className="inline-flex min-h-11 items-center font-[family-name:var(--font-home-sans)] text-sm font-medium text-[var(--home-muted)] underline decoration-[var(--home-line)] underline-offset-4 transition-colors hover:text-[var(--home-accent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] motion-reduce:transition-none"
             >
-              01 / Selected work
-            </p>
-            <span
-              className={cn(
-                editorialType.micro,
-                'text-right font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-muted)] uppercase'
-              )}
-            >
-              Replay archive · 04 signals
-            </span>
+              View all projects
+            </Link>
           </div>
-          <h2 className="max-w-[14ch] font-[family-name:var(--font-home-display)] text-[clamp(2.65rem,13vw,4.5rem)] leading-[0.9] font-normal tracking-[-0.07em] text-[var(--home-ink)] uppercase lg:text-[clamp(2.9rem,6vw,6.6rem)]">
-            Systems made useful.
-          </h2>
           <p
             className={cn(
               editorialType.body,
-              'max-w-[48ch] font-light text-[var(--home-muted)]'
+              'mt-4 max-w-[48ch] text-[var(--home-muted)]'
             )}
           >
             A selection of platforms built for complex operations, from AI
@@ -222,56 +211,12 @@ export default function Project({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.55fr)_minmax(19rem,0.85fr)]">
-          <div className="relative flex h-full min-h-0">
-            <span className="home-channel-rail absolute top-8 -left-8 hidden font-[family-name:var(--font-home-mono)] text-[0.65rem] tracking-[0.14em] text-[var(--home-muted)] uppercase md:block">
-              Active channel / 01
-            </span>
-            <ProjectItem project={filteredProject[0]} variant="bento" />
-          </div>
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-1">
-            {filteredProject.slice(1).map((project, index) => (
-              <div key={project.name} className="min-w-0">
-                <ProjectItem
-                  project={project}
-                  variant="bento"
-                  compact
-                  index={index + 2}
-                />
-              </div>
-            ))}
-          </div>
-
-          <Link
-            href="/projects"
-            className="group/archive mt-1 grid min-h-28 grid-cols-[auto_1fr_auto] items-center gap-4 border border-[var(--home-line)] bg-[var(--home-panel-tint)] p-5 text-[var(--home-ink)] transition-colors duration-200 hover:border-[var(--home-accent)] hover:bg-[var(--home-surface)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] sm:p-6 motion-reduce:transition-none"
-          >
-            <span
-              className={cn(
-                editorialType.micro,
-                'font-[family-name:var(--font-home-mono)] tracking-[0.1em] text-[var(--home-accent)] uppercase'
-              )}
-            >
-              Archive
-            </span>
-            <span className="min-w-0">
-              <strong className="block text-[clamp(1rem,1.7vw,1.35rem)] font-medium">
-                Explore the full project registry
-              </strong>
-              <span
-                className={cn(
-                  editorialType.micro,
-                  'mt-1 block text-[var(--home-muted)]'
-                )}
-              >
-                Browse the complete project archive.
-              </span>
-            </span>
-            <ArrowRightIcon
-              className="size-5 shrink-0 transition-transform duration-200 group-hover/archive:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none"
-              aria-hidden="true"
-            />
-          </Link>
+        <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2">
+          {filteredProject.map((project) => (
+            <div key={project.name} className="min-w-0">
+              <ProjectItem project={project} variant="bento" />
+            </div>
+          ))}
         </div>
       </section>
     )
@@ -280,26 +225,16 @@ export default function Project({
   return (
     <section
       id="work"
-      className="mx-auto w-full max-w-[1500px] px-5 py-20 sm:px-8 sm:py-28 lg:px-12"
+      className="mx-auto w-full max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24 lg:px-16"
     >
-      <div className="mb-12 grid max-w-[72rem] gap-5 border-b border-[var(--home-line)] pb-8">
-        <div>
-          <p
-            className={cn(
-              editorialType.micro,
-              'font-[family-name:var(--font-home-mono)] uppercase tracking-[0.18em] text-[var(--home-accent)]'
-            )}
-          >
-            Project registry
-          </p>
-          <h1 className="mt-4 text-balance font-[family-name:var(--font-home-display)] text-[clamp(3.4rem,8vw,8rem)] leading-[0.86] tracking-[-0.05em] text-[var(--home-ink)]">
-            Selected works.
-          </h1>
-        </div>
+      <div className="mb-12 max-w-[42rem]">
+        <h1 className="text-balance font-[family-name:var(--font-home-display)] text-[clamp(2.75rem,7vw,4rem)] leading-[0.92] font-normal tracking-[-0.04em] text-[var(--home-ink)]">
+          Selected works.
+        </h1>
         <p
           className={cn(
             editorialType.body,
-            'max-w-[52ch] text-[var(--home-muted)]'
+            'mt-5 max-w-[52ch] text-[var(--home-muted)]'
           )}
         >
           Products, platforms, and experiments spanning AI, operations,
@@ -307,14 +242,12 @@ export default function Project({
         </p>
       </div>
 
-      <div className="w-full">
-        <div className="grid grid-cols-1 gap-px border border-[var(--home-line)] bg-[var(--home-line)] md:grid-cols-2 xl:grid-cols-3">
-          {filteredProject.map((project) => (
-            <div key={project.name} className="min-w-0 bg-[var(--home-canvas)]">
-              <ProjectItem project={project} variant="registry" />
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2 md:gap-y-20">
+        {filteredProject.map((project) => (
+          <div key={project.name} className="min-w-0">
+            <ProjectItem project={project} variant="registry" />
+          </div>
+        ))}
       </div>
     </section>
   )
