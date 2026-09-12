@@ -34,6 +34,7 @@ const homeThemeInitializer = `
 `
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://katsuotz.com'),
   title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
   description:
     'Experienced full-stack developer with over 7 years of industry expertise, actively engaged in startups and freelancing on side projects.',
@@ -43,16 +44,72 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    'max-image-preview': 'none',
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  alternates: {
+    canonical: '/',
   },
   openGraph: {
     title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
     description:
       'Experienced full-stack developer with over 7 years of industry expertise, actively engaged in startups and freelancing on side projects.',
-    url: 'https://katsuotz.com',
+    url: '/',
     siteName: 'Katsuotz',
     type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/photography/orange-backpacks.webp',
+        width: 1920,
+        height: 1280,
+        alt: 'Orange backpack hikers in a misty forest',
+      },
+    ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Muhammad Irfan Fakhri - Software Engineer | Katsuotz',
+    description:
+      'Experienced full-stack developer with over 7 years of industry expertise, actively engaged in startups and freelancing on side projects.',
+    images: ['/photography/orange-backpacks.webp'],
+  },
+}
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://katsuotz.com/#website',
+      url: 'https://katsuotz.com',
+      name: 'Katsuotz',
+      inLanguage: 'en',
+      publisher: {
+        '@id': 'https://katsuotz.com/#person',
+      },
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://katsuotz.com/#person',
+      name: 'Muhammad Irfan Fakhri',
+      alternateName: 'Katsuotz',
+      url: 'https://katsuotz.com',
+      jobTitle: 'Software Engineer',
+      sameAs: [
+        'https://github.com/katsuotz/',
+        'https://www.linkedin.com/in/irfan-fakhri/',
+      ],
+    },
+  ],
 }
 
 export const viewport = 'width=device-width, initial-scale=1'
@@ -83,6 +140,10 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-foreground font-sans antialiased selection:bg-[var(--color-accent)]/30">
         <div className="relative">{children}</div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-E8CK2FG8Z2"
           strategy="afterInteractive"

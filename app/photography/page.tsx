@@ -6,10 +6,12 @@ import { editorialType } from '@/lib/editorial-typography'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://katsuotz.com'),
   title: 'Photography | Katsuotz',
   description:
     'A field collection of photographs from beyond the screen by Muhammad Irfan Fakhri.',
+  alternates: {
+    canonical: '/photography',
+  },
   openGraph: {
     title: 'Photography | Katsuotz',
     description:

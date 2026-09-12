@@ -1,7 +1,16 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import EditorialShell from '@/components/home/editorial-shell'
 import { cn } from '@/lib/utils'
 import { editorialType } from '@/lib/editorial-typography'
+
+export const metadata: Metadata = {
+  title: 'Page not found | Katsuotz',
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function NotFound() {
   return (

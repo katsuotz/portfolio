@@ -1,6 +1,24 @@
-export const metadata = {
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
   title: 'Logs | Katsuotz',
-  description: "Katsuotz's Logs.",
+  description:
+    'Writing about web performance, travel, and experiences by Muhammad Irfan Fakhri.',
+  alternates: {
+    canonical: '/log',
+  },
+  openGraph: {
+    url: '/log',
+    type: 'website',
+    images: ['/photography/orange-backpacks.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Logs | Katsuotz',
+    description:
+      'Writing about web performance, travel, and experiences by Muhammad Irfan Fakhri.',
+    images: ['/photography/orange-backpacks.webp'],
+  },
 }
 
 import Link from 'next/link'
