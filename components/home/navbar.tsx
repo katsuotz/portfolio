@@ -11,6 +11,7 @@ export type EditorialRoute =
   | 'home'
   | 'projects'
   | 'showcase'
+  | 'photography'
   | 'log'
   | 'not-found'
 
@@ -18,6 +19,7 @@ const homeLinks = [
   { href: '#selected-work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
   { href: '#credentials', label: 'Credentials' },
+  { href: '/photography', label: 'Photography' },
   { href: '/showcase', label: 'Showcases' },
   { href: '/log', label: 'Log' },
 ]
@@ -25,6 +27,7 @@ const homeLinks = [
 const routeLinks = [
   { href: '/', label: 'Home', route: 'home' },
   { href: '/projects', label: 'Projects', route: 'projects' },
+  { href: '/photography', label: 'Photography', route: 'photography' },
   { href: '/showcase', label: 'Showcases', route: 'showcase' },
   { href: '/log', label: 'Log', route: 'log' },
 ] as const
@@ -41,7 +44,9 @@ function LinkSet({
   onNavigate?: () => void
 }) {
   return (
-    <div className={cn(mobile ? 'grid gap-1' : 'flex items-center gap-7')}>
+    <div
+      className={cn(mobile ? 'grid gap-1' : 'flex items-center gap-6 xl:gap-7')}
+    >
       {links.map((link) => {
         const active = 'route' in link && link.route === route
         const className = cn(
@@ -87,9 +92,9 @@ export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
   const mobileDetailsRef = useRef<HTMLDetailsElement>(null)
 
   return (
-    <header className="pointer-events-none fixed inset-x-4 top-4 z-60 flex justify-center max-md:inset-x-3 max-md:top-3">
+    <header className="pointer-events-none fixed inset-x-4 top-4 z-60 flex justify-center max-lg:inset-x-3 max-lg:top-3">
       <nav
-        className="pointer-events-auto grid min-h-15 w-full max-w-[96rem] grid-cols-[auto_1fr_auto] items-center border border-[var(--home-line)] bg-[color-mix(in_srgb,var(--home-canvas)_92%,transparent)] py-0 pr-3 pl-5 shadow-[0_12px_48px_var(--home-shadow)] backdrop-blur-md transition-[background-color,border-color,box-shadow] duration-200 max-md:grid-cols-[auto_1fr] max-md:pl-4 motion-reduce:transition-none"
+        className="pointer-events-auto grid min-h-15 w-full max-w-[96rem] grid-cols-[auto_1fr_auto] items-center border border-[var(--home-line)] bg-[color-mix(in_srgb,var(--home-canvas)_92%,transparent)] py-0 pr-3 pl-5 shadow-[0_12px_48px_var(--home-shadow)] backdrop-blur-md transition-[background-color,border-color,box-shadow] duration-200 max-lg:grid-cols-[auto_1fr] max-lg:pl-4 motion-reduce:transition-none"
         aria-label="Primary navigation"
       >
         {isHome ? (
@@ -110,14 +115,14 @@ export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
           </Link>
         )}
 
-        <div className="flex justify-center max-md:hidden">
+        <div className="flex justify-center max-lg:hidden">
           <LinkSet links={links} route={route} />
         </div>
 
-        <div className="flex items-center gap-2 max-md:justify-self-end">
+        <div className="flex items-center gap-2 max-lg:justify-self-end">
           <details
             ref={mobileDetailsRef}
-            className="relative hidden max-md:block"
+            className="relative hidden max-lg:block"
           >
             <summary
               aria-label="Primary navigation"
