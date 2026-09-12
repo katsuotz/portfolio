@@ -9,7 +9,7 @@ export default function Photography() {
   return (
     <section
       id="photography"
-      className="mx-auto w-full max-w-[1440px] scroll-mt-24 border-t border-[var(--home-line)] px-5 py-20 md:px-8 md:py-28 lg:px-16"
+      className="mx-auto w-full max-w-[1440px] scroll-mt-24 px-5 py-20 md:px-8 md:py-28 lg:px-16"
       aria-labelledby="photography-title"
     >
       <div className="mb-[clamp(3rem,7vw,6rem)] grid max-w-[72rem] gap-[clamp(1.5rem,4vw,3rem)]">

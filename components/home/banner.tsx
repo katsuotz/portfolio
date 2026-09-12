@@ -21,8 +21,11 @@ export default function Banner() {
         >
           Katsuotz
         </h1>
-        <p className="mt-4 max-w-[36ch] font-[family-name:var(--font-home-sans)] text-base text-[var(--home-muted)]">
-          Muhammad Irfan Fakhri / Software Engineer / Full-stack developer
+        <p className="mt-4 font-[family-name:var(--font-home-sans)] text-base text-[var(--home-ink)]">
+          Muhammad Irfan Fakhri
+        </p>
+        <p className="mt-1 max-w-[36ch] font-[family-name:var(--font-home-sans)] text-base text-[var(--home-muted)]">
+          Software Engineer / Full-Stack Developer
         </p>
         <p className="mt-2 font-[family-name:var(--font-home-sans)] text-base font-medium text-[var(--home-muted)]">
           Available for new opportunities
