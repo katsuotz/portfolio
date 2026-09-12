@@ -98,12 +98,39 @@ const structuredData = {
       },
     },
     {
+      '@type': 'ProfilePage',
+      '@id': 'https://katsuotz.com/#profile',
+      url: 'https://katsuotz.com',
+      name: 'Muhammad Irfan Fakhri - Software Engineer',
+      isPartOf: {
+        '@id': 'https://katsuotz.com/#website',
+      },
+      mainEntity: {
+        '@id': 'https://katsuotz.com/#person',
+      },
+    },
+    {
       '@type': 'Person',
       '@id': 'https://katsuotz.com/#person',
       name: 'Muhammad Irfan Fakhri',
       alternateName: 'Katsuotz',
       url: 'https://katsuotz.com',
       jobTitle: 'Software Engineer',
+      description:
+        'Experienced full-stack developer building dependable digital products across AI, logistics, agritech, education, and enterprise software.',
+      image: 'https://katsuotz.com/photography/portrait.webp',
+      knowsAbout: [
+        'Full-stack web development',
+        'Software engineering',
+        'Web performance optimization',
+        'AI-powered workflows',
+        'React',
+        'Next.js',
+        'Vue',
+        'Go',
+        'Node.js',
+        'PostgreSQL',
+      ],
       sameAs: [
         'https://github.com/katsuotz/',
         'https://www.linkedin.com/in/irfan-fakhri/',

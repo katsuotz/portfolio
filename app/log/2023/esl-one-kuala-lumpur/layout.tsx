@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ArticleStructuredData from '@/components/seo/article-structured-data'
 
 export const metadata: Metadata = {
   title: 'ESL One Kuala Lumpur 2023 | Katsuotz',
@@ -25,5 +26,23 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      <ArticleStructuredData
+        headline="ESL One Kuala Lumpur Experience"
+        description="A photo journal from attending ESL One Kuala Lumpur 2023 in Malaysia."
+        url="https://katsuotz.com/log/2023/esl-one-kuala-lumpur"
+        datePublished="2023-12-17"
+        image="/log/kuala-lumpur/arte-mitec.jpg"
+        articleSection="Travel and esports"
+        keywords={[
+          'ESL One Kuala Lumpur',
+          'Dota 2',
+          'Kuala Lumpur',
+          'Malaysia',
+        ]}
+      />
+      {children}
+    </>
+  )
 }

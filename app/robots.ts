@@ -4,10 +4,16 @@ export const dynamic = 'force-static'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
+    rules: [
+      {
+        userAgent: 'OAI-SearchBot',
+        allow: '/',
+      },
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
     sitemap: 'https://katsuotz.com/sitemap.xml',
     host: 'https://katsuotz.com',
   }

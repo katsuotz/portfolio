@@ -73,6 +73,15 @@
 - External links opened in a new tab must include `rel="noreferrer"` or the appropriate safe equivalent.
 - Do not change Google Analytics configuration or identifiers unless explicitly requested.
 
+## Search and AI Discoverability
+
+- Keep all public portfolio and log routes crawlable, indexable, and linked from the site navigation or sitemap.
+- Keep `metadataBase`, canonical URLs, route metadata, `app/sitemap.ts`, and `app/robots.ts` synchronized when adding or renaming routes.
+- Preserve explicit access for `OAI-SearchBot` and the wildcard crawler rule unless the user requests a visibility restriction.
+- Keep JSON-LD entities and articles accurate to visible page content, including names, descriptions, dates, images, authorship, and canonical URLs.
+- Use semantic headings, descriptive image alt text, and concise factual copy so search engines and answer engines can identify the page subject without relying on client-only behavior.
+- Treat structured data as supporting context: do not add claims, dates, keywords, or relationships that are not represented by the page content.
+
 ## Verification
 
 - For code or styling changes, run:

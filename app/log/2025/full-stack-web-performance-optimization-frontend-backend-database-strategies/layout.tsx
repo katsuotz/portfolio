@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ArticleStructuredData from '@/components/seo/article-structured-data'
 
 export const metadata: Metadata = {
   title: 'Full-Stack Web Performance Optimization | Katsuotz',
@@ -26,5 +27,27 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      <ArticleStructuredData
+        headline="Full-Stack Web Performance Optimization: Frontend, Backend, and Database Strategies"
+        description="How we optimized a large-scale web application across the frontend, backend, and database layers using Vue.js, Golang, PostgreSQL, Redis, Varnish, and Cloudflare."
+        url="https://katsuotz.com/log/2025/full-stack-web-performance-optimization-frontend-backend-database-strategies"
+        datePublished="2025-07-14"
+        image="/log/spmb-jabar/google-analytics.webp"
+        articleSection="Software engineering"
+        keywords={[
+          'web performance',
+          'frontend optimization',
+          'backend optimization',
+          'database tuning',
+          'Golang',
+          'Vue.js',
+          'PostgreSQL',
+          'Redis',
+        ]}
+      />
+      {children}
+    </>
+  )
 }
