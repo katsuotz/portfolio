@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ListIcon } from '@phosphor-icons/react/dist/ssr'
 import ThemeToggle from '@/components/home/theme-toggle'
 import { cn } from '@/lib/utils'
@@ -31,6 +32,27 @@ const routeLinks = [
   { href: '/showcase', label: 'Showcases', route: 'showcase' },
   { href: '/log', label: 'Log', route: 'log' },
 ] as const
+
+function FaviconMark() {
+  return (
+    <span className="relative block size-11" aria-hidden="true">
+      <Image
+        src="/favicon-light.svg"
+        alt=""
+        width={44}
+        height={44}
+        className="block size-11 dark:hidden"
+      />
+      <Image
+        src="/favicon-dark.svg"
+        alt=""
+        width={44}
+        height={44}
+        className="hidden size-11 dark:block"
+      />
+    </span>
+  )
+}
 
 function LinkSet({
   links,
@@ -114,19 +136,19 @@ export default function Navbar({ route = 'home' }: { route?: EditorialRoute }) {
       >
         {isHome ? (
           <a
-            className="inline-flex min-h-11 items-center font-[family-name:var(--font-home-display)] text-base tracking-[-0.03em] text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] xl:text-lg"
+            className="inline-flex size-11 items-center justify-center text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)]"
             href="#top"
             aria-label="Katsuotz home"
           >
-            K<span className="text-[var(--home-accent)]">/</span>O
+            <FaviconMark />
           </a>
         ) : (
           <Link
-            className="inline-flex min-h-11 items-center font-[family-name:var(--font-home-display)] text-base tracking-[-0.03em] text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)] xl:text-lg"
+            className="inline-flex size-11 items-center justify-center text-[var(--home-ink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--home-accent)]"
             href="/"
             aria-label="Katsuotz home"
           >
-            K<span className="text-[var(--home-accent)]">/</span>O
+            <FaviconMark />
           </Link>
         )}
 
