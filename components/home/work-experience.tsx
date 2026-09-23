@@ -38,23 +38,23 @@ export default function WorkExperience() {
     //   description:
     //     'Built a secure and intuitive platform to track medicine serialization and delivery, ensuring authenticity and regulatory compliance across the supply chain.',
     // },
-    // {
-    //   logo: '/work/nvp.webp',
-    //   flag: '/flag/id.webp',
-    //   company: 'Native Productions',
-    //   headingClassName:
-    //     'text-[clamp(2.05rem,4.3vw,4.8rem)] lg:whitespace-nowrap lg:text-[clamp(1.9rem,2.7vw,3rem)]',
-    //   country: 'Indonesia',
-    //   status: 'contract',
-    //   position: [
-    //     {
-    //       title: 'Full-Stack Developer',
-    //       date: 'Dec 2025 - Now',
-    //     },
-    //   ],
-    //   description:
-    //     'Built customizable and scalable enterprise applications with tailored workflows and advanced reporting to support client-specific business logic.',
-    // },
+    {
+      logo: '/work/nvp.webp',
+      flag: '/flag/id.webp',
+      company: 'Native Productions',
+      headingClassName:
+        'text-[clamp(2.05rem,4.3vw,4.8rem)] lg:whitespace-nowrap lg:text-[clamp(1.9rem,2.7vw,3rem)]',
+      country: 'Indonesia',
+      status: 'contract',
+      position: [
+        {
+          title: 'Full-Stack Developer',
+          date: 'Dec 2025 - Aug 2026',
+        },
+      ],
+      description:
+        'Built customizable and scalable enterprise applications with tailored workflows and advanced reporting to support client-specific business logic.',
+    },
     {
       logo: '/work/farmbyte.webp',
       flag: '/flag/my.svg',
